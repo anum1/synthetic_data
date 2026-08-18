@@ -1,0 +1,12 @@
+For an even more realistic Workday demo, I would add:
+
+Supervisory organizations (manager hierarchy)
+Job profiles and grades
+Open enrollment events
+Employee transfers/promotions
+Attrition and terminations
+Diversity metrics
+Monthly benefit claims data
+
+Those additions make the AI demo much more impressive because users can ask natural-language workforce 
+analytics questions similar to real Workday reporting.

@@ -1,0 +1,3138 @@
+employee_id,review_year,review_period,rating,potential,manager_score,goals_met_pct
+100000,2022,Annual,Unsatisfactory,Low,2.2,15
+100000,2023,Annual,Exceeds Expectations,Medium,8.1,79
+100000,2024,Annual,Exceeds Expectations,Medium,7.5,83
+100000,2025,Annual,Meets Expectations,Low,6.8,67
+100002,2025,Annual,Meets Expectations,Medium,5.6,56
+100003,2022,Annual,Exceeds Expectations,High,8.4,73
+100003,2023,Annual,Meets Expectations,Medium,6.3,55
+100003,2024,Annual,Exceeds Expectations,Medium,7.8,79
+100003,2025,Annual,Exceeds Expectations,Medium,7.8,81
+100004,2024,Annual,Exceptional,High,9.3,88
+100004,2025,Annual,Exceptional,High,9.0,93
+100005,2023,Annual,Meets Expectations,Medium,6.7,68
+100005,2024,Annual,Meets Expectations,Low,7.0,50
+100005,2025,Annual,Below Expectations,Low,3.6,31
+100006,2022,Annual,Meets Expectations,Medium,6.4,66
+100006,2023,Annual,Below Expectations,Low,3.6,44
+100006,2024,Annual,Meets Expectations,Low,6.9,50
+100006,2025,Annual,Below Expectations,Medium,3.8,40
+100007,2022,Annual,Exceeds Expectations,High,8.5,78
+100007,2023,Annual,Meets Expectations,Low,5.6,56
+100007,2024,Annual,Meets Expectations,Medium,6.7,51
+100007,2025,Annual,Exceptional,High,9.4,99
+100008,2022,Annual,Unsatisfactory,Low,0.8,0
+100008,2023,Annual,Exceeds Expectations,High,7.6,72
+100008,2024,Annual,Below Expectations,Medium,3.7,38
+100008,2025,Annual,Meets Expectations,Medium,6.6,62
+100009,2022,Annual,Meets Expectations,Medium,5.4,65
+100009,2023,Annual,Meets Expectations,Medium,6.8,50
+100009,2024,Annual,Exceptional,High,9.5,96
+100009,2025,Annual,Exceeds Expectations,Medium,7.7,72
+100010,2022,Annual,Meets Expectations,Medium,5.9,58
+100010,2023,Annual,Exceeds Expectations,Medium,7.0,85
+100010,2024,Annual,Exceptional,High,9.5,89
+100010,2025,Annual,Exceeds Expectations,Medium,7.9,72
+100011,2022,Annual,Exceeds Expectations,Medium,7.8,72
+100011,2023,Annual,Exceeds Expectations,Medium,7.7,83
+100011,2024,Annual,Exceeds Expectations,Medium,8.3,85
+100012,2022,Annual,Exceptional,Medium,9.9,97
+100012,2023,Annual,Meets Expectations,Medium,5.0,70
+100012,2024,Annual,Below Expectations,Low,3.4,35
+100012,2025,Annual,Meets Expectations,Medium,6.5,57
+100013,2022,Annual,Exceptional,High,8.8,94
+100013,2023,Annual,Exceeds Expectations,High,7.3,77
+100013,2024,Annual,Meets Expectations,Medium,6.9,64
+100013,2025,Annual,Meets Expectations,Low,5.6,68
+100014,2022,Annual,Meets Expectations,Medium,5.6,56
+100014,2023,Annual,Meets Expectations,Medium,6.3,50
+100014,2024,Annual,Exceeds Expectations,High,8.4,74
+100014,2025,Annual,Unsatisfactory,Low,1.9,24
+100015,2022,Annual,Below Expectations,Medium,4.5,36
+100015,2023,Annual,Meets Expectations,Low,5.3,55
+100015,2024,Annual,Meets Expectations,Medium,5.7,64
+100015,2025,Annual,Meets Expectations,Medium,6.7,56
+100016,2022,Annual,Exceptional,High,9.7,88
+100016,2023,Annual,Exceeds Expectations,Medium,7.6,82
+100016,2024,Annual,Exceeds Expectations,Medium,7.3,76
+100016,2025,Annual,Meets Expectations,Low,6.0,66
+100017,2022,Annual,Meets Expectations,Medium,5.5,63
+100017,2023,Annual,Meets Expectations,Medium,6.0,61
+100017,2024,Annual,Meets Expectations,Medium,6.2,63
+100017,2025,Annual,Meets Expectations,Low,5.0,70
+100018,2022,Annual,Meets Expectations,Medium,5.1,69
+100018,2023,Annual,Meets Expectations,Low,5.8,50
+100018,2024,Annual,Meets Expectations,Low,6.9,51
+100018,2025,Annual,Below Expectations,Medium,4.8,50
+100019,2022,Annual,Exceeds Expectations,Medium,7.2,82
+100019,2023,Annual,Meets Expectations,Medium,6.1,62
+100019,2024,Annual,Meets Expectations,Medium,6.9,59
+100019,2025,Annual,Meets Expectations,Low,6.6,66
+100020,2022,Annual,Meets Expectations,Medium,5.0,68
+100020,2023,Annual,Unsatisfactory,Low,0.3,10
+100020,2024,Annual,Meets Expectations,Medium,5.7,60
+100020,2025,Annual,Below Expectations,Medium,3.4,45
+100021,2022,Annual,Exceeds Expectations,Medium,8.5,70
+100021,2023,Annual,Meets Expectations,Medium,5.8,64
+100021,2024,Annual,Meets Expectations,Medium,5.1,64
+100021,2025,Annual,Exceptional,High,10.0,88
+100022,2023,Annual,Exceptional,High,8.6,91
+100022,2024,Annual,Exceeds Expectations,Medium,7.2,84
+100022,2025,Annual,Exceeds Expectations,High,8.0,85
+100023,2022,Annual,Meets Expectations,Low,5.2,68
+100023,2023,Annual,Meets Expectations,Medium,6.9,51
+100023,2024,Annual,Exceptional,High,8.7,96
+100023,2025,Annual,Unsatisfactory,Low,1.4,28
+100024,2023,Annual,Meets Expectations,Medium,5.7,65
+100024,2024,Annual,Meets Expectations,Medium,5.8,70
+100026,2023,Annual,Unsatisfactory,Low,0.0,6
+100026,2024,Annual,Exceeds Expectations,Medium,8.2,76
+100026,2025,Annual,Below Expectations,Medium,4.8,38
+100027,2024,Annual,Exceeds Expectations,Medium,7.8,77
+100027,2025,Annual,Below Expectations,Low,4.6,33
+100028,2022,Annual,Meets Expectations,Low,6.7,63
+100028,2023,Annual,Exceeds Expectations,Medium,7.1,75
+100028,2024,Annual,Exceptional,High,9.8,94
+100028,2025,Annual,Below Expectations,Low,3.8,40
+100029,2023,Annual,Exceeds Expectations,High,8.1,79
+100029,2024,Annual,Meets Expectations,Medium,5.7,57
+100029,2025,Annual,Unsatisfactory,Low,1.3,16
+100030,2022,Annual,Exceptional,Medium,9.2,89
+100030,2023,Annual,Exceptional,High,9.6,89
+100030,2024,Annual,Meets Expectations,Medium,7.0,57
+100030,2025,Annual,Below Expectations,Low,3.7,33
+100031,2022,Annual,Meets Expectations,Medium,6.6,67
+100031,2023,Annual,Meets Expectations,Low,5.0,54
+100031,2024,Annual,Exceptional,High,9.9,88
+100031,2025,Annual,Exceeds Expectations,High,7.8,75
+100032,2023,Annual,Exceeds Expectations,Medium,8.1,85
+100032,2024,Annual,Meets Expectations,Medium,6.6,55
+100032,2025,Annual,Exceeds Expectations,Medium,8.4,75
+100033,2022,Annual,Exceeds Expectations,Medium,7.2,81
+100033,2023,Annual,Meets Expectations,Medium,6.3,53
+100033,2024,Annual,Below Expectations,Low,3.2,48
+100033,2025,Annual,Meets Expectations,Medium,6.3,70
+100034,2022,Annual,Exceptional,High,8.6,98
+100034,2023,Annual,Meets Expectations,Medium,5.3,69
+100034,2024,Annual,Meets Expectations,Low,5.4,63
+100034,2025,Annual,Meets Expectations,Low,6.8,52
+100036,2022,Annual,Exceeds Expectations,Medium,7.4,84
+100036,2023,Annual,Exceeds Expectations,Medium,8.3,82
+100036,2024,Annual,Meets Expectations,Medium,5.8,53
+100036,2025,Annual,Unsatisfactory,Low,1.1,14
+100037,2023,Annual,Unsatisfactory,Low,2.4,6
+100037,2024,Annual,Exceeds Expectations,Medium,7.4,80
+100037,2025,Annual,Exceeds Expectations,Medium,8.1,78
+100038,2023,Annual,Meets Expectations,Medium,5.5,54
+100038,2024,Annual,Meets Expectations,Low,5.6,66
+100038,2025,Annual,Exceeds Expectations,Medium,8.3,80
+100039,2022,Annual,Meets Expectations,Medium,5.2,70
+100039,2023,Annual,Meets Expectations,Low,6.8,63
+100039,2024,Annual,Below Expectations,Low,3.3,39
+100039,2025,Annual,Meets Expectations,Low,5.7,60
+100040,2022,Annual,Below Expectations,Low,4.5,33
+100040,2023,Annual,Meets Expectations,Medium,5.8,58
+100040,2024,Annual,Meets Expectations,Low,6.6,50
+100040,2025,Annual,Exceptional,Medium,9.7,85
+100041,2022,Annual,Meets Expectations,Medium,6.2,66
+100041,2023,Annual,Exceeds Expectations,High,7.2,81
+100041,2024,Annual,Exceeds Expectations,Medium,8.4,83
+100041,2025,Annual,Meets Expectations,Medium,5.6,70
+100042,2023,Annual,Meets Expectations,Medium,6.6,56
+100042,2024,Annual,Unsatisfactory,Low,0.5,28
+100042,2025,Annual,Below Expectations,Medium,4.3,43
+100043,2025,Annual,Unsatisfactory,Low,2.5,5
+100044,2022,Annual,Exceeds Expectations,High,7.8,74
+100044,2023,Annual,Exceeds Expectations,Medium,8.1,73
+100044,2024,Annual,Exceeds Expectations,High,8.2,80
+100044,2025,Annual,Below Expectations,Medium,3.3,46
+100045,2022,Annual,Exceeds Expectations,Medium,7.1,84
+100045,2023,Annual,Unsatisfactory,Low,0.9,17
+100045,2024,Annual,Meets Expectations,Medium,6.0,51
+100045,2025,Annual,Exceptional,High,8.8,98
+100047,2023,Annual,Meets Expectations,Medium,5.9,66
+100047,2024,Annual,Below Expectations,Low,4.8,30
+100047,2025,Annual,Exceeds Expectations,Medium,7.3,71
+100048,2022,Annual,Exceeds Expectations,Medium,7.9,76
+100048,2023,Annual,Meets Expectations,Medium,6.3,58
+100048,2024,Annual,Meets Expectations,Medium,5.3,70
+100048,2025,Annual,Exceeds Expectations,High,8.4,74
+100049,2022,Annual,Meets Expectations,Low,6.5,54
+100049,2023,Annual,Meets Expectations,Medium,6.5,66
+100050,2025,Annual,Meets Expectations,Low,5.0,68
+100051,2022,Annual,Exceptional,Medium,9.5,87
+100051,2023,Annual,Unsatisfactory,Low,0.5,5
+100051,2024,Annual,Meets Expectations,Medium,6.9,70
+100051,2025,Annual,Exceeds Expectations,High,7.3,74
+100052,2022,Annual,Below Expectations,Low,3.8,43
+100052,2023,Annual,Exceeds Expectations,Medium,7.6,80
+100052,2024,Annual,Meets Expectations,Medium,5.8,55
+100052,2025,Annual,Exceeds Expectations,Medium,7.3,74
+100053,2022,Annual,Meets Expectations,Low,6.8,67
+100053,2023,Annual,Meets Expectations,Medium,6.0,60
+100053,2024,Annual,Below Expectations,Low,3.2,35
+100053,2025,Annual,Below Expectations,Medium,3.4,43
+100054,2024,Annual,Below Expectations,Low,4.4,48
+100054,2025,Annual,Exceeds Expectations,High,7.5,85
+100055,2022,Annual,Exceeds Expectations,Medium,8.2,85
+100055,2023,Annual,Meets Expectations,Low,6.0,67
+100055,2024,Annual,Unsatisfactory,Low,0.8,14
+100055,2025,Annual,Meets Expectations,Medium,5.3,50
+100056,2022,Annual,Meets Expectations,Medium,6.3,67
+100056,2023,Annual,Exceptional,Medium,9.6,88
+100056,2024,Annual,Meets Expectations,Medium,5.6,65
+100056,2025,Annual,Meets Expectations,Medium,6.8,58
+100057,2022,Annual,Meets Expectations,Medium,5.3,66
+100057,2023,Annual,Meets Expectations,Low,5.3,62
+100057,2024,Annual,Below Expectations,Medium,4.9,37
+100057,2025,Annual,Meets Expectations,Medium,6.9,59
+100058,2022,Annual,Exceeds Expectations,High,7.1,79
+100058,2023,Annual,Exceeds Expectations,Medium,8.4,71
+100058,2024,Annual,Exceptional,High,9.4,97
+100058,2025,Annual,Exceeds Expectations,Medium,7.4,70
+100059,2022,Annual,Meets Expectations,Medium,5.5,58
+100059,2023,Annual,Exceptional,Medium,9.7,85
+100059,2024,Annual,Exceptional,High,8.8,89
+100059,2025,Annual,Exceeds Expectations,Medium,7.0,71
+100060,2022,Annual,Meets Expectations,Medium,5.8,55
+100060,2023,Annual,Meets Expectations,Medium,5.4,69
+100060,2024,Annual,Exceeds Expectations,Medium,8.4,73
+100060,2025,Annual,Meets Expectations,Medium,5.9,53
+100061,2022,Annual,Meets Expectations,Medium,5.7,52
+100061,2023,Annual,Exceeds Expectations,Medium,7.9,73
+100061,2024,Annual,Meets Expectations,Medium,5.3,65
+100061,2025,Annual,Meets Expectations,Medium,5.3,63
+100063,2022,Annual,Meets Expectations,Medium,5.3,65
+100063,2023,Annual,Exceeds Expectations,Medium,7.9,83
+100063,2024,Annual,Exceeds Expectations,Medium,8.0,85
+100063,2025,Annual,Unsatisfactory,Low,1.4,13
+100064,2022,Annual,Exceeds Expectations,Medium,8.0,84
+100064,2023,Annual,Below Expectations,Medium,3.8,49
+100064,2024,Annual,Below Expectations,Low,3.4,31
+100064,2025,Annual,Exceeds Expectations,High,7.6,84
+100065,2022,Annual,Meets Expectations,Low,6.5,66
+100065,2023,Annual,Meets Expectations,Medium,5.3,66
+100065,2024,Annual,Meets Expectations,Medium,6.3,70
+100065,2025,Annual,Meets Expectations,Medium,6.9,50
+100067,2022,Annual,Exceptional,Medium,9.6,85
+100067,2023,Annual,Exceeds Expectations,Medium,8.3,83
+100067,2024,Annual,Meets Expectations,Low,6.7,67
+100067,2025,Annual,Meets Expectations,Medium,6.5,52
+100068,2022,Annual,Exceptional,Medium,9.0,91
+100068,2023,Annual,Exceeds Expectations,Medium,7.2,78
+100068,2024,Annual,Meets Expectations,Medium,6.6,54
+100068,2025,Annual,Meets Expectations,Medium,6.1,69
+100069,2022,Annual,Exceeds Expectations,High,8.2,80
+100069,2023,Annual,Below Expectations,Medium,3.5,43
+100069,2024,Annual,Meets Expectations,Medium,5.1,50
+100069,2025,Annual,Meets Expectations,Medium,5.9,57
+100070,2022,Annual,Exceeds Expectations,Medium,8.4,77
+100070,2023,Annual,Below Expectations,Low,4.8,45
+100070,2024,Annual,Meets Expectations,Low,7.0,64
+100070,2025,Annual,Exceeds Expectations,Medium,7.8,83
+100071,2022,Annual,Meets Expectations,Low,5.0,66
+100071,2023,Annual,Exceeds Expectations,Medium,7.9,75
+100071,2024,Annual,Below Expectations,Medium,3.9,33
+100071,2025,Annual,Unsatisfactory,Low,2.0,12
+100072,2024,Annual,Meets Expectations,Medium,6.5,69
+100072,2025,Annual,Below Expectations,Medium,4.0,38
+100073,2022,Annual,Meets Expectations,Medium,5.6,69
+100073,2023,Annual,Meets Expectations,Low,5.7,63
+100073,2024,Annual,Meets Expectations,Low,5.6,59
+100073,2025,Annual,Meets Expectations,Medium,5.7,63
+100074,2022,Annual,Exceptional,High,8.5,100
+100074,2023,Annual,Meets Expectations,Medium,6.2,53
+100074,2024,Annual,Exceeds Expectations,High,7.8,72
+100074,2025,Annual,Exceptional,Medium,9.6,93
+100075,2025,Annual,Exceptional,High,8.9,100
+100076,2024,Annual,Exceptional,Medium,9.9,90
+100076,2025,Annual,Exceeds Expectations,High,8.3,80
+100077,2022,Annual,Meets Expectations,Medium,6.3,54
+100077,2023,Annual,Exceeds Expectations,Medium,7.5,71
+100077,2024,Annual,Below Expectations,Low,4.1,39
+100077,2025,Annual,Meets Expectations,Low,5.2,64
+100078,2022,Annual,Below Expectations,Low,4.9,48
+100078,2023,Annual,Exceptional,High,9.0,98
+100078,2024,Annual,Meets Expectations,Medium,5.6,61
+100078,2025,Annual,Meets Expectations,Medium,5.8,59
+100079,2022,Annual,Meets Expectations,Low,6.0,53
+100079,2023,Annual,Meets Expectations,Medium,5.8,68
+100079,2024,Annual,Unsatisfactory,Low,2.5,14
+100079,2025,Annual,Below Expectations,Medium,4.7,45
+100080,2022,Annual,Below Expectations,Low,3.4,32
+100080,2023,Annual,Meets Expectations,Medium,5.5,68
+100080,2024,Annual,Meets Expectations,Medium,6.5,61
+100080,2025,Annual,Exceeds Expectations,Medium,7.7,83
+100081,2025,Annual,Meets Expectations,Medium,5.7,64
+100082,2023,Annual,Meets Expectations,Low,6.6,61
+100082,2024,Annual,Meets Expectations,Medium,6.7,55
+100082,2025,Annual,Exceeds Expectations,High,7.4,85
+100083,2022,Annual,Exceptional,High,9.3,89
+100083,2023,Annual,Meets Expectations,Medium,5.8,61
+100083,2024,Annual,Meets Expectations,Medium,5.4,57
+100083,2025,Annual,Below Expectations,Low,5.0,43
+100084,2022,Annual,Meets Expectations,Low,5.8,64
+100084,2023,Annual,Meets Expectations,Low,6.7,58
+100084,2024,Annual,Meets Expectations,Low,5.8,66
+100084,2025,Annual,Below Expectations,Low,4.8,33
+100085,2022,Annual,Meets Expectations,Low,6.1,58
+100085,2023,Annual,Meets Expectations,Medium,5.2,69
+100085,2024,Annual,Exceeds Expectations,High,7.9,73
+100085,2025,Annual,Meets Expectations,Medium,5.6,66
+100086,2023,Annual,Exceptional,High,8.7,95
+100086,2024,Annual,Below Expectations,Low,3.8,49
+100086,2025,Annual,Meets Expectations,Low,5.1,61
+100087,2022,Annual,Meets Expectations,Medium,5.8,68
+100087,2023,Annual,Exceeds Expectations,Medium,7.2,79
+100087,2024,Annual,Meets Expectations,Medium,5.9,56
+100087,2025,Annual,Exceeds Expectations,Medium,7.7,85
+100088,2022,Annual,Meets Expectations,Low,5.9,51
+100088,2023,Annual,Meets Expectations,Low,6.6,60
+100088,2024,Annual,Exceeds Expectations,Medium,7.9,83
+100088,2025,Annual,Exceeds Expectations,Medium,7.5,83
+100089,2022,Annual,Exceeds Expectations,Medium,7.5,81
+100089,2023,Annual,Exceptional,Medium,9.3,100
+100089,2024,Annual,Exceptional,High,9.9,97
+100089,2025,Annual,Exceeds Expectations,High,8.0,71
+100090,2022,Annual,Exceeds Expectations,Medium,8.1,81
+100090,2023,Annual,Unsatisfactory,Low,2.5,27
+100090,2024,Annual,Exceptional,High,8.8,91
+100090,2025,Annual,Meets Expectations,Medium,5.2,64
+100091,2024,Annual,Exceeds Expectations,Medium,7.5,82
+100091,2025,Annual,Unsatisfactory,Low,1.2,28
+100092,2022,Annual,Below Expectations,Low,4.0,33
+100092,2023,Annual,Meets Expectations,Low,5.5,52
+100092,2024,Annual,Meets Expectations,Medium,6.9,51
+100092,2025,Annual,Meets Expectations,Low,5.2,58
+100093,2022,Annual,Exceeds Expectations,High,8.2,76
+100093,2023,Annual,Meets Expectations,Low,5.8,52
+100093,2024,Annual,Exceptional,High,9.5,90
+100093,2025,Annual,Meets Expectations,Low,6.2,50
+100094,2025,Annual,Exceeds Expectations,Medium,8.1,83
+100095,2022,Annual,Exceptional,Medium,9.0,88
+100095,2023,Annual,Exceeds Expectations,Medium,8.0,73
+100095,2024,Annual,Meets Expectations,Medium,5.5,62
+100095,2025,Annual,Meets Expectations,Medium,6.2,70
+100096,2022,Annual,Exceeds Expectations,High,8.3,74
+100096,2023,Annual,Meets Expectations,Medium,5.8,59
+100096,2024,Annual,Meets Expectations,Medium,5.1,66
+100096,2025,Annual,Exceeds Expectations,Medium,8.3,77
+100097,2022,Annual,Meets Expectations,Medium,6.8,66
+100097,2023,Annual,Exceeds Expectations,High,8.3,74
+100097,2024,Annual,Below Expectations,Low,4.9,46
+100097,2025,Annual,Exceeds Expectations,Medium,7.4,84
+100098,2022,Annual,Exceeds Expectations,High,7.6,71
+100098,2023,Annual,Meets Expectations,Medium,6.8,65
+100098,2024,Annual,Meets Expectations,Medium,6.9,63
+100098,2025,Annual,Below Expectations,Low,4.4,33
+100099,2022,Annual,Exceptional,Medium,9.3,93
+100099,2023,Annual,Meets Expectations,Low,6.1,66
+100099,2024,Annual,Meets Expectations,Low,5.5,55
+100099,2025,Annual,Meets Expectations,Low,5.1,53
+100100,2022,Annual,Meets Expectations,Medium,6.9,66
+100100,2023,Annual,Exceeds Expectations,Medium,7.3,70
+100100,2024,Annual,Below Expectations,Medium,3.8,34
+100100,2025,Annual,Meets Expectations,Low,5.1,53
+100101,2025,Annual,Exceeds Expectations,High,8.1,77
+100102,2025,Annual,Below Expectations,Low,4.4,40
+100103,2022,Annual,Exceeds Expectations,Medium,8.1,77
+100103,2023,Annual,Meets Expectations,Medium,6.2,70
+100103,2024,Annual,Meets Expectations,Medium,6.9,51
+100103,2025,Annual,Meets Expectations,Low,5.3,69
+100104,2022,Annual,Meets Expectations,Medium,5.8,56
+100104,2023,Annual,Exceeds Expectations,Medium,8.2,81
+100104,2024,Annual,Exceeds Expectations,High,8.1,78
+100104,2025,Annual,Meets Expectations,Low,6.2,60
+100105,2022,Annual,Meets Expectations,Medium,5.2,70
+100105,2023,Annual,Meets Expectations,Medium,6.5,68
+100105,2024,Annual,Meets Expectations,Medium,5.7,59
+100105,2025,Annual,Exceeds Expectations,Medium,7.5,75
+100106,2023,Annual,Meets Expectations,Medium,5.1,64
+100106,2024,Annual,Meets Expectations,Medium,5.0,56
+100106,2025,Annual,Unsatisfactory,Low,0.9,24
+100107,2024,Annual,Meets Expectations,Low,7.0,65
+100107,2025,Annual,Meets Expectations,Medium,5.9,63
+100108,2022,Annual,Meets Expectations,Low,5.5,57
+100108,2023,Annual,Below Expectations,Medium,4.2,36
+100108,2024,Annual,Exceeds Expectations,Medium,7.4,76
+100108,2025,Annual,Meets Expectations,Medium,6.8,54
+100109,2022,Annual,Exceeds Expectations,Medium,8.0,82
+100109,2023,Annual,Unsatisfactory,Low,1.2,9
+100109,2024,Annual,Meets Expectations,Medium,5.2,57
+100109,2025,Annual,Exceeds Expectations,High,8.0,73
+100110,2022,Annual,Exceeds Expectations,Medium,7.2,75
+100110,2023,Annual,Exceptional,High,9.1,90
+100110,2024,Annual,Meets Expectations,Low,5.5,61
+100110,2025,Annual,Exceeds Expectations,High,8.1,70
+100111,2022,Annual,Meets Expectations,Low,6.2,55
+100111,2023,Annual,Exceeds Expectations,Medium,7.3,73
+100111,2024,Annual,Below Expectations,Medium,4.7,49
+100111,2025,Annual,Below Expectations,Low,3.3,44
+100112,2022,Annual,Below Expectations,Low,4.6,39
+100112,2023,Annual,Exceeds Expectations,Medium,7.3,71
+100112,2024,Annual,Meets Expectations,Medium,5.6,57
+100112,2025,Annual,Meets Expectations,Medium,6.0,55
+100113,2022,Annual,Meets Expectations,Low,6.8,64
+100113,2023,Annual,Meets Expectations,Medium,6.0,55
+100113,2024,Annual,Meets Expectations,Medium,5.3,69
+100113,2025,Annual,Below Expectations,Medium,4.3,34
+100114,2022,Annual,Exceeds Expectations,High,7.6,72
+100114,2023,Annual,Meets Expectations,Low,6.6,56
+100114,2024,Annual,Exceeds Expectations,High,7.3,75
+100114,2025,Annual,Meets Expectations,Medium,5.8,65
+100115,2022,Annual,Exceeds Expectations,Medium,8.3,70
+100115,2023,Annual,Unsatisfactory,Low,0.8,19
+100115,2024,Annual,Meets Expectations,Low,6.9,52
+100115,2025,Annual,Meets Expectations,Medium,6.2,69
+100116,2025,Annual,Exceeds Expectations,Medium,8.0,82
+100117,2023,Annual,Below Expectations,Low,4.8,30
+100117,2024,Annual,Meets Expectations,Medium,7.0,67
+100117,2025,Annual,Meets Expectations,Low,5.4,60
+100118,2022,Annual,Meets Expectations,Medium,5.9,56
+100118,2023,Annual,Exceeds Expectations,High,8.3,82
+100118,2024,Annual,Exceptional,High,9.7,90
+100118,2025,Annual,Meets Expectations,Low,6.3,66
+100119,2022,Annual,Meets Expectations,Medium,6.3,70
+100119,2023,Annual,Exceeds Expectations,High,8.0,83
+100119,2024,Annual,Exceptional,High,9.7,94
+100119,2025,Annual,Meets Expectations,Medium,6.6,64
+100121,2022,Annual,Exceeds Expectations,High,8.4,83
+100121,2023,Annual,Below Expectations,Medium,4.9,42
+100121,2024,Annual,Exceeds Expectations,Medium,7.6,77
+100121,2025,Annual,Meets Expectations,Medium,5.8,55
+100122,2022,Annual,Below Expectations,Low,3.2,38
+100122,2023,Annual,Unsatisfactory,Low,1.9,28
+100122,2024,Annual,Meets Expectations,Medium,6.1,70
+100122,2025,Annual,Below Expectations,Low,3.6,37
+100123,2022,Annual,Exceeds Expectations,Medium,7.8,79
+100123,2023,Annual,Exceeds Expectations,Medium,7.4,77
+100123,2024,Annual,Exceeds Expectations,Medium,7.5,85
+100123,2025,Annual,Unsatisfactory,Low,0.7,14
+100124,2022,Annual,Below Expectations,Medium,3.5,44
+100124,2023,Annual,Meets Expectations,Medium,6.8,58
+100124,2024,Annual,Exceeds Expectations,Medium,7.5,84
+100124,2025,Annual,Exceeds Expectations,Medium,8.2,72
+100125,2022,Annual,Below Expectations,Low,3.7,38
+100125,2023,Annual,Exceeds Expectations,Medium,7.0,84
+100125,2024,Annual,Exceptional,Medium,9.0,88
+100125,2025,Annual,Exceptional,High,9.6,94
+100126,2022,Annual,Meets Expectations,Medium,5.7,67
+100126,2023,Annual,Meets Expectations,Low,6.6,69
+100126,2024,Annual,Exceeds Expectations,High,7.3,73
+100126,2025,Annual,Meets Expectations,Low,5.8,57
+100127,2022,Annual,Exceeds Expectations,High,8.3,80
+100127,2023,Annual,Exceeds Expectations,Medium,7.2,71
+100127,2024,Annual,Meets Expectations,Low,6.0,63
+100127,2025,Annual,Meets Expectations,Low,5.3,54
+100128,2022,Annual,Below Expectations,Low,3.1,48
+100128,2023,Annual,Meets Expectations,Medium,6.0,52
+100128,2024,Annual,Exceeds Expectations,Medium,8.3,82
+100128,2025,Annual,Below Expectations,Low,4.1,44
+100129,2025,Annual,Below Expectations,Low,3.4,41
+100131,2022,Annual,Exceeds Expectations,Medium,7.1,77
+100131,2023,Annual,Exceeds Expectations,Medium,7.2,82
+100131,2024,Annual,Exceptional,High,9.5,92
+100131,2025,Annual,Meets Expectations,Low,5.2,59
+100132,2022,Annual,Exceeds Expectations,High,7.2,74
+100132,2023,Annual,Exceeds Expectations,Medium,7.6,72
+100132,2024,Annual,Exceeds Expectations,Medium,7.1,75
+100132,2025,Annual,Meets Expectations,Medium,6.3,69
+100133,2022,Annual,Exceeds Expectations,High,7.4,84
+100133,2023,Annual,Meets Expectations,Medium,5.2,59
+100133,2024,Annual,Meets Expectations,Medium,5.5,65
+100133,2025,Annual,Meets Expectations,Low,6.0,54
+100134,2023,Annual,Below Expectations,Low,3.8,47
+100134,2024,Annual,Exceptional,High,9.2,85
+100134,2025,Annual,Exceeds Expectations,High,8.4,83
+100135,2022,Annual,Meets Expectations,Medium,5.1,51
+100135,2023,Annual,Below Expectations,Medium,4.5,42
+100135,2024,Annual,Exceeds Expectations,Medium,7.3,85
+100135,2025,Annual,Exceptional,Medium,9.7,90
+100136,2022,Annual,Meets Expectations,Low,6.1,64
+100136,2023,Annual,Meets Expectations,Low,6.7,54
+100136,2024,Annual,Below Expectations,Low,3.7,35
+100136,2025,Annual,Exceptional,High,10.0,96
+100137,2022,Annual,Below Expectations,Medium,3.9,47
+100137,2023,Annual,Exceeds Expectations,Medium,8.5,81
+100137,2024,Annual,Below Expectations,Low,4.3,36
+100137,2025,Annual,Exceeds Expectations,Medium,7.4,82
+100138,2022,Annual,Below Expectations,Medium,3.8,37
+100138,2023,Annual,Exceptional,Medium,9.8,92
+100138,2024,Annual,Exceeds Expectations,Medium,7.8,76
+100138,2025,Annual,Exceptional,High,8.8,94
+100139,2022,Annual,Meets Expectations,Low,6.8,61
+100139,2023,Annual,Meets Expectations,Medium,5.8,66
+100139,2024,Annual,Below Expectations,Medium,4.8,42
+100139,2025,Annual,Meets Expectations,Low,5.6,55
+100140,2022,Annual,Below Expectations,Medium,3.3,33
+100140,2023,Annual,Exceptional,Medium,9.9,99
+100140,2024,Annual,Below Expectations,Low,4.9,35
+100140,2025,Annual,Meets Expectations,Medium,6.6,69
+100142,2022,Annual,Meets Expectations,Medium,6.6,60
+100142,2023,Annual,Exceeds Expectations,High,7.3,80
+100142,2024,Annual,Meets Expectations,Medium,6.9,65
+100142,2025,Annual,Meets Expectations,Medium,6.1,60
+100143,2023,Annual,Meets Expectations,Medium,6.1,58
+100143,2024,Annual,Exceeds Expectations,Medium,7.2,75
+100143,2025,Annual,Exceeds Expectations,Medium,7.2,73
+100144,2025,Annual,Exceeds Expectations,Medium,7.4,78
+100145,2022,Annual,Exceeds Expectations,High,7.7,70
+100145,2023,Annual,Exceeds Expectations,Medium,8.4,81
+100145,2024,Annual,Exceeds Expectations,Medium,8.3,74
+100145,2025,Annual,Exceeds Expectations,Medium,7.3,76
+100146,2022,Annual,Meets Expectations,Low,6.3,67
+100146,2023,Annual,Exceeds Expectations,Medium,7.0,76
+100146,2024,Annual,Meets Expectations,Medium,6.2,64
+100146,2025,Annual,Below Expectations,Low,3.9,30
+100147,2022,Annual,Below Expectations,Medium,3.2,45
+100147,2023,Annual,Meets Expectations,Medium,5.6,70
+100147,2024,Annual,Below Expectations,Low,3.9,41
+100147,2025,Annual,Below Expectations,Low,3.9,34
+100148,2022,Annual,Exceptional,High,10.0,85
+100148,2023,Annual,Meets Expectations,Medium,6.2,61
+100148,2024,Annual,Exceeds Expectations,Medium,7.1,77
+100148,2025,Annual,Exceeds Expectations,High,7.6,85
+100151,2022,Annual,Meets Expectations,Low,5.1,62
+100151,2023,Annual,Exceeds Expectations,Medium,7.6,77
+100151,2024,Annual,Exceptional,High,9.3,95
+100151,2025,Annual,Exceptional,High,10.0,89
+100152,2022,Annual,Below Expectations,Medium,3.3,41
+100152,2023,Annual,Unsatisfactory,Low,1.5,7
+100152,2024,Annual,Meets Expectations,Low,5.4,65
+100152,2025,Annual,Exceeds Expectations,Medium,8.1,85
+100153,2022,Annual,Below Expectations,Medium,4.1,42
+100153,2023,Annual,Exceeds Expectations,Medium,8.2,76
+100153,2024,Annual,Meets Expectations,Low,6.9,67
+100153,2025,Annual,Meets Expectations,Medium,6.3,65
+100154,2023,Annual,Exceeds Expectations,Medium,7.2,82
+100154,2024,Annual,Exceeds Expectations,Medium,7.5,83
+100154,2025,Annual,Meets Expectations,Low,5.6,66
+100155,2022,Annual,Exceeds Expectations,Medium,7.2,71
+100155,2023,Annual,Meets Expectations,Low,6.9,59
+100155,2024,Annual,Exceeds Expectations,High,7.6,76
+100155,2025,Annual,Exceptional,High,9.4,94
+100156,2022,Annual,Meets Expectations,Low,6.1,62
+100156,2023,Annual,Unsatisfactory,Low,1.2,26
+100156,2024,Annual,Below Expectations,Low,3.8,35
+100156,2025,Annual,Meets Expectations,Medium,5.1,51
+100157,2022,Annual,Exceptional,Medium,8.7,100
+100157,2023,Annual,Meets Expectations,Low,6.2,60
+100157,2024,Annual,Exceptional,High,8.9,96
+100157,2025,Annual,Exceeds Expectations,High,8.1,79
+100158,2022,Annual,Meets Expectations,Low,6.7,60
+100158,2023,Annual,Meets Expectations,Medium,6.7,53
+100158,2024,Annual,Exceptional,High,8.8,94
+100158,2025,Annual,Below Expectations,Low,3.8,37
+100159,2023,Annual,Meets Expectations,Medium,5.5,69
+100159,2024,Annual,Meets Expectations,Low,5.6,58
+100159,2025,Annual,Below Expectations,Low,4.6,49
+100160,2024,Annual,Meets Expectations,Medium,5.5,65
+100160,2025,Annual,Meets Expectations,Medium,6.7,58
+100161,2022,Annual,Meets Expectations,Low,5.9,54
+100161,2023,Annual,Exceptional,High,9.5,99
+100161,2024,Annual,Below Expectations,Low,4.5,30
+100161,2025,Annual,Below Expectations,Medium,4.8,38
+100162,2022,Annual,Meets Expectations,Low,6.3,51
+100162,2023,Annual,Exceptional,Medium,9.1,85
+100162,2024,Annual,Below Expectations,Medium,4.1,50
+100162,2025,Annual,Exceeds Expectations,Medium,7.2,75
+100163,2022,Annual,Meets Expectations,Low,5.7,70
+100163,2023,Annual,Meets Expectations,Medium,6.2,65
+100163,2024,Annual,Below Expectations,Medium,3.8,39
+100163,2025,Annual,Below Expectations,Medium,3.0,31
+100164,2023,Annual,Exceeds Expectations,Medium,8.4,81
+100164,2024,Annual,Exceptional,High,8.8,96
+100164,2025,Annual,Meets Expectations,Medium,6.6,53
+100165,2022,Annual,Exceeds Expectations,High,7.7,70
+100165,2023,Annual,Meets Expectations,Medium,5.7,68
+100165,2024,Annual,Meets Expectations,Low,6.1,50
+100165,2025,Annual,Exceeds Expectations,Medium,7.5,82
+100166,2024,Annual,Meets Expectations,Medium,5.8,61
+100166,2025,Annual,Below Expectations,Low,4.6,45
+100167,2022,Annual,Meets Expectations,Medium,5.0,50
+100167,2023,Annual,Below Expectations,Low,4.3,32
+100167,2024,Annual,Exceeds Expectations,High,8.3,83
+100167,2025,Annual,Exceeds Expectations,Medium,8.2,71
+100168,2022,Annual,Exceeds Expectations,Medium,7.0,72
+100168,2023,Annual,Exceeds Expectations,Medium,7.9,73
+100168,2024,Annual,Meets Expectations,Medium,5.4,70
+100168,2025,Annual,Meets Expectations,Medium,5.3,51
+100169,2022,Annual,Exceeds Expectations,Medium,8.1,84
+100169,2023,Annual,Exceptional,Medium,10.0,100
+100169,2024,Annual,Exceptional,High,9.6,90
+100169,2025,Annual,Below Expectations,Low,3.7,48
+100170,2022,Annual,Meets Expectations,Low,5.6,55
+100170,2023,Annual,Exceptional,Medium,9.1,93
+100170,2024,Annual,Below Expectations,Low,4.6,38
+100170,2025,Annual,Meets Expectations,Medium,5.7,56
+100171,2022,Annual,Meets Expectations,Medium,5.4,53
+100171,2023,Annual,Exceeds Expectations,Medium,7.2,72
+100171,2024,Annual,Meets Expectations,Medium,5.8,53
+100171,2025,Annual,Meets Expectations,Medium,6.1,52
+100172,2022,Annual,Exceeds Expectations,Medium,7.2,74
+100172,2023,Annual,Meets Expectations,Medium,6.4,68
+100172,2024,Annual,Below Expectations,Medium,3.8,49
+100172,2025,Annual,Exceeds Expectations,Medium,7.2,81
+100173,2022,Annual,Exceeds Expectations,Medium,8.3,72
+100173,2023,Annual,Meets Expectations,Low,5.4,57
+100173,2024,Annual,Exceeds Expectations,High,7.8,83
+100173,2025,Annual,Exceeds Expectations,High,7.9,75
+100174,2022,Annual,Meets Expectations,Medium,7.0,58
+100174,2023,Annual,Below Expectations,Low,4.5,33
+100174,2024,Annual,Meets Expectations,Low,5.0,52
+100174,2025,Annual,Meets Expectations,Medium,6.3,52
+100175,2023,Annual,Meets Expectations,Low,6.2,53
+100175,2024,Annual,Meets Expectations,Medium,6.8,61
+100175,2025,Annual,Meets Expectations,Medium,6.3,55
+100176,2022,Annual,Exceeds Expectations,Medium,7.1,83
+100176,2023,Annual,Meets Expectations,Low,6.4,54
+100176,2024,Annual,Meets Expectations,Medium,6.4,55
+100176,2025,Annual,Exceeds Expectations,Medium,7.1,77
+100177,2025,Annual,Exceeds Expectations,Medium,7.8,72
+100178,2022,Annual,Meets Expectations,Medium,6.4,62
+100178,2023,Annual,Meets Expectations,Medium,5.7,57
+100178,2024,Annual,Below Expectations,Low,3.4,40
+100178,2025,Annual,Meets Expectations,Medium,5.7,52
+100179,2022,Annual,Meets Expectations,Low,6.7,50
+100179,2023,Annual,Meets Expectations,Medium,6.7,62
+100179,2024,Annual,Meets Expectations,Medium,6.7,70
+100179,2025,Annual,Meets Expectations,Medium,6.2,57
+100180,2022,Annual,Below Expectations,Low,4.9,30
+100180,2023,Annual,Unsatisfactory,Low,1.5,4
+100180,2024,Annual,Meets Expectations,Low,6.4,54
+100180,2025,Annual,Meets Expectations,Low,6.6,54
+100181,2024,Annual,Exceeds Expectations,Medium,7.9,79
+100181,2025,Annual,Exceeds Expectations,Medium,7.5,77
+100182,2022,Annual,Exceptional,Medium,9.6,86
+100182,2023,Annual,Unsatisfactory,Low,1.4,2
+100182,2024,Annual,Meets Expectations,Medium,7.0,54
+100182,2025,Annual,Meets Expectations,Medium,6.9,52
+100183,2022,Annual,Below Expectations,Low,4.1,37
+100183,2023,Annual,Meets Expectations,Medium,5.5,66
+100183,2024,Annual,Meets Expectations,Low,5.7,53
+100183,2025,Annual,Below Expectations,Low,4.1,31
+100184,2022,Annual,Meets Expectations,Medium,5.1,51
+100184,2023,Annual,Exceeds Expectations,High,8.0,78
+100184,2024,Annual,Exceeds Expectations,Medium,8.1,76
+100184,2025,Annual,Exceeds Expectations,High,7.4,84
+100185,2022,Annual,Unsatisfactory,Low,1.4,10
+100185,2023,Annual,Exceeds Expectations,Medium,7.1,70
+100185,2024,Annual,Meets Expectations,Medium,5.1,57
+100185,2025,Annual,Meets Expectations,Medium,5.4,70
+100186,2022,Annual,Exceeds Expectations,High,8.4,81
+100186,2023,Annual,Meets Expectations,Medium,6.8,56
+100186,2024,Annual,Exceeds Expectations,Medium,8.0,76
+100186,2025,Annual,Exceeds Expectations,Medium,7.4,76
+100187,2024,Annual,Below Expectations,Low,3.9,41
+100187,2025,Annual,Below Expectations,Low,4.2,47
+100188,2022,Annual,Meets Expectations,Medium,5.5,56
+100188,2023,Annual,Meets Expectations,Medium,6.9,65
+100188,2024,Annual,Meets Expectations,Low,6.1,69
+100188,2025,Annual,Exceeds Expectations,Medium,8.0,73
+100189,2022,Annual,Meets Expectations,Medium,6.0,55
+100189,2023,Annual,Below Expectations,Medium,3.3,46
+100189,2024,Annual,Meets Expectations,Low,6.9,63
+100189,2025,Annual,Meets Expectations,Low,6.5,64
+100190,2022,Annual,Exceeds Expectations,Medium,7.3,72
+100190,2023,Annual,Below Expectations,Low,3.1,37
+100190,2024,Annual,Exceeds Expectations,Medium,8.1,85
+100190,2025,Annual,Meets Expectations,Low,6.5,66
+100192,2022,Annual,Exceptional,High,9.0,91
+100192,2023,Annual,Exceeds Expectations,Medium,7.7,84
+100192,2024,Annual,Exceptional,High,9.4,91
+100192,2025,Annual,Exceeds Expectations,Medium,7.5,72
+100193,2023,Annual,Exceeds Expectations,High,7.7,83
+100193,2024,Annual,Meets Expectations,Medium,5.9,50
+100193,2025,Annual,Exceeds Expectations,Medium,7.9,79
+100194,2022,Annual,Below Expectations,Low,3.9,38
+100194,2023,Annual,Meets Expectations,Low,5.3,60
+100194,2024,Annual,Exceptional,High,8.7,86
+100194,2025,Annual,Meets Expectations,Low,5.8,70
+100195,2022,Annual,Exceeds Expectations,Medium,8.0,78
+100195,2023,Annual,Exceeds Expectations,Medium,7.9,84
+100195,2024,Annual,Exceeds Expectations,Medium,7.1,74
+100195,2025,Annual,Meets Expectations,Medium,6.4,66
+100196,2022,Annual,Exceeds Expectations,Medium,7.2,78
+100196,2023,Annual,Exceeds Expectations,High,7.1,71
+100196,2024,Annual,Exceptional,High,9.9,91
+100196,2025,Annual,Exceeds Expectations,High,7.8,78
+100197,2023,Annual,Meets Expectations,Low,6.5,70
+100197,2024,Annual,Exceeds Expectations,Medium,7.9,76
+100197,2025,Annual,Below Expectations,Medium,4.3,35
+100198,2023,Annual,Below Expectations,Low,3.1,45
+100198,2024,Annual,Below Expectations,Low,3.2,40
+100198,2025,Annual,Unsatisfactory,Low,0.9,10
+100200,2022,Annual,Below Expectations,Low,3.2,31
+100200,2023,Annual,Exceptional,High,9.6,97
+100200,2024,Annual,Meets Expectations,Medium,5.7,67
+100200,2025,Annual,Meets Expectations,Low,5.2,54
+100202,2022,Annual,Meets Expectations,Medium,6.7,58
+100202,2023,Annual,Meets Expectations,Low,5.4,66
+100202,2024,Annual,Exceptional,High,9.1,99
+100202,2025,Annual,Exceeds Expectations,Medium,8.2,83
+100203,2022,Annual,Meets Expectations,Medium,6.5,61
+100203,2023,Annual,Meets Expectations,Low,5.6,56
+100203,2024,Annual,Meets Expectations,Medium,5.7,61
+100203,2025,Annual,Exceptional,High,8.9,86
+100204,2023,Annual,Exceeds Expectations,Medium,8.3,70
+100204,2024,Annual,Exceeds Expectations,High,7.2,72
+100204,2025,Annual,Below Expectations,Low,4.2,35
+100205,2022,Annual,Exceeds Expectations,Medium,7.8,78
+100205,2023,Annual,Exceptional,Medium,9.2,92
+100205,2024,Annual,Meets Expectations,Medium,6.1,57
+100205,2025,Annual,Meets Expectations,Low,7.0,55
+100206,2022,Annual,Exceptional,Medium,9.9,94
+100206,2023,Annual,Unsatisfactory,Low,1.0,20
+100206,2024,Annual,Meets Expectations,Medium,6.0,60
+100206,2025,Annual,Meets Expectations,Medium,5.4,54
+100207,2022,Annual,Meets Expectations,Low,5.2,67
+100207,2023,Annual,Exceptional,Medium,8.9,91
+100207,2024,Annual,Exceeds Expectations,High,7.8,79
+100207,2025,Annual,Exceeds Expectations,High,8.5,76
+100208,2025,Annual,Meets Expectations,Medium,6.3,59
+100209,2024,Annual,Meets Expectations,Medium,6.5,55
+100209,2025,Annual,Meets Expectations,Medium,6.2,50
+100210,2024,Annual,Exceeds Expectations,High,7.0,80
+100210,2025,Annual,Meets Expectations,Medium,5.8,64
+100211,2022,Annual,Exceeds Expectations,Medium,7.8,85
+100212,2024,Annual,Exceeds Expectations,High,8.0,71
+100212,2025,Annual,Below Expectations,Medium,4.8,48
+100213,2022,Annual,Below Expectations,Low,3.7,35
+100213,2023,Annual,Unsatisfactory,Low,0.8,28
+100213,2024,Annual,Meets Expectations,Low,5.1,57
+100213,2025,Annual,Exceeds Expectations,Medium,8.2,75
+100214,2025,Annual,Exceeds Expectations,Medium,7.0,72
+100215,2022,Annual,Meets Expectations,Low,5.7,68
+100215,2023,Annual,Meets Expectations,Low,6.3,50
+100215,2024,Annual,Meets Expectations,Medium,5.9,63
+100215,2025,Annual,Meets Expectations,Low,5.7,57
+100216,2022,Annual,Exceeds Expectations,Medium,7.8,81
+100216,2023,Annual,Meets Expectations,Low,6.6,70
+100216,2024,Annual,Exceeds Expectations,Medium,7.2,70
+100216,2025,Annual,Exceeds Expectations,Medium,7.6,82
+100217,2022,Annual,Meets Expectations,Medium,5.3,50
+100217,2023,Annual,Meets Expectations,Low,5.3,54
+100217,2024,Annual,Meets Expectations,Medium,6.6,68
+100217,2025,Annual,Meets Expectations,Medium,6.7,53
+100218,2024,Annual,Exceeds Expectations,Medium,8.1,73
+100218,2025,Annual,Exceeds Expectations,High,7.4,81
+100219,2025,Annual,Exceeds Expectations,Medium,8.1,82
+100220,2024,Annual,Meets Expectations,Medium,6.8,63
+100220,2025,Annual,Below Expectations,Medium,3.3,40
+100221,2022,Annual,Meets Expectations,Medium,5.6,66
+100221,2023,Annual,Meets Expectations,Medium,5.2,50
+100221,2024,Annual,Meets Expectations,Low,6.8,62
+100221,2025,Annual,Unsatisfactory,Low,0.6,15
+100223,2022,Annual,Exceptional,High,9.8,94
+100223,2023,Annual,Below Expectations,Medium,3.1,46
+100223,2024,Annual,Meets Expectations,Medium,5.3,67
+100223,2025,Annual,Meets Expectations,Medium,6.5,53
+100224,2022,Annual,Meets Expectations,Medium,6.8,67
+100224,2023,Annual,Meets Expectations,Medium,6.4,51
+100224,2024,Annual,Exceeds Expectations,High,7.2,84
+100224,2025,Annual,Meets Expectations,Medium,6.8,67
+100225,2025,Annual,Exceptional,High,8.9,90
+100226,2022,Annual,Meets Expectations,Medium,6.5,65
+100226,2023,Annual,Meets Expectations,Medium,5.7,61
+100226,2024,Annual,Below Expectations,Medium,3.2,35
+100226,2025,Annual,Exceptional,High,8.8,92
+100227,2022,Annual,Exceeds Expectations,Medium,7.5,85
+100227,2023,Annual,Exceptional,Medium,9.7,96
+100227,2024,Annual,Meets Expectations,Low,6.1,57
+100227,2025,Annual,Exceeds Expectations,Medium,7.1,84
+100229,2025,Annual,Unsatisfactory,Low,2.6,27
+100230,2022,Annual,Exceeds Expectations,Medium,7.4,79
+100230,2023,Annual,Meets Expectations,Low,6.4,60
+100230,2024,Annual,Exceptional,Medium,9.9,100
+100230,2025,Annual,Meets Expectations,Medium,5.7,67
+100231,2022,Annual,Exceeds Expectations,Medium,7.5,71
+100231,2023,Annual,Meets Expectations,Low,5.2,59
+100231,2024,Annual,Exceeds Expectations,Medium,7.7,80
+100231,2025,Annual,Exceptional,High,9.5,90
+100232,2022,Annual,Exceeds Expectations,Medium,8.4,79
+100232,2023,Annual,Meets Expectations,Low,6.3,65
+100232,2024,Annual,Meets Expectations,Medium,6.7,51
+100232,2025,Annual,Below Expectations,Medium,3.4,45
+100234,2022,Annual,Meets Expectations,Medium,6.7,62
+100234,2023,Annual,Meets Expectations,Medium,6.9,52
+100234,2024,Annual,Exceptional,High,8.6,92
+100234,2025,Annual,Meets Expectations,Medium,6.7,60
+100235,2022,Annual,Meets Expectations,Medium,6.1,70
+100235,2023,Annual,Exceeds Expectations,Medium,7.4,82
+100235,2024,Annual,Exceeds Expectations,High,7.5,81
+100235,2025,Annual,Below Expectations,Medium,3.3,32
+100236,2022,Annual,Meets Expectations,Low,6.3,69
+100236,2023,Annual,Below Expectations,Low,4.7,45
+100236,2024,Annual,Meets Expectations,Medium,5.9,62
+100236,2025,Annual,Meets Expectations,Medium,6.4,51
+100237,2022,Annual,Meets Expectations,Low,5.5,64
+100237,2023,Annual,Exceptional,High,9.2,92
+100237,2024,Annual,Exceeds Expectations,Medium,7.0,75
+100237,2025,Annual,Exceeds Expectations,Medium,8.1,71
+100238,2022,Annual,Exceeds Expectations,Medium,7.6,77
+100238,2023,Annual,Meets Expectations,Low,5.7,56
+100238,2024,Annual,Meets Expectations,Medium,5.5,53
+100238,2025,Annual,Meets Expectations,Medium,6.3,60
+100239,2025,Annual,Exceptional,High,8.6,88
+100240,2024,Annual,Exceeds Expectations,Medium,8.3,77
+100240,2025,Annual,Meets Expectations,Medium,6.0,66
+100241,2024,Annual,Exceeds Expectations,Medium,8.3,75
+100241,2025,Annual,Meets Expectations,Medium,5.6,59
+100242,2023,Annual,Meets Expectations,Low,7.0,68
+100242,2024,Annual,Meets Expectations,Low,6.5,56
+100242,2025,Annual,Meets Expectations,Medium,6.0,66
+100243,2022,Annual,Meets Expectations,Low,6.4,67
+100243,2023,Annual,Exceeds Expectations,Medium,8.2,81
+100243,2024,Annual,Exceeds Expectations,Medium,8.0,79
+100243,2025,Annual,Meets Expectations,Medium,5.2,53
+100244,2024,Annual,Meets Expectations,Medium,6.6,68
+100244,2025,Annual,Meets Expectations,Medium,5.9,63
+100245,2022,Annual,Unsatisfactory,Low,2.7,16
+100245,2023,Annual,Exceeds Expectations,Medium,7.8,81
+100245,2024,Annual,Exceeds Expectations,Medium,7.3,81
+100245,2025,Annual,Exceeds Expectations,Medium,8.3,81
+100246,2022,Annual,Exceeds Expectations,Medium,7.4,79
+100246,2023,Annual,Meets Expectations,Low,6.4,64
+100246,2024,Annual,Meets Expectations,Low,5.3,52
+100246,2025,Annual,Meets Expectations,Low,6.1,66
+100247,2022,Annual,Exceeds Expectations,High,8.3,77
+100247,2023,Annual,Exceptional,High,8.9,100
+100247,2024,Annual,Meets Expectations,Medium,5.4,53
+100247,2025,Annual,Exceeds Expectations,Medium,7.6,75
+100248,2023,Annual,Meets Expectations,Low,5.1,50
+100248,2024,Annual,Below Expectations,Low,4.3,32
+100248,2025,Annual,Exceeds Expectations,Medium,7.5,79
+100250,2022,Annual,Meets Expectations,Medium,5.7,67
+100250,2023,Annual,Unsatisfactory,Low,0.4,14
+100250,2024,Annual,Meets Expectations,Low,5.9,53
+100250,2025,Annual,Unsatisfactory,Low,0.3,20
+100251,2022,Annual,Meets Expectations,Medium,6.9,69
+100251,2023,Annual,Meets Expectations,Medium,5.9,68
+100251,2024,Annual,Exceeds Expectations,Medium,7.8,76
+100251,2025,Annual,Meets Expectations,Low,6.0,63
+100252,2022,Annual,Meets Expectations,Medium,5.2,65
+100252,2023,Annual,Meets Expectations,Medium,5.4,51
+100252,2024,Annual,Meets Expectations,Low,6.8,58
+100252,2025,Annual,Exceeds Expectations,Medium,8.3,78
+100253,2025,Annual,Meets Expectations,Low,6.5,61
+100254,2022,Annual,Meets Expectations,Medium,6.1,59
+100254,2023,Annual,Exceptional,High,9.3,87
+100254,2024,Annual,Exceeds Expectations,Medium,8.1,83
+100254,2025,Annual,Exceptional,Medium,9.9,92
+100255,2022,Annual,Exceeds Expectations,Medium,7.4,76
+100255,2023,Annual,Exceeds Expectations,Medium,7.4,74
+100255,2024,Annual,Meets Expectations,Low,5.8,63
+100255,2025,Annual,Below Expectations,Low,4.5,38
+100256,2022,Annual,Meets Expectations,Low,6.0,66
+100256,2023,Annual,Meets Expectations,Low,5.3,58
+100256,2024,Annual,Exceeds Expectations,Medium,7.8,75
+100256,2025,Annual,Exceeds Expectations,Medium,8.1,84
+100257,2022,Annual,Exceeds Expectations,Medium,7.2,73
+100257,2023,Annual,Meets Expectations,Medium,5.7,59
+100257,2024,Annual,Meets Expectations,Medium,6.7,62
+100257,2025,Annual,Meets Expectations,Medium,6.1,54
+100258,2022,Annual,Exceeds Expectations,High,8.0,76
+100258,2023,Annual,Exceptional,High,9.8,88
+100258,2024,Annual,Meets Expectations,Medium,5.2,61
+100258,2025,Annual,Below Expectations,Low,3.2,46
+100259,2023,Annual,Exceeds Expectations,High,8.0,82
+100259,2024,Annual,Exceeds Expectations,High,7.5,79
+100259,2025,Annual,Exceeds Expectations,High,7.8,77
+100260,2022,Annual,Below Expectations,Low,4.6,38
+100260,2023,Annual,Meets Expectations,Medium,5.6,62
+100260,2024,Annual,Exceeds Expectations,Medium,7.2,70
+100260,2025,Annual,Exceeds Expectations,High,7.8,77
+100261,2022,Annual,Unsatisfactory,Low,3.0,21
+100261,2023,Annual,Meets Expectations,Low,6.2,69
+100261,2024,Annual,Below Expectations,Medium,4.8,34
+100261,2025,Annual,Exceptional,Medium,8.9,94
+100262,2022,Annual,Exceeds Expectations,High,7.2,78
+100262,2023,Annual,Exceeds Expectations,Medium,8.3,78
+100262,2024,Annual,Exceeds Expectations,Medium,7.7,85
+100262,2025,Annual,Meets Expectations,Low,6.5,60
+100263,2022,Annual,Exceeds Expectations,High,8.5,74
+100263,2023,Annual,Below Expectations,Medium,4.0,32
+100263,2024,Annual,Meets Expectations,Medium,5.5,70
+100263,2025,Annual,Exceeds Expectations,High,7.0,77
+100264,2022,Annual,Below Expectations,Low,5.0,35
+100264,2023,Annual,Exceptional,High,8.6,89
+100264,2024,Annual,Meets Expectations,Low,5.3,62
+100264,2025,Annual,Exceeds Expectations,Medium,7.6,82
+100265,2022,Annual,Exceeds Expectations,High,8.0,77
+100265,2023,Annual,Exceeds Expectations,Medium,8.2,79
+100265,2024,Annual,Meets Expectations,Medium,5.3,69
+100265,2025,Annual,Exceptional,High,9.6,90
+100266,2023,Annual,Meets Expectations,Medium,6.1,59
+100266,2024,Annual,Meets Expectations,Medium,6.5,68
+100266,2025,Annual,Exceeds Expectations,Medium,7.6,75
+100267,2025,Annual,Exceeds Expectations,Medium,7.2,74
+100268,2025,Annual,Meets Expectations,Medium,6.4,51
+100270,2022,Annual,Meets Expectations,Medium,5.7,55
+100270,2023,Annual,Meets Expectations,Low,6.0,62
+100270,2024,Annual,Meets Expectations,Medium,6.8,59
+100270,2025,Annual,Exceeds Expectations,Medium,7.3,79
+100271,2023,Annual,Exceeds Expectations,Medium,8.0,71
+100271,2024,Annual,Below Expectations,Low,3.1,32
+100271,2025,Annual,Meets Expectations,Low,6.4,66
+100273,2022,Annual,Meets Expectations,Medium,6.8,64
+100273,2023,Annual,Exceeds Expectations,Medium,7.4,79
+100273,2024,Annual,Meets Expectations,Medium,5.2,64
+100273,2025,Annual,Meets Expectations,Medium,6.2,52
+100274,2022,Annual,Below Expectations,Low,3.2,44
+100274,2023,Annual,Meets Expectations,Low,6.3,54
+100274,2024,Annual,Exceeds Expectations,Medium,8.2,74
+100274,2025,Annual,Meets Expectations,Medium,5.6,69
+100275,2022,Annual,Meets Expectations,Medium,5.7,68
+100275,2023,Annual,Meets Expectations,Medium,5.6,55
+100275,2024,Annual,Exceptional,High,9.2,89
+100275,2025,Annual,Unsatisfactory,Low,0.5,24
+100276,2022,Annual,Exceeds Expectations,Medium,8.3,73
+100276,2023,Annual,Meets Expectations,Medium,6.1,56
+100276,2024,Annual,Meets Expectations,Medium,5.4,53
+100276,2025,Annual,Below Expectations,Low,4.0,36
+100277,2025,Annual,Exceeds Expectations,Medium,8.0,83
+100278,2022,Annual,Meets Expectations,Medium,5.3,65
+100278,2023,Annual,Meets Expectations,Medium,5.5,70
+100278,2024,Annual,Unsatisfactory,Low,0.0,17
+100278,2025,Annual,Meets Expectations,Low,6.7,52
+100281,2022,Annual,Meets Expectations,Medium,5.6,54
+100281,2023,Annual,Meets Expectations,Medium,6.2,53
+100281,2024,Annual,Meets Expectations,Low,6.5,53
+100281,2025,Annual,Meets Expectations,Medium,6.4,51
+100282,2022,Annual,Exceeds Expectations,Medium,8.0,73
+100282,2023,Annual,Meets Expectations,Low,6.4,62
+100282,2024,Annual,Meets Expectations,Medium,5.4,67
+100282,2025,Annual,Exceptional,High,9.8,91
+100283,2023,Annual,Unsatisfactory,Low,1.0,25
+100283,2024,Annual,Exceeds Expectations,High,7.2,73
+100283,2025,Annual,Exceeds Expectations,Medium,8.2,73
+100284,2023,Annual,Exceeds Expectations,Medium,8.0,84
+100284,2024,Annual,Meets Expectations,Low,5.1,66
+100284,2025,Annual,Meets Expectations,Medium,5.1,50
+100285,2022,Annual,Meets Expectations,Medium,5.6,70
+100285,2023,Annual,Meets Expectations,Medium,5.4,62
+100285,2024,Annual,Meets Expectations,Medium,6.1,52
+100285,2025,Annual,Meets Expectations,Medium,5.3,62
+100286,2022,Annual,Meets Expectations,Medium,6.0,58
+100286,2023,Annual,Meets Expectations,Medium,6.5,68
+100286,2024,Annual,Meets Expectations,Medium,7.0,58
+100286,2025,Annual,Unsatisfactory,Low,2.4,21
+100287,2022,Annual,Exceeds Expectations,Medium,7.7,70
+100287,2023,Annual,Exceeds Expectations,Medium,8.2,83
+100287,2024,Annual,Meets Expectations,Medium,6.0,53
+100287,2025,Annual,Meets Expectations,Medium,6.1,65
+100288,2024,Annual,Meets Expectations,Medium,5.4,65
+100288,2025,Annual,Meets Expectations,Medium,6.3,53
+100289,2022,Annual,Meets Expectations,Medium,6.3,59
+100289,2023,Annual,Below Expectations,Low,3.2,31
+100289,2024,Annual,Meets Expectations,Medium,5.3,59
+100289,2025,Annual,Meets Expectations,Medium,5.1,58
+100290,2022,Annual,Meets Expectations,Medium,7.0,63
+100290,2023,Annual,Meets Expectations,Low,6.3,51
+100290,2024,Annual,Meets Expectations,Low,5.2,53
+100290,2025,Annual,Meets Expectations,Medium,5.1,50
+100291,2022,Annual,Meets Expectations,Medium,5.2,66
+100291,2023,Annual,Meets Expectations,Medium,6.0,56
+100291,2024,Annual,Meets Expectations,Medium,6.3,58
+100291,2025,Annual,Exceeds Expectations,Medium,7.9,75
+100292,2022,Annual,Meets Expectations,Medium,6.3,67
+100292,2023,Annual,Meets Expectations,Low,6.7,65
+100292,2024,Annual,Exceeds Expectations,High,7.5,78
+100292,2025,Annual,Exceptional,Medium,9.5,89
+100293,2022,Annual,Meets Expectations,Medium,6.0,51
+100293,2023,Annual,Exceptional,High,8.6,96
+100293,2024,Annual,Exceeds Expectations,Medium,8.1,81
+100293,2025,Annual,Exceeds Expectations,High,7.4,79
+100294,2023,Annual,Exceeds Expectations,High,7.9,77
+100294,2024,Annual,Exceptional,High,9.7,85
+100294,2025,Annual,Meets Expectations,Medium,5.0,53
+100295,2022,Annual,Unsatisfactory,Low,2.2,13
+100295,2023,Annual,Exceeds Expectations,High,7.4,85
+100295,2024,Annual,Meets Expectations,Low,5.9,62
+100295,2025,Annual,Below Expectations,Medium,3.1,41
+100296,2022,Annual,Meets Expectations,Low,6.7,53
+100296,2023,Annual,Exceptional,Medium,8.8,97
+100296,2024,Annual,Below Expectations,Low,3.7,50
+100296,2025,Annual,Exceeds Expectations,High,7.5,84
+100297,2025,Annual,Exceeds Expectations,Medium,7.5,80
+100298,2022,Annual,Meets Expectations,Medium,6.6,61
+100299,2024,Annual,Meets Expectations,Medium,5.6,65
+100299,2025,Annual,Meets Expectations,Medium,6.4,55
+100300,2022,Annual,Exceeds Expectations,High,8.5,77
+100300,2023,Annual,Unsatisfactory,Low,2.3,10
+100300,2024,Annual,Meets Expectations,Medium,6.1,52
+100300,2025,Annual,Meets Expectations,Low,5.6,68
+100301,2025,Annual,Below Expectations,Medium,3.7,42
+100302,2022,Annual,Exceptional,High,8.6,95
+100302,2023,Annual,Below Expectations,Low,3.6,30
+100302,2024,Annual,Below Expectations,Low,3.5,38
+100302,2025,Annual,Meets Expectations,Medium,6.1,53
+100303,2023,Annual,Meets Expectations,Low,6.4,56
+100303,2024,Annual,Exceeds Expectations,Medium,8.4,83
+100303,2025,Annual,Meets Expectations,Medium,5.5,52
+100304,2022,Annual,Meets Expectations,Low,5.6,58
+100304,2023,Annual,Meets Expectations,Low,6.8,57
+100304,2024,Annual,Below Expectations,Medium,3.8,35
+100304,2025,Annual,Exceeds Expectations,High,8.2,70
+100305,2022,Annual,Meets Expectations,Low,5.8,57
+100305,2023,Annual,Exceeds Expectations,High,8.0,83
+100305,2024,Annual,Meets Expectations,Medium,5.8,65
+100306,2023,Annual,Unsatisfactory,Low,1.6,3
+100306,2024,Annual,Meets Expectations,Medium,5.3,50
+100306,2025,Annual,Meets Expectations,Low,5.4,68
+100307,2022,Annual,Below Expectations,Low,3.8,47
+100307,2023,Annual,Exceptional,High,9.2,92
+100307,2024,Annual,Exceeds Expectations,Medium,7.1,82
+100307,2025,Annual,Meets Expectations,Medium,6.0,62
+100308,2022,Annual,Exceeds Expectations,High,7.2,74
+100308,2023,Annual,Exceeds Expectations,Medium,7.2,85
+100309,2022,Annual,Exceptional,Medium,8.8,88
+100309,2023,Annual,Exceeds Expectations,High,8.1,80
+100309,2024,Annual,Exceeds Expectations,Medium,7.5,74
+100309,2025,Annual,Exceptional,High,8.8,97
+100310,2022,Annual,Meets Expectations,Medium,6.9,58
+100310,2023,Annual,Exceptional,Medium,9.1,94
+100310,2024,Annual,Meets Expectations,Low,6.4,69
+100310,2025,Annual,Meets Expectations,Low,6.6,67
+100311,2022,Annual,Meets Expectations,Low,6.5,64
+100311,2023,Annual,Exceptional,Medium,8.7,88
+100311,2024,Annual,Meets Expectations,Medium,6.6,69
+100311,2025,Annual,Exceeds Expectations,Medium,8.0,80
+100313,2024,Annual,Exceeds Expectations,Medium,8.1,83
+100314,2023,Annual,Exceeds Expectations,High,7.8,84
+100314,2024,Annual,Below Expectations,Medium,3.1,34
+100314,2025,Annual,Unsatisfactory,Low,0.6,15
+100315,2022,Annual,Meets Expectations,Medium,6.8,52
+100315,2023,Annual,Exceeds Expectations,Medium,7.8,74
+100315,2024,Annual,Exceeds Expectations,Medium,7.4,77
+100315,2025,Annual,Exceptional,High,9.1,86
+100316,2025,Annual,Below Expectations,Low,4.4,34
+100317,2024,Annual,Exceeds Expectations,High,7.6,71
+100317,2025,Annual,Exceptional,High,8.9,89
+100319,2022,Annual,Meets Expectations,Medium,5.4,52
+100319,2023,Annual,Meets Expectations,Low,5.1,63
+100319,2024,Annual,Below Expectations,Medium,3.7,38
+100319,2025,Annual,Meets Expectations,Low,6.9,52
+100320,2023,Annual,Meets Expectations,Medium,5.9,62
+100320,2024,Annual,Meets Expectations,Low,6.1,68
+100320,2025,Annual,Meets Expectations,Low,7.0,60
+100321,2022,Annual,Meets Expectations,Medium,5.7,63
+100321,2023,Annual,Exceptional,High,9.7,93
+100321,2024,Annual,Below Expectations,Low,3.5,30
+100321,2025,Annual,Meets Expectations,Medium,5.2,70
+100323,2022,Annual,Below Expectations,Medium,4.0,49
+100323,2023,Annual,Meets Expectations,Medium,6.4,53
+100323,2024,Annual,Below Expectations,Medium,4.0,45
+100323,2025,Annual,Exceeds Expectations,High,7.9,74
+100324,2022,Annual,Exceeds Expectations,Medium,7.6,71
+100324,2023,Annual,Meets Expectations,Medium,6.3,59
+100324,2024,Annual,Below Expectations,Medium,3.8,31
+100324,2025,Annual,Meets Expectations,Medium,5.7,65
+100325,2022,Annual,Below Expectations,Medium,3.2,45
+100325,2023,Annual,Exceeds Expectations,High,7.8,81
+100325,2024,Annual,Meets Expectations,Medium,5.4,64
+100325,2025,Annual,Meets Expectations,Medium,6.7,59
+100327,2022,Annual,Unsatisfactory,Low,2.4,13
+100327,2023,Annual,Meets Expectations,Medium,6.0,60
+100327,2024,Annual,Below Expectations,Low,3.4,48
+100327,2025,Annual,Below Expectations,Low,4.9,46
+100328,2025,Annual,Exceeds Expectations,High,8.2,72
+100329,2025,Annual,Exceeds Expectations,High,7.5,83
+100330,2022,Annual,Exceeds Expectations,High,7.9,79
+100330,2023,Annual,Exceeds Expectations,High,8.0,72
+100330,2024,Annual,Exceeds Expectations,Medium,8.3,77
+100330,2025,Annual,Meets Expectations,Medium,7.0,59
+100331,2022,Annual,Meets Expectations,Low,6.2,63
+100331,2023,Annual,Meets Expectations,Medium,6.1,54
+100331,2024,Annual,Exceeds Expectations,Medium,7.6,75
+100331,2025,Annual,Meets Expectations,Medium,5.9,67
+100332,2022,Annual,Below Expectations,Low,3.8,40
+100332,2023,Annual,Meets Expectations,Medium,5.4,51
+100332,2024,Annual,Exceeds Expectations,Medium,7.2,76
+100332,2025,Annual,Meets Expectations,Medium,6.1,64
+100333,2022,Annual,Meets Expectations,Medium,5.0,67
+100333,2023,Annual,Meets Expectations,Medium,5.1,64
+100333,2024,Annual,Exceeds Expectations,High,8.0,83
+100333,2025,Annual,Exceeds Expectations,Medium,7.9,73
+100334,2022,Annual,Exceeds Expectations,Medium,7.7,77
+100334,2023,Annual,Meets Expectations,Medium,5.1,67
+100334,2024,Annual,Meets Expectations,Medium,6.8,66
+100334,2025,Annual,Meets Expectations,Medium,5.5,59
+100335,2022,Annual,Exceeds Expectations,Medium,8.0,70
+100335,2023,Annual,Meets Expectations,Medium,6.5,53
+100335,2024,Annual,Meets Expectations,Low,6.2,68
+100335,2025,Annual,Meets Expectations,Medium,5.3,54
+100338,2025,Annual,Meets Expectations,Medium,5.5,57
+100339,2025,Annual,Exceeds Expectations,Medium,8.3,70
+100340,2022,Annual,Meets Expectations,Medium,6.5,58
+100340,2023,Annual,Exceeds Expectations,Medium,7.2,80
+100340,2024,Annual,Meets Expectations,Low,7.0,51
+100340,2025,Annual,Unsatisfactory,Low,2.1,2
+100341,2022,Annual,Meets Expectations,Medium,5.2,53
+100341,2023,Annual,Exceeds Expectations,Medium,7.5,84
+100341,2024,Annual,Below Expectations,Low,3.6,50
+100341,2025,Annual,Exceeds Expectations,High,7.1,83
+100342,2024,Annual,Below Expectations,Medium,3.8,38
+100342,2025,Annual,Exceeds Expectations,Medium,8.0,81
+100343,2022,Annual,Meets Expectations,Medium,6.2,63
+100343,2023,Annual,Meets Expectations,Medium,5.1,62
+100343,2024,Annual,Unsatisfactory,Low,2.2,18
+100343,2025,Annual,Exceptional,High,9.7,85
+100344,2022,Annual,Below Expectations,Medium,4.1,40
+100344,2023,Annual,Meets Expectations,Medium,6.6,52
+100344,2024,Annual,Below Expectations,Low,4.8,48
+100344,2025,Annual,Below Expectations,Low,3.9,35
+100345,2022,Annual,Exceeds Expectations,High,8.2,71
+100345,2023,Annual,Meets Expectations,Medium,5.8,54
+100345,2024,Annual,Below Expectations,Medium,4.6,50
+100345,2025,Annual,Meets Expectations,Medium,5.6,67
+100346,2022,Annual,Exceeds Expectations,Medium,7.0,76
+100346,2023,Annual,Exceeds Expectations,Medium,7.6,75
+100346,2024,Annual,Exceeds Expectations,Medium,7.2,70
+100346,2025,Annual,Meets Expectations,Low,5.3,70
+100347,2022,Annual,Meets Expectations,Medium,5.0,65
+100347,2023,Annual,Below Expectations,Low,3.5,34
+100347,2024,Annual,Below Expectations,Medium,3.5,34
+100347,2025,Annual,Meets Expectations,Medium,5.7,58
+100349,2022,Annual,Meets Expectations,Medium,5.5,58
+100349,2023,Annual,Meets Expectations,Medium,5.9,70
+100349,2024,Annual,Exceeds Expectations,High,7.2,83
+100349,2025,Annual,Exceeds Expectations,Medium,8.3,73
+100350,2024,Annual,Meets Expectations,Medium,6.9,60
+100350,2025,Annual,Unsatisfactory,Low,1.9,8
+100351,2022,Annual,Below Expectations,Low,3.4,39
+100351,2023,Annual,Exceeds Expectations,Medium,8.0,83
+100351,2024,Annual,Meets Expectations,Low,5.7,60
+100351,2025,Annual,Meets Expectations,Medium,6.2,59
+100352,2022,Annual,Below Expectations,Low,4.7,40
+100352,2023,Annual,Exceeds Expectations,Medium,8.3,72
+100352,2024,Annual,Meets Expectations,Low,5.6,60
+100352,2025,Annual,Meets Expectations,Medium,5.7,59
+100355,2022,Annual,Meets Expectations,Medium,6.3,55
+100355,2023,Annual,Meets Expectations,Low,6.0,53
+100355,2024,Annual,Exceptional,Medium,8.5,97
+100355,2025,Annual,Meets Expectations,Low,5.7,51
+100356,2024,Annual,Meets Expectations,Medium,6.5,55
+100356,2025,Annual,Meets Expectations,Medium,5.2,54
+100357,2022,Annual,Exceeds Expectations,High,7.7,81
+100357,2023,Annual,Meets Expectations,Low,6.0,69
+100357,2024,Annual,Exceptional,Medium,9.0,89
+100357,2025,Annual,Meets Expectations,Medium,5.4,58
+100358,2022,Annual,Meets Expectations,Medium,6.4,61
+100358,2023,Annual,Exceeds Expectations,High,8.3,81
+100358,2024,Annual,Exceeds Expectations,High,7.9,76
+100358,2025,Annual,Below Expectations,Low,3.2,32
+100359,2022,Annual,Below Expectations,Medium,3.1,46
+100359,2023,Annual,Exceeds Expectations,Medium,8.3,77
+100359,2024,Annual,Unsatisfactory,Low,0.5,6
+100359,2025,Annual,Meets Expectations,Medium,5.8,70
+100360,2025,Annual,Meets Expectations,Low,6.0,57
+100361,2022,Annual,Meets Expectations,Medium,5.1,58
+100361,2023,Annual,Exceeds Expectations,Medium,7.7,84
+100361,2024,Annual,Exceptional,High,8.6,96
+100361,2025,Annual,Meets Expectations,Low,6.2,60
+100362,2022,Annual,Meets Expectations,Medium,6.6,63
+100362,2023,Annual,Exceeds Expectations,Medium,7.2,78
+100362,2024,Annual,Meets Expectations,Medium,5.1,68
+100362,2025,Annual,Meets Expectations,Medium,5.8,59
+100364,2024,Annual,Below Expectations,Low,4.8,44
+100364,2025,Annual,Meets Expectations,Low,5.5,68
+100365,2022,Annual,Meets Expectations,Medium,5.7,63
+100365,2023,Annual,Meets Expectations,Low,5.1,50
+100365,2024,Annual,Meets Expectations,Medium,5.4,56
+100365,2025,Annual,Meets Expectations,Medium,7.0,62
+100366,2024,Annual,Exceeds Expectations,Medium,7.4,79
+100366,2025,Annual,Meets Expectations,Low,5.7,53
+100367,2023,Annual,Meets Expectations,Medium,6.8,54
+100367,2024,Annual,Meets Expectations,Medium,5.5,59
+100367,2025,Annual,Unsatisfactory,Low,1.4,3
+100368,2022,Annual,Exceptional,High,9.0,92
+100368,2023,Annual,Exceptional,Medium,8.6,92
+100368,2024,Annual,Exceeds Expectations,High,7.5,79
+100368,2025,Annual,Meets Expectations,Medium,6.0,55
+100369,2024,Annual,Exceeds Expectations,Medium,7.2,75
+100369,2025,Annual,Below Expectations,Low,4.3,45
+100370,2022,Annual,Exceptional,Medium,9.9,85
+100370,2023,Annual,Meets Expectations,Medium,5.6,54
+100370,2024,Annual,Meets Expectations,Medium,5.8,58
+100370,2025,Annual,Below Expectations,Low,3.6,40
+100371,2024,Annual,Meets Expectations,Low,5.5,70
+100371,2025,Annual,Exceeds Expectations,Medium,7.7,77
+100372,2022,Annual,Exceptional,High,9.9,99
+100372,2023,Annual,Exceptional,Medium,8.8,86
+100372,2024,Annual,Meets Expectations,Medium,5.3,65
+100373,2024,Annual,Meets Expectations,Low,6.5,64
+100373,2025,Annual,Meets Expectations,Medium,5.3,56
+100374,2022,Annual,Meets Expectations,Medium,6.8,52
+100374,2023,Annual,Exceeds Expectations,High,8.3,73
+100374,2024,Annual,Meets Expectations,Medium,6.7,57
+100374,2025,Annual,Meets Expectations,Medium,5.2,58
+100375,2022,Annual,Exceptional,High,9.5,89
+100375,2023,Annual,Meets Expectations,Medium,5.2,53
+100375,2024,Annual,Exceptional,Medium,8.7,96
+100375,2025,Annual,Exceeds Expectations,Medium,8.3,79
+100377,2025,Annual,Meets Expectations,Medium,6.8,56
+100378,2023,Annual,Exceeds Expectations,Medium,8.3,85
+100378,2024,Annual,Exceeds Expectations,Medium,8.3,73
+100378,2025,Annual,Meets Expectations,Low,6.0,50
+100379,2022,Annual,Exceeds Expectations,Medium,8.0,71
+100379,2023,Annual,Unsatisfactory,Low,2.0,1
+100379,2024,Annual,Exceeds Expectations,High,7.3,77
+100379,2025,Annual,Exceeds Expectations,Medium,8.4,71
+100381,2025,Annual,Exceeds Expectations,Medium,7.5,84
+100382,2022,Annual,Meets Expectations,Medium,6.0,69
+100382,2023,Annual,Unsatisfactory,Low,2.8,20
+100382,2024,Annual,Exceeds Expectations,High,8.4,79
+100382,2025,Annual,Exceeds Expectations,Medium,7.2,82
+100383,2022,Annual,Meets Expectations,Low,5.2,57
+100383,2023,Annual,Exceeds Expectations,Medium,7.7,77
+100383,2024,Annual,Meets Expectations,Low,6.8,62
+100383,2025,Annual,Meets Expectations,Medium,6.3,56
+100384,2022,Annual,Meets Expectations,Medium,5.4,68
+100384,2023,Annual,Exceptional,Medium,9.6,100
+100384,2024,Annual,Below Expectations,Low,4.9,31
+100384,2025,Annual,Meets Expectations,Medium,5.4,57
+100385,2022,Annual,Exceeds Expectations,High,8.3,82
+100385,2023,Annual,Meets Expectations,Medium,5.3,67
+100385,2024,Annual,Exceeds Expectations,High,8.0,70
+100385,2025,Annual,Exceeds Expectations,Medium,8.2,76
+100387,2022,Annual,Below Expectations,Low,3.4,31
+100387,2023,Annual,Exceeds Expectations,Medium,7.3,80
+100387,2024,Annual,Below Expectations,Medium,3.2,39
+100387,2025,Annual,Meets Expectations,Low,6.6,51
+100388,2022,Annual,Meets Expectations,Medium,7.0,61
+100388,2023,Annual,Meets Expectations,Medium,7.0,53
+100388,2024,Annual,Below Expectations,Medium,3.4,50
+100388,2025,Annual,Exceptional,High,8.6,100
+100389,2022,Annual,Unsatisfactory,Low,2.5,4
+100389,2023,Annual,Exceeds Expectations,High,7.2,75
+100389,2024,Annual,Exceeds Expectations,High,8.0,71
+100389,2025,Annual,Below Expectations,Low,4.5,49
+100390,2022,Annual,Exceeds Expectations,Medium,7.5,76
+100390,2023,Annual,Exceeds Expectations,Medium,7.5,78
+100390,2024,Annual,Exceeds Expectations,Medium,7.4,85
+100390,2025,Annual,Meets Expectations,Medium,6.8,68
+100391,2025,Annual,Exceeds Expectations,Medium,7.5,79
+100392,2023,Annual,Unsatisfactory,Low,1.8,29
+100392,2024,Annual,Meets Expectations,Medium,5.9,61
+100392,2025,Annual,Below Expectations,Medium,3.1,47
+100393,2025,Annual,Meets Expectations,Medium,5.3,67
+100394,2022,Annual,Exceptional,High,9.0,99
+100394,2023,Annual,Below Expectations,Low,4.7,39
+100394,2024,Annual,Meets Expectations,Low,6.6,65
+100394,2025,Annual,Exceeds Expectations,High,7.3,79
+100395,2023,Annual,Below Expectations,Low,4.9,44
+100395,2024,Annual,Meets Expectations,Medium,5.8,51
+100395,2025,Annual,Exceeds Expectations,Medium,7.2,72
+100396,2022,Annual,Exceeds Expectations,Medium,8.4,72
+100396,2023,Annual,Meets Expectations,Medium,6.4,56
+100396,2024,Annual,Meets Expectations,Medium,7.0,58
+100396,2025,Annual,Meets Expectations,Low,5.9,62
+100397,2022,Annual,Meets Expectations,Low,5.7,56
+100397,2023,Annual,Meets Expectations,Low,6.6,58
+100397,2024,Annual,Meets Expectations,Medium,6.1,50
+100397,2025,Annual,Meets Expectations,Medium,6.8,67
+100398,2022,Annual,Below Expectations,Low,3.5,41
+100398,2023,Annual,Below Expectations,Medium,5.0,46
+100398,2024,Annual,Exceptional,High,9.5,100
+100398,2025,Annual,Exceeds Expectations,High,8.4,79
+100399,2022,Annual,Meets Expectations,Low,5.5,57
+100399,2023,Annual,Exceptional,High,8.5,90
+100399,2024,Annual,Below Expectations,Low,4.1,42
+100399,2025,Annual,Below Expectations,Low,3.4,39
+100400,2025,Annual,Exceeds Expectations,High,8.3,75
+100401,2022,Annual,Exceeds Expectations,Medium,7.4,76
+100401,2023,Annual,Exceeds Expectations,Medium,7.2,81
+100401,2024,Annual,Exceeds Expectations,High,8.4,75
+100401,2025,Annual,Meets Expectations,Medium,6.6,56
+100402,2022,Annual,Exceeds Expectations,Medium,8.2,83
+100402,2023,Annual,Meets Expectations,Medium,5.5,56
+100402,2024,Annual,Meets Expectations,Medium,6.7,70
+100402,2025,Annual,Meets Expectations,Medium,6.2,61
+100403,2022,Annual,Meets Expectations,Medium,5.9,70
+100403,2023,Annual,Meets Expectations,Low,5.4,64
+100403,2024,Annual,Meets Expectations,Low,6.0,50
+100403,2025,Annual,Exceptional,High,8.6,90
+100405,2022,Annual,Meets Expectations,Medium,5.7,54
+100405,2023,Annual,Exceeds Expectations,Medium,7.1,70
+100405,2024,Annual,Meets Expectations,Medium,5.2,68
+100405,2025,Annual,Exceptional,Medium,9.0,94
+100406,2022,Annual,Meets Expectations,Low,6.9,53
+100406,2023,Annual,Exceeds Expectations,High,7.2,81
+100406,2024,Annual,Below Expectations,Medium,4.1,33
+100406,2025,Annual,Exceptional,Medium,9.1,98
+100407,2022,Annual,Meets Expectations,Medium,6.2,60
+100407,2023,Annual,Meets Expectations,Low,5.6,69
+100407,2024,Annual,Exceeds Expectations,Medium,7.4,82
+100407,2025,Annual,Meets Expectations,Medium,6.5,56
+100408,2022,Annual,Exceeds Expectations,High,7.1,72
+100408,2023,Annual,Exceeds Expectations,Medium,7.7,81
+100408,2024,Annual,Exceeds Expectations,Medium,7.6,79
+100408,2025,Annual,Meets Expectations,Low,5.3,58
+100409,2025,Annual,Exceeds Expectations,Medium,8.2,73
+100410,2023,Annual,Exceeds Expectations,Medium,8.4,84
+100410,2024,Annual,Meets Expectations,Low,5.2,51
+100410,2025,Annual,Meets Expectations,Medium,6.9,54
+100411,2022,Annual,Meets Expectations,Medium,5.0,55
+100411,2023,Annual,Unsatisfactory,Low,3.0,19
+100411,2024,Annual,Below Expectations,Low,3.7,50
+100411,2025,Annual,Exceeds Expectations,Medium,8.1,77
+100413,2025,Annual,Exceeds Expectations,Medium,7.5,77
+100414,2023,Annual,Exceeds Expectations,Medium,7.9,77
+100414,2024,Annual,Meets Expectations,Low,5.1,66
+100414,2025,Annual,Meets Expectations,Medium,6.5,61
+100415,2024,Annual,Meets Expectations,Low,6.7,59
+100415,2025,Annual,Meets Expectations,Medium,5.5,63
+100416,2023,Annual,Meets Expectations,Low,6.1,51
+100416,2024,Annual,Exceeds Expectations,Medium,8.1,71
+100416,2025,Annual,Meets Expectations,Medium,5.6,69
+100417,2022,Annual,Meets Expectations,Medium,5.5,52
+100417,2023,Annual,Meets Expectations,Low,5.6,56
+100417,2024,Annual,Unsatisfactory,Low,0.9,12
+100417,2025,Annual,Exceeds Expectations,Medium,7.6,84
+100418,2023,Annual,Meets Expectations,Low,6.8,68
+100418,2024,Annual,Meets Expectations,Medium,5.2,62
+100418,2025,Annual,Meets Expectations,Medium,5.2,55
+100419,2022,Annual,Meets Expectations,Medium,5.1,69
+100419,2023,Annual,Meets Expectations,Low,5.5,51
+100419,2024,Annual,Exceptional,High,9.4,96
+100419,2025,Annual,Meets Expectations,Medium,6.9,55
+100421,2022,Annual,Meets Expectations,Medium,6.0,57
+100421,2023,Annual,Meets Expectations,Medium,5.7,57
+100421,2024,Annual,Exceeds Expectations,Medium,7.1,84
+100421,2025,Annual,Meets Expectations,Medium,6.0,68
+100422,2022,Annual,Meets Expectations,Medium,5.5,65
+100422,2023,Annual,Below Expectations,Low,4.5,48
+100422,2024,Annual,Meets Expectations,Medium,5.8,57
+100422,2025,Annual,Meets Expectations,Medium,6.0,56
+100423,2022,Annual,Exceeds Expectations,Medium,7.3,83
+100423,2023,Annual,Meets Expectations,Medium,6.0,64
+100423,2024,Annual,Unsatisfactory,Low,2.7,4
+100423,2025,Annual,Meets Expectations,Low,6.9,59
+100424,2022,Annual,Meets Expectations,Medium,6.0,69
+100424,2023,Annual,Meets Expectations,Medium,5.3,70
+100424,2024,Annual,Below Expectations,Medium,3.0,48
+100424,2025,Annual,Meets Expectations,Medium,6.8,57
+100425,2022,Annual,Meets Expectations,Low,5.4,65
+100425,2023,Annual,Exceeds Expectations,Medium,7.6,79
+100425,2024,Annual,Meets Expectations,Medium,6.6,57
+100425,2025,Annual,Exceeds Expectations,High,8.1,80
+100426,2022,Annual,Exceeds Expectations,Medium,7.1,74
+100426,2023,Annual,Meets Expectations,Low,5.3,60
+100426,2024,Annual,Meets Expectations,Low,6.9,58
+100426,2025,Annual,Meets Expectations,Medium,6.0,68
+100427,2024,Annual,Exceeds Expectations,Medium,7.8,77
+100427,2025,Annual,Meets Expectations,Medium,6.1,50
+100428,2022,Annual,Below Expectations,Low,3.3,43
+100428,2023,Annual,Meets Expectations,Medium,5.8,65
+100428,2024,Annual,Below Expectations,Low,4.7,42
+100428,2025,Annual,Exceptional,High,8.7,100
+100429,2022,Annual,Exceeds Expectations,High,7.3,76
+100429,2023,Annual,Unsatisfactory,Low,2.5,19
+100429,2024,Annual,Meets Expectations,Medium,6.4,68
+100429,2025,Annual,Unsatisfactory,Low,1.8,6
+100430,2024,Annual,Exceeds Expectations,Medium,7.1,73
+100430,2025,Annual,Exceeds Expectations,Medium,8.4,77
+100432,2022,Annual,Meets Expectations,Low,6.2,64
+100432,2023,Annual,Exceeds Expectations,Medium,7.4,78
+100432,2024,Annual,Meets Expectations,Medium,7.0,50
+100432,2025,Annual,Exceeds Expectations,High,7.5,84
+100433,2022,Annual,Unsatisfactory,Low,0.6,14
+100433,2023,Annual,Unsatisfactory,Low,2.6,25
+100433,2024,Annual,Exceeds Expectations,Medium,7.9,77
+100433,2025,Annual,Meets Expectations,Medium,5.9,55
+100434,2025,Annual,Meets Expectations,Medium,5.6,70
+100435,2022,Annual,Meets Expectations,Medium,6.0,64
+100435,2023,Annual,Exceeds Expectations,Medium,7.2,70
+100435,2024,Annual,Meets Expectations,Low,5.3,62
+100435,2025,Annual,Exceeds Expectations,Medium,7.0,78
+100436,2022,Annual,Meets Expectations,Medium,6.5,64
+100436,2023,Annual,Exceeds Expectations,Medium,8.1,84
+100436,2024,Annual,Meets Expectations,Medium,6.0,62
+100436,2025,Annual,Meets Expectations,Medium,6.9,63
+100437,2022,Annual,Exceeds Expectations,High,7.5,81
+100437,2023,Annual,Meets Expectations,Medium,6.3,68
+100437,2024,Annual,Exceptional,Medium,9.1,88
+100437,2025,Annual,Meets Expectations,Medium,6.2,55
+100438,2023,Annual,Meets Expectations,Medium,5.0,52
+100438,2024,Annual,Meets Expectations,Medium,6.5,59
+100438,2025,Annual,Exceeds Expectations,Medium,7.4,79
+100439,2025,Annual,Below Expectations,Low,3.6,41
+100440,2022,Annual,Meets Expectations,Medium,6.3,56
+100440,2023,Annual,Meets Expectations,Medium,5.8,61
+100440,2024,Annual,Meets Expectations,Medium,6.4,58
+100440,2025,Annual,Below Expectations,Low,4.9,44
+100441,2025,Annual,Exceptional,Medium,9.6,97
+100442,2022,Annual,Meets Expectations,Low,6.6,65
+100442,2023,Annual,Exceeds Expectations,Medium,8.4,82
+100442,2024,Annual,Unsatisfactory,Low,0.7,22
+100442,2025,Annual,Meets Expectations,Medium,5.4,54
+100443,2022,Annual,Meets Expectations,Low,5.6,52
+100443,2023,Annual,Meets Expectations,Medium,5.7,62
+100443,2024,Annual,Meets Expectations,Medium,6.0,51
+100443,2025,Annual,Meets Expectations,Medium,5.7,67
+100444,2022,Annual,Below Expectations,Low,4.0,49
+100444,2023,Annual,Meets Expectations,Medium,6.9,50
+100444,2024,Annual,Meets Expectations,Low,5.1,57
+100444,2025,Annual,Below Expectations,Low,4.3,45
+100445,2024,Annual,Meets Expectations,Medium,6.7,54
+100445,2025,Annual,Meets Expectations,Medium,5.9,52
+100446,2024,Annual,Meets Expectations,Medium,5.1,52
+100446,2025,Annual,Meets Expectations,Medium,5.3,59
+100447,2023,Annual,Meets Expectations,Medium,5.4,68
+100447,2024,Annual,Meets Expectations,Low,6.1,61
+100447,2025,Annual,Meets Expectations,Low,5.9,58
+100448,2022,Annual,Exceeds Expectations,High,8.5,76
+100448,2023,Annual,Meets Expectations,Medium,5.4,51
+100448,2024,Annual,Unsatisfactory,Low,2.5,4
+100449,2023,Annual,Meets Expectations,Medium,6.0,63
+100449,2024,Annual,Below Expectations,Low,3.1,46
+100449,2025,Annual,Exceeds Expectations,Medium,7.5,79
+100450,2022,Annual,Meets Expectations,Low,6.6,53
+100450,2023,Annual,Meets Expectations,Medium,6.7,63
+100450,2024,Annual,Exceeds Expectations,Medium,7.7,75
+100450,2025,Annual,Exceeds Expectations,Medium,7.3,82
+100451,2022,Annual,Below Expectations,Medium,4.8,33
+100451,2023,Annual,Meets Expectations,Low,6.7,61
+100451,2024,Annual,Meets Expectations,Low,5.4,59
+100451,2025,Annual,Exceptional,High,8.7,93
+100452,2022,Annual,Below Expectations,Low,4.6,45
+100452,2023,Annual,Below Expectations,Low,3.6,38
+100452,2024,Annual,Meets Expectations,Medium,5.5,57
+100452,2025,Annual,Meets Expectations,Medium,6.3,53
+100453,2022,Annual,Unsatisfactory,Low,0.0,11
+100453,2023,Annual,Exceeds Expectations,Medium,7.8,70
+100453,2024,Annual,Exceeds Expectations,Medium,7.6,82
+100453,2025,Annual,Meets Expectations,Medium,5.1,50
+100454,2022,Annual,Meets Expectations,Medium,6.5,67
+100454,2023,Annual,Exceptional,Medium,9.0,86
+100454,2024,Annual,Exceeds Expectations,Medium,8.4,76
+100454,2025,Annual,Meets Expectations,Medium,5.9,50
+100455,2022,Annual,Meets Expectations,Low,6.4,55
+100455,2023,Annual,Exceeds Expectations,High,7.3,79
+100455,2024,Annual,Exceeds Expectations,High,7.2,75
+100455,2025,Annual,Meets Expectations,Medium,5.5,52
+100456,2022,Annual,Below Expectations,Low,4.0,38
+100456,2023,Annual,Exceeds Expectations,Medium,7.7,85
+100456,2024,Annual,Exceeds Expectations,Medium,7.4,74
+100456,2025,Annual,Meets Expectations,Medium,6.6,62
+100457,2022,Annual,Exceeds Expectations,Medium,7.2,71
+100457,2023,Annual,Below Expectations,Low,4.1,41
+100457,2024,Annual,Exceeds Expectations,High,7.4,77
+100457,2025,Annual,Meets Expectations,Low,5.6,56
+100458,2022,Annual,Meets Expectations,Low,5.1,69
+100458,2023,Annual,Meets Expectations,Medium,6.3,58
+100458,2024,Annual,Exceeds Expectations,Medium,7.4,83
+100458,2025,Annual,Meets Expectations,Low,6.8,53
+100459,2022,Annual,Meets Expectations,Medium,5.5,62
+100459,2023,Annual,Exceeds Expectations,High,7.0,73
+100459,2024,Annual,Meets Expectations,Medium,5.6,57
+100459,2025,Annual,Exceptional,Medium,9.5,87
+100460,2022,Annual,Below Expectations,Medium,4.1,43
+100460,2023,Annual,Meets Expectations,Medium,5.7,70
+100460,2024,Annual,Meets Expectations,Low,6.8,59
+100460,2025,Annual,Meets Expectations,Medium,6.3,66
+100461,2024,Annual,Meets Expectations,Low,5.1,50
+100461,2025,Annual,Meets Expectations,Low,6.0,63
+100462,2022,Annual,Meets Expectations,Low,6.6,56
+100462,2023,Annual,Below Expectations,Low,4.0,49
+100462,2024,Annual,Meets Expectations,Low,5.7,56
+100462,2025,Annual,Below Expectations,Medium,3.3,38
+100463,2023,Annual,Exceptional,High,8.8,91
+100463,2024,Annual,Meets Expectations,Medium,6.8,60
+100463,2025,Annual,Below Expectations,Low,4.3,43
+100464,2022,Annual,Unsatisfactory,Low,0.3,0
+100464,2023,Annual,Exceeds Expectations,Medium,7.5,77
+100464,2024,Annual,Meets Expectations,Low,5.7,58
+100464,2025,Annual,Exceeds Expectations,High,8.2,71
+100465,2024,Annual,Meets Expectations,Medium,5.6,52
+100465,2025,Annual,Exceeds Expectations,Medium,7.2,72
+100466,2025,Annual,Exceeds Expectations,Medium,8.2,70
+100467,2023,Annual,Meets Expectations,Low,6.2,66
+100467,2024,Annual,Meets Expectations,Low,6.8,55
+100467,2025,Annual,Exceeds Expectations,Medium,8.0,75
+100468,2024,Annual,Exceeds Expectations,High,8.0,71
+100468,2025,Annual,Meets Expectations,Low,6.5,66
+100469,2022,Annual,Exceeds Expectations,Medium,8.3,82
+100469,2023,Annual,Exceeds Expectations,Medium,8.5,78
+100469,2024,Annual,Unsatisfactory,Low,1.3,17
+100469,2025,Annual,Exceptional,Medium,8.7,99
+100470,2022,Annual,Meets Expectations,Low,6.0,62
+100470,2023,Annual,Meets Expectations,Medium,5.8,52
+100470,2024,Annual,Meets Expectations,Low,7.0,52
+100470,2025,Annual,Meets Expectations,Medium,6.5,67
+100472,2022,Annual,Exceeds Expectations,Medium,8.0,85
+100472,2023,Annual,Meets Expectations,Medium,5.0,63
+100472,2024,Annual,Unsatisfactory,Low,0.8,20
+100472,2025,Annual,Exceptional,Medium,9.8,88
+100473,2022,Annual,Exceeds Expectations,Medium,7.8,78
+100473,2023,Annual,Meets Expectations,Low,5.7,63
+100473,2024,Annual,Below Expectations,Medium,3.2,38
+100473,2025,Annual,Meets Expectations,Medium,6.1,68
+100474,2022,Annual,Meets Expectations,Medium,5.8,66
+100474,2023,Annual,Exceptional,Medium,9.5,85
+100474,2024,Annual,Exceptional,High,9.2,88
+100474,2025,Annual,Exceeds Expectations,High,8.4,71
+100475,2022,Annual,Exceeds Expectations,Medium,7.4,82
+100475,2023,Annual,Meets Expectations,Low,5.2,54
+100475,2024,Annual,Meets Expectations,Medium,6.2,68
+100475,2025,Annual,Meets Expectations,Medium,5.4,61
+100476,2025,Annual,Meets Expectations,Medium,6.7,50
+100477,2022,Annual,Exceptional,High,9.3,96
+100477,2023,Annual,Exceeds Expectations,Medium,7.9,78
+100477,2024,Annual,Exceptional,High,9.4,96
+100477,2025,Annual,Meets Expectations,Medium,6.8,67
+100478,2022,Annual,Meets Expectations,Medium,5.6,68
+100478,2023,Annual,Exceptional,Medium,9.4,94
+100478,2024,Annual,Exceeds Expectations,High,7.6,81
+100478,2025,Annual,Exceeds Expectations,Medium,8.4,73
+100479,2022,Annual,Exceeds Expectations,Medium,7.9,81
+100479,2023,Annual,Exceeds Expectations,Medium,7.6,70
+100479,2024,Annual,Meets Expectations,Medium,6.5,54
+100479,2025,Annual,Meets Expectations,Low,5.2,61
+100480,2022,Annual,Exceptional,Medium,9.4,93
+100481,2022,Annual,Exceeds Expectations,High,7.7,70
+100481,2023,Annual,Exceeds Expectations,Medium,8.2,71
+100481,2024,Annual,Exceeds Expectations,High,7.3,80
+100481,2025,Annual,Exceptional,Medium,8.5,90
+100482,2022,Annual,Meets Expectations,Medium,6.6,66
+100482,2023,Annual,Meets Expectations,Low,6.7,64
+100482,2024,Annual,Exceeds Expectations,Medium,8.3,85
+100482,2025,Annual,Below Expectations,Medium,3.5,33
+100483,2022,Annual,Exceeds Expectations,Medium,7.2,73
+100483,2023,Annual,Meets Expectations,Low,5.8,58
+100483,2024,Annual,Below Expectations,Low,3.2,44
+100483,2025,Annual,Meets Expectations,Medium,5.1,59
+100484,2022,Annual,Exceptional,High,8.6,86
+100484,2023,Annual,Exceptional,High,9.7,97
+100484,2024,Annual,Exceeds Expectations,Medium,7.0,83
+100484,2025,Annual,Meets Expectations,Medium,6.5,65
+100485,2022,Annual,Exceptional,Medium,8.7,91
+100485,2023,Annual,Exceptional,High,9.2,97
+100485,2024,Annual,Exceeds Expectations,Medium,8.3,78
+100485,2025,Annual,Exceeds Expectations,Medium,8.4,81
+100486,2024,Annual,Meets Expectations,Low,6.7,61
+100486,2025,Annual,Exceeds Expectations,Medium,7.2,79
+100487,2025,Annual,Meets Expectations,Low,6.4,53
+100488,2022,Annual,Meets Expectations,Medium,6.5,52
+100488,2023,Annual,Meets Expectations,Low,6.1,61
+100488,2024,Annual,Meets Expectations,Medium,6.0,57
+100488,2025,Annual,Meets Expectations,Medium,6.5,60
+100489,2022,Annual,Below Expectations,Low,3.5,30
+100489,2023,Annual,Exceeds Expectations,Medium,7.7,74
+100489,2024,Annual,Meets Expectations,Low,6.2,69
+100489,2025,Annual,Exceeds Expectations,Medium,8.1,77
+100490,2022,Annual,Unsatisfactory,Low,0.1,8
+100490,2023,Annual,Exceeds Expectations,Medium,7.9,77
+100490,2024,Annual,Below Expectations,Low,3.8,42
+100490,2025,Annual,Meets Expectations,Low,5.9,50
+100491,2022,Annual,Exceptional,High,8.8,97
+100491,2023,Annual,Meets Expectations,Low,5.2,64
+100491,2024,Annual,Below Expectations,Medium,4.3,38
+100491,2025,Annual,Meets Expectations,Medium,6.0,64
+100492,2024,Annual,Exceeds Expectations,Medium,7.9,75
+100492,2025,Annual,Meets Expectations,Medium,5.7,53
+100493,2022,Annual,Meets Expectations,Medium,6.2,62
+100493,2023,Annual,Below Expectations,Medium,4.5,43
+100493,2024,Annual,Meets Expectations,Low,5.9,52
+100493,2025,Annual,Meets Expectations,Medium,5.8,53
+100494,2022,Annual,Exceeds Expectations,Medium,7.8,82
+100494,2023,Annual,Unsatisfactory,Low,1.2,6
+100494,2024,Annual,Exceeds Expectations,Medium,7.6,70
+100494,2025,Annual,Meets Expectations,Low,6.5,66
+100495,2022,Annual,Below Expectations,Medium,4.9,44
+100495,2023,Annual,Meets Expectations,Medium,6.7,52
+100495,2024,Annual,Meets Expectations,Medium,5.3,56
+100495,2025,Annual,Meets Expectations,Medium,5.5,53
+100496,2023,Annual,Meets Expectations,Medium,5.4,63
+100496,2024,Annual,Meets Expectations,Medium,6.2,62
+100496,2025,Annual,Exceeds Expectations,High,7.9,83
+100497,2023,Annual,Below Expectations,Low,4.7,50
+100497,2024,Annual,Exceeds Expectations,Medium,7.7,78
+100497,2025,Annual,Exceptional,High,9.6,95
+100498,2022,Annual,Meets Expectations,Medium,6.1,69
+100498,2023,Annual,Below Expectations,Low,4.9,47
+100498,2024,Annual,Meets Expectations,Low,5.8,70
+100498,2025,Annual,Exceeds Expectations,Medium,8.2,81
+100499,2022,Annual,Exceeds Expectations,Medium,7.4,72
+100499,2023,Annual,Meets Expectations,Medium,5.3,69
+100499,2024,Annual,Exceeds Expectations,High,7.4,76
+100499,2025,Annual,Meets Expectations,Medium,5.3,66
+100500,2022,Annual,Meets Expectations,Low,5.2,67
+100500,2023,Annual,Meets Expectations,Medium,6.6,56
+100500,2024,Annual,Below Expectations,Medium,4.4,36
+100500,2025,Annual,Exceeds Expectations,Medium,7.9,70
+100501,2022,Annual,Below Expectations,Low,3.8,45
+100501,2023,Annual,Exceeds Expectations,High,7.0,80
+100501,2024,Annual,Exceeds Expectations,High,7.1,81
+100501,2025,Annual,Exceeds Expectations,Medium,7.1,77
+100502,2022,Annual,Meets Expectations,Low,6.6,54
+100502,2023,Annual,Meets Expectations,Low,5.6,52
+100502,2024,Annual,Exceeds Expectations,High,8.0,85
+100502,2025,Annual,Meets Expectations,Medium,6.6,59
+100503,2022,Annual,Meets Expectations,Medium,5.4,58
+100503,2023,Annual,Meets Expectations,Low,5.9,58
+100503,2024,Annual,Meets Expectations,Low,6.0,70
+100503,2025,Annual,Meets Expectations,Medium,6.5,62
+100504,2022,Annual,Meets Expectations,Low,5.1,60
+100504,2023,Annual,Below Expectations,Low,3.7,32
+100504,2024,Annual,Below Expectations,Low,4.3,45
+100504,2025,Annual,Meets Expectations,Medium,7.0,55
+100505,2022,Annual,Meets Expectations,Medium,6.2,52
+100505,2023,Annual,Meets Expectations,Medium,5.8,52
+100505,2024,Annual,Meets Expectations,Low,6.9,59
+100505,2025,Annual,Meets Expectations,Medium,5.8,65
+100506,2025,Annual,Meets Expectations,Medium,6.2,65
+100507,2022,Annual,Meets Expectations,Low,5.1,67
+100507,2023,Annual,Exceptional,High,9.4,93
+100507,2024,Annual,Exceptional,High,9.2,90
+100507,2025,Annual,Below Expectations,Medium,5.0,40
+100508,2025,Annual,Meets Expectations,Medium,5.1,54
+100509,2023,Annual,Below Expectations,Low,4.3,42
+100509,2024,Annual,Meets Expectations,Low,5.1,54
+100509,2025,Annual,Unsatisfactory,Low,1.2,10
+100510,2022,Annual,Meets Expectations,Medium,6.9,62
+100510,2023,Annual,Meets Expectations,Low,6.3,64
+100510,2024,Annual,Exceeds Expectations,High,8.4,78
+100510,2025,Annual,Meets Expectations,Medium,6.6,58
+100511,2024,Annual,Meets Expectations,Medium,6.1,60
+100511,2025,Annual,Exceeds Expectations,Medium,7.6,76
+100512,2025,Annual,Exceeds Expectations,Medium,7.8,75
+100514,2024,Annual,Meets Expectations,Medium,5.7,67
+100514,2025,Annual,Meets Expectations,Medium,6.9,56
+100515,2022,Annual,Exceptional,Medium,9.5,87
+100515,2023,Annual,Exceeds Expectations,Medium,7.6,80
+100515,2024,Annual,Exceeds Expectations,High,7.3,82
+100515,2025,Annual,Meets Expectations,Low,5.4,67
+100516,2022,Annual,Exceeds Expectations,Medium,7.2,72
+100516,2023,Annual,Exceptional,Medium,8.9,100
+100516,2024,Annual,Below Expectations,Low,3.6,42
+100516,2025,Annual,Meets Expectations,Medium,5.9,67
+100517,2022,Annual,Meets Expectations,Medium,6.8,69
+100517,2023,Annual,Meets Expectations,Medium,6.2,62
+100517,2024,Annual,Unsatisfactory,Low,0.3,16
+100517,2025,Annual,Meets Expectations,Medium,6.7,70
+100518,2022,Annual,Below Expectations,Low,4.4,37
+100518,2023,Annual,Meets Expectations,Medium,5.8,57
+100518,2024,Annual,Meets Expectations,Low,6.5,52
+100518,2025,Annual,Exceeds Expectations,Medium,7.0,83
+100519,2022,Annual,Meets Expectations,Medium,5.5,63
+100519,2023,Annual,Exceptional,High,9.4,91
+100519,2024,Annual,Meets Expectations,Medium,5.8,60
+100519,2025,Annual,Meets Expectations,Low,5.3,59
+100520,2025,Annual,Exceeds Expectations,Medium,8.4,82
+100521,2025,Annual,Meets Expectations,Medium,6.5,53
+100522,2023,Annual,Below Expectations,Low,3.3,30
+100522,2024,Annual,Meets Expectations,Medium,5.4,62
+100522,2025,Annual,Meets Expectations,Medium,5.6,56
+100523,2023,Annual,Meets Expectations,Low,6.8,67
+100523,2024,Annual,Meets Expectations,Low,6.2,66
+100523,2025,Annual,Below Expectations,Medium,4.7,40
+100524,2022,Annual,Exceeds Expectations,Medium,7.5,84
+100524,2023,Annual,Exceptional,High,9.6,94
+100524,2024,Annual,Meets Expectations,Low,6.1,51
+100524,2025,Annual,Exceeds Expectations,Medium,7.5,78
+100525,2022,Annual,Exceeds Expectations,Medium,7.7,77
+100525,2023,Annual,Exceptional,High,8.8,92
+100525,2024,Annual,Exceeds Expectations,High,7.6,80
+100525,2025,Annual,Below Expectations,Low,4.0,32
+100526,2022,Annual,Exceptional,High,9.4,91
+100526,2023,Annual,Exceeds Expectations,Medium,7.8,84
+100526,2024,Annual,Exceeds Expectations,Medium,7.3,82
+100526,2025,Annual,Unsatisfactory,Low,0.5,27
+100527,2022,Annual,Meets Expectations,Medium,5.6,54
+100527,2023,Annual,Unsatisfactory,Low,0.7,6
+100527,2024,Annual,Meets Expectations,Medium,5.1,70
+100527,2025,Annual,Meets Expectations,Medium,7.0,62
+100528,2024,Annual,Meets Expectations,Low,5.5,70
+100528,2025,Annual,Meets Expectations,Medium,5.4,61
+100529,2023,Annual,Meets Expectations,Medium,6.8,58
+100529,2024,Annual,Exceeds Expectations,Medium,8.2,84
+100529,2025,Annual,Meets Expectations,Low,5.0,55
+100530,2022,Annual,Below Expectations,Low,3.7,46
+100530,2023,Annual,Meets Expectations,Medium,5.9,70
+100530,2024,Annual,Below Expectations,Medium,3.7,45
+100530,2025,Annual,Meets Expectations,Low,6.3,52
+100531,2024,Annual,Meets Expectations,Medium,6.9,68
+100531,2025,Annual,Below Expectations,Low,4.6,30
+100532,2022,Annual,Exceptional,Medium,8.6,92
+100532,2023,Annual,Exceeds Expectations,Medium,8.0,83
+100532,2024,Annual,Exceeds Expectations,High,7.6,85
+100532,2025,Annual,Meets Expectations,Medium,6.1,63
+100533,2022,Annual,Exceeds Expectations,Medium,7.3,73
+100533,2023,Annual,Exceeds Expectations,High,7.6,81
+100533,2024,Annual,Exceptional,High,9.0,87
+100533,2025,Annual,Exceeds Expectations,High,8.5,70
+100534,2023,Annual,Exceeds Expectations,Medium,7.7,81
+100534,2024,Annual,Meets Expectations,Medium,6.5,55
+100534,2025,Annual,Exceeds Expectations,High,7.8,85
+100535,2022,Annual,Below Expectations,Low,3.5,43
+100535,2023,Annual,Meets Expectations,Medium,6.5,65
+100535,2024,Annual,Exceeds Expectations,Medium,8.0,81
+100535,2025,Annual,Exceeds Expectations,High,7.0,77
+100536,2024,Annual,Meets Expectations,Medium,5.1,66
+100536,2025,Annual,Exceptional,High,9.3,90
+100537,2025,Annual,Exceeds Expectations,Medium,7.7,71
+100538,2022,Annual,Meets Expectations,Medium,5.7,59
+100538,2023,Annual,Exceptional,Medium,9.5,91
+100538,2024,Annual,Below Expectations,Medium,3.2,37
+100538,2025,Annual,Meets Expectations,Low,5.3,54
+100539,2024,Annual,Meets Expectations,Medium,6.7,62
+100539,2025,Annual,Exceptional,High,9.3,99
+100540,2022,Annual,Exceeds Expectations,Medium,7.6,85
+100540,2023,Annual,Exceeds Expectations,Medium,7.8,78
+100540,2024,Annual,Meets Expectations,Low,6.0,65
+100540,2025,Annual,Exceeds Expectations,High,8.3,73
+100541,2022,Annual,Meets Expectations,Medium,5.4,66
+100541,2023,Annual,Exceeds Expectations,Medium,7.4,80
+100541,2024,Annual,Meets Expectations,Medium,6.9,66
+100541,2025,Annual,Meets Expectations,Medium,6.0,53
+100542,2022,Annual,Exceptional,High,9.5,88
+100542,2023,Annual,Meets Expectations,Medium,6.3,56
+100542,2024,Annual,Meets Expectations,Medium,5.6,52
+100542,2025,Annual,Exceptional,Medium,9.6,93
+100543,2022,Annual,Meets Expectations,Low,5.2,52
+100543,2023,Annual,Exceeds Expectations,Medium,7.1,81
+100543,2024,Annual,Meets Expectations,Medium,6.5,56
+100543,2025,Annual,Exceeds Expectations,Medium,7.4,76
+100544,2024,Annual,Exceeds Expectations,High,8.1,82
+100544,2025,Annual,Exceptional,Medium,8.5,96
+100545,2022,Annual,Below Expectations,Low,5.0,50
+100545,2023,Annual,Exceeds Expectations,Medium,8.5,79
+100545,2024,Annual,Exceeds Expectations,Medium,7.1,80
+100545,2025,Annual,Meets Expectations,Medium,6.2,50
+100546,2022,Annual,Exceeds Expectations,High,8.5,71
+100546,2023,Annual,Below Expectations,Low,4.6,38
+100546,2024,Annual,Exceeds Expectations,Medium,8.1,71
+100546,2025,Annual,Meets Expectations,Medium,5.8,52
+100547,2022,Annual,Unsatisfactory,Low,1.8,16
+100547,2023,Annual,Below Expectations,Medium,4.7,50
+100547,2024,Annual,Meets Expectations,Low,5.6,59
+100547,2025,Annual,Below Expectations,Low,3.1,30
+100548,2022,Annual,Meets Expectations,Medium,5.0,68
+100548,2023,Annual,Meets Expectations,Low,7.0,62
+100548,2024,Annual,Meets Expectations,Low,5.3,61
+100548,2025,Annual,Exceeds Expectations,Medium,7.9,78
+100549,2022,Annual,Exceeds Expectations,Medium,7.1,78
+100549,2023,Annual,Exceeds Expectations,Medium,7.7,83
+100549,2024,Annual,Meets Expectations,Medium,6.0,61
+100549,2025,Annual,Below Expectations,Low,4.6,43
+100550,2022,Annual,Exceeds Expectations,Medium,7.3,71
+100550,2023,Annual,Exceeds Expectations,Medium,7.6,70
+100550,2024,Annual,Exceeds Expectations,High,7.2,79
+100550,2025,Annual,Exceptional,Medium,9.7,93
+100551,2022,Annual,Exceeds Expectations,Medium,7.4,79
+100551,2023,Annual,Exceeds Expectations,Medium,7.3,83
+100551,2024,Annual,Below Expectations,Medium,3.0,47
+100551,2025,Annual,Exceeds Expectations,Medium,7.6,71
+100552,2023,Annual,Exceptional,High,9.5,86
+100552,2024,Annual,Below Expectations,Medium,3.8,32
+100552,2025,Annual,Meets Expectations,Medium,5.9,52
+100553,2022,Annual,Meets Expectations,Medium,6.0,66
+100553,2023,Annual,Meets Expectations,Low,5.5,62
+100553,2024,Annual,Exceeds Expectations,Medium,8.1,85
+100553,2025,Annual,Exceeds Expectations,High,7.8,81
+100554,2025,Annual,Exceptional,Medium,9.6,87
+100555,2024,Annual,Meets Expectations,Low,6.3,62
+100555,2025,Annual,Exceptional,High,8.7,87
+100556,2022,Annual,Below Expectations,Low,5.0,38
+100556,2023,Annual,Exceeds Expectations,Medium,7.2,74
+100556,2024,Annual,Meets Expectations,Low,6.3,64
+100556,2025,Annual,Exceptional,High,9.8,98
+100557,2022,Annual,Meets Expectations,Medium,6.9,53
+100557,2023,Annual,Exceeds Expectations,Medium,7.2,71
+100557,2024,Annual,Below Expectations,Low,3.4,45
+100557,2025,Annual,Meets Expectations,Low,6.8,55
+100558,2024,Annual,Below Expectations,Medium,4.6,34
+100558,2025,Annual,Below Expectations,Low,3.4,30
+100559,2022,Annual,Meets Expectations,Medium,6.5,50
+100559,2023,Annual,Meets Expectations,Low,6.9,66
+100559,2024,Annual,Exceeds Expectations,Medium,8.2,70
+100559,2025,Annual,Below Expectations,Low,5.0,43
+100560,2022,Annual,Exceeds Expectations,Medium,8.3,82
+100560,2023,Annual,Exceptional,High,9.6,90
+100560,2024,Annual,Meets Expectations,Low,5.7,57
+100560,2025,Annual,Unsatisfactory,Low,0.0,20
+100561,2023,Annual,Meets Expectations,Medium,6.2,69
+100561,2024,Annual,Below Expectations,Medium,4.7,31
+100561,2025,Annual,Meets Expectations,Medium,5.9,54
+100562,2022,Annual,Unsatisfactory,Low,0.9,12
+100562,2023,Annual,Below Expectations,Low,3.6,44
+100562,2024,Annual,Meets Expectations,Low,6.6,65
+100562,2025,Annual,Below Expectations,Low,4.5,31
+100563,2022,Annual,Exceptional,Medium,10.0,95
+100563,2023,Annual,Exceeds Expectations,High,8.4,75
+100563,2024,Annual,Exceeds Expectations,Medium,7.8,73
+100563,2025,Annual,Unsatisfactory,Low,1.7,11
+100564,2022,Annual,Exceeds Expectations,High,8.1,75
+100564,2023,Annual,Meets Expectations,Low,6.0,55
+100564,2024,Annual,Exceeds Expectations,High,8.4,71
+100564,2025,Annual,Meets Expectations,Low,5.8,59
+100565,2022,Annual,Exceeds Expectations,High,7.2,83
+100565,2023,Annual,Exceeds Expectations,High,8.4,82
+100565,2024,Annual,Meets Expectations,Medium,6.5,60
+100565,2025,Annual,Meets Expectations,Medium,6.4,53
+100566,2022,Annual,Unsatisfactory,Low,2.9,20
+100566,2023,Annual,Meets Expectations,Medium,6.1,63
+100566,2024,Annual,Meets Expectations,Low,6.3,51
+100566,2025,Annual,Below Expectations,Low,3.2,50
+100567,2022,Annual,Meets Expectations,Medium,6.6,57
+100567,2023,Annual,Meets Expectations,Medium,6.2,54
+100567,2024,Annual,Below Expectations,Low,3.5,47
+100567,2025,Annual,Meets Expectations,Medium,5.8,57
+100568,2024,Annual,Meets Expectations,Medium,5.9,56
+100568,2025,Annual,Meets Expectations,Medium,5.5,61
+100569,2022,Annual,Exceptional,High,8.7,91
+100569,2023,Annual,Exceptional,Medium,8.5,100
+100569,2024,Annual,Meets Expectations,Low,6.7,60
+100569,2025,Annual,Exceeds Expectations,Medium,8.4,83
+100570,2022,Annual,Below Expectations,Low,3.3,45
+100570,2023,Annual,Meets Expectations,Medium,5.6,69
+100570,2024,Annual,Meets Expectations,Medium,5.6,61
+100570,2025,Annual,Meets Expectations,Medium,6.3,69
+100571,2023,Annual,Meets Expectations,Medium,6.0,57
+100571,2024,Annual,Exceeds Expectations,Medium,7.6,75
+100571,2025,Annual,Below Expectations,Low,4.3,44
+100572,2022,Annual,Exceeds Expectations,Medium,8.2,71
+100572,2023,Annual,Meets Expectations,Low,6.3,69
+100572,2024,Annual,Below Expectations,Medium,3.6,47
+100572,2025,Annual,Exceeds Expectations,High,7.1,72
+100573,2025,Annual,Meets Expectations,Low,6.9,62
+100574,2022,Annual,Unsatisfactory,Low,0.9,14
+100574,2023,Annual,Exceeds Expectations,High,8.4,85
+100574,2024,Annual,Exceeds Expectations,High,8.1,73
+100574,2025,Annual,Exceptional,Medium,9.3,98
+100575,2023,Annual,Below Expectations,Low,3.0,45
+100575,2024,Annual,Meets Expectations,Low,5.9,55
+100575,2025,Annual,Meets Expectations,Medium,5.1,70
+100576,2022,Annual,Meets Expectations,Low,5.9,51
+100576,2023,Annual,Meets Expectations,Medium,5.2,55
+100576,2024,Annual,Meets Expectations,Medium,5.4,57
+100576,2025,Annual,Meets Expectations,Medium,6.0,69
+100577,2022,Annual,Exceeds Expectations,Medium,8.2,72
+100577,2023,Annual,Meets Expectations,Medium,5.4,55
+100577,2024,Annual,Below Expectations,Medium,3.0,45
+100577,2025,Annual,Below Expectations,Medium,3.1,36
+100578,2022,Annual,Meets Expectations,Low,6.9,51
+100578,2023,Annual,Exceeds Expectations,Medium,7.6,71
+100579,2023,Annual,Exceeds Expectations,Medium,7.9,75
+100579,2024,Annual,Exceeds Expectations,Medium,7.9,85
+100579,2025,Annual,Meets Expectations,Medium,6.5,52
+100580,2025,Annual,Meets Expectations,Medium,6.4,53
+100581,2022,Annual,Unsatisfactory,Low,2.5,24
+100581,2023,Annual,Below Expectations,Low,4.6,50
+100581,2024,Annual,Below Expectations,Low,4.7,44
+100581,2025,Annual,Meets Expectations,Medium,5.9,65
+100582,2022,Annual,Exceptional,High,8.8,100
+100582,2023,Annual,Meets Expectations,Low,5.4,55
+100582,2024,Annual,Exceeds Expectations,High,7.6,84
+100582,2025,Annual,Unsatisfactory,Low,0.7,11
+100583,2022,Annual,Exceeds Expectations,Medium,8.2,82
+100583,2023,Annual,Meets Expectations,Medium,5.1,50
+100583,2024,Annual,Exceeds Expectations,Medium,7.5,83
+100584,2025,Annual,Below Expectations,Low,3.8,30
+100585,2022,Annual,Meets Expectations,Medium,6.6,50
+100585,2023,Annual,Meets Expectations,Medium,6.2,53
+100585,2024,Annual,Exceptional,High,9.5,93
+100585,2025,Annual,Exceptional,High,9.2,92
+100586,2025,Annual,Meets Expectations,Low,5.1,55
+100587,2025,Annual,Below Expectations,Low,4.9,42
+100588,2022,Annual,Meets Expectations,Medium,5.5,52
+100588,2023,Annual,Meets Expectations,Low,6.5,62
+100588,2024,Annual,Exceeds Expectations,Medium,7.2,85
+100588,2025,Annual,Exceeds Expectations,Medium,7.5,70
+100589,2023,Annual,Meets Expectations,Medium,7.0,62
+100589,2024,Annual,Meets Expectations,Medium,6.3,60
+100589,2025,Annual,Meets Expectations,Low,5.8,57
+100591,2022,Annual,Meets Expectations,Medium,6.9,62
+100591,2023,Annual,Meets Expectations,Medium,6.8,55
+100591,2024,Annual,Below Expectations,Low,4.2,43
+100591,2025,Annual,Meets Expectations,Medium,6.5,68
+100592,2022,Annual,Below Expectations,Medium,4.9,38
+100592,2023,Annual,Below Expectations,Low,4.6,30
+100592,2024,Annual,Exceeds Expectations,High,7.7,73
+100592,2025,Annual,Meets Expectations,Medium,6.1,52
+100593,2022,Annual,Unsatisfactory,Low,1.0,14
+100593,2023,Annual,Meets Expectations,Medium,6.7,64
+100593,2024,Annual,Meets Expectations,Medium,5.2,52
+100593,2025,Annual,Exceeds Expectations,Medium,8.4,78
+100594,2022,Annual,Exceeds Expectations,Medium,7.3,74
+100594,2023,Annual,Exceptional,High,9.5,98
+100594,2024,Annual,Exceeds Expectations,Medium,7.9,71
+100594,2025,Annual,Meets Expectations,Low,6.6,64
+100595,2022,Annual,Exceeds Expectations,Medium,7.3,72
+100595,2023,Annual,Meets Expectations,Medium,5.9,57
+100595,2024,Annual,Meets Expectations,Medium,5.3,66
+100595,2025,Annual,Meets Expectations,Medium,6.7,50
+100596,2022,Annual,Meets Expectations,Medium,6.9,69
+100596,2023,Annual,Meets Expectations,Low,5.4,58
+100596,2024,Annual,Exceeds Expectations,Medium,8.0,82
+100596,2025,Annual,Exceeds Expectations,High,8.4,84
+100597,2022,Annual,Exceeds Expectations,Medium,7.5,71
+100597,2023,Annual,Meets Expectations,Medium,6.4,50
+100597,2024,Annual,Meets Expectations,Medium,6.7,53
+100597,2025,Annual,Exceeds Expectations,High,8.2,84
+100598,2022,Annual,Meets Expectations,Low,5.8,55
+100598,2023,Annual,Unsatisfactory,Low,2.0,12
+100598,2024,Annual,Meets Expectations,Low,5.9,51
+100598,2025,Annual,Exceeds Expectations,High,7.2,83
+100599,2022,Annual,Meets Expectations,Low,5.5,59
+100599,2023,Annual,Meets Expectations,Low,5.8,68
+100599,2024,Annual,Meets Expectations,Medium,5.2,54
+100600,2024,Annual,Exceeds Expectations,Medium,7.9,82
+100600,2025,Annual,Exceeds Expectations,Medium,7.9,85
+100601,2022,Annual,Exceptional,High,8.8,86
+100601,2023,Annual,Meets Expectations,Medium,6.5,53
+100601,2024,Annual,Exceeds Expectations,Medium,7.3,83
+100601,2025,Annual,Exceeds Expectations,Medium,7.2,75
+100602,2022,Annual,Meets Expectations,Medium,5.7,64
+100602,2023,Annual,Unsatisfactory,Low,2.3,23
+100602,2024,Annual,Meets Expectations,Medium,6.2,61
+100602,2025,Annual,Meets Expectations,Low,5.4,64
+100603,2022,Annual,Exceeds Expectations,Medium,7.2,80
+100603,2023,Annual,Below Expectations,Low,4.2,44
+100603,2024,Annual,Meets Expectations,Medium,5.8,58
+100603,2025,Annual,Meets Expectations,Medium,6.7,56
+100604,2022,Annual,Exceeds Expectations,Medium,7.8,82
+100604,2023,Annual,Exceeds Expectations,High,8.3,73
+100604,2024,Annual,Meets Expectations,Low,5.6,54
+100604,2025,Annual,Meets Expectations,Medium,5.5,51
+100605,2022,Annual,Meets Expectations,Medium,6.0,52
+100605,2023,Annual,Exceeds Expectations,High,8.4,82
+100605,2024,Annual,Meets Expectations,Medium,5.2,69
+100605,2025,Annual,Exceeds Expectations,Medium,7.4,75
+100606,2024,Annual,Below Expectations,Low,3.4,33
+100606,2025,Annual,Meets Expectations,Medium,6.0,64
+100607,2022,Annual,Meets Expectations,Medium,5.9,52
+100607,2023,Annual,Exceeds Expectations,Medium,7.5,70
+100607,2024,Annual,Meets Expectations,Medium,5.0,58
+100607,2025,Annual,Below Expectations,Low,3.9,49
+100608,2022,Annual,Meets Expectations,Low,5.3,70
+100608,2023,Annual,Exceptional,Medium,9.5,87
+100608,2024,Annual,Meets Expectations,Medium,6.6,59
+100608,2025,Annual,Unsatisfactory,Low,1.9,0
+100609,2024,Annual,Exceeds Expectations,High,8.4,79
+100609,2025,Annual,Meets Expectations,Medium,6.2,59
+100610,2025,Annual,Exceeds Expectations,High,7.1,84
+100611,2022,Annual,Exceeds Expectations,Medium,7.0,80
+100611,2023,Annual,Meets Expectations,Low,5.2,56
+100611,2024,Annual,Meets Expectations,Medium,6.1,50
+100611,2025,Annual,Meets Expectations,Medium,6.3,57
+100612,2022,Annual,Exceeds Expectations,Medium,8.3,72
+100612,2023,Annual,Meets Expectations,Medium,5.4,64
+100612,2024,Annual,Exceeds Expectations,Medium,7.1,83
+100612,2025,Annual,Meets Expectations,Low,5.2,53
+100613,2023,Annual,Meets Expectations,Medium,6.5,54
+100613,2024,Annual,Exceeds Expectations,High,7.4,82
+100613,2025,Annual,Exceeds Expectations,Medium,7.1,80
+100614,2022,Annual,Exceeds Expectations,Medium,7.5,81
+100614,2023,Annual,Exceeds Expectations,Medium,7.8,70
+100614,2024,Annual,Meets Expectations,Low,5.7,50
+100614,2025,Annual,Below Expectations,Medium,3.5,50
+100615,2022,Annual,Below Expectations,Low,3.6,42
+100615,2023,Annual,Below Expectations,Low,3.3,31
+100615,2024,Annual,Exceeds Expectations,High,8.2,83
+100615,2025,Annual,Meets Expectations,Low,5.2,61
+100616,2022,Annual,Meets Expectations,Low,5.6,65
+100616,2023,Annual,Exceeds Expectations,Medium,7.1,81
+100616,2024,Annual,Meets Expectations,Low,5.7,66
+100616,2025,Annual,Exceptional,High,9.3,99
+100617,2022,Annual,Meets Expectations,Medium,5.1,61
+100617,2023,Annual,Meets Expectations,Medium,5.4,60
+100617,2024,Annual,Meets Expectations,Medium,6.0,60
+100617,2025,Annual,Exceeds Expectations,Medium,7.5,73
+100619,2025,Annual,Exceeds Expectations,High,8.2,77
+100620,2022,Annual,Meets Expectations,Medium,6.9,70
+100620,2023,Annual,Meets Expectations,Medium,5.8,70
+100620,2024,Annual,Unsatisfactory,Low,1.3,27
+100620,2025,Annual,Meets Expectations,Medium,5.1,57
+100621,2022,Annual,Unsatisfactory,Low,2.3,5
+100621,2023,Annual,Meets Expectations,Medium,5.4,69
+100621,2024,Annual,Meets Expectations,Medium,6.9,58
+100621,2025,Annual,Meets Expectations,Low,6.0,54
+100622,2022,Annual,Exceeds Expectations,Medium,7.6,74
+100622,2023,Annual,Exceeds Expectations,Medium,8.2,76
+100622,2024,Annual,Meets Expectations,Medium,6.1,70
+100622,2025,Annual,Meets Expectations,Medium,6.7,52
+100623,2022,Annual,Meets Expectations,Medium,6.5,54
+100623,2023,Annual,Meets Expectations,Low,5.6,55
+100623,2024,Annual,Exceptional,High,9.3,93
+100623,2025,Annual,Meets Expectations,Medium,5.3,64
+100624,2022,Annual,Meets Expectations,Medium,6.5,65
+100624,2023,Annual,Meets Expectations,Medium,6.1,70
+100624,2024,Annual,Meets Expectations,Low,6.2,61
+100624,2025,Annual,Unsatisfactory,Low,1.8,18
+100625,2022,Annual,Meets Expectations,Medium,5.5,66
+100625,2023,Annual,Exceeds Expectations,Medium,7.6,77
+100625,2024,Annual,Meets Expectations,Medium,5.6,67
+100625,2025,Annual,Meets Expectations,Medium,6.7,56
+100626,2022,Annual,Meets Expectations,Low,6.9,68
+100627,2022,Annual,Exceeds Expectations,Medium,8.1,80
+100627,2023,Annual,Unsatisfactory,Low,0.6,28
+100627,2024,Annual,Unsatisfactory,Low,2.8,24
+100627,2025,Annual,Exceeds Expectations,Medium,7.6,85
+100628,2022,Annual,Meets Expectations,Medium,6.8,65
+100628,2023,Annual,Meets Expectations,Medium,5.3,65
+100628,2024,Annual,Exceeds Expectations,High,7.9,72
+100628,2025,Annual,Meets Expectations,Medium,5.4,62
+100629,2025,Annual,Below Expectations,Low,3.5,41
+100631,2025,Annual,Meets Expectations,Medium,6.4,50
+100632,2022,Annual,Unsatisfactory,Low,0.3,2
+100632,2023,Annual,Exceeds Expectations,Medium,8.0,77
+100632,2024,Annual,Meets Expectations,Medium,6.1,70
+100632,2025,Annual,Below Expectations,Medium,4.4,48
+100633,2022,Annual,Meets Expectations,Medium,5.9,63
+100633,2023,Annual,Below Expectations,Low,4.1,37
+100633,2024,Annual,Exceeds Expectations,Medium,7.8,76
+100633,2025,Annual,Meets Expectations,Low,6.4,69
+100634,2023,Annual,Meets Expectations,Low,5.9,54
+100634,2024,Annual,Meets Expectations,Low,6.0,51
+100634,2025,Annual,Below Expectations,Medium,3.8,44
+100635,2022,Annual,Below Expectations,Low,3.6,42
+100635,2023,Annual,Unsatisfactory,Low,2.2,25
+100635,2024,Annual,Exceptional,High,8.5,93
+100635,2025,Annual,Exceeds Expectations,High,7.1,80
+100636,2024,Annual,Meets Expectations,Medium,6.7,70
+100636,2025,Annual,Below Expectations,Low,4.5,30
+100637,2022,Annual,Meets Expectations,Medium,5.1,61
+100637,2023,Annual,Meets Expectations,Low,5.1,54
+100637,2024,Annual,Meets Expectations,Medium,5.4,55
+100637,2025,Annual,Meets Expectations,Medium,5.5,63
+100638,2022,Annual,Meets Expectations,Low,6.1,60
+100638,2023,Annual,Exceptional,Medium,8.7,96
+100638,2024,Annual,Meets Expectations,Low,5.9,59
+100638,2025,Annual,Meets Expectations,Medium,5.5,63
+100639,2022,Annual,Meets Expectations,Medium,5.8,67
+100639,2023,Annual,Exceeds Expectations,Medium,7.2,73
+100639,2024,Annual,Meets Expectations,Low,5.2,55
+100639,2025,Annual,Meets Expectations,Low,5.6,57
+100640,2022,Annual,Meets Expectations,Low,6.5,52
+100640,2023,Annual,Exceeds Expectations,Medium,7.2,70
+100640,2024,Annual,Meets Expectations,Medium,5.2,66
+100640,2025,Annual,Below Expectations,Low,3.2,45
+100641,2022,Annual,Meets Expectations,Low,6.4,55
+100641,2023,Annual,Meets Expectations,Medium,5.1,57
+100641,2024,Annual,Exceptional,High,9.2,85
+100641,2025,Annual,Exceptional,High,8.8,95
+100642,2025,Annual,Meets Expectations,Low,6.5,62
+100643,2022,Annual,Meets Expectations,Low,5.3,57
+100643,2023,Annual,Unsatisfactory,Low,1.9,15
+100643,2024,Annual,Unsatisfactory,Low,0.1,12
+100643,2025,Annual,Meets Expectations,Low,5.5,63
+100644,2022,Annual,Below Expectations,Medium,4.3,49
+100644,2023,Annual,Meets Expectations,Medium,6.6,51
+100644,2024,Annual,Meets Expectations,Low,5.4,50
+100644,2025,Annual,Meets Expectations,Medium,6.0,61
+100645,2022,Annual,Meets Expectations,Medium,6.6,68
+100645,2023,Annual,Meets Expectations,Low,7.0,58
+100645,2024,Annual,Exceptional,High,8.6,92
+100645,2025,Annual,Exceptional,High,9.0,92
+100646,2022,Annual,Below Expectations,Low,5.0,38
+100646,2023,Annual,Meets Expectations,Medium,7.0,64
+100646,2024,Annual,Unsatisfactory,Low,2.1,18
+100646,2025,Annual,Exceeds Expectations,High,8.3,77
+100647,2022,Annual,Exceeds Expectations,High,8.2,85
+100647,2023,Annual,Meets Expectations,Low,6.4,69
+100647,2024,Annual,Meets Expectations,Medium,5.4,65
+100647,2025,Annual,Unsatisfactory,Low,0.6,18
+100648,2023,Annual,Exceptional,High,8.9,86
+100648,2024,Annual,Exceeds Expectations,Medium,8.5,81
+100648,2025,Annual,Below Expectations,Low,3.8,30
+100649,2022,Annual,Meets Expectations,Medium,6.4,63
+100649,2023,Annual,Below Expectations,Low,3.5,42
+100649,2024,Annual,Meets Expectations,Low,6.6,61
+100649,2025,Annual,Meets Expectations,Low,5.3,56
+100650,2025,Annual,Below Expectations,Medium,3.2,44
+100651,2022,Annual,Below Expectations,Medium,4.1,38
+100651,2023,Annual,Exceeds Expectations,Medium,7.2,72
+100651,2024,Annual,Exceeds Expectations,Medium,8.3,71
+100651,2025,Annual,Below Expectations,Low,3.9,33
+100652,2022,Annual,Exceptional,High,9.0,98
+100652,2023,Annual,Exceeds Expectations,High,8.0,80
+100652,2024,Annual,Below Expectations,Medium,4.3,46
+100652,2025,Annual,Meets Expectations,Low,5.2,69
+100653,2022,Annual,Meets Expectations,Medium,5.1,60
+100653,2023,Annual,Meets Expectations,Medium,5.4,57
+100653,2024,Annual,Below Expectations,Low,3.9,42
+100653,2025,Annual,Meets Expectations,Low,5.5,53
+100654,2025,Annual,Exceeds Expectations,Medium,7.9,79
+100655,2022,Annual,Exceeds Expectations,Medium,8.1,80
+100655,2023,Annual,Below Expectations,Medium,4.9,48
+100655,2024,Annual,Unsatisfactory,Low,0.2,12
+100655,2025,Annual,Meets Expectations,Medium,5.9,63
+100656,2022,Annual,Meets Expectations,Low,6.0,66
+100656,2023,Annual,Exceptional,Medium,8.6,100
+100656,2024,Annual,Meets Expectations,Low,6.9,67
+100656,2025,Annual,Exceeds Expectations,Medium,7.3,75
+100657,2022,Annual,Meets Expectations,Medium,5.4,53
+100657,2023,Annual,Meets Expectations,Medium,6.9,56
+100657,2024,Annual,Exceptional,High,10.0,99
+100657,2025,Annual,Exceeds Expectations,Medium,8.5,82
+100658,2025,Annual,Exceeds Expectations,High,7.4,76
+100659,2022,Annual,Meets Expectations,Medium,5.2,54
+100659,2023,Annual,Meets Expectations,Medium,5.3,69
+100659,2024,Annual,Exceeds Expectations,Medium,8.2,80
+100659,2025,Annual,Meets Expectations,Low,5.2,65
+100660,2022,Annual,Below Expectations,Low,4.5,40
+100660,2023,Annual,Meets Expectations,Medium,5.3,55
+100660,2024,Annual,Exceeds Expectations,Medium,8.1,79
+100660,2025,Annual,Meets Expectations,Medium,6.1,54
+100661,2022,Annual,Exceeds Expectations,High,8.2,70
+100661,2023,Annual,Meets Expectations,Medium,6.8,60
+100661,2024,Annual,Meets Expectations,Medium,6.5,60
+100661,2025,Annual,Meets Expectations,Medium,5.2,51
+100662,2024,Annual,Below Expectations,Medium,3.4,39
+100662,2025,Annual,Meets Expectations,Medium,5.4,58
+100663,2023,Annual,Exceeds Expectations,Medium,7.6,83
+100663,2024,Annual,Exceeds Expectations,High,7.5,84
+100663,2025,Annual,Meets Expectations,Medium,5.5,70
+100664,2024,Annual,Below Expectations,Medium,3.3,33
+100664,2025,Annual,Meets Expectations,Medium,6.9,68
+100665,2022,Annual,Exceptional,Medium,9.7,98
+100665,2023,Annual,Exceeds Expectations,Medium,8.0,75
+100665,2024,Annual,Meets Expectations,Medium,5.3,60
+100665,2025,Annual,Exceeds Expectations,High,8.1,81
+100666,2022,Annual,Exceeds Expectations,Medium,8.2,85
+100666,2023,Annual,Exceptional,High,10.0,96
+100666,2024,Annual,Exceeds Expectations,Medium,7.1,78
+100666,2025,Annual,Meets Expectations,Low,6.1,60
+100667,2024,Annual,Meets Expectations,Medium,5.4,51
+100667,2025,Annual,Meets Expectations,Medium,5.0,64
+100668,2022,Annual,Below Expectations,Medium,4.5,34
+100668,2023,Annual,Exceeds Expectations,High,8.1,71
+100668,2024,Annual,Meets Expectations,Low,5.8,50
+100668,2025,Annual,Unsatisfactory,Low,2.1,5
+100669,2024,Annual,Below Expectations,Low,3.2,34
+100669,2025,Annual,Exceptional,High,9.0,87
+100670,2022,Annual,Exceeds Expectations,Medium,7.0,73
+100670,2023,Annual,Meets Expectations,Low,6.5,54
+100670,2024,Annual,Exceeds Expectations,Medium,7.7,82
+100670,2025,Annual,Exceptional,Medium,9.7,97
+100671,2022,Annual,Exceeds Expectations,High,7.3,70
+100671,2023,Annual,Meets Expectations,Low,6.1,57
+100671,2024,Annual,Exceeds Expectations,High,8.1,82
+100671,2025,Annual,Meets Expectations,Medium,6.8,69
+100672,2022,Annual,Meets Expectations,Medium,5.7,66
+100672,2023,Annual,Meets Expectations,Low,5.5,50
+100672,2024,Annual,Meets Expectations,Low,6.4,54
+100672,2025,Annual,Unsatisfactory,Low,3.0,1
+100673,2023,Annual,Exceeds Expectations,Medium,7.8,79
+100673,2024,Annual,Below Expectations,Low,3.6,37
+100673,2025,Annual,Meets Expectations,Medium,6.8,58
+100674,2022,Annual,Meets Expectations,Low,5.5,69
+100674,2023,Annual,Below Expectations,Low,3.1,30
+100674,2024,Annual,Meets Expectations,Low,6.4,62
+100674,2025,Annual,Meets Expectations,Low,7.0,56
+100675,2022,Annual,Exceeds Expectations,Medium,7.2,72
+100675,2023,Annual,Exceptional,High,9.7,94
+100675,2024,Annual,Exceptional,High,8.8,98
+100675,2025,Annual,Meets Expectations,Medium,6.2,56
+100676,2022,Annual,Meets Expectations,Medium,5.0,60
+100676,2023,Annual,Meets Expectations,Medium,6.8,59
+100676,2024,Annual,Meets Expectations,Low,6.6,67
+100676,2025,Annual,Exceeds Expectations,High,7.5,81
+100678,2022,Annual,Meets Expectations,Low,5.6,52
+100678,2023,Annual,Exceeds Expectations,Medium,8.5,85
+100678,2024,Annual,Below Expectations,Low,4.5,48
+100678,2025,Annual,Meets Expectations,Medium,6.5,60
+100679,2024,Annual,Meets Expectations,Medium,6.8,57
+100679,2025,Annual,Unsatisfactory,Low,0.3,17
+100680,2023,Annual,Exceptional,High,8.7,88
+100680,2024,Annual,Exceeds Expectations,Medium,8.2,81
+100680,2025,Annual,Exceeds Expectations,Medium,7.6,74
+100681,2022,Annual,Exceptional,Medium,9.9,94
+100681,2023,Annual,Below Expectations,Medium,3.8,44
+100681,2024,Annual,Below Expectations,Low,3.4,45
+100681,2025,Annual,Exceptional,High,8.9,86
+100682,2022,Annual,Meets Expectations,Low,5.3,50
+100682,2023,Annual,Unsatisfactory,Low,0.3,5
+100682,2024,Annual,Below Expectations,Medium,4.7,50
+100682,2025,Annual,Meets Expectations,Low,6.8,62
+100683,2022,Annual,Below Expectations,Low,4.3,40
+100683,2023,Annual,Exceptional,Medium,9.1,92
+100683,2024,Annual,Below Expectations,Medium,3.4,44
+100683,2025,Annual,Below Expectations,Low,3.4,35
+100684,2022,Annual,Exceeds Expectations,High,8.1,81
+100684,2023,Annual,Exceptional,High,9.4,85
+100684,2024,Annual,Meets Expectations,Medium,5.2,59
+100684,2025,Annual,Meets Expectations,Medium,5.1,57
+100685,2022,Annual,Meets Expectations,Medium,6.5,63
+100685,2023,Annual,Meets Expectations,Medium,5.2,64
+100685,2024,Annual,Exceptional,Medium,8.6,95
+100685,2025,Annual,Meets Expectations,Low,5.2,59
+100686,2025,Annual,Exceeds Expectations,Medium,7.7,77
+100687,2023,Annual,Meets Expectations,Medium,6.6,69
+100687,2024,Annual,Exceeds Expectations,Medium,8.2,83
+100687,2025,Annual,Below Expectations,Low,3.3,47
+100688,2022,Annual,Below Expectations,Medium,4.8,45
+100688,2023,Annual,Meets Expectations,Medium,6.0,51
+100688,2024,Annual,Exceeds Expectations,Medium,8.4,72
+100688,2025,Annual,Unsatisfactory,Low,0.1,28
+100689,2022,Annual,Exceeds Expectations,High,8.5,82
+100689,2023,Annual,Meets Expectations,Medium,6.0,62
+100689,2024,Annual,Exceeds Expectations,Medium,7.1,80
+100689,2025,Annual,Meets Expectations,Medium,6.4,56
+100690,2022,Annual,Below Expectations,Low,4.1,32
+100690,2023,Annual,Below Expectations,Low,4.4,31
+100690,2024,Annual,Exceeds Expectations,Medium,7.8,78
+100690,2025,Annual,Exceeds Expectations,Medium,7.6,85
+100691,2022,Annual,Below Expectations,Medium,4.1,34
+100691,2023,Annual,Meets Expectations,Medium,6.4,70
+100691,2024,Annual,Meets Expectations,Medium,5.9,65
+100691,2025,Annual,Exceeds Expectations,Medium,8.1,80
+100692,2022,Annual,Meets Expectations,Medium,5.7,52
+100692,2023,Annual,Meets Expectations,Medium,6.2,61
+100693,2022,Annual,Exceeds Expectations,Medium,8.2,77
+100693,2023,Annual,Exceptional,High,8.6,93
+100693,2024,Annual,Exceeds Expectations,High,7.6,81
+100693,2025,Annual,Below Expectations,Low,3.7,39
+100695,2022,Annual,Exceptional,High,9.6,98
+100695,2023,Annual,Meets Expectations,Medium,6.9,53
+100695,2024,Annual,Exceeds Expectations,Medium,8.2,75
+100695,2025,Annual,Meets Expectations,Low,6.5,70
+100697,2022,Annual,Meets Expectations,Medium,6.7,50
+100697,2023,Annual,Below Expectations,Medium,3.9,45
+100697,2024,Annual,Meets Expectations,Medium,6.9,51
+100697,2025,Annual,Meets Expectations,Medium,5.7,68
+100698,2022,Annual,Meets Expectations,Medium,5.6,66
+100698,2023,Annual,Below Expectations,Low,3.4,41
+100698,2024,Annual,Exceeds Expectations,High,7.0,70
+100698,2025,Annual,Exceptional,High,9.0,95
+100699,2025,Annual,Below Expectations,Low,4.0,34
+100700,2025,Annual,Exceeds Expectations,Medium,7.1,74
+100701,2023,Annual,Meets Expectations,Medium,7.0,52
+100701,2024,Annual,Exceptional,High,9.1,88
+100701,2025,Annual,Meets Expectations,Medium,5.2,69
+100702,2023,Annual,Below Expectations,Low,3.5,38
+100702,2024,Annual,Meets Expectations,Medium,6.4,69
+100702,2025,Annual,Exceeds Expectations,High,8.4,76
+100703,2022,Annual,Meets Expectations,Medium,5.5,66
+100703,2023,Annual,Meets Expectations,Medium,6.7,66
+100703,2024,Annual,Exceeds Expectations,Medium,8.3,78
+100703,2025,Annual,Below Expectations,Medium,3.7,32
+100704,2022,Annual,Meets Expectations,Low,5.8,54
+100704,2023,Annual,Exceeds Expectations,Medium,8.5,85
+100704,2024,Annual,Unsatisfactory,Low,2.8,28
+100704,2025,Annual,Meets Expectations,Medium,7.0,53
+100705,2022,Annual,Meets Expectations,Medium,5.5,64
+100705,2023,Annual,Meets Expectations,Medium,5.7,61
+100705,2024,Annual,Exceptional,Medium,9.0,96
+100705,2025,Annual,Below Expectations,Low,4.5,40
+100706,2022,Annual,Meets Expectations,Low,6.7,50
+100706,2023,Annual,Exceeds Expectations,Medium,7.2,74
+100706,2024,Annual,Exceptional,High,9.4,97
+100706,2025,Annual,Exceeds Expectations,Medium,7.3,82
+100707,2025,Annual,Below Expectations,Low,3.6,49
+100708,2022,Annual,Exceeds Expectations,Medium,7.4,84
+100708,2023,Annual,Exceeds Expectations,Medium,8.4,84
+100708,2024,Annual,Meets Expectations,Medium,5.1,70
+100708,2025,Annual,Below Expectations,Low,4.7,38
+100710,2024,Annual,Meets Expectations,Low,6.4,55
+100711,2022,Annual,Unsatisfactory,Low,1.0,21
+100711,2023,Annual,Below Expectations,Low,4.9,50
+100711,2024,Annual,Meets Expectations,Low,5.1,52
+100711,2025,Annual,Unsatisfactory,Low,2.7,11
+100712,2022,Annual,Meets Expectations,Medium,5.6,67
+100712,2023,Annual,Meets Expectations,Low,5.0,52
+100712,2024,Annual,Meets Expectations,Medium,6.8,50
+100712,2025,Annual,Meets Expectations,Medium,5.2,54
+100713,2024,Annual,Meets Expectations,Medium,6.3,53
+100713,2025,Annual,Meets Expectations,Medium,6.9,59
+100714,2022,Annual,Meets Expectations,Medium,5.3,70
+100714,2023,Annual,Meets Expectations,Medium,6.5,69
+100714,2024,Annual,Exceptional,High,9.6,90
+100714,2025,Annual,Exceeds Expectations,High,8.2,70
+100715,2022,Annual,Meets Expectations,Medium,5.2,51
+100715,2023,Annual,Exceptional,High,8.8,98
+100715,2024,Annual,Meets Expectations,Medium,5.1,51
+100715,2025,Annual,Exceeds Expectations,Medium,8.3,85
+100716,2022,Annual,Meets Expectations,Medium,6.9,68
+100716,2023,Annual,Meets Expectations,Medium,5.2,55
+100716,2024,Annual,Meets Expectations,Medium,5.6,56
+100716,2025,Annual,Meets Expectations,Medium,6.1,65
+100717,2022,Annual,Exceeds Expectations,Medium,7.2,79
+100717,2023,Annual,Meets Expectations,Medium,6.5,63
+100717,2024,Annual,Exceptional,High,10.0,92
+100717,2025,Annual,Meets Expectations,Low,5.4,53
+100719,2022,Annual,Meets Expectations,Low,6.6,60
+100719,2023,Annual,Below Expectations,Low,3.6,35
+100719,2024,Annual,Meets Expectations,Low,6.0,52
+100719,2025,Annual,Below Expectations,Medium,4.7,43
+100720,2024,Annual,Meets Expectations,Medium,5.6,63
+100720,2025,Annual,Meets Expectations,Medium,5.6,56
+100721,2025,Annual,Exceptional,High,9.4,89
+100722,2024,Annual,Below Expectations,Low,3.0,40
+100722,2025,Annual,Meets Expectations,Medium,5.9,59
+100723,2022,Annual,Meets Expectations,Medium,6.8,59
+100723,2023,Annual,Exceeds Expectations,Medium,7.2,78
+100723,2024,Annual,Exceeds Expectations,Medium,8.2,80
+100723,2025,Annual,Exceptional,Medium,8.5,85
+100724,2024,Annual,Meets Expectations,Medium,5.0,50
+100724,2025,Annual,Meets Expectations,Medium,6.1,60
+100725,2022,Annual,Meets Expectations,Medium,6.2,67
+100725,2023,Annual,Meets Expectations,Medium,6.6,58
+100725,2024,Annual,Exceeds Expectations,Medium,7.8,76
+100725,2025,Annual,Meets Expectations,Low,5.7,61
+100726,2022,Annual,Below Expectations,Medium,4.0,39
+100726,2023,Annual,Unsatisfactory,Low,0.3,8
+100726,2024,Annual,Below Expectations,Low,3.1,38
+100726,2025,Annual,Exceeds Expectations,Medium,7.9,75
+100727,2022,Annual,Below Expectations,Medium,3.8,43
+100727,2023,Annual,Below Expectations,Medium,3.7,31
+100727,2024,Annual,Meets Expectations,Medium,6.4,68
+100727,2025,Annual,Unsatisfactory,Low,3.0,20
+100728,2022,Annual,Meets Expectations,Medium,5.5,70
+100728,2023,Annual,Below Expectations,Low,4.0,33
+100728,2024,Annual,Meets Expectations,Medium,6.8,57
+100728,2025,Annual,Exceptional,High,8.8,99
+100729,2022,Annual,Below Expectations,Low,4.0,39
+100729,2023,Annual,Exceeds Expectations,Medium,7.5,76
+100729,2024,Annual,Exceeds Expectations,Medium,7.9,76
+100729,2025,Annual,Exceeds Expectations,Medium,7.3,76
+100730,2022,Annual,Meets Expectations,Medium,5.9,67
+100730,2023,Annual,Meets Expectations,Low,6.1,53
+100730,2024,Annual,Below Expectations,Low,4.4,36
+100730,2025,Annual,Meets Expectations,Medium,6.1,62
+100731,2022,Annual,Exceptional,High,9.4,98
+100731,2023,Annual,Meets Expectations,Medium,6.4,57
+100731,2024,Annual,Below Expectations,Low,4.1,34
+100731,2025,Annual,Meets Expectations,Medium,6.9,70
+100732,2022,Annual,Unsatisfactory,Low,2.7,30
+100732,2023,Annual,Unsatisfactory,Low,1.0,25
+100732,2024,Annual,Meets Expectations,Medium,5.3,54
+100732,2025,Annual,Below Expectations,Medium,3.9,31
+100733,2022,Annual,Exceeds Expectations,Medium,7.1,83
+100733,2023,Annual,Below Expectations,Low,4.6,45
+100733,2024,Annual,Exceeds Expectations,Medium,7.2,70
+100733,2025,Annual,Meets Expectations,Low,6.0,66
+100734,2024,Annual,Exceeds Expectations,High,7.4,74
+100734,2025,Annual,Meets Expectations,Low,6.3,55
+100735,2022,Annual,Meets Expectations,Medium,6.0,52
+100735,2023,Annual,Exceeds Expectations,Medium,8.0,75
+100735,2024,Annual,Unsatisfactory,Low,2.5,10
+100735,2025,Annual,Meets Expectations,Medium,6.6,63
+100736,2022,Annual,Exceptional,High,9.3,92
+100736,2023,Annual,Unsatisfactory,Low,1.1,17
+100736,2024,Annual,Meets Expectations,Medium,6.0,65
+100736,2025,Annual,Exceeds Expectations,Medium,7.4,83
+100737,2022,Annual,Exceeds Expectations,Medium,7.4,75
+100737,2023,Annual,Exceeds Expectations,Medium,7.9,83
+100737,2024,Annual,Exceeds Expectations,High,8.0,75
+100737,2025,Annual,Exceptional,Medium,9.8,89
+100738,2022,Annual,Meets Expectations,Medium,5.6,66
+100738,2023,Annual,Meets Expectations,Medium,5.3,66
+100738,2024,Annual,Meets Expectations,Medium,5.5,62
+100738,2025,Annual,Below Expectations,Medium,3.3,49
+100739,2022,Annual,Exceeds Expectations,High,7.9,80
+100739,2023,Annual,Meets Expectations,Low,6.4,62
+100739,2024,Annual,Meets Expectations,Medium,5.5,58
+100739,2025,Annual,Exceeds Expectations,Medium,8.2,83
+100740,2023,Annual,Below Expectations,Low,3.4,45
+100740,2024,Annual,Meets Expectations,Medium,5.6,63
+100740,2025,Annual,Meets Expectations,Low,5.7,68
+100741,2023,Annual,Meets Expectations,Medium,6.7,54
+100741,2024,Annual,Unsatisfactory,Low,0.9,13
+100741,2025,Annual,Meets Expectations,Medium,6.1,52
+100742,2025,Annual,Meets Expectations,Low,6.4,63
+100744,2022,Annual,Meets Expectations,Low,6.1,66
+100744,2023,Annual,Exceeds Expectations,Medium,7.1,75
+100744,2024,Annual,Below Expectations,Low,3.5,47
+100744,2025,Annual,Exceeds Expectations,Medium,8.0,74
+100745,2025,Annual,Exceeds Expectations,High,8.5,77
+100746,2022,Annual,Unsatisfactory,Low,1.8,19
+100746,2023,Annual,Exceptional,Medium,10.0,97
+100746,2024,Annual,Meets Expectations,Low,6.0,63
+100746,2025,Annual,Meets Expectations,Low,5.9,69
+100747,2022,Annual,Meets Expectations,Low,5.3,64
+100747,2023,Annual,Meets Expectations,Medium,7.0,70
+100748,2022,Annual,Exceeds Expectations,High,8.0,73
+100748,2023,Annual,Unsatisfactory,Low,0.0,6
+100748,2024,Annual,Meets Expectations,Low,6.8,60
+100748,2025,Annual,Meets Expectations,Low,5.8,61
+100749,2024,Annual,Unsatisfactory,Low,2.6,3
+100749,2025,Annual,Exceeds Expectations,High,7.1,71
+100750,2022,Annual,Meets Expectations,Low,6.4,65
+100750,2023,Annual,Below Expectations,Medium,4.2,39
+100750,2024,Annual,Meets Expectations,Medium,6.9,51
+100750,2025,Annual,Unsatisfactory,Low,1.0,0
+100751,2022,Annual,Below Expectations,Medium,4.0,41
+100751,2023,Annual,Meets Expectations,Low,6.7,52
+100751,2024,Annual,Meets Expectations,Low,6.3,65
+100751,2025,Annual,Exceeds Expectations,Medium,7.4,75
+100752,2022,Annual,Meets Expectations,Medium,6.2,51
+100752,2023,Annual,Below Expectations,Low,4.2,37
+100752,2024,Annual,Meets Expectations,Medium,7.0,62
+100752,2025,Annual,Exceeds Expectations,High,7.8,72
+100753,2022,Annual,Exceeds Expectations,High,7.7,85
+100753,2023,Annual,Exceeds Expectations,Medium,7.2,79
+100753,2024,Annual,Meets Expectations,Medium,6.3,66
+100753,2025,Annual,Meets Expectations,Low,5.5,53
+100754,2022,Annual,Exceeds Expectations,Medium,8.0,73
+100754,2023,Annual,Exceeds Expectations,Medium,7.8,76
+100754,2024,Annual,Meets Expectations,Low,6.6,63
+100754,2025,Annual,Exceeds Expectations,Medium,7.1,72
+100755,2024,Annual,Exceptional,Medium,9.3,85
+100755,2025,Annual,Meets Expectations,Low,5.9,67
+100756,2022,Annual,Below Expectations,Low,3.6,45
+100756,2023,Annual,Exceeds Expectations,Medium,8.2,72
+100756,2024,Annual,Meets Expectations,Medium,6.4,55
+100756,2025,Annual,Exceeds Expectations,Medium,8.0,80
+100757,2022,Annual,Exceeds Expectations,Medium,8.0,84
+100757,2023,Annual,Meets Expectations,Low,6.3,51
+100757,2024,Annual,Unsatisfactory,Low,1.7,7
+100757,2025,Annual,Exceeds Expectations,Medium,8.1,73
+100758,2022,Annual,Meets Expectations,Low,6.1,65
+100758,2023,Annual,Meets Expectations,Medium,5.9,60
+100758,2024,Annual,Below Expectations,Low,4.5,37
+100759,2024,Annual,Meets Expectations,Medium,6.0,67
+100759,2025,Annual,Meets Expectations,Medium,5.0,57
+100760,2022,Annual,Below Expectations,Low,4.7,42
+100760,2023,Annual,Below Expectations,Low,4.9,32
+100760,2024,Annual,Exceeds Expectations,Medium,8.2,79
+100760,2025,Annual,Meets Expectations,Medium,6.4,57
+100761,2024,Annual,Meets Expectations,Medium,5.5,67
+100761,2025,Annual,Below Expectations,Medium,4.5,49
+100762,2022,Annual,Meets Expectations,Medium,5.6,51
+100762,2023,Annual,Meets Expectations,Medium,6.2,55
+100762,2024,Annual,Exceeds Expectations,Medium,7.8,71
+100762,2025,Annual,Below Expectations,Low,4.4,45
+100763,2022,Annual,Meets Expectations,Medium,5.4,56
+100763,2023,Annual,Meets Expectations,Medium,6.1,68
+100763,2024,Annual,Meets Expectations,Low,5.4,67
+100763,2025,Annual,Exceptional,High,9.8,93
+100764,2022,Annual,Below Expectations,Low,3.8,42
+100764,2023,Annual,Unsatisfactory,Low,1.9,17
+100764,2024,Annual,Meets Expectations,Medium,5.9,53
+100764,2025,Annual,Below Expectations,Low,3.6,46
+100765,2022,Annual,Exceeds Expectations,Medium,7.5,75
+100765,2023,Annual,Meets Expectations,Low,6.8,52
+100765,2024,Annual,Exceeds Expectations,Medium,7.3,80
+100765,2025,Annual,Below Expectations,Low,3.9,36
+100766,2022,Annual,Exceeds Expectations,High,8.3,79
+100766,2023,Annual,Meets Expectations,Medium,5.1,65
+100766,2024,Annual,Meets Expectations,Medium,5.2,61
+100766,2025,Annual,Meets Expectations,Low,5.7,70
+100767,2022,Annual,Meets Expectations,Medium,6.0,61
+100767,2023,Annual,Exceeds Expectations,High,8.3,71
+100767,2024,Annual,Meets Expectations,Medium,6.6,66
+100767,2025,Annual,Unsatisfactory,Low,0.2,30
+100768,2022,Annual,Unsatisfactory,Low,0.7,15
+100770,2022,Annual,Exceeds Expectations,Medium,7.6,85
+100770,2023,Annual,Unsatisfactory,Low,1.7,19
+100770,2024,Annual,Exceeds Expectations,Medium,7.6,83
+100770,2025,Annual,Below Expectations,Low,4.2,41
+100771,2022,Annual,Meets Expectations,Low,6.0,56
+100771,2023,Annual,Meets Expectations,Medium,5.9,61
+100771,2024,Annual,Meets Expectations,Low,5.5,58
+100771,2025,Annual,Below Expectations,Low,4.5,40
+100772,2023,Annual,Exceeds Expectations,Medium,7.4,70
+100772,2024,Annual,Below Expectations,Medium,4.7,37
+100773,2022,Annual,Exceeds Expectations,Medium,7.2,78
+100773,2023,Annual,Meets Expectations,Medium,5.4,65
+100773,2024,Annual,Meets Expectations,Medium,5.0,57
+100773,2025,Annual,Meets Expectations,Medium,5.2,61
+100774,2022,Annual,Below Expectations,Medium,3.9,48
+100774,2023,Annual,Below Expectations,Low,3.8,41
+100774,2024,Annual,Exceeds Expectations,High,7.7,70
+100774,2025,Annual,Exceptional,Medium,8.7,99
+100775,2023,Annual,Below Expectations,Medium,3.0,31
+100775,2024,Annual,Meets Expectations,Medium,5.5,68
+100775,2025,Annual,Exceeds Expectations,Medium,7.9,72
+100776,2025,Annual,Exceeds Expectations,High,8.2,85
+100777,2023,Annual,Meets Expectations,Low,5.1,58
+100777,2024,Annual,Exceeds Expectations,Medium,7.3,85
+100777,2025,Annual,Exceeds Expectations,High,7.5,85
+100778,2022,Annual,Meets Expectations,Medium,6.0,54
+100778,2023,Annual,Unsatisfactory,Low,2.5,2
+100778,2024,Annual,Exceptional,High,8.6,100
+100778,2025,Annual,Meets Expectations,Medium,6.9,58
+100780,2025,Annual,Exceeds Expectations,High,7.9,81
+100781,2022,Annual,Meets Expectations,Low,5.4,56
+100781,2023,Annual,Exceeds Expectations,High,8.1,77
+100781,2024,Annual,Below Expectations,Low,3.6,44
+100781,2025,Annual,Below Expectations,Low,3.8,44
+100782,2022,Annual,Exceptional,Medium,9.6,97
+100782,2023,Annual,Below Expectations,Low,3.6,34
+100782,2024,Annual,Meets Expectations,Low,6.8,65
+100782,2025,Annual,Exceeds Expectations,High,7.2,81
+100783,2022,Annual,Exceeds Expectations,Medium,7.1,82
+100783,2023,Annual,Below Expectations,Low,4.2,32
+100783,2024,Annual,Exceptional,High,8.7,91
+100783,2025,Annual,Meets Expectations,Medium,5.5,70
+100784,2025,Annual,Exceeds Expectations,High,7.7,75
+100785,2022,Annual,Exceeds Expectations,Medium,8.2,72
+100785,2023,Annual,Meets Expectations,Medium,5.8,53
+100785,2024,Annual,Meets Expectations,Medium,5.1,57
+100785,2025,Annual,Meets Expectations,Low,6.9,58
+100786,2022,Annual,Exceptional,High,8.8,95
+100786,2023,Annual,Exceeds Expectations,Medium,7.6,70
+100786,2024,Annual,Exceeds Expectations,Medium,7.2,71
+100787,2022,Annual,Below Expectations,Low,5.0,36
+100787,2023,Annual,Unsatisfactory,Low,0.6,11
+100787,2024,Annual,Exceeds Expectations,Medium,7.3,79
+100787,2025,Annual,Meets Expectations,Low,6.3,62
+100788,2022,Annual,Exceeds Expectations,Medium,7.9,70
+100788,2023,Annual,Exceptional,Medium,9.3,91
+100788,2024,Annual,Meets Expectations,Medium,6.7,53
+100788,2025,Annual,Unsatisfactory,Low,2.7,20
+100790,2022,Annual,Below Expectations,Low,4.1,48
+100790,2023,Annual,Below Expectations,Low,3.3,50
+100790,2024,Annual,Meets Expectations,Low,6.5,53
+100790,2025,Annual,Meets Expectations,Medium,5.9,62
+100791,2022,Annual,Exceeds Expectations,Medium,7.3,83
+100791,2023,Annual,Exceptional,Medium,9.4,99
+100792,2023,Annual,Below Expectations,Low,4.4,36
+100792,2024,Annual,Meets Expectations,Low,5.5,69
+100792,2025,Annual,Meets Expectations,Low,5.3,65
+100793,2022,Annual,Exceeds Expectations,High,7.1,81
+100793,2023,Annual,Exceptional,Medium,9.2,97
+100793,2024,Annual,Meets Expectations,Medium,5.1,66
+100793,2025,Annual,Exceeds Expectations,Medium,8.5,81
+100794,2022,Annual,Meets Expectations,Medium,5.2,59
+100794,2023,Annual,Meets Expectations,Medium,5.1,58
+100794,2024,Annual,Meets Expectations,Medium,6.1,50
+100794,2025,Annual,Exceeds Expectations,High,7.8,80
+100795,2022,Annual,Meets Expectations,Medium,6.5,63
+100795,2023,Annual,Meets Expectations,Medium,5.3,51
+100795,2024,Annual,Meets Expectations,Low,5.9,62
+100795,2025,Annual,Meets Expectations,Medium,6.3,52
+100796,2024,Annual,Exceptional,Medium,8.7,100
+100796,2025,Annual,Exceeds Expectations,Medium,8.4,73
+100797,2022,Annual,Meets Expectations,Medium,5.5,55
+100797,2023,Annual,Exceeds Expectations,Medium,8.1,78
+100797,2024,Annual,Meets Expectations,Medium,6.5,57
+100797,2025,Annual,Meets Expectations,Low,5.5,55
+100798,2025,Annual,Below Expectations,Low,3.0,49
+100799,2025,Annual,Meets Expectations,Medium,5.7,60
+100800,2022,Annual,Meets Expectations,Medium,5.4,70
+100800,2023,Annual,Exceeds Expectations,Medium,8.2,85
+100800,2024,Annual,Meets Expectations,Low,6.1,56
+100800,2025,Annual,Meets Expectations,Low,5.1,61
+100801,2022,Annual,Meets Expectations,Low,5.8,67
+100801,2023,Annual,Meets Expectations,Low,6.7,68
+100801,2024,Annual,Meets Expectations,Medium,5.8,60
+100801,2025,Annual,Meets Expectations,Low,5.9,57
+100802,2022,Annual,Meets Expectations,Medium,6.3,69
+100802,2023,Annual,Meets Expectations,Medium,6.5,53
+100802,2024,Annual,Exceeds Expectations,Medium,7.9,73
+100802,2025,Annual,Exceeds Expectations,High,7.8,84
+100803,2023,Annual,Exceptional,High,9.7,95
+100803,2024,Annual,Exceeds Expectations,Medium,8.4,71
+100803,2025,Annual,Meets Expectations,Medium,5.5,67
+100804,2024,Annual,Below Expectations,Medium,4.9,35
+100804,2025,Annual,Below Expectations,Low,4.0,50
+100805,2024,Annual,Meets Expectations,Medium,5.1,63
+100805,2025,Annual,Meets Expectations,Medium,5.4,51
+100806,2022,Annual,Exceptional,High,9.9,98
+100806,2023,Annual,Exceeds Expectations,High,8.5,83
+100806,2024,Annual,Meets Expectations,Medium,5.2,68
+100806,2025,Annual,Exceeds Expectations,Medium,8.3,78
+100807,2022,Annual,Meets Expectations,Low,5.6,51
+100807,2023,Annual,Meets Expectations,Low,5.1,61
+100807,2024,Annual,Meets Expectations,Low,5.5,61
+100807,2025,Annual,Meets Expectations,Medium,5.1,50
+100808,2022,Annual,Exceptional,High,8.9,86
+100808,2023,Annual,Below Expectations,Medium,4.3,41
+100808,2024,Annual,Exceeds Expectations,Medium,8.4,80
+100808,2025,Annual,Meets Expectations,Medium,6.6,67
+100809,2022,Annual,Meets Expectations,Low,5.0,64
+100809,2023,Annual,Meets Expectations,Medium,5.9,62
+100809,2024,Annual,Meets Expectations,Medium,6.4,51
+100809,2025,Annual,Meets Expectations,Medium,6.3,56
+100810,2024,Annual,Exceeds Expectations,High,7.3,85
+100810,2025,Annual,Meets Expectations,Low,6.9,59
+100811,2022,Annual,Meets Expectations,Medium,5.2,69
+100811,2023,Annual,Meets Expectations,Medium,5.9,56
+100811,2024,Annual,Meets Expectations,Medium,5.7,60
+100811,2025,Annual,Meets Expectations,Medium,5.6,53
+100812,2022,Annual,Meets Expectations,Medium,5.4,59
+100812,2023,Annual,Meets Expectations,Medium,5.0,56
+100812,2024,Annual,Meets Expectations,Low,5.8,68
+100812,2025,Annual,Meets Expectations,Medium,5.5,66
+100813,2022,Annual,Meets Expectations,Medium,6.1,69
+100813,2023,Annual,Exceptional,High,9.3,91
+100813,2024,Annual,Meets Expectations,Low,5.0,65
+100813,2025,Annual,Meets Expectations,Low,6.1,70
+100814,2022,Annual,Meets Expectations,Medium,6.3,63
+100814,2023,Annual,Exceeds Expectations,Medium,7.2,71
+100814,2024,Annual,Meets Expectations,Low,7.0,68
+100814,2025,Annual,Exceeds Expectations,High,7.9,73
+100815,2022,Annual,Meets Expectations,Low,6.5,68
+100815,2023,Annual,Meets Expectations,Medium,6.2,64
+100816,2025,Annual,Exceeds Expectations,Medium,7.6,85
+100817,2022,Annual,Exceeds Expectations,Medium,7.6,77
+100817,2023,Annual,Below Expectations,Low,4.9,49
+100817,2024,Annual,Meets Expectations,Low,6.2,68
+100817,2025,Annual,Below Expectations,Low,4.1,45
+100818,2022,Annual,Exceeds Expectations,Medium,7.1,84
+100818,2023,Annual,Meets Expectations,Medium,6.4,63
+100818,2024,Annual,Exceeds Expectations,Medium,7.9,74
+100818,2025,Annual,Meets Expectations,Medium,6.9,52
+100820,2022,Annual,Unsatisfactory,Low,0.1,1
+100820,2023,Annual,Meets Expectations,Medium,6.8,70
+100820,2024,Annual,Meets Expectations,Low,6.2,55
+100820,2025,Annual,Below Expectations,Medium,3.7,39
+100821,2022,Annual,Meets Expectations,Medium,7.0,55
+100821,2023,Annual,Meets Expectations,Medium,6.9,70
+100821,2024,Annual,Below Expectations,Low,4.1,47
+100821,2025,Annual,Meets Expectations,Medium,5.6,68
+100822,2022,Annual,Exceeds Expectations,Medium,7.8,75
+100822,2023,Annual,Meets Expectations,Medium,5.6,52
+100822,2024,Annual,Unsatisfactory,Low,1.4,27
+100822,2025,Annual,Exceeds Expectations,Medium,7.0,78
+100823,2022,Annual,Meets Expectations,Medium,6.3,58
+100823,2023,Annual,Meets Expectations,Medium,6.7,56
+100823,2024,Annual,Meets Expectations,Medium,5.6,57
+100823,2025,Annual,Meets Expectations,Low,5.7,66
+100824,2022,Annual,Meets Expectations,Low,6.4,53
+100824,2023,Annual,Exceptional,Medium,9.1,98
+100824,2024,Annual,Meets Expectations,Medium,6.7,53
+100824,2025,Annual,Meets Expectations,Low,5.6,59
+100825,2024,Annual,Meets Expectations,Low,5.7,63
+100825,2025,Annual,Exceeds Expectations,Medium,8.0,79
+100826,2023,Annual,Meets Expectations,Medium,5.7,70
+100826,2024,Annual,Exceeds Expectations,High,8.2,70
+100826,2025,Annual,Meets Expectations,Low,6.6,61
+100827,2024,Annual,Below Expectations,Low,4.8,41
+100827,2025,Annual,Exceptional,High,10.0,94
+100828,2022,Annual,Meets Expectations,Medium,5.6,62
+100828,2023,Annual,Exceeds Expectations,High,7.5,77
+100828,2024,Annual,Exceeds Expectations,Medium,8.4,76
+100828,2025,Annual,Meets Expectations,Medium,5.2,66
+100829,2022,Annual,Exceeds Expectations,Medium,7.4,85
+100829,2023,Annual,Exceeds Expectations,Medium,8.0,72
+100829,2024,Annual,Exceeds Expectations,Medium,7.7,82
+100829,2025,Annual,Below Expectations,Medium,4.9,40
+100830,2023,Annual,Meets Expectations,Medium,5.3,66
+100830,2024,Annual,Meets Expectations,Medium,6.5,63
+100830,2025,Annual,Exceeds Expectations,Medium,7.1,78
+100831,2022,Annual,Exceeds Expectations,Medium,8.4,81
+100831,2023,Annual,Meets Expectations,Medium,6.0,54
+100831,2024,Annual,Meets Expectations,Low,6.7,66
+100831,2025,Annual,Below Expectations,Low,5.0,40
+100832,2022,Annual,Below Expectations,Medium,3.4,44
+100832,2023,Annual,Below Expectations,Medium,3.7,31
+100832,2024,Annual,Meets Expectations,Medium,6.7,66
+100832,2025,Annual,Meets Expectations,Medium,6.7,63
+100833,2023,Annual,Meets Expectations,Medium,6.0,68
+100833,2024,Annual,Below Expectations,Low,3.7,31
+100833,2025,Annual,Meets Expectations,Medium,5.4,57
+100834,2022,Annual,Exceeds Expectations,Medium,8.4,72
+100834,2023,Annual,Exceptional,High,8.6,97
+100834,2024,Annual,Exceeds Expectations,Medium,8.4,84
+100834,2025,Annual,Exceeds Expectations,High,7.6,70
+100835,2022,Annual,Meets Expectations,Medium,5.2,65
+100835,2023,Annual,Meets Expectations,Medium,5.4,51
+100835,2024,Annual,Meets Expectations,Low,6.2,54
+100835,2025,Annual,Unsatisfactory,Low,2.7,25
+100836,2022,Annual,Meets Expectations,Medium,6.7,54
+100836,2023,Annual,Exceeds Expectations,Medium,8.4,76
+100836,2024,Annual,Meets Expectations,Medium,6.0,65
+100836,2025,Annual,Exceptional,High,9.9,94
+100838,2022,Annual,Meets Expectations,Medium,5.4,52
+100838,2023,Annual,Unsatisfactory,Low,1.8,10
+100838,2024,Annual,Exceeds Expectations,Medium,7.3,84
+100838,2025,Annual,Exceptional,High,9.4,98
+100839,2022,Annual,Meets Expectations,Low,5.7,51
+100839,2023,Annual,Exceptional,High,9.9,89
+100839,2024,Annual,Meets Expectations,Medium,5.4,62
+100839,2025,Annual,Exceeds Expectations,Medium,7.3,73
+100840,2022,Annual,Meets Expectations,Medium,5.3,70
+100840,2023,Annual,Meets Expectations,Low,6.9,69
+100840,2024,Annual,Meets Expectations,Medium,5.3,53
+100840,2025,Annual,Meets Expectations,Medium,5.6,53
+100841,2023,Annual,Below Expectations,Medium,3.1,41
+100841,2024,Annual,Below Expectations,Medium,4.5,40
+100841,2025,Annual,Meets Expectations,Medium,5.9,52
+100842,2022,Annual,Meets Expectations,Low,6.7,63
+100842,2023,Annual,Meets Expectations,Medium,5.5,50
+100842,2024,Annual,Exceeds Expectations,Medium,7.1,83
+100842,2025,Annual,Meets Expectations,Medium,5.0,53
+100843,2022,Annual,Exceeds Expectations,Medium,7.0,76
+100843,2023,Annual,Exceptional,Medium,9.5,99
+100843,2024,Annual,Meets Expectations,Medium,6.8,69
+100843,2025,Annual,Exceptional,Medium,8.5,91
+100844,2022,Annual,Meets Expectations,Medium,5.1,63
+100844,2023,Annual,Meets Expectations,Low,5.1,53
+100844,2024,Annual,Below Expectations,Low,4.1,40
+100844,2025,Annual,Exceeds Expectations,Medium,8.1,75
+100845,2022,Annual,Exceptional,Medium,9.2,100
+100845,2023,Annual,Meets Expectations,Low,5.5,63
+100845,2024,Annual,Below Expectations,Low,4.9,47
+100845,2025,Annual,Unsatisfactory,Low,2.7,26
+100847,2022,Annual,Unsatisfactory,Low,0.7,20
+100847,2023,Annual,Exceptional,High,8.9,97
+100847,2024,Annual,Meets Expectations,Medium,5.9,55
+100847,2025,Annual,Meets Expectations,Medium,5.3,61
+100849,2023,Annual,Exceptional,High,8.8,88
+100849,2024,Annual,Meets Expectations,Medium,6.5,57
+100849,2025,Annual,Exceeds Expectations,Medium,7.4,79
+100850,2022,Annual,Exceptional,High,9.5,92
+100850,2023,Annual,Meets Expectations,Medium,6.9,58
+100850,2024,Annual,Meets Expectations,Medium,5.4,65
+100850,2025,Annual,Below Expectations,Medium,3.3,37
+100851,2025,Annual,Exceeds Expectations,Medium,8.5,78
+100854,2025,Annual,Meets Expectations,Medium,5.8,52
+100855,2022,Annual,Exceeds Expectations,Medium,7.0,85
+100855,2023,Annual,Exceeds Expectations,Medium,8.1,81
+100855,2024,Annual,Unsatisfactory,Low,1.9,8
+100855,2025,Annual,Meets Expectations,Low,6.9,52
+100856,2022,Annual,Meets Expectations,Medium,6.1,60
+100856,2023,Annual,Exceeds Expectations,High,7.5,73
+100856,2024,Annual,Meets Expectations,Medium,6.0,54
+100856,2025,Annual,Exceeds Expectations,Medium,7.5,70
+100857,2022,Annual,Below Expectations,Low,3.4,50
+100857,2023,Annual,Meets Expectations,Medium,6.4,60
+100857,2024,Annual,Exceeds Expectations,High,7.3,83
+100857,2025,Annual,Exceptional,High,9.1,96
+100858,2022,Annual,Below Expectations,Low,3.6,35
+100858,2023,Annual,Exceptional,High,9.2,99
+100858,2024,Annual,Exceeds Expectations,High,7.4,70
+100858,2025,Annual,Meets Expectations,Medium,6.5,65
+100859,2022,Annual,Meets Expectations,Medium,5.8,60
+100859,2023,Annual,Below Expectations,Medium,3.4,42
+100859,2024,Annual,Meets Expectations,Medium,5.1,67
+100859,2025,Annual,Meets Expectations,Low,6.9,61
+100860,2022,Annual,Meets Expectations,Medium,6.2,64
+100860,2023,Annual,Meets Expectations,Medium,6.0,51
+100860,2024,Annual,Meets Expectations,Medium,5.6,53
+100860,2025,Annual,Meets Expectations,Medium,6.5,70
+100861,2022,Annual,Exceptional,Medium,9.0,100
+100861,2023,Annual,Meets Expectations,Medium,5.3,68
+100861,2024,Annual,Below Expectations,Low,4.2,37
+100861,2025,Annual,Meets Expectations,Medium,7.0,69
+100862,2022,Annual,Exceptional,High,9.3,90
+100862,2023,Annual,Exceeds Expectations,Medium,7.5,75
+100862,2024,Annual,Meets Expectations,Low,5.6,50
+100862,2025,Annual,Exceeds Expectations,High,8.4,82
+100863,2022,Annual,Exceeds Expectations,High,7.1,79
+100863,2023,Annual,Exceeds Expectations,Medium,8.0,81
+100863,2024,Annual,Below Expectations,Medium,3.9,31
+100863,2025,Annual,Exceeds Expectations,Medium,8.3,78
+100864,2024,Annual,Exceeds Expectations,Medium,8.1,84
+100864,2025,Annual,Meets Expectations,Low,5.3,60
+100865,2022,Annual,Below Expectations,Low,4.5,36
+100865,2023,Annual,Exceeds Expectations,Medium,7.1,82
+100865,2024,Annual,Meets Expectations,Low,6.4,61
+100865,2025,Annual,Unsatisfactory,Low,0.4,1
+100866,2022,Annual,Meets Expectations,Low,6.0,61
+100866,2023,Annual,Meets Expectations,Medium,6.5,65
+100866,2024,Annual,Meets Expectations,Medium,5.7,67
+100866,2025,Annual,Exceptional,High,9.9,99
+100867,2025,Annual,Below Expectations,Low,3.4,48
+100868,2022,Annual,Exceptional,High,10.0,94
+100868,2023,Annual,Meets Expectations,Medium,5.9,60
+100868,2024,Annual,Meets Expectations,Low,6.0,52
+100868,2025,Annual,Meets Expectations,Medium,6.9,66
+100869,2022,Annual,Exceeds Expectations,Medium,7.7,78
+100870,2025,Annual,Exceptional,Medium,8.9,88
+100871,2022,Annual,Exceptional,High,8.8,91
+100871,2023,Annual,Exceptional,High,9.6,88
+100871,2024,Annual,Below Expectations,Low,4.7,32
+100871,2025,Annual,Meets Expectations,Low,5.6,64
+100872,2024,Annual,Exceptional,High,9.1,92
+100872,2025,Annual,Meets Expectations,Medium,6.5,65
+100873,2022,Annual,Below Expectations,Low,3.2,39
+100873,2023,Annual,Exceeds Expectations,Medium,8.2,78
+100873,2024,Annual,Meets Expectations,Medium,6.8,62
+100873,2025,Annual,Meets Expectations,Medium,5.2,62
+100874,2022,Annual,Meets Expectations,Medium,6.5,56
+100874,2023,Annual,Exceeds Expectations,High,7.2,72
+100874,2024,Annual,Exceptional,High,9.7,89
+100874,2025,Annual,Meets Expectations,Medium,5.5,55
+100875,2022,Annual,Exceeds Expectations,Medium,7.0,78
+100875,2023,Annual,Exceeds Expectations,High,7.8,82
+100875,2024,Annual,Meets Expectations,Medium,5.3,68
+100875,2025,Annual,Below Expectations,Low,4.1,34
+100876,2022,Annual,Meets Expectations,Medium,5.5,54
+100876,2023,Annual,Meets Expectations,Medium,6.6,64
+100876,2024,Annual,Meets Expectations,Medium,6.5,55
+100876,2025,Annual,Meets Expectations,Medium,6.6,58
+100877,2022,Annual,Meets Expectations,Medium,5.7,68
+100877,2023,Annual,Meets Expectations,Low,5.6,61
+100877,2024,Annual,Below Expectations,Medium,4.4,40
+100877,2025,Annual,Meets Expectations,Medium,6.6,59
+100878,2022,Annual,Exceeds Expectations,High,8.4,76
+100878,2023,Annual,Below Expectations,Medium,4.6,45
+100878,2024,Annual,Exceptional,Medium,9.5,88
+100878,2025,Annual,Meets Expectations,Medium,6.8,53
+100879,2025,Annual,Exceeds Expectations,Medium,7.6,77
+100880,2023,Annual,Meets Expectations,Low,5.5,68
+100880,2024,Annual,Meets Expectations,Medium,5.9,62
+100880,2025,Annual,Meets Expectations,Medium,6.9,53
+100881,2023,Annual,Exceeds Expectations,Medium,8.3,76
+100881,2024,Annual,Exceeds Expectations,Medium,7.3,73
+100881,2025,Annual,Exceeds Expectations,High,8.0,79
+100882,2022,Annual,Meets Expectations,Low,5.8,50
+100882,2023,Annual,Meets Expectations,Low,6.3,66
+100882,2024,Annual,Meets Expectations,Medium,5.7,66
+100882,2025,Annual,Meets Expectations,Medium,5.1,63
+100883,2022,Annual,Meets Expectations,Low,6.7,66
+100883,2023,Annual,Meets Expectations,Low,5.8,51
+100883,2024,Annual,Below Expectations,Low,4.8,50
+100883,2025,Annual,Unsatisfactory,Low,1.4,1
+100884,2022,Annual,Below Expectations,Low,3.8,34
+100884,2023,Annual,Meets Expectations,Medium,6.0,57
+100884,2024,Annual,Meets Expectations,Medium,7.0,50
+100884,2025,Annual,Meets Expectations,Medium,6.3,66
+100885,2024,Annual,Exceeds Expectations,Medium,8.1,77
+100885,2025,Annual,Exceptional,Medium,9.1,97
+100886,2022,Annual,Meets Expectations,Medium,6.1,63
+100886,2023,Annual,Meets Expectations,Medium,5.8,63
+100886,2024,Annual,Meets Expectations,Medium,5.9,58
+100886,2025,Annual,Meets Expectations,Medium,6.0,56
+100887,2022,Annual,Meets Expectations,Medium,6.0,62
+100887,2023,Annual,Meets Expectations,Medium,5.8,69
+100887,2024,Annual,Exceeds Expectations,Medium,7.6,82
+100887,2025,Annual,Meets Expectations,Low,6.1,57
+100888,2022,Annual,Meets Expectations,Medium,6.3,67
+100888,2023,Annual,Below Expectations,Low,4.7,41
+100888,2024,Annual,Meets Expectations,Low,5.9,59
+100888,2025,Annual,Below Expectations,Medium,5.0,44
+100890,2022,Annual,Meets Expectations,Low,5.4,68
+100890,2023,Annual,Meets Expectations,Low,6.7,52
+100890,2024,Annual,Below Expectations,Medium,4.4,32
+100890,2025,Annual,Meets Expectations,Medium,6.0,51
+100891,2022,Annual,Meets Expectations,Low,5.4,67
+100891,2023,Annual,Meets Expectations,Medium,6.1,50
+100891,2024,Annual,Meets Expectations,Low,6.0,50
+100891,2025,Annual,Exceeds Expectations,Medium,7.3,82
+100892,2022,Annual,Exceeds Expectations,High,7.9,80
+100892,2023,Annual,Exceptional,Medium,9.2,91
+100892,2024,Annual,Unsatisfactory,Low,1.1,17
+100892,2025,Annual,Exceeds Expectations,Medium,7.7,70
+100893,2022,Annual,Meets Expectations,Medium,6.0,58
+100894,2023,Annual,Meets Expectations,Low,5.5,59
+100894,2024,Annual,Below Expectations,Low,4.6,35
+100894,2025,Annual,Below Expectations,Low,3.7,48
+100895,2022,Annual,Unsatisfactory,Low,0.1,3
+100895,2023,Annual,Exceeds Expectations,High,7.7,81
+100895,2024,Annual,Meets Expectations,Medium,6.4,54
+100895,2025,Annual,Meets Expectations,Medium,5.5,63
+100896,2022,Annual,Below Expectations,Low,4.2,46
+100896,2023,Annual,Exceeds Expectations,High,7.1,70
+100896,2024,Annual,Exceeds Expectations,High,8.2,71
+100896,2025,Annual,Exceptional,High,8.8,90
+100897,2023,Annual,Meets Expectations,Low,6.3,56
+100897,2024,Annual,Meets Expectations,Low,5.7,54
+100897,2025,Annual,Exceeds Expectations,High,7.0,72
+100898,2022,Annual,Meets Expectations,Low,6.7,61
+100898,2023,Annual,Exceeds Expectations,High,7.7,78
+100898,2024,Annual,Meets Expectations,Medium,6.0,66
+100898,2025,Annual,Meets Expectations,Medium,5.6,52
+100899,2022,Annual,Unsatisfactory,Low,1.1,18
+100899,2023,Annual,Exceptional,High,9.4,92
+100899,2024,Annual,Meets Expectations,Low,6.2,59
+100899,2025,Annual,Exceptional,High,9.5,97
+100900,2025,Annual,Meets Expectations,Medium,6.3,64
+100901,2022,Annual,Exceeds Expectations,Medium,7.4,75
+100901,2023,Annual,Exceeds Expectations,Medium,7.4,84
+100901,2024,Annual,Meets Expectations,Medium,6.9,50
+100901,2025,Annual,Meets Expectations,Medium,5.1,52
+100902,2024,Annual,Below Expectations,Low,4.1,35
+100902,2025,Annual,Exceptional,High,8.6,88
+100904,2022,Annual,Exceptional,Medium,9.7,95
+100904,2023,Annual,Exceeds Expectations,High,8.4,81
+100904,2024,Annual,Meets Expectations,Medium,5.7,50
+100904,2025,Annual,Exceptional,High,9.3,98
+100906,2022,Annual,Exceeds Expectations,High,7.6,71
+100906,2023,Annual,Meets Expectations,Medium,5.8,56
+100906,2024,Annual,Meets Expectations,Medium,5.0,66
+100906,2025,Annual,Unsatisfactory,Low,2.0,29
+100907,2025,Annual,Meets Expectations,Low,6.2,66
+100908,2022,Annual,Meets Expectations,Medium,6.0,67
+100908,2023,Annual,Exceptional,Medium,9.4,87
+100908,2024,Annual,Meets Expectations,Low,6.2,63
+100908,2025,Annual,Exceeds Expectations,Medium,7.5,82
+100909,2022,Annual,Below Expectations,Low,3.7,48
+100909,2023,Annual,Meets Expectations,Medium,5.0,63
+100909,2024,Annual,Meets Expectations,Low,6.4,66
+100909,2025,Annual,Exceeds Expectations,Medium,7.3,79
+100910,2022,Annual,Exceeds Expectations,High,7.7,81
+100910,2023,Annual,Exceeds Expectations,Medium,8.1,78
+100910,2024,Annual,Meets Expectations,Low,5.4,70
+100910,2025,Annual,Exceptional,Medium,9.9,89
+100911,2024,Annual,Exceeds Expectations,Medium,8.1,72
+100911,2025,Annual,Below Expectations,Low,4.5,50
+100912,2022,Annual,Exceeds Expectations,Medium,7.8,77
+100912,2023,Annual,Meets Expectations,Medium,5.2,50
+100912,2024,Annual,Below Expectations,Low,4.2,45
+100912,2025,Annual,Meets Expectations,Medium,5.6,68
+100913,2022,Annual,Exceptional,Medium,9.6,88
+100913,2023,Annual,Exceptional,High,9.8,85
+100913,2024,Annual,Exceeds Expectations,High,7.5,84
+100913,2025,Annual,Meets Expectations,Low,6.7,55
+100915,2024,Annual,Meets Expectations,Medium,5.3,70
+100915,2025,Annual,Exceeds Expectations,Medium,7.9,75
+100916,2024,Annual,Exceeds Expectations,Medium,7.4,81
+100916,2025,Annual,Exceptional,Medium,9.8,98
+100917,2023,Annual,Meets Expectations,Low,6.6,55
+100917,2024,Annual,Unsatisfactory,Low,2.2,23
+100917,2025,Annual,Meets Expectations,Low,5.7,65
+100918,2022,Annual,Exceeds Expectations,High,8.1,78
+100918,2023,Annual,Meets Expectations,Medium,5.1,56
+100918,2024,Annual,Exceeds Expectations,Medium,8.5,72
+100918,2025,Annual,Meets Expectations,Medium,6.2,61
+100919,2022,Annual,Meets Expectations,Low,5.5,68
+100919,2023,Annual,Exceeds Expectations,High,8.2,73
+100919,2024,Annual,Unsatisfactory,Low,0.6,27
+100919,2025,Annual,Unsatisfactory,Low,1.6,14
+100920,2022,Annual,Meets Expectations,Medium,5.3,54
+100920,2023,Annual,Meets Expectations,Medium,6.2,57
+100920,2024,Annual,Exceptional,High,9.1,96
+100920,2025,Annual,Meets Expectations,Medium,5.6,53
+100921,2022,Annual,Meets Expectations,Low,6.0,50
+100921,2023,Annual,Exceeds Expectations,Medium,7.4,76
+100921,2024,Annual,Meets Expectations,Medium,6.8,59
+100921,2025,Annual,Below Expectations,Low,4.5,34
+100922,2022,Annual,Meets Expectations,Low,6.8,54
+100922,2023,Annual,Exceeds Expectations,Medium,7.4,70
+100922,2024,Annual,Meets Expectations,Low,6.3,55
+100922,2025,Annual,Unsatisfactory,Low,0.9,8
+100923,2022,Annual,Meets Expectations,Medium,5.4,65
+100924,2023,Annual,Meets Expectations,Medium,5.8,52
+100924,2024,Annual,Exceeds Expectations,High,8.3,81
+100924,2025,Annual,Meets Expectations,Low,5.9,56
+100925,2022,Annual,Meets Expectations,Medium,6.6,59
+100925,2023,Annual,Below Expectations,Medium,3.9,31
+100925,2024,Annual,Meets Expectations,Medium,5.7,70
+100925,2025,Annual,Meets Expectations,Medium,6.5,68
+100926,2022,Annual,Below Expectations,Low,4.8,38
+100926,2023,Annual,Exceeds Expectations,Medium,8.0,83
+100926,2024,Annual,Meets Expectations,Low,6.0,69
+100926,2025,Annual,Meets Expectations,Low,5.3,58
+100927,2022,Annual,Meets Expectations,Low,5.1,57
+100927,2023,Annual,Exceeds Expectations,Medium,8.1,76
+100927,2024,Annual,Exceeds Expectations,High,7.9,79
+100928,2022,Annual,Meets Expectations,Medium,6.2,51
+100928,2023,Annual,Exceeds Expectations,High,7.4,85
+100928,2024,Annual,Exceeds Expectations,Medium,7.4,83
+100928,2025,Annual,Meets Expectations,Medium,5.8,58
+100929,2023,Annual,Meets Expectations,Low,5.9,67
+100929,2024,Annual,Below Expectations,Low,4.7,43
+100929,2025,Annual,Below Expectations,Low,5.0,33
+100930,2022,Annual,Meets Expectations,Medium,6.3,62
+100930,2023,Annual,Below Expectations,Low,4.2,43
+100930,2024,Annual,Meets Expectations,Medium,6.8,52
+100931,2022,Annual,Meets Expectations,Low,6.6,65
+100931,2023,Annual,Below Expectations,Low,4.0,48
+100931,2024,Annual,Below Expectations,Low,4.3,40
+100931,2025,Annual,Meets Expectations,Low,5.8,53
+100932,2022,Annual,Meets Expectations,Low,5.3,57
+100932,2023,Annual,Exceeds Expectations,Medium,8.2,84
+100932,2024,Annual,Below Expectations,Low,4.3,45
+100932,2025,Annual,Unsatisfactory,Low,0.1,2
+100933,2022,Annual,Exceptional,High,8.7,99
+100933,2023,Annual,Below Expectations,Medium,4.9,36
+100933,2024,Annual,Exceeds Expectations,Medium,8.2,76
+100933,2025,Annual,Exceeds Expectations,High,7.6,79
+100934,2023,Annual,Exceeds Expectations,Medium,8.2,85
+100934,2024,Annual,Exceeds Expectations,Medium,7.3,85
+100935,2024,Annual,Meets Expectations,Medium,6.2,58
+100935,2025,Annual,Meets Expectations,Medium,6.0,55
+100936,2022,Annual,Meets Expectations,Medium,6.2,50
+100936,2023,Annual,Exceeds Expectations,Medium,7.4,85
+100936,2024,Annual,Meets Expectations,Medium,5.8,63
+100936,2025,Annual,Exceeds Expectations,Medium,8.4,81
+100937,2025,Annual,Exceeds Expectations,Medium,8.2,78
+100938,2024,Annual,Below Expectations,Medium,3.1,34
+100938,2025,Annual,Unsatisfactory,Low,0.2,7
+100939,2022,Annual,Exceeds Expectations,High,7.4,75
+100939,2023,Annual,Meets Expectations,Low,6.7,56
+100939,2024,Annual,Meets Expectations,Low,6.0,58
+100939,2025,Annual,Meets Expectations,Medium,5.2,66
+100940,2022,Annual,Meets Expectations,Medium,6.5,70
+100940,2023,Annual,Exceeds Expectations,High,8.4,70
+100940,2024,Annual,Below Expectations,Low,3.2,42
+100940,2025,Annual,Meets Expectations,Medium,5.3,69
+100941,2022,Annual,Exceeds Expectations,Medium,8.0,76
+100941,2023,Annual,Below Expectations,Low,3.6,33
+100941,2024,Annual,Meets Expectations,Medium,6.3,57
+100941,2025,Annual,Exceeds Expectations,High,7.9,80
+100942,2022,Annual,Exceptional,High,8.7,85
+100942,2023,Annual,Exceeds Expectations,High,8.3,76
+100942,2024,Annual,Below Expectations,Medium,3.5,46
+100942,2025,Annual,Unsatisfactory,Low,1.2,13
+100943,2022,Annual,Exceptional,Medium,9.3,96
+100943,2023,Annual,Exceeds Expectations,Medium,7.6,80
+100943,2024,Annual,Meets Expectations,Medium,6.3,55
+100943,2025,Annual,Meets Expectations,Medium,5.1,59
+100944,2024,Annual,Meets Expectations,Medium,5.4,70
+100944,2025,Annual,Meets Expectations,Medium,6.3,68
+100945,2022,Annual,Exceeds Expectations,Medium,8.0,72
+100945,2023,Annual,Exceeds Expectations,Medium,7.9,84
+100945,2024,Annual,Exceptional,High,9.5,96
+100945,2025,Annual,Meets Expectations,Medium,6.2,55
+100946,2025,Annual,Meets Expectations,Medium,5.4,56
+100947,2025,Annual,Meets Expectations,Low,5.8,64
+100948,2022,Annual,Exceeds Expectations,Medium,7.2,73
+100948,2023,Annual,Exceptional,High,9.5,93
+100948,2024,Annual,Exceptional,Medium,9.6,89
+100948,2025,Annual,Exceeds Expectations,Medium,7.8,72
+100949,2022,Annual,Meets Expectations,Medium,5.6,62
+100949,2023,Annual,Meets Expectations,Medium,6.7,58
+100949,2024,Annual,Exceptional,High,8.9,100
+100949,2025,Annual,Meets Expectations,Low,5.6,70
+100950,2022,Annual,Below Expectations,Low,4.7,41
+100950,2023,Annual,Meets Expectations,Medium,5.5,62
+100950,2024,Annual,Exceeds Expectations,High,7.1,84
+100950,2025,Annual,Exceptional,High,9.8,96
+100951,2022,Annual,Below Expectations,Low,3.3,50
+100951,2023,Annual,Exceptional,High,9.1,94
+100951,2024,Annual,Below Expectations,Low,4.8,45
+100951,2025,Annual,Exceptional,High,8.6,98
+100952,2025,Annual,Meets Expectations,Low,5.1,53
+100953,2022,Annual,Exceeds Expectations,Medium,8.4,73
+100953,2023,Annual,Exceeds Expectations,High,8.2,85
+100953,2024,Annual,Meets Expectations,Medium,5.6,50
+100953,2025,Annual,Meets Expectations,Medium,6.0,66
+100954,2022,Annual,Meets Expectations,Medium,5.4,63
+100954,2023,Annual,Meets Expectations,Low,5.6,52
+100954,2024,Annual,Meets Expectations,Medium,6.8,66
+100954,2025,Annual,Meets Expectations,Low,6.4,60
+100956,2022,Annual,Exceeds Expectations,Medium,7.5,85
+100956,2023,Annual,Meets Expectations,Medium,5.7,52
+100956,2024,Annual,Below Expectations,Low,3.7,50
+100956,2025,Annual,Meets Expectations,Medium,6.3,55
+100957,2023,Annual,Below Expectations,Medium,3.3,38
+100957,2024,Annual,Exceeds Expectations,Medium,7.7,77
+100957,2025,Annual,Below Expectations,Low,4.4,37
+100958,2024,Annual,Meets Expectations,Low,6.3,69
+100958,2025,Annual,Below Expectations,Medium,4.3,38
+100959,2022,Annual,Below Expectations,Low,3.8,35
+100959,2023,Annual,Exceeds Expectations,High,7.5,79
+100960,2025,Annual,Meets Expectations,Medium,5.2,67
+100961,2025,Annual,Exceeds Expectations,Medium,7.6,75
+100962,2022,Annual,Exceptional,High,8.6,87
+100962,2023,Annual,Meets Expectations,Medium,6.0,52
+100962,2024,Annual,Meets Expectations,Low,5.8,69
+100962,2025,Annual,Meets Expectations,Medium,5.6,55
+100963,2022,Annual,Exceeds Expectations,Medium,7.5,72
+100963,2023,Annual,Exceeds Expectations,Medium,7.4,78
+100963,2024,Annual,Exceeds Expectations,High,7.9,78
+100963,2025,Annual,Exceeds Expectations,Medium,8.0,85
+100964,2024,Annual,Below Expectations,Low,4.8,30
+100964,2025,Annual,Meets Expectations,Low,5.6,55
+100965,2022,Annual,Meets Expectations,Medium,5.8,55
+100965,2023,Annual,Meets Expectations,Low,6.3,61
+100965,2024,Annual,Meets Expectations,Low,6.6,69
+100965,2025,Annual,Meets Expectations,Medium,6.6,57
+100966,2022,Annual,Meets Expectations,Medium,5.5,62
+100966,2023,Annual,Below Expectations,Low,4.7,46
+100966,2024,Annual,Exceeds Expectations,Medium,7.8,84
+100966,2025,Annual,Meets Expectations,Medium,6.0,66
+100967,2022,Annual,Exceeds Expectations,Medium,7.3,80
+100967,2023,Annual,Meets Expectations,Medium,6.9,59
+100967,2024,Annual,Meets Expectations,Medium,6.2,57
+100967,2025,Annual,Meets Expectations,Medium,5.6,57
+100968,2023,Annual,Exceptional,Medium,9.0,95
+100968,2024,Annual,Meets Expectations,Medium,6.7,53
+100968,2025,Annual,Meets Expectations,Medium,5.4,59
+100969,2022,Annual,Meets Expectations,Medium,5.9,69
+100969,2023,Annual,Meets Expectations,Medium,6.4,64
+100969,2024,Annual,Exceeds Expectations,Medium,7.3,72
+100969,2025,Annual,Below Expectations,Low,3.5,33
+100970,2022,Annual,Exceeds Expectations,Medium,7.1,80
+100970,2023,Annual,Meets Expectations,Medium,5.3,58
+100970,2024,Annual,Meets Expectations,Medium,5.0,58
+100970,2025,Annual,Meets Expectations,Low,5.4,51
+100971,2024,Annual,Meets Expectations,Medium,6.8,55
+100971,2025,Annual,Meets Expectations,Low,6.3,51
+100972,2022,Annual,Below Expectations,Low,3.8,49
+100972,2023,Annual,Meets Expectations,Low,5.7,51
+100972,2024,Annual,Below Expectations,Low,4.1,33
+100972,2025,Annual,Meets Expectations,Low,6.4,69
+100973,2022,Annual,Meets Expectations,Medium,6.4,64
+100973,2023,Annual,Meets Expectations,Medium,5.4,68
+100973,2024,Annual,Exceeds Expectations,Medium,7.6,79
+100973,2025,Annual,Meets Expectations,Low,6.7,50
+100974,2022,Annual,Exceeds Expectations,High,8.1,85
+100974,2023,Annual,Meets Expectations,Medium,5.8,65
+100974,2024,Annual,Meets Expectations,Low,5.4,53
+100974,2025,Annual,Exceptional,High,9.7,95
+100975,2025,Annual,Exceeds Expectations,High,7.1,75
+100976,2023,Annual,Meets Expectations,Medium,5.3,53
+100976,2024,Annual,Exceptional,High,8.6,90
+100976,2025,Annual,Meets Expectations,Medium,5.9,68
+100977,2022,Annual,Unsatisfactory,Low,2.4,18
+100977,2023,Annual,Exceeds Expectations,Medium,8.5,74
+100977,2024,Annual,Meets Expectations,Low,6.0,66
+100977,2025,Annual,Exceeds Expectations,Medium,7.4,72
+100978,2022,Annual,Exceeds Expectations,Medium,8.3,85
+100978,2023,Annual,Exceptional,High,9.6,85
+100978,2024,Annual,Meets Expectations,Medium,5.0,61
+100978,2025,Annual,Meets Expectations,Medium,6.0,54
+100979,2023,Annual,Meets Expectations,Medium,6.2,67
+100979,2024,Annual,Meets Expectations,Medium,6.1,53
+100979,2025,Annual,Meets Expectations,Medium,5.2,53
+100980,2022,Annual,Exceptional,Medium,8.7,99
+100980,2023,Annual,Meets Expectations,Medium,6.3,55
+100980,2024,Annual,Exceeds Expectations,High,8.1,79
+100980,2025,Annual,Below Expectations,Low,4.8,48
+100981,2022,Annual,Below Expectations,Low,4.9,43
+100981,2023,Annual,Meets Expectations,Medium,6.9,52
+100981,2024,Annual,Meets Expectations,Medium,6.6,52
+100981,2025,Annual,Exceeds Expectations,Medium,7.3,74
+100982,2023,Annual,Unsatisfactory,Low,2.3,5
+100982,2024,Annual,Exceeds Expectations,High,7.6,78
+100982,2025,Annual,Meets Expectations,Low,6.1,55
+100983,2022,Annual,Meets Expectations,Medium,5.0,58
+100983,2023,Annual,Exceptional,High,9.8,86
+100983,2024,Annual,Meets Expectations,Medium,5.4,53
+100983,2025,Annual,Below Expectations,Low,3.0,34
+100984,2022,Annual,Exceeds Expectations,Medium,7.8,82
+100984,2023,Annual,Meets Expectations,Medium,5.5,57
+100984,2024,Annual,Meets Expectations,Medium,5.6,62
+100984,2025,Annual,Meets Expectations,Medium,6.9,66
+100985,2022,Annual,Below Expectations,Low,3.8,47
+100985,2023,Annual,Below Expectations,Medium,3.0,46
+100985,2024,Annual,Below Expectations,Low,3.8,47
+100985,2025,Annual,Meets Expectations,Low,6.5,63
+100986,2022,Annual,Meets Expectations,Low,6.3,70
+100986,2023,Annual,Meets Expectations,Low,5.8,54
+100986,2024,Annual,Exceeds Expectations,High,7.7,71
+100986,2025,Annual,Exceeds Expectations,High,7.5,71
+100987,2022,Annual,Exceeds Expectations,Medium,7.3,71
+100987,2023,Annual,Exceeds Expectations,High,7.5,79
+100987,2024,Annual,Below Expectations,Low,4.0,36
+100987,2025,Annual,Exceptional,Medium,8.5,88
+100988,2022,Annual,Exceeds Expectations,High,7.7,77
+100988,2023,Annual,Meets Expectations,Medium,5.5,51
+100988,2024,Annual,Below Expectations,Low,4.7,49
+100988,2025,Annual,Unsatisfactory,Low,0.1,13
+100989,2022,Annual,Exceeds Expectations,High,8.2,79
+100989,2023,Annual,Exceptional,Medium,9.8,98
+100989,2024,Annual,Exceeds Expectations,Medium,8.4,84
+100989,2025,Annual,Below Expectations,Low,3.8,34
+100990,2022,Annual,Meets Expectations,Medium,5.9,59
+100990,2023,Annual,Meets Expectations,Medium,6.5,69
+100990,2024,Annual,Exceeds Expectations,Medium,8.3,81
+100990,2025,Annual,Exceeds Expectations,Medium,8.0,81
+100991,2022,Annual,Below Expectations,Medium,4.0,40
+100991,2023,Annual,Below Expectations,Medium,3.5,44
+100991,2024,Annual,Meets Expectations,Low,6.3,70
+100991,2025,Annual,Exceptional,High,8.9,87
+100993,2022,Annual,Exceeds Expectations,High,7.3,85
+100993,2023,Annual,Exceeds Expectations,Medium,8.1,70
+100993,2024,Annual,Meets Expectations,Medium,5.9,54
+100993,2025,Annual,Exceeds Expectations,High,8.1,78
+100994,2022,Annual,Meets Expectations,Medium,5.1,69
+100994,2023,Annual,Meets Expectations,Medium,6.1,67
+100994,2024,Annual,Meets Expectations,Medium,6.9,60
+100994,2025,Annual,Meets Expectations,Medium,6.4,57
+100995,2025,Annual,Meets Expectations,Medium,5.4,59
+100996,2022,Annual,Exceeds Expectations,High,8.1,82
+100996,2023,Annual,Exceptional,High,9.9,93
+100996,2024,Annual,Unsatisfactory,Low,1.2,10
+100996,2025,Annual,Exceeds Expectations,Medium,8.4,70
+100997,2022,Annual,Meets Expectations,Low,6.9,50
+100997,2023,Annual,Exceeds Expectations,Medium,8.2,70
+100997,2024,Annual,Below Expectations,Low,4.2,37
+100997,2025,Annual,Exceeds Expectations,Medium,7.9,79
+100998,2023,Annual,Meets Expectations,Low,6.0,54
+100998,2024,Annual,Unsatisfactory,Low,0.1,26
+100998,2025,Annual,Meets Expectations,Medium,5.8,50
+100999,2022,Annual,Meets Expectations,Medium,6.0,64
+100999,2023,Annual,Below Expectations,Low,4.4,46
+100999,2024,Annual,Meets Expectations,Medium,5.4,54
+100999,2025,Annual,Meets Expectations,Low,5.5,58

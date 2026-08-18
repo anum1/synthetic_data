@@ -1,0 +1,57 @@
+job_profile_id,job_title,job_family,grade,min_salary,max_salary
+JP0001,Sales Representative I,Sales,G1,40000,60000
+JP0002,Sales Representative II,Sales,G2,55000,80000
+JP0003,Senior Sales Representative,Sales,G3,75000,105000
+JP0004,Sales Specialist,Sales,G4,95000,135000
+JP0005,Senior Sales Specialist,Sales,G5,125000,165000
+JP0006,Sales Manager,Sales,G6,155000,205000
+JP0007,Sales Director,Sales,G7,190000,255000
+JP0008,VP of Sales,Sales,G8,240000,350000
+JP0009,Finance Analyst I,Finance,G1,40000,60000
+JP0010,Finance Analyst II,Finance,G2,55000,80000
+JP0011,Senior Finance Analyst,Finance,G3,75000,105000
+JP0012,Finance Lead,Finance,G4,95000,135000
+JP0013,Senior Finance Lead,Finance,G5,125000,165000
+JP0014,Finance Manager,Finance,G6,155000,205000
+JP0015,Finance Director,Finance,G7,190000,255000
+JP0016,VP of Finance,Finance,G8,240000,350000
+JP0017,HR Coordinator I,Human Resources,G1,40000,60000
+JP0018,HR Coordinator II,Human Resources,G2,55000,80000
+JP0019,HR Specialist,Human Resources,G3,75000,105000
+JP0020,Senior HR Specialist,Human Resources,G4,95000,135000
+JP0021,HR Business Partner,Human Resources,G5,125000,165000
+JP0022,HR Manager,Human Resources,G6,155000,205000
+JP0023,HR Director,Human Resources,G7,190000,255000
+JP0024,Chief HR Officer,Human Resources,G8,240000,350000
+JP0025,IT Support Specialist I,Technology,G1,40000,60000
+JP0026,Software Engineer I,Technology,G2,55000,80000
+JP0027,Software Engineer II,Technology,G3,75000,105000
+JP0028,Senior Software Engineer,Technology,G4,95000,135000
+JP0029,Staff Engineer,Technology,G5,125000,165000
+JP0030,Engineering Manager,Technology,G6,155000,205000
+JP0031,Engineering Director,Technology,G7,190000,255000
+JP0032,VP of Engineering,Technology,G8,240000,350000
+JP0033,Marketing Coordinator I,Marketing,G1,40000,60000
+JP0034,Marketing Coordinator II,Marketing,G2,55000,80000
+JP0035,Marketing Specialist,Marketing,G3,75000,105000
+JP0036,Senior Marketing Specialist,Marketing,G4,95000,135000
+JP0037,Marketing Lead,Marketing,G5,125000,165000
+JP0038,Marketing Manager,Marketing,G6,155000,205000
+JP0039,Marketing Director,Marketing,G7,190000,255000
+JP0040,VP of Marketing,Marketing,G8,240000,350000
+JP0041,Operations Coordinator I,Operations,G1,40000,60000
+JP0042,Operations Coordinator II,Operations,G2,55000,80000
+JP0043,Operations Analyst,Operations,G3,75000,105000
+JP0044,Senior Operations Analyst,Operations,G4,95000,135000
+JP0045,Operations Lead,Operations,G5,125000,165000
+JP0046,Operations Manager,Operations,G6,155000,205000
+JP0047,Operations Director,Operations,G7,190000,255000
+JP0048,VP of Operations,Operations,G8,240000,350000
+JP0049,Support Representative I,Customer Support,G1,40000,60000
+JP0050,Support Representative II,Customer Support,G2,55000,80000
+JP0051,Senior Support Representative,Customer Support,G3,75000,105000
+JP0052,Support Specialist,Customer Support,G4,95000,135000
+JP0053,Senior Support Specialist,Customer Support,G5,125000,165000
+JP0054,Support Manager,Customer Support,G6,155000,205000
+JP0055,Support Director,Customer Support,G7,190000,255000
+JP0056,VP of Customer Success,Customer Support,G8,240000,350000

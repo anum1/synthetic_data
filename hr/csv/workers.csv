@@ -1,0 +1,1001 @@
+employee_id,employee_name,gender_identity,ethnicity,veteran_status,disability_status,department,location,hire_date,age,grade,job_title,org_level,job_profile_id,status,termination_date,termination_reason,manager_id
+100000,Ryan Williamson,Male,Hispanic or Latino,No,No,Marketing,New York,2021-11-01,32,G3,Marketing Specialist,Individual Contributor,JP0035,Active,,,100913
+100001,Robert Flores,Male,Hispanic or Latino,Yes,No,IT,Phoenix,2026-01-27,59,G6,Engineering Manager,Manager,JP0030,Active,,,100283
+100002,James Romero,Male,White,No,No,IT,Dallas,2025-01-24,48,G1,IT Support Specialist I,Individual Contributor,JP0025,Active,,,100001
+100003,Ricardo Figueroa,Male,Two or more races,No,No,Finance,Phoenix,2019-06-28,24,G4,Finance Lead,Individual Contributor,JP0012,Terminated,2025-10-05,Voluntary Resignation,100920
+100004,Krista Roberson,Male,White,No,No,Customer Support,Austin,2024-04-12,30,G6,Support Manager,Manager,JP0054,Active,,,100420
+100005,Jacob Collins,Female,White,No,No,Finance,New York,2023-11-17,35,G1,Finance Analyst I,Individual Contributor,JP0009,Active,,,100206
+100006,Jeffery Thomas,Female,White,No,No,Finance,Phoenix,2020-01-11,50,G3,Senior Finance Analyst,Individual Contributor,JP0011,Terminated,2025-07-23,Voluntary Resignation,100206
+100007,Bob Frazier,Male,White,No,No,Finance,Phoenix,2018-05-26,44,G7,Finance Director,Director,JP0015,Active,,,100520
+100008,Kelly Brown,Male,White,No,No,Operations,Austin,2018-04-16,46,G4,Senior Operations Analyst,Individual Contributor,JP0044,Active,,,100237
+100009,Richard Rios,Male,White,No,Yes,IT,Dallas,2020-12-18,45,G3,Software Engineer II,Individual Contributor,JP0027,Active,,,100619
+100010,Sharon Olson,Female,Hispanic or Latino,No,No,Customer Support,Atlanta,2022-09-20,63,G3,Senior Support Representative,Individual Contributor,JP0051,Active,,,100821
+100011,Austin Horton,Female,Black or African American,No,No,Sales,Phoenix,2022-11-23,45,G3,Senior Sales Representative,Individual Contributor,JP0003,Terminated,2024-06-16,Voluntary Resignation,100076
+100012,Allison Brown,Female,Black or African American,No,No,IT,Phoenix,2018-06-22,24,G4,Senior Software Engineer,Individual Contributor,JP0028,Active,,,100587
+100013,Heather Patrick,Male,White,Yes,No,Finance,Austin,2016-12-02,63,G5,Senior Finance Lead,Senior Individual Contributor,JP0013,Active,,,100441
+100014,Ryan Brown,Male,Hispanic or Latino,No,No,HR,Phoenix,2019-07-27,58,G3,HR Specialist,Individual Contributor,JP0019,Active,,,100017
+100015,Christopher Hall,Female,White,No,No,Marketing,New York,2020-07-27,43,G2,Marketing Coordinator II,Individual Contributor,JP0034,Active,,,100177
+100016,Diane Morrison,Female,Hispanic or Latino,No,No,Finance,Chicago,2019-05-08,41,G6,Finance Manager,Manager,JP0014,Active,,,100238
+100017,Emily Smith,Male,White,No,No,HR,Dallas,2021-03-28,48,G6,HR Manager,Manager,JP0022,Terminated,2026-05-24,Voluntary Resignation,100341
+100018,Tony Gordon,Male,White,No,No,IT,Phoenix,2020-01-28,58,G3,Software Engineer II,Individual Contributor,JP0027,Active,,,100305
+100019,Kelli Smith,Male,Asian,No,No,Finance,Dallas,2018-07-03,33,G5,Senior Finance Lead,Senior Individual Contributor,JP0013,Active,,,100815
+100020,Megan Mccann,Female,White,No,No,Finance,Austin,2022-09-05,23,G2,Finance Analyst II,Individual Contributor,JP0010,Active,,,100823
+100021,Ryan Dominguez,Male,Asian,No,No,Customer Support,Chicago,2020-01-25,47,G3,Senior Support Representative,Individual Contributor,JP0051,Active,,,100004
+100022,Logan Smith MD,Female,Hispanic or Latino,No,No,Customer Support,Atlanta,2023-05-23,55,G8,VP of Customer Success,Vice President,JP0056,Active,,,
+100023,Michael Cruz,Female,Black or African American,No,No,HR,Atlanta,2017-07-22,24,G4,Senior HR Specialist,Individual Contributor,JP0020,Active,,,100576
+100024,Michael Harris,Male,Hispanic or Latino,No,No,HR,Chicago,2023-09-03,62,G4,Senior HR Specialist,Individual Contributor,JP0020,Terminated,2024-09-07,Involuntary,100355
+100025,Anthony Braun,Female,White,No,No,Customer Support,Phoenix,2026-01-02,63,G5,Senior Support Specialist,Senior Individual Contributor,JP0053,Active,,,100915
+100026,Christina Glass,Male,Native American,No,No,IT,Dallas,2023-03-17,33,G2,Software Engineer I,Individual Contributor,JP0026,Active,,,100733
+100027,Logan Lowe,Male,White,No,No,HR,Chicago,2024-10-15,45,G4,Senior HR Specialist,Individual Contributor,JP0020,Active,,,100576
+100028,Mrs. Erin Calderon,Female,White,No,No,Sales,Chicago,2018-08-26,56,G3,Senior Sales Representative,Individual Contributor,JP0003,Active,,,100664
+100029,Jennifer Cook,Female,White,No,No,Sales,Phoenix,2023-08-30,56,G3,Senior Sales Representative,Individual Contributor,JP0003,Active,,,100209
+100030,Jason Mora,Male,White,No,No,Sales,New York,2022-02-13,38,G4,Sales Specialist,Individual Contributor,JP0004,Active,,,100698
+100031,Alicia Moss,Female,Hispanic or Latino,No,No,IT,Phoenix,2019-11-07,29,G3,Software Engineer II,Individual Contributor,JP0027,Active,,,100587
+100032,Joshua Carson,Male,Hispanic or Latino,No,No,Finance,Chicago,2023-10-04,40,G4,Finance Lead,Individual Contributor,JP0012,Active,,,100259
+100033,William Hammond,Male,Pacific Islander,No,No,Sales,Phoenix,2019-09-13,56,G4,Sales Specialist,Individual Contributor,JP0004,Active,,,100057
+100034,Eric Williams,Female,White,No,No,Marketing,Dallas,2022-12-06,42,G5,Marketing Lead,Senior Individual Contributor,JP0037,Active,,,100214
+100035,Cynthia Young,Male,White,No,No,Sales,Austin,2026-02-19,24,G2,Sales Representative II,Individual Contributor,JP0002,Active,,,100664
+100036,Steven Neal,Female,Pacific Islander,No,No,Finance,Austin,2020-12-05,47,G4,Finance Lead,Individual Contributor,JP0012,Active,,,100399
+100037,Diana Williams,Male,Hispanic or Latino,No,No,Sales,Austin,2023-01-23,56,G5,Senior Sales Specialist,Senior Individual Contributor,JP0005,Active,,,100610
+100038,Vicki Sherman,Male,White,No,No,Marketing,Phoenix,2023-07-03,37,G2,Marketing Coordinator II,Individual Contributor,JP0034,Active,,,100214
+100039,Nathan Richardson,Male,White,No,No,HR,Phoenix,2022-11-19,46,G1,HR Coordinator I,Individual Contributor,JP0017,Active,,,100355
+100040,Stephanie Barnes,Male,White,Yes,Yes,Operations,Phoenix,2020-01-27,36,G2,Operations Coordinator II,Individual Contributor,JP0042,Active,,,100512
+100041,Timothy Smith,Male,Black or African American,No,No,IT,Chicago,2019-09-14,27,G3,Software Engineer II,Individual Contributor,JP0027,Active,,,100047
+100042,Derek Grant,Male,Hispanic or Latino,No,No,IT,Austin,2023-08-22,63,G1,IT Support Specialist I,Individual Contributor,JP0025,Active,,,100047
+100043,Cynthia Terry,Male,White,No,No,Sales,Austin,2025-07-06,44,G3,Senior Sales Representative,Individual Contributor,JP0003,Active,,,100664
+100044,Brandon Jimenez,Male,White,No,No,IT,Phoenix,2017-09-07,46,G3,Software Engineer II,Individual Contributor,JP0027,Active,,,100047
+100045,Jeremy Quinn,Female,White,No,No,Marketing,Atlanta,2021-05-07,24,G4,Senior Marketing Specialist,Individual Contributor,JP0036,Active,,,100375
+100046,Marissa Yang,Female,White,No,Yes,HR,Dallas,2026-05-23,51,G2,HR Coordinator II,Individual Contributor,JP0018,Active,,,100813
+100047,Ryan Fisher,Male,White,No,No,IT,Chicago,2023-01-31,54,G6,Engineering Manager,Manager,JP0030,Active,,,100550
+100048,Pedro Barron,Male,Hispanic or Latino,No,Yes,Marketing,Austin,2017-05-22,40,G3,Marketing Specialist,Individual Contributor,JP0035,Active,,,100604
+100049,Pamela Johnson,Female,Hispanic or Latino,No,No,Sales,Austin,2017-07-04,49,G4,Sales Specialist,Individual Contributor,JP0004,Terminated,2023-03-27,Involuntary,100610
+100050,Matthew Brown,Female,Hispanic or Latino,No,No,HR,Atlanta,2025-11-16,64,G4,Senior HR Specialist,Individual Contributor,JP0020,Active,,,100802
+100051,Matthew Caldwell,Female,Hispanic or Latino,No,No,HR,Chicago,2020-05-16,52,G7,HR Director,Director,JP0023,Terminated,2025-06-25,Voluntary Resignation,100226
+100052,Kevin Frank,Male,Hispanic or Latino,Yes,No,Marketing,Austin,2019-06-20,31,G3,Marketing Specialist,Individual Contributor,JP0035,Active,,,100962
+100053,Tonya Davis,Male,White,No,No,Finance,New York,2018-08-04,50,G1,Finance Analyst I,Individual Contributor,JP0009,Active,,,100457
+100054,Jennifer Ferrell,Female,White,No,No,Sales,New York,2024-10-12,56,G1,Sales Representative I,Individual Contributor,JP0001,Active,,,100907
+100055,Michelle Martin,Male,White,No,No,Finance,Chicago,2022-07-14,34,G3,Senior Finance Analyst,Individual Contributor,JP0011,Terminated,2025-02-03,Involuntary,100118
+100056,Wendy Hampton,Male,Asian,No,No,HR,Phoenix,2018-07-08,34,G5,HR Business Partner,Senior Individual Contributor,JP0021,Active,,,100937
+100057,Ruth Adams,Male,Asian,No,No,Sales,Chicago,2017-05-29,35,G6,Sales Manager,Manager,JP0006,Active,,,100626
+100058,Dr. David Rodriguez,Female,Hispanic or Latino,No,No,IT,Dallas,2016-06-26,42,G4,Senior Software Engineer,Individual Contributor,JP0028,Active,,,100047
+100059,Jennifer Martinez,Female,White,No,No,Customer Support,Phoenix,2022-09-02,52,G5,Senior Support Specialist,Senior Individual Contributor,JP0053,Active,,,100821
+100060,Melanie Hill,Female,White,No,No,HR,Austin,2021-05-31,38,G1,HR Coordinator I,Individual Contributor,JP0017,Active,,,100357
+100061,Lisa Brown,Male,White,No,No,Customer Support,Austin,2019-05-12,26,G2,Support Representative II,Individual Contributor,JP0050,Active,,,100915
+100062,Linda Walker,Prefer not to disclose,White,No,No,Operations,Dallas,2026-02-18,25,G4,Senior Operations Analyst,Individual Contributor,JP0044,Active,,,100934
+100063,Rachel Lee,Male,Hispanic or Latino,No,No,IT,Austin,2022-10-01,40,G3,Software Engineer II,Individual Contributor,JP0027,Active,,,100948
+100064,Jessica Simpson,Male,White,No,No,HR,Atlanta,2016-07-02,62,G2,HR Coordinator II,Individual Contributor,JP0018,Active,,,100391
+100065,Kenneth Bridges,Female,Two or more races,No,No,HR,Dallas,2022-07-22,59,G5,HR Business Partner,Senior Individual Contributor,JP0021,Active,,,100648
+100066,Joshua Chan,Male,Two or more races,Yes,No,Finance,Phoenix,2026-04-13,42,G3,Senior Finance Analyst,Individual Contributor,JP0011,Active,,,100206
+100067,Drew Mathis,Male,Hispanic or Latino,Yes,No,Marketing,Dallas,2022-07-04,35,G8,VP of Marketing,Vice President,JP0040,Active,,,100022
+100068,Kelly Morgan,Female,White,No,Yes,Sales,Chicago,2021-10-12,31,G3,Senior Sales Representative,Individual Contributor,JP0003,Active,,,100076
+100069,Joshua Mccall,Male,Hispanic or Latino,No,No,Operations,Austin,2022-01-18,29,G7,Operations Director,Director,JP0047,Active,,,100096
+100070,Kayla Harris,Male,White,No,No,Finance,Dallas,2018-04-07,30,G3,Senior Finance Analyst,Individual Contributor,JP0011,Active,,,100898
+100071,Jonathon Irwin,Female,White,No,No,IT,Phoenix,2018-02-16,39,G3,Software Engineer II,Individual Contributor,JP0027,Active,,,100305
+100072,Ashley Grant,Female,White,No,No,Marketing,Atlanta,2024-11-01,26,G3,Marketing Specialist,Individual Contributor,JP0035,Active,,,100373
+100073,Kathy Murphy,Female,White,No,No,Sales,Austin,2019-11-12,46,G1,Sales Representative I,Individual Contributor,JP0001,Active,,,100076
+100074,Mrs. Alyssa Pacheco,Female,White,Yes,No,HR,Atlanta,2018-01-03,27,G7,HR Director,Director,JP0023,Active,,,100485
+100075,Laura King,Prefer not to disclose,Prefer not to disclose,No,No,Marketing,Atlanta,2025-04-17,31,G5,Marketing Lead,Senior Individual Contributor,JP0037,Active,,,100197
+100076,Bryan Lindsey,Male,White,No,No,Sales,Chicago,2024-08-17,22,G6,Sales Manager,Manager,JP0006,Active,,,100626
+100077,John Cook,Male,White,No,No,Finance,Phoenix,2020-01-19,24,G4,Finance Lead,Individual Contributor,JP0012,Active,,,100259
+100078,Michael Nguyen,Female,Two or more races,No,No,IT,Dallas,2021-04-11,44,G4,Senior Software Engineer,Individual Contributor,JP0028,Active,,,100436
+100079,Marissa Lewis,Female,Black or African American,No,No,Marketing,Austin,2018-12-29,59,G5,Marketing Lead,Senior Individual Contributor,JP0037,Active,,,100913
+100080,Chelsea Hernandez,Male,White,No,No,Finance,Phoenix,2017-07-02,54,G4,Finance Lead,Individual Contributor,JP0012,Active,,,100958
+100081,Melissa Fernandez,Male,White,No,No,IT,Austin,2025-11-03,38,G5,Staff Engineer,Senior Individual Contributor,JP0029,Terminated,2026-05-26,Involuntary,100383
+100082,Debbie Fitzgerald,Male,White,No,No,IT,Phoenix,2023-04-06,64,G4,Senior Software Engineer,Individual Contributor,JP0028,Active,,,100296
+100083,Michael Dickerson,Male,White,No,No,HR,Phoenix,2021-06-22,37,G4,Senior HR Specialist,Individual Contributor,JP0020,Active,,,100391
+100084,Julie Parks,Male,Black or African American,No,No,IT,Austin,2018-01-05,40,G4,Senior Software Engineer,Individual Contributor,JP0028,Active,,,100383
+100085,Melanie Barr,Male,White,No,No,Finance,Dallas,2022-11-12,33,G5,Senior Finance Lead,Senior Individual Contributor,JP0013,Active,,,100206
+100086,Justin Moore,Male,White,No,No,Finance,Dallas,2023-06-17,43,G2,Finance Analyst II,Individual Contributor,JP0010,Active,,,100898
+100087,Stephen Shah,Male,White,Yes,No,Operations,Dallas,2019-12-19,56,G2,Operations Coordinator II,Individual Contributor,JP0042,Active,,,100501
+100088,Ruth Sanchez,Female,Asian,No,No,Customer Support,Phoenix,2022-05-06,45,G2,Support Representative II,Individual Contributor,JP0050,Active,,,100915
+100089,Elizabeth Newman,Male,White,No,No,Finance,Phoenix,2018-06-01,64,G5,Senior Finance Lead,Senior Individual Contributor,JP0013,Active,,,100118
+100090,Eugene Gonzalez,Female,White,No,No,Marketing,Atlanta,2018-11-04,49,G4,Senior Marketing Specialist,Individual Contributor,JP0036,Active,,,100604
+100091,Cheyenne Johnson,Female,White,No,No,Sales,Atlanta,2024-04-26,41,G1,Sales Representative I,Individual Contributor,JP0001,Terminated,2025-01-30,Voluntary Resignation,100108
+100092,Michael Fox,Female,White,No,No,Finance,Austin,2022-06-14,29,G3,Senior Finance Analyst,Individual Contributor,JP0011,Active,,,100815
+100093,Bradley Pham,Male,White,No,No,IT,Austin,2018-11-02,27,G4,Senior Software Engineer,Individual Contributor,JP0028,Active,,,100733
+100094,Adam Dunn,Male,White,No,No,Sales,Phoenix,2025-03-17,32,G4,Sales Specialist,Individual Contributor,JP0004,Active,,,100209
+100095,Richard Estes,Male,Black or African American,No,No,Operations,Atlanta,2021-08-14,57,G2,Operations Coordinator II,Individual Contributor,JP0042,Active,,,100316
+100096,Christina Richardson,Male,Two or more races,No,No,Operations,Dallas,2020-12-28,51,G8,VP of Operations,Vice President,JP0048,Active,,,100022
+100097,Brandon Cohen,Female,Hispanic or Latino,No,No,HR,Atlanta,2022-10-23,26,G2,HR Coordinator II,Individual Contributor,JP0018,Active,,,100564
+100098,Thomas Bush,Female,White,No,No,Operations,Dallas,2016-07-21,47,G2,Operations Coordinator II,Individual Contributor,JP0042,Active,,,100563
+100099,Teresa Cooley,Female,White,No,No,Operations,Dallas,2022-03-08,27,G5,Operations Lead,Senior Individual Contributor,JP0045,Active,,,100501
+100100,Aaron Middleton,Female,White,No,No,Finance,Chicago,2019-12-24,22,G3,Senior Finance Analyst,Individual Contributor,JP0011,Active,,,100989
+100101,Kimberly Jackson,Female,White,No,No,Sales,Phoenix,2025-10-08,52,G2,Sales Representative II,Individual Contributor,JP0002,Active,,,100907
+100102,Elijah Allen,Female,White,No,No,Operations,Austin,2025-02-21,33,G6,Operations Manager,Manager,JP0046,Active,,,100265
+100103,Kimberly Johnston,Female,White,No,No,Sales,Dallas,2019-11-02,58,G3,Senior Sales Representative,Individual Contributor,JP0003,Active,,,100638
+100104,Charlene Roberts,Female,White,No,No,Operations,Phoenix,2022-03-11,25,G2,Operations Coordinator II,Individual Contributor,JP0042,Active,,,100102
+100105,Rebecca Hurley,Male,Black or African American,No,No,Finance,New York,2018-07-14,59,G3,Senior Finance Analyst,Individual Contributor,JP0011,Active,,,100206
+100106,David Tyler,Female,White,No,No,Customer Support,Phoenix,2023-08-09,61,G4,Support Specialist,Individual Contributor,JP0052,Active,,,100129
+100107,Timothy Torres,Male,Asian,No,No,Customer Support,Chicago,2024-12-04,36,G2,Support Representative II,Individual Contributor,JP0050,Active,,,100525
+100108,Randy Velasquez,Female,Black or African American,No,No,Sales,Dallas,2019-01-12,58,G6,Sales Manager,Manager,JP0006,Active,,,100626
+100109,Jennifer Ryan,Male,White,No,No,Sales,Dallas,2017-05-25,59,G5,Senior Sales Specialist,Senior Individual Contributor,JP0005,Active,,,100610
+100110,Emily Morton,Female,White,No,No,Customer Support,Atlanta,2022-08-12,50,G4,Support Specialist,Individual Contributor,JP0052,Active,,,100143
+100111,Crystal Dennis,Female,White,No,No,IT,Austin,2020-08-13,64,G2,Software Engineer I,Individual Contributor,JP0026,Active,,,100305
+100112,Stephen Durham,Male,Asian,No,No,IT,Austin,2018-12-04,64,G4,Senior Software Engineer,Individual Contributor,JP0028,Terminated,2025-08-12,Retirement,100587
+100113,Jeffrey Morse,Male,White,No,No,Marketing,New York,2017-07-26,33,G2,Marketing Coordinator II,Individual Contributor,JP0034,Active,,,100962
+100114,Steven Hodge,Female,White,No,No,IT,Austin,2019-02-06,30,G2,Software Engineer I,Individual Contributor,JP0026,Active,,,100383
+100115,Kenneth Bender DDS,Male,Black or African American,No,No,Marketing,Atlanta,2018-01-19,42,G3,Marketing Specialist,Individual Contributor,JP0035,Active,,,100322
+100116,Pamela Smith,Male,Asian,No,No,IT,Atlanta,2025-08-01,30,G2,Software Engineer I,Individual Contributor,JP0026,Active,,,100619
+100117,James Phillips,Female,White,No,No,Finance,Dallas,2023-06-30,47,G5,Senior Finance Lead,Senior Individual Contributor,JP0013,Active,,,100457
+100118,Maxwell Johnson,Male,White,No,No,Finance,New York,2021-08-10,45,G6,Finance Manager,Manager,JP0014,Active,,,100827
+100119,James Hill,Male,Asian,No,No,IT,Phoenix,2020-07-07,47,G4,Senior Software Engineer,Individual Contributor,JP0028,Active,,,100619
+100120,Christopher Wheeler,Female,Two or more races,No,No,Marketing,Phoenix,2026-01-25,49,G1,Marketing Coordinator I,Individual Contributor,JP0033,Active,,,100513
+100121,Jacqueline Arnold,Male,White,No,No,Sales,New York,2016-09-16,53,G4,Sales Specialist,Individual Contributor,JP0004,Active,,,100108
+100122,Thomas Williamson,Male,White,No,Yes,Sales,Phoenix,2018-01-04,23,G3,Senior Sales Representative,Individual Contributor,JP0003,Active,,,100610
+100123,Suzanne Sanchez,Male,White,No,No,Sales,Atlanta,2019-12-29,60,G4,Sales Specialist,Individual Contributor,JP0004,Active,,,100108
+100124,Mary Armstrong,Male,Hispanic or Latino,No,Yes,Finance,Chicago,2019-05-19,53,G5,Senior Finance Lead,Senior Individual Contributor,JP0013,Active,,,100206
+100125,Tina Smith,Male,White,No,No,Marketing,Atlanta,2019-03-09,29,G5,Marketing Lead,Senior Individual Contributor,JP0037,Active,,,100962
+100126,Renee Sweeney,Female,Black or African American,No,No,Customer Support,New York,2021-04-11,53,G2,Support Representative II,Individual Contributor,JP0050,Active,,,100821
+100127,Matthew Watkins,Female,White,No,No,Operations,Austin,2022-10-30,28,G8,VP of Operations,Vice President,JP0048,Active,,,100022
+100128,Brooke Gutierrez,Male,White,No,No,Sales,Chicago,2020-01-03,39,G4,Sales Specialist,Individual Contributor,JP0004,Active,,,100907
+100129,Heidi Shelton,Female,White,No,No,Customer Support,Chicago,2025-07-29,41,G6,Support Manager,Manager,JP0054,Active,,,100420
+100130,Joshua Whitehead,Female,White,No,No,Operations,Austin,2026-05-03,43,G4,Senior Operations Analyst,Individual Contributor,JP0044,Active,,,100934
+100131,April Keller,Female,White,No,No,Sales,Dallas,2022-09-20,38,G5,Senior Sales Specialist,Senior Individual Contributor,JP0005,Active,,,100664
+100132,Renee Mckenzie,Female,White,No,No,Finance,Chicago,2022-01-09,47,G3,Senior Finance Analyst,Individual Contributor,JP0011,Active,,,100989
+100133,Kenneth Anderson,Female,Hispanic or Latino,No,No,Marketing,Austin,2016-10-11,57,G4,Senior Marketing Specialist,Individual Contributor,JP0036,Active,,,100604
+100134,Melissa Huynh,Female,Hispanic or Latino,No,No,Finance,Austin,2023-08-19,43,G4,Finance Lead,Individual Contributor,JP0012,Active,,,100441
+100135,David Hodge,Male,Hispanic or Latino,No,No,Sales,Atlanta,2022-06-28,28,G2,Sales Representative II,Individual Contributor,JP0002,Active,,,100638
+100136,Cathy Hill,Male,White,No,Yes,Sales,Chicago,2018-10-14,64,G4,Sales Specialist,Individual Contributor,JP0004,Active,,,100209
+100137,Adrian Perez,Female,White,No,No,Marketing,Chicago,2019-04-06,60,G2,Marketing Coordinator II,Individual Contributor,JP0034,Active,,,100214
+100138,Sandra Mejia,Male,Hispanic or Latino,No,No,Operations,Dallas,2020-05-08,57,G4,Senior Operations Analyst,Individual Contributor,JP0044,Terminated,2025-08-11,Voluntary Resignation,100777
+100139,Tanya Griffith,Female,White,No,No,HR,Austin,2022-02-09,30,G4,Senior HR Specialist,Individual Contributor,JP0020,Active,,,100564
+100140,Andrew Hawkins,Male,White,No,No,Marketing,Austin,2019-12-04,46,G5,Marketing Lead,Senior Individual Contributor,JP0037,Active,,,100197
+100141,Cory Hill,Male,White,No,Yes,HR,Chicago,2026-02-22,40,G2,HR Coordinator II,Individual Contributor,JP0018,Active,,,100802
+100142,Tammy Good,Female,White,No,No,HR,Chicago,2019-10-29,37,G3,HR Specialist,Individual Contributor,JP0019,Active,,,100017
+100143,Benjamin Rhodes,Female,Hispanic or Latino,No,No,Customer Support,Dallas,2023-09-03,39,G6,Support Manager,Manager,JP0054,Active,,,100349
+100144,Natalie Davis,Female,White,No,Yes,Customer Support,Dallas,2025-09-21,44,G4,Support Specialist,Individual Contributor,JP0052,Active,,,100153
+100145,Monique Pittman,Female,White,No,No,Operations,Austin,2018-11-24,44,G4,Senior Operations Analyst,Individual Contributor,JP0044,Active,,,100998
+100146,James Waters,Female,Black or African American,No,No,Customer Support,Dallas,2020-11-04,35,G5,Senior Support Specialist,Senior Individual Contributor,JP0053,Active,,,100409
+100147,Jasmin Dawson,Female,White,No,No,HR,Austin,2020-05-27,44,G4,Senior HR Specialist,Individual Contributor,JP0020,Active,,,100802
+100148,Wanda Tucker,Female,White,No,No,Customer Support,Dallas,2020-05-20,37,G1,Support Representative I,Individual Contributor,JP0049,Active,,,100730
+100149,Janice Kane,Male,White,No,Yes,IT,Atlanta,2026-03-02,34,G3,Software Engineer II,Individual Contributor,JP0027,Active,,,100587
+100150,Jennifer Carrillo,Male,White,Yes,No,HR,Phoenix,2026-01-17,37,G3,HR Specialist,Individual Contributor,JP0019,Active,,,100157
+100151,James Lawson,Male,White,No,No,Customer Support,Dallas,2021-07-13,51,G6,Support Manager,Manager,JP0054,Active,,,100666
+100152,Monica Garcia,Male,White,No,No,Marketing,Dallas,2016-09-08,22,G1,Marketing Coordinator I,Individual Contributor,JP0033,Active,,,100442
+100153,Susan Wood,Male,White,No,No,Customer Support,Austin,2017-12-02,58,G6,Support Manager,Manager,JP0054,Active,,,100944
+100154,Patrick Smith,Female,Native American,No,No,HR,Phoenix,2023-10-04,34,G5,HR Business Partner,Senior Individual Contributor,JP0021,Terminated,2025-11-03,Involuntary,100564
+100155,Marcus Browning,Prefer not to disclose,White,No,No,Customer Support,Atlanta,2022-03-20,31,G8,VP of Customer Success,Vice President,JP0056,Active,,,100022
+100156,Timothy Chandler,Male,White,No,No,Sales,Atlanta,2018-05-16,44,G1,Sales Representative I,Individual Contributor,JP0001,Active,,,100907
+100157,James Trujillo,Female,White,No,No,HR,Austin,2019-05-26,38,G6,HR Manager,Manager,JP0022,Active,,,100405
+100158,Mr. Cameron Pugh,Male,White,No,No,HR,Phoenix,2018-04-11,58,G2,HR Coordinator II,Individual Contributor,JP0018,Active,,,100576
+100159,Deborah Molina,Male,White,No,Yes,Sales,Austin,2023-05-16,33,G2,Sales Representative II,Individual Contributor,JP0002,Active,,,100057
+100160,Susan May,Female,White,No,No,Customer Support,Phoenix,2024-01-12,29,G1,Support Representative I,Individual Contributor,JP0049,Active,,,100151
+100161,Joshua Bass,Female,Two or more races,No,No,Finance,Atlanta,2020-06-01,38,G5,Senior Finance Lead,Senior Individual Contributor,JP0013,Active,,,100898
+100162,Jeffrey Richardson,Female,White,No,No,Marketing,Austin,2020-09-07,61,G1,Marketing Coordinator I,Individual Contributor,JP0033,Active,,,100518
+100163,Parker Gray,Female,White,No,No,Marketing,New York,2017-01-16,62,G4,Senior Marketing Specialist,Individual Contributor,JP0036,Active,,,100373
+100164,Jennifer Calhoun,Female,Hispanic or Latino,No,No,Marketing,Atlanta,2023-08-20,64,G3,Marketing Specialist,Individual Contributor,JP0035,Active,,,100913
+100165,Craig Bradley,Male,Black or African American,No,No,Sales,Phoenix,2020-12-26,60,G7,Sales Director,Director,JP0007,Active,,,100346
+100166,Evan Thomas,Female,Hispanic or Latino,No,No,IT,Atlanta,2024-09-19,48,G2,Software Engineer I,Individual Contributor,JP0026,Active,,,100047
+100167,Mary Turner,Male,White,Yes,No,Sales,Phoenix,2019-04-22,40,G8,VP of Sales,Vice President,JP0008,Active,,,100022
+100168,Brian Jones,Male,Black or African American,No,No,Finance,Atlanta,2018-03-02,50,G5,Senior Finance Lead,Senior Individual Contributor,JP0013,Active,,,100259
+100169,Andrea Gutierrez,Female,White,No,No,IT,Phoenix,2018-10-19,38,G5,Staff Engineer,Senior Individual Contributor,JP0029,Active,,,100401
+100170,Amanda Sandoval,Male,White,No,No,Sales,Atlanta,2021-08-12,33,G4,Sales Specialist,Individual Contributor,JP0004,Active,,,100108
+100171,Nicholas Williams,Female,White,Yes,No,HR,New York,2019-04-24,32,G5,HR Business Partner,Senior Individual Contributor,JP0021,Active,,,100564
+100172,Dawn Campos,Male,White,No,No,Finance,Dallas,2019-04-21,60,G5,Senior Finance Lead,Senior Individual Contributor,JP0013,Terminated,2026-04-17,Voluntary Resignation,100016
+100173,Erica Walter,Female,White,No,No,Marketing,Phoenix,2016-08-07,32,G4,Senior Marketing Specialist,Individual Contributor,JP0036,Active,,,100962
+100174,Dawn Grant,Non-binary,White,No,No,Sales,Atlanta,2021-12-17,41,G3,Senior Sales Representative,Individual Contributor,JP0003,Active,,,100610
+100175,Katie Parrish,Male,White,No,No,Sales,Austin,2023-04-07,56,G3,Senior Sales Representative,Individual Contributor,JP0003,Active,,,100907
+100176,Jeffrey Smith,Female,White,No,No,Sales,Chicago,2019-09-25,46,G1,Sales Representative I,Individual Contributor,JP0001,Active,,,100108
+100177,Jose Castillo,Male,White,No,Yes,Marketing,Atlanta,2025-11-13,45,G6,Marketing Manager,Manager,JP0038,Active,,,100869
+100178,Benjamin Gilbert,Male,White,Yes,No,HR,Phoenix,2021-12-21,41,G6,HR Manager,Manager,JP0022,Active,,,100074
+100179,Eric Russell,Male,White,No,No,Operations,Austin,2017-09-19,45,G3,Operations Analyst,Individual Contributor,JP0043,Active,,,100998
+100180,Carol George,Male,White,No,No,Marketing,Phoenix,2021-03-05,53,G3,Marketing Specialist,Individual Contributor,JP0035,Active,,,100373
+100181,Cesar Hancock,Female,Hispanic or Latino,Yes,No,Sales,Dallas,2024-08-25,38,G4,Sales Specialist,Individual Contributor,JP0004,Active,,,100907
+100182,Briana Jacobs,Male,White,No,No,Operations,Austin,2020-06-28,61,G2,Operations Coordinator II,Individual Contributor,JP0042,Active,,,100934
+100183,Barbara Reynolds,Male,White,No,No,IT,Atlanta,2017-06-07,47,G1,IT Support Specialist I,Individual Contributor,JP0025,Active,,,100305
+100184,Eric Ruiz,Non-binary,White,No,No,Finance,Austin,2021-03-29,61,G3,Senior Finance Analyst,Individual Contributor,JP0011,Active,,,100186
+100185,Collin Knight,Female,White,No,No,HR,Dallas,2021-11-18,33,G4,Senior HR Specialist,Individual Contributor,JP0020,Active,,,100391
+100186,Stephanie Snyder,Female,Black or African American,No,No,Finance,New York,2017-11-20,41,G6,Finance Manager,Manager,JP0014,Active,,,100331
+100187,John Kelly,Female,White,No,No,Operations,Austin,2024-11-06,35,G4,Senior Operations Analyst,Individual Contributor,JP0044,Active,,,100777
+100188,Sean Bates,Female,Hispanic or Latino,No,No,Operations,New York,2021-03-18,57,G2,Operations Coordinator II,Individual Contributor,JP0042,Active,,,100777
+100189,Michelle Martin,Female,Hispanic or Latino,No,No,Marketing,Austin,2022-12-23,40,G5,Marketing Lead,Senior Individual Contributor,JP0037,Active,,,100177
+100190,Michelle Sullivan,Female,White,No,No,Sales,Phoenix,2017-03-06,36,G2,Sales Representative II,Individual Contributor,JP0002,Active,,,100638
+100191,Patrick Carter,Male,Two or more races,No,No,IT,Atlanta,2026-04-12,25,G2,Software Engineer I,Individual Contributor,JP0026,Terminated,2026-06-10,Involuntary,100436
+100192,Scott Clark,Prefer not to disclose,White,No,No,Operations,Chicago,2020-06-12,55,G5,Operations Lead,Senior Individual Contributor,JP0045,Active,,,100102
+100193,Melanie Jacobs,Female,Black or African American,No,No,Finance,Austin,2023-10-23,33,G4,Finance Lead,Individual Contributor,JP0012,Active,,,100118
+100194,Marcus Vargas,Female,Hispanic or Latino,No,No,Finance,Phoenix,2020-08-05,44,G3,Senior Finance Analyst,Individual Contributor,JP0011,Active,,,100989
+100195,Jeffrey Wong,Non-binary,White,No,No,Operations,Phoenix,2021-02-05,35,G4,Senior Operations Analyst,Individual Contributor,JP0044,Terminated,2025-05-19,Involuntary,100512
+100196,Robert Sanchez,Female,White,No,No,Sales,Chicago,2019-04-16,23,G4,Sales Specialist,Individual Contributor,JP0004,Active,,,100610
+100197,Sarah Bennett,Male,Hispanic or Latino,No,No,Marketing,New York,2023-06-02,31,G6,Marketing Manager,Manager,JP0038,Active,,,100492
+100198,Valerie Jackson,Male,White,No,No,Operations,Atlanta,2023-07-19,41,G1,Operations Coordinator I,Individual Contributor,JP0041,Active,,,100102
+100199,Paul Miranda,Female,White,No,Yes,IT,Atlanta,2016-07-10,58,G4,Senior Software Engineer,Individual Contributor,JP0028,Terminated,2017-12-06,Voluntary Resignation,100305
+100200,Matthew Little,Female,Black or African American,No,No,Sales,Chicago,2021-10-27,41,G4,Sales Specialist,Individual Contributor,JP0004,Active,,,100076
+100201,Joshua Miller,Male,White,Yes,No,Finance,New York,2026-02-06,27,G3,Senior Finance Analyst,Individual Contributor,JP0011,Active,,,100118
+100202,Terry Davis,Male,White,Yes,No,HR,Atlanta,2020-08-10,45,G2,HR Coordinator II,Individual Contributor,JP0018,Active,,,100776
+100203,Mr. David Hendricks,Female,Hispanic or Latino,No,No,Operations,New York,2021-03-01,44,G5,Operations Lead,Senior Individual Contributor,JP0045,Active,,,100746
+100204,Timothy Cannon,Male,White,No,No,IT,Chicago,2023-02-12,29,G4,Senior Software Engineer,Individual Contributor,JP0028,Active,,,100948
+100205,Cindy Lara,Female,White,No,No,Sales,Austin,2022-02-24,22,G7,Sales Director,Director,JP0007,Active,,,100167
+100206,Tracey Kaufman,Male,White,No,No,Finance,Dallas,2018-04-07,33,G6,Finance Manager,Manager,JP0014,Active,,,100911
+100207,Jennifer Williams,Female,Hispanic or Latino,No,No,Sales,Atlanta,2020-03-26,26,G2,Sales Representative II,Individual Contributor,JP0002,Active,,,100108
+100208,Kayla Murphy,Female,Prefer not to disclose,Yes,No,Operations,Dallas,2025-03-16,46,G4,Senior Operations Analyst,Individual Contributor,JP0044,Active,,,100316
+100209,Victoria Rogers,Male,White,No,No,Sales,Phoenix,2024-08-28,25,G6,Sales Manager,Manager,JP0006,Active,,,100866
+100210,Ian Lara,Female,Black or African American,No,No,Operations,Dallas,2024-08-10,45,G4,Senior Operations Analyst,Individual Contributor,JP0044,Active,,,100746
+100211,Daniel Walker,Male,White,No,No,Customer Support,Atlanta,2019-05-16,40,G3,Senior Support Representative,Individual Contributor,JP0051,Terminated,2022-11-02,Involuntary,100821
+100212,John Flynn,Female,White,No,Yes,Sales,New York,2024-06-16,56,G3,Senior Sales Representative,Individual Contributor,JP0003,Active,,,100108
+100213,Gina Wilcox,Female,White,No,No,Operations,Austin,2022-08-19,27,G2,Operations Coordinator II,Individual Contributor,JP0042,Active,,,100501
+100214,Jodi Briggs,Male,White,No,No,Marketing,Chicago,2025-09-01,57,G6,Marketing Manager,Manager,JP0038,Active,,,100869
+100215,Jonathan Knight,Female,Hispanic or Latino,No,Yes,Customer Support,New York,2021-11-24,37,G4,Support Specialist,Individual Contributor,JP0052,Active,,,100896
+100216,Joseph Mckinney,Female,Hispanic or Latino,No,No,IT,Atlanta,2017-06-17,43,G4,Senior Software Engineer,Individual Contributor,JP0028,Active,,,100401
+100217,Jacqueline Rivas,Female,White,No,No,Operations,Chicago,2017-06-26,56,G2,Operations Coordinator II,Individual Contributor,JP0042,Active,,,100424
+100218,Sarah Lopez,Female,Hispanic or Latino,No,No,Finance,Dallas,2024-12-13,51,G4,Finance Lead,Individual Contributor,JP0012,Active,,,100989
+100219,Amanda Mullen,Female,Black or African American,No,No,Customer Support,Dallas,2025-05-31,63,G2,Support Representative II,Individual Contributor,JP0050,Active,,,100821
+100220,Steve Garcia,Male,White,No,No,IT,Atlanta,2024-11-14,63,G2,Software Engineer I,Individual Contributor,JP0026,Active,,,100900
+100221,Belinda Jones,Female,Black or African American,No,No,Marketing,Dallas,2018-01-16,36,G2,Marketing Coordinator II,Individual Contributor,JP0034,Active,,,100962
+100222,Austin Simpson,Male,Asian,No,No,Finance,New York,2017-09-16,58,G4,Finance Lead,Individual Contributor,JP0012,Terminated,2017-12-12,Voluntary Resignation,100920
+100223,Carolyn Velasquez,Female,Hispanic or Latino,No,No,HR,Austin,2019-06-14,54,G3,HR Specialist,Individual Contributor,JP0019,Active,,,100355
+100224,Jonathan Brown,Male,Hispanic or Latino,No,No,Marketing,Dallas,2022-10-31,43,G3,Marketing Specialist,Individual Contributor,JP0035,Terminated,2025-07-30,Involuntary,100962
+100225,Michael Alexander,Male,White,No,No,Customer Support,Atlanta,2025-03-11,46,G1,Support Representative I,Individual Contributor,JP0049,Active,,,100516
+100226,Lauren Martinez,Female,Hispanic or Latino,No,No,HR,Dallas,2022-01-13,32,G8,Chief HR Officer,Vice President,JP0024,Active,,,100022
+100227,Mr. Benjamin Scott MD,Female,Hispanic or Latino,No,No,IT,Atlanta,2019-03-25,57,G8,VP of Engineering,Vice President,JP0032,Active,,,100022
+100228,Mr. Eugene Anderson,Female,White,No,No,Sales,Chicago,2026-04-25,34,G2,Sales Representative II,Individual Contributor,JP0002,Active,,,100664
+100229,Melissa Berg MD,Female,White,No,No,Finance,Austin,2025-08-05,24,G4,Finance Lead,Individual Contributor,JP0012,Active,,,100898
+100230,David Taylor,Male,White,Yes,No,Marketing,Phoenix,2020-09-27,38,G4,Senior Marketing Specialist,Individual Contributor,JP0036,Active,,,100913
+100231,William Malone,Male,White,No,No,Customer Support,Atlanta,2019-08-31,50,G8,VP of Customer Success,Vice President,JP0056,Active,,,100022
+100232,Dominic Brown,Male,White,No,No,Sales,Chicago,2021-11-19,38,G5,Senior Sales Specialist,Senior Individual Contributor,JP0005,Active,,,100638
+100233,Erin Simpson,Male,White,No,No,IT,Phoenix,2026-04-16,26,G3,Software Engineer II,Individual Contributor,JP0027,Active,,,100436
+100234,Cynthia Watson,Male,Hispanic or Latino,No,No,IT,Dallas,2020-12-14,37,G5,Staff Engineer,Senior Individual Contributor,JP0029,Active,,,100534
+100235,Shelly Wright,Female,White,No,No,IT,Austin,2017-12-20,62,G4,Senior Software Engineer,Individual Contributor,JP0028,Active,,,100436
+100236,Nathaniel Perkins,Male,White,No,No,HR,Austin,2022-11-20,25,G2,HR Coordinator II,Individual Contributor,JP0018,Active,,,100157
+100237,Rachel Leach,Female,White,No,No,Operations,Austin,2016-08-17,33,G6,Operations Manager,Manager,JP0046,Active,,,100265
+100238,Pamela Ward,Female,Hispanic or Latino,No,No,Finance,Phoenix,2017-11-09,27,G7,Finance Director,Director,JP0015,Active,,,100520
+100239,Victoria Lara,Male,White,No,No,Customer Support,Austin,2025-04-03,56,G2,Support Representative II,Individual Contributor,JP0050,Active,,,100143
+100240,Rodney Liu,Female,Asian,No,No,IT,Dallas,2024-03-16,57,G3,Software Engineer II,Individual Contributor,JP0027,Active,,,100383
+100241,Kristina Petersen,Female,Hispanic or Latino,No,No,Sales,Dallas,2024-08-26,27,G4,Sales Specialist,Individual Contributor,JP0004,Active,,,100057
+100242,Marco Schultz,Male,White,No,No,Marketing,Atlanta,2023-01-21,33,G2,Marketing Coordinator II,Individual Contributor,JP0034,Active,,,100604
+100243,Carlos Schaefer,Male,White,No,No,IT,Phoenix,2022-02-05,53,G7,Engineering Director,Director,JP0031,Active,,,100856
+100244,Michael Dominguez,Female,White,No,No,Operations,Austin,2024-09-17,31,G2,Operations Coordinator II,Individual Contributor,JP0042,Terminated,2025-03-01,Voluntary Resignation,100424
+100245,Leah Morales,Prefer not to disclose,White,No,No,Operations,New York,2017-12-30,30,G2,Operations Coordinator II,Individual Contributor,JP0042,Active,,,100934
+100246,Joseph Martinez,Female,White,No,No,Sales,Dallas,2017-08-07,25,G2,Sales Representative II,Individual Contributor,JP0002,Active,,,100209
+100247,Ms. Stacey Hall DDS,Male,White,No,No,Sales,Phoenix,2017-01-04,60,G4,Sales Specialist,Individual Contributor,JP0004,Active,,,100057
+100248,Chad Calderon,Female,White,No,No,Marketing,Chicago,2023-12-13,43,G5,Marketing Lead,Senior Individual Contributor,JP0037,Active,,,100197
+100249,Paul Lucas,Male,Two or more races,No,No,Marketing,Atlanta,2026-03-25,59,G5,Marketing Lead,Senior Individual Contributor,JP0037,Active,,,100962
+100250,Amanda Young,Female,White,No,No,Finance,Austin,2019-07-16,42,G2,Finance Analyst II,Individual Contributor,JP0010,Active,,,100898
+100251,Karen Young,Female,White,No,No,Marketing,Atlanta,2017-05-15,47,G2,Marketing Coordinator II,Individual Contributor,JP0034,Active,,,100177
+100252,Crystal Hernandez,Male,Hispanic or Latino,No,No,Finance,Chicago,2021-06-19,50,G2,Finance Analyst II,Individual Contributor,JP0010,Active,,,100206
+100253,Joyce Ho,Female,White,No,No,Marketing,Dallas,2025-03-21,22,G3,Marketing Specialist,Individual Contributor,JP0035,Active,,,100197
+100254,Jesus Mckinney,Male,Asian,No,No,Marketing,Chicago,2016-08-04,32,G5,Marketing Lead,Senior Individual Contributor,JP0037,Active,,,100177
+100255,Melanie Allen,Male,White,No,No,HR,Atlanta,2021-05-27,40,G4,Senior HR Specialist,Individual Contributor,JP0020,Active,,,100813
+100256,Brandon Hall,Female,Hispanic or Latino,Yes,No,IT,New York,2022-06-10,22,G2,Software Engineer I,Individual Contributor,JP0026,Active,,,100383
+100257,James Blackwell,Male,Asian,No,No,HR,Phoenix,2022-10-26,57,G1,HR Coordinator I,Individual Contributor,JP0017,Active,,,100157
+100258,Yesenia Garcia,Female,Black or African American,No,No,Customer Support,Atlanta,2021-01-03,51,G3,Senior Support Representative,Individual Contributor,JP0051,Terminated,2025-10-10,Voluntary Resignation,100787
+100259,Christian Rogers,Male,White,No,No,Finance,Dallas,2023-07-21,30,G6,Finance Manager,Manager,JP0014,Active,,,100629
+100260,Tiffany Kirk,Male,White,No,Yes,Finance,Dallas,2019-04-22,31,G3,Senior Finance Analyst,Individual Contributor,JP0011,Active,,,100259
+100261,Ryan Saunders,Male,White,No,No,IT,Chicago,2022-01-04,55,G5,Staff Engineer,Senior Individual Contributor,JP0029,Active,,,100619
+100262,Lisa Klein,Male,White,No,No,Customer Support,Phoenix,2018-06-10,46,G2,Support Representative II,Individual Contributor,JP0050,Active,,,100784
+100263,Shannon Poole,Male,White,No,No,IT,Atlanta,2022-12-27,56,G2,Software Engineer I,Individual Contributor,JP0026,Active,,,100305
+100264,Amber Bowman,Female,Black or African American,No,No,Operations,Atlanta,2018-09-26,42,G4,Senior Operations Analyst,Individual Contributor,JP0044,Active,,,100777
+100265,William Blake,Female,Hispanic or Latino,No,No,Operations,Phoenix,2016-09-20,43,G7,Operations Director,Director,JP0047,Active,,,100127
+100266,Terry Steele,Female,Hispanic or Latino,No,No,Operations,Chicago,2023-01-09,48,G8,VP of Operations,Vice President,JP0048,Active,,,100022
+100267,Wayne Greene,Female,Black or African American,No,No,Customer Support,Atlanta,2025-07-10,54,G7,Support Director,Director,JP0055,Active,,,100910
+100268,Kenneth Lewis,Male,White,No,No,Customer Support,Dallas,2025-02-12,58,G4,Support Specialist,Individual Contributor,JP0052,Active,,,100510
+100269,Aimee Richards,Female,Black or African American,No,No,Finance,Chicago,2026-05-27,61,G2,Finance Analyst II,Individual Contributor,JP0010,Active,,,100933
+100270,John Gaines MD,Female,White,No,No,Finance,New York,2017-07-01,48,G2,Finance Analyst II,Individual Contributor,JP0010,Active,,,100457
+100271,Daniel Caldwell,Female,White,No,No,Marketing,Chicago,2023-01-01,38,G5,Marketing Lead,Senior Individual Contributor,JP0037,Active,,,100442
+100272,Stacey Gray,Female,White,No,No,Sales,Phoenix,2026-01-11,40,G1,Sales Representative I,Individual Contributor,JP0001,Active,,,100209
+100273,Timothy Palmer,Male,Hispanic or Latino,No,No,IT,Austin,2020-09-14,58,G8,VP of Engineering,Vice President,JP0032,Active,,,100022
+100274,Katrina Mcbride,Female,White,No,No,Operations,Dallas,2018-02-01,41,G4,Senior Operations Analyst,Individual Contributor,JP0044,Active,,,100237
+100275,Jordan Wheeler,Female,Hispanic or Latino,Yes,No,Customer Support,Chicago,2018-03-01,25,G3,Senior Support Representative,Individual Contributor,JP0051,Active,,,100151
+100276,Deborah Davis,Female,Hispanic or Latino,Yes,No,Finance,Phoenix,2019-06-04,40,G1,Finance Analyst I,Individual Contributor,JP0009,Active,,,100898
+100277,Heidi Smith,Female,Native American,No,No,Marketing,New York,2025-09-06,57,G1,Marketing Coordinator I,Individual Contributor,JP0033,Active,,,100442
+100278,Amy Waller,Male,White,No,No,Sales,New York,2022-03-22,32,G2,Sales Representative II,Individual Contributor,JP0002,Active,,,100638
+100279,Glenn Carroll,Female,White,No,No,Operations,New York,2017-07-26,36,G5,Operations Lead,Senior Individual Contributor,JP0045,Terminated,2020-12-29,Involuntary,100563
+100280,Angela Simmons,Female,Hispanic or Latino,No,No,Operations,Chicago,2026-03-26,31,G3,Operations Analyst,Individual Contributor,JP0043,Active,,,100563
+100281,Michelle Newton,Female,White,No,No,Marketing,New York,2017-04-22,40,G3,Marketing Specialist,Individual Contributor,JP0035,Active,,,100513
+100282,Amanda Ho,Male,White,No,No,Operations,Atlanta,2021-10-15,31,G2,Operations Coordinator II,Individual Contributor,JP0042,Active,,,100102
+100283,Barbara Williams,Male,White,No,No,IT,Dallas,2023-09-04,45,G7,Engineering Director,Director,JP0031,Active,,,100227
+100284,Patricia Martin,Male,White,No,No,Operations,Chicago,2023-07-16,45,G5,Operations Lead,Senior Individual Contributor,JP0045,Active,,,100102
+100285,Andrea Gonzalez,Male,White,No,No,Marketing,New York,2016-06-17,49,G3,Marketing Specialist,Individual Contributor,JP0035,Active,,,100442
+100286,Raymond Green,Male,Hispanic or Latino,No,No,Finance,Chicago,2021-09-01,30,G5,Senior Finance Lead,Senior Individual Contributor,JP0013,Active,,,100920
+100287,Brett Hicks,Male,Asian,No,No,HR,Dallas,2016-07-31,48,G4,Senior HR Specialist,Individual Contributor,JP0020,Active,,,100391
+100288,Melanie Scott,Male,Hispanic or Latino,No,No,Customer Support,Atlanta,2024-07-03,63,G3,Senior Support Representative,Individual Contributor,JP0051,Active,,,100151
+100289,John Garcia,Female,Native American,No,No,Operations,Austin,2021-11-29,58,G5,Operations Lead,Senior Individual Contributor,JP0045,Active,,,100424
+100290,Tammy Brooks,Male,Asian,No,No,HR,Dallas,2020-03-05,25,G4,Senior HR Specialist,Individual Contributor,JP0020,Active,,,100355
+100291,Robin Tucker,Female,White,No,No,Sales,Austin,2020-04-20,49,G3,Senior Sales Representative,Individual Contributor,JP0003,Active,,,100209
+100292,Justin Bryant,Female,White,No,No,Sales,Austin,2019-05-17,22,G5,Senior Sales Specialist,Senior Individual Contributor,JP0005,Active,,,100907
+100293,James Wilson,Female,Black or African American,No,No,Marketing,New York,2021-08-07,60,G3,Marketing Specialist,Individual Contributor,JP0035,Active,,,100513
+100294,Patricia Wilson,Female,Black or African American,No,Yes,Customer Support,Dallas,2023-04-02,53,G4,Support Specialist,Individual Contributor,JP0052,Active,,,100153
+100295,Hannah Graham,Female,Hispanic or Latino,No,Yes,IT,Atlanta,2022-12-15,36,G2,Software Engineer I,Individual Contributor,JP0026,Active,,,100401
+100296,Matthew Page,Male,Asian,No,No,IT,Dallas,2020-09-07,23,G6,Engineering Manager,Manager,JP0030,Active,,,100390
+100297,Carol Johnson,Male,White,No,No,Operations,Chicago,2025-07-17,44,G1,Operations Coordinator I,Individual Contributor,JP0041,Terminated,2025-08-08,Voluntary Resignation,100501
+100298,Timothy Edwards,Male,White,No,No,Finance,Chicago,2019-11-26,49,G5,Senior Finance Lead,Senior Individual Contributor,JP0013,Terminated,2022-03-30,Voluntary Resignation,100457
+100299,Erin Young,Female,Black or African American,No,No,Marketing,Austin,2024-05-23,63,G5,Marketing Lead,Senior Individual Contributor,JP0037,Active,,,100322
+100300,Anthony Gonzalez,Female,White,No,No,Operations,Austin,2016-08-04,64,G3,Operations Analyst,Individual Contributor,JP0043,Active,,,100237
+100301,Mallory Powell DVM,Female,White,No,No,Sales,New York,2025-03-29,58,G8,VP of Sales,Vice President,JP0008,Active,,,100022
+100302,Alejandro Russo,Non-binary,Black or African American,No,No,Operations,Dallas,2018-05-08,42,G3,Operations Analyst,Individual Contributor,JP0043,Active,,,100746
+100303,Glenn Porter,Male,Black or African American,No,No,Finance,New York,2023-02-11,26,G5,Senior Finance Lead,Senior Individual Contributor,JP0013,Active,,,100933
+100304,Allen Jackson,Male,Black or African American,No,No,Sales,New York,2020-12-13,49,G4,Sales Specialist,Individual Contributor,JP0004,Active,,,100907
+100305,Joseph Long,Female,White,No,No,IT,Austin,2016-08-18,30,G6,Engineering Manager,Manager,JP0030,Terminated,2024-03-06,Voluntary Resignation,100283
+100306,Craig Hall,Female,Black or African American,No,No,Finance,Chicago,2023-03-26,47,G3,Senior Finance Analyst,Individual Contributor,JP0011,Active,,,100016
+100307,Richard Frederick,Male,Asian,No,No,Marketing,New York,2018-06-07,44,G2,Marketing Coordinator II,Individual Contributor,JP0034,Active,,,100913
+100308,Patricia Robinson,Female,Black or African American,No,No,Operations,Dallas,2019-06-15,41,G4,Senior Operations Analyst,Individual Contributor,JP0044,Terminated,2023-04-04,Voluntary Resignation,100777
+100309,Nathaniel Martin,Male,Hispanic or Latino,Yes,No,Finance,Dallas,2020-05-31,41,G5,Senior Finance Lead,Senior Individual Contributor,JP0013,Active,,,100958
+100310,John Kelly,Male,Hispanic or Latino,No,No,Customer Support,Phoenix,2020-06-18,36,G2,Support Representative II,Individual Contributor,JP0050,Active,,,100004
+100311,Elizabeth Young,Female,White,No,No,HR,Dallas,2020-07-25,60,G2,HR Coordinator II,Individual Contributor,JP0018,Active,,,100157
+100312,Cody Olson,Female,White,No,No,IT,New York,2026-04-20,48,G5,Staff Engineer,Senior Individual Contributor,JP0029,Active,,,100900
+100313,Taylor Figueroa,Male,Black or African American,No,No,Operations,Phoenix,2024-04-20,35,G3,Operations Analyst,Individual Contributor,JP0043,Terminated,2024-11-17,Retirement,100424
+100314,Kenneth Holden,Male,Hispanic or Latino,No,No,Sales,Dallas,2023-01-13,40,G3,Senior Sales Representative,Individual Contributor,JP0003,Active,,,100108
+100315,Michael Liu,Female,Black or African American,Yes,No,HR,Dallas,2017-12-31,40,G7,HR Director,Director,JP0023,Active,,,100881
+100316,Derrick King,Male,White,Yes,No,Operations,Dallas,2025-09-22,54,G6,Operations Manager,Manager,JP0046,Active,,,100875
+100317,Nicholas Mora,Female,White,No,No,Sales,Dallas,2024-04-18,25,G3,Senior Sales Representative,Individual Contributor,JP0003,Active,,,100698
+100318,James Barron,Female,Hispanic or Latino,No,No,IT,Atlanta,2017-02-07,51,G1,IT Support Specialist I,Individual Contributor,JP0025,Terminated,2020-12-29,Voluntary Resignation,100305
+100319,Nathan Johnson,Prefer not to disclose,Black or African American,No,Yes,HR,Chicago,2021-12-07,58,G3,HR Specialist,Individual Contributor,JP0019,Active,,,100813
+100320,Matthew Bauer,Female,White,Yes,No,Sales,Austin,2023-03-18,45,G4,Sales Specialist,Individual Contributor,JP0004,Active,,,100664
+100321,Victoria Sullivan,Female,White,No,No,Marketing,Dallas,2020-09-30,40,G7,Marketing Director,Director,JP0039,Active,,,100067
+100322,Robert Miller,Male,Asian,No,No,Marketing,New York,2017-04-16,25,G6,Marketing Manager,Manager,JP0038,Terminated,2019-03-26,Involuntary,100492
+100323,Philip James,Male,White,No,No,IT,Austin,2019-05-16,45,G4,Senior Software Engineer,Individual Contributor,JP0028,Active,,,100401
+100324,Donald Walker,Prefer not to disclose,White,No,No,Customer Support,Austin,2017-04-07,38,G4,Support Specialist,Individual Contributor,JP0052,Active,,,100004
+100325,Jennifer Gillespie,Male,White,No,No,Operations,Atlanta,2018-03-22,56,G1,Operations Coordinator I,Individual Contributor,JP0041,Active,,,100563
+100326,Joshua Mcknight,Male,White,No,No,HR,Dallas,2019-01-13,29,G2,HR Coordinator II,Individual Contributor,JP0018,Terminated,2019-02-12,Voluntary Resignation,100357
+100327,Yolanda Patrick,Male,White,No,No,IT,Austin,2016-08-01,64,G1,IT Support Specialist I,Individual Contributor,JP0025,Active,,,100900
+100328,Taylor Adams,Male,White,No,No,Sales,New York,2025-07-19,60,G1,Sales Representative I,Individual Contributor,JP0001,Active,,,100698
+100329,Mary Jackson,Female,Hispanic or Latino,No,No,Customer Support,Phoenix,2025-07-14,22,G4,Support Specialist,Individual Contributor,JP0052,Terminated,2025-09-23,Voluntary Resignation,100516
+100330,Denise Williams,Male,Asian,No,No,HR,Dallas,2019-05-06,47,G3,HR Specialist,Individual Contributor,JP0019,Active,,,100454
+100331,Joshua Avery,Female,Black or African American,Yes,No,Finance,Dallas,2018-05-29,41,G7,Finance Director,Director,JP0015,Active,,,100834
+100332,James Thompson,Female,Black or African American,No,No,Finance,Chicago,2018-01-19,61,G5,Senior Finance Lead,Senior Individual Contributor,JP0013,Active,,,100186
+100333,Matthew Smith,Male,White,No,No,Sales,Atlanta,2022-01-01,62,G5,Senior Sales Specialist,Senior Individual Contributor,JP0005,Active,,,100209
+100334,Teresa Hill,Female,White,No,No,HR,Dallas,2020-07-15,60,G4,Senior HR Specialist,Individual Contributor,JP0020,Active,,,100357
+100335,Kimberly Bernard,Female,Hispanic or Latino,No,No,IT,Phoenix,2021-08-30,61,G6,Engineering Manager,Manager,JP0030,Active,,,100450
+100336,Emily Murphy,Male,White,No,No,Sales,Austin,2026-01-09,58,G5,Senior Sales Specialist,Senior Individual Contributor,JP0005,Active,,,100057
+100337,Tyler Russell,Male,White,No,Yes,Sales,Atlanta,2026-01-09,64,G2,Sales Representative II,Individual Contributor,JP0002,Terminated,2026-06-07,Voluntary Resignation,100907
+100338,Amanda Johnston,Male,White,No,No,HR,Chicago,2025-04-22,55,G3,HR Specialist,Individual Contributor,JP0019,Active,,,100017
+100339,Derek Morrison,Female,Asian,No,No,HR,Austin,2025-10-08,57,G3,HR Specialist,Individual Contributor,JP0019,Active,,,100776
+100340,Nicholas Mercado,Female,White,No,Yes,Customer Support,Dallas,2019-11-28,22,G3,Senior Support Representative,Individual Contributor,JP0051,Active,,,100525
+100341,James Le MD,Male,Hispanic or Latino,No,No,HR,New York,2021-01-23,32,G7,HR Director,Director,JP0023,Active,,,100226
+100342,Rhonda Coleman,Female,White,No,No,Operations,Phoenix,2024-11-23,22,G3,Operations Analyst,Individual Contributor,JP0043,Terminated,2026-02-27,Voluntary Resignation,100102
+100343,Kathryn Washington,Male,White,Yes,No,Sales,New York,2022-03-30,25,G2,Sales Representative II,Individual Contributor,JP0002,Active,,,100698
+100344,Sara Horton,Male,White,No,Yes,Operations,New York,2021-03-02,36,G2,Operations Coordinator II,Individual Contributor,JP0042,Active,,,100777
+100345,Curtis Gomez,Female,White,No,No,Finance,Phoenix,2020-09-16,25,G4,Finance Lead,Individual Contributor,JP0012,Active,,,100989
+100346,Patrick Palmer,Prefer not to disclose,White,No,No,Sales,Atlanta,2017-03-28,53,G8,VP of Sales,Vice President,JP0008,Active,,,100022
+100347,Jennifer Pollard,Prefer not to disclose,White,No,No,IT,Atlanta,2020-08-02,44,G3,Software Engineer II,Individual Contributor,JP0027,Active,,,100948
+100348,Ms. Stacey Griffin MD,Female,Hispanic or Latino,No,No,Finance,Chicago,2016-12-24,42,G3,Senior Finance Analyst,Individual Contributor,JP0011,Terminated,2017-08-12,Retirement,100815
+100349,Tammy Morrow,Female,White,No,No,Customer Support,Atlanta,2019-11-05,55,G7,Support Director,Director,JP0055,Active,,,100155
+100350,James Atkinson,Female,Hispanic or Latino,No,No,HR,Austin,2024-06-23,40,G4,Senior HR Specialist,Individual Contributor,JP0020,Active,,,100017
+100351,Miss Tracey Gonzalez,Male,Black or African American,No,No,Marketing,New York,2016-06-24,55,G2,Marketing Coordinator II,Individual Contributor,JP0034,Active,,,100518
+100352,Megan Khan,Male,White,No,No,Marketing,Atlanta,2020-10-10,38,G5,Marketing Lead,Senior Individual Contributor,JP0037,Active,,,100197
+100353,Shawn Curtis,Female,Asian,No,No,Sales,Chicago,2019-06-14,53,G5,Senior Sales Specialist,Senior Individual Contributor,JP0005,Terminated,2021-09-16,Involuntary,100108
+100354,Felicia Cordova,Male,White,No,No,Customer Support,New York,2017-04-26,32,G4,Support Specialist,Individual Contributor,JP0052,Terminated,2018-04-17,Involuntary,100143
+100355,Peter Watkins,Female,Black or African American,No,No,HR,New York,2016-09-02,25,G6,HR Manager,Manager,JP0022,Active,,,100074
+100356,Brian Mejia,Male,White,No,No,HR,Dallas,2024-06-02,54,G5,HR Business Partner,Senior Individual Contributor,JP0021,Active,,,100715
+100357,Joshua Hill,Male,White,Yes,No,HR,Atlanta,2016-08-24,52,G6,HR Manager,Manager,JP0022,Active,,,100341
+100358,Dana Bowman,Male,Hispanic or Latino,No,No,Finance,Austin,2019-08-16,42,G5,Senior Finance Lead,Senior Individual Contributor,JP0013,Active,,,100441
+100359,Peter Stewart,Male,Hispanic or Latino,No,No,Finance,New York,2016-12-11,40,G3,Senior Finance Analyst,Individual Contributor,JP0011,Active,,,100118
+100360,Linda Ramos,Female,White,Yes,No,Finance,Dallas,2025-10-11,58,G2,Finance Analyst II,Individual Contributor,JP0010,Terminated,2025-12-01,Voluntary Resignation,100989
+100361,William Ray,Male,Asian,No,No,Marketing,Dallas,2019-11-05,57,G5,Marketing Lead,Senior Individual Contributor,JP0037,Active,,,100604
+100362,Margaret Tran,Male,White,Yes,No,Customer Support,Phoenix,2022-07-03,52,G5,Senior Support Specialist,Senior Individual Contributor,JP0053,Active,,,100510
+100363,Mrs. Patricia Miller DVM,Female,Hispanic or Latino,No,No,HR,Atlanta,2026-05-24,40,G1,HR Coordinator I,Individual Contributor,JP0017,Active,,,100648
+100364,Walter Johnson,Male,White,No,No,Finance,Chicago,2024-12-09,23,G4,Finance Lead,Individual Contributor,JP0012,Active,,,100823
+100365,Melissa Wolfe,Female,White,No,No,Marketing,Phoenix,2018-02-27,48,G1,Marketing Coordinator I,Individual Contributor,JP0033,Active,,,100177
+100366,John Martinez,Male,White,No,No,Customer Support,Atlanta,2024-10-12,40,G1,Support Representative I,Individual Contributor,JP0049,Active,,,100896
+100367,Dennis Barber,Female,White,No,No,Sales,Austin,2023-03-01,31,G3,Senior Sales Representative,Individual Contributor,JP0003,Active,,,100076
+100368,Jean Nichols,Male,Hispanic or Latino,No,No,Operations,Chicago,2018-08-31,45,G5,Operations Lead,Senior Individual Contributor,JP0045,Active,,,100563
+100369,Jason Bartlett,Female,White,No,No,Operations,Phoenix,2024-11-26,55,G3,Operations Analyst,Individual Contributor,JP0043,Active,,,100998
+100370,Jennifer Perkins,Female,White,No,No,Finance,Dallas,2019-12-15,50,G2,Finance Analyst II,Individual Contributor,JP0010,Active,,,100823
+100371,Stephanie Price,Female,White,No,Yes,Operations,Atlanta,2024-12-23,50,G1,Operations Coordinator I,Individual Contributor,JP0041,Active,,,100934
+100372,Jacob Kidd,Male,White,No,No,Sales,Chicago,2019-09-27,39,G7,Sales Director,Director,JP0007,Terminated,2024-11-25,Involuntary,100542
+100373,Glenn Anderson,Male,White,No,No,Marketing,Dallas,2024-01-14,44,G6,Marketing Manager,Manager,JP0038,Active,,,100500
+100374,Brittany Rodriguez,Female,Black or African American,No,No,Sales,Atlanta,2017-02-20,42,G4,Sales Specialist,Individual Contributor,JP0004,Active,,,100610
+100375,Taylor Potts,Non-binary,Hispanic or Latino,No,No,Marketing,Phoenix,2018-07-04,30,G6,Marketing Manager,Manager,JP0038,Active,,,100492
+100376,Marcia Pineda,Female,Prefer not to disclose,No,No,HR,Chicago,2026-05-27,62,G2,HR Coordinator II,Individual Contributor,JP0018,Active,,,100715
+100377,Alexandra Rocha,Female,Hispanic or Latino,Yes,No,Finance,Atlanta,2025-01-01,39,G3,Senior Finance Analyst,Individual Contributor,JP0011,Active,,,100920
+100378,Amanda Henry,Female,White,No,No,IT,Phoenix,2023-07-24,54,G4,Senior Software Engineer,Individual Contributor,JP0028,Active,,,100383
+100379,Tyler Whitaker,Female,White,No,No,Customer Support,Austin,2016-09-15,24,G5,Senior Support Specialist,Senior Individual Contributor,JP0053,Active,,,100510
+100380,James Ramirez,Male,Hispanic or Latino,No,No,IT,Atlanta,2026-02-28,64,G3,Software Engineer II,Individual Contributor,JP0027,Active,,,100335
+100381,Cassidy Carlson,Female,Black or African American,No,No,Sales,Austin,2025-04-18,34,G3,Senior Sales Representative,Individual Contributor,JP0003,Active,,,100664
+100382,Maria Bates DVM,Male,White,No,No,Finance,Phoenix,2020-02-24,38,G3,Senior Finance Analyst,Individual Contributor,JP0011,Active,,,100186
+100383,James Brown,Male,White,No,No,IT,Phoenix,2021-07-03,22,G6,Engineering Manager,Manager,JP0030,Active,,,100470
+100384,April Mullins,Male,White,No,No,IT,Phoenix,2017-01-08,63,G3,Software Engineer II,Individual Contributor,JP0027,Active,,,100436
+100385,Kimberly Chan,Male,White,No,No,Operations,Dallas,2020-04-03,54,G5,Operations Lead,Senior Individual Contributor,JP0045,Active,,,100512
+100386,Roy Campos DDS,Male,White,Yes,No,Customer Support,Chicago,2026-03-02,34,G5,Senior Support Specialist,Senior Individual Contributor,JP0053,Active,,,100143
+100387,Stephen Howell,Female,White,No,No,Customer Support,Atlanta,2021-09-17,43,G7,Support Director,Director,JP0055,Terminated,2026-06-15,Retirement,100022
+100388,Patricia Wolf,Female,Asian,No,No,HR,Chicago,2022-09-05,44,G2,HR Coordinator II,Individual Contributor,JP0018,Active,,,100564
+100389,Dale Mejia,Female,Asian,No,No,IT,Austin,2020-01-10,32,G4,Senior Software Engineer,Individual Contributor,JP0028,Active,,,100587
+100390,Mark Kelley,Female,White,No,No,IT,Dallas,2021-07-25,47,G7,Engineering Director,Director,JP0031,Active,,,100856
+100391,Mary Waller,Female,White,No,No,HR,Chicago,2025-01-03,32,G6,HR Manager,Manager,JP0022,Active,,,100074
+100392,Caroline Ortiz,Female,White,No,No,Sales,Dallas,2023-10-18,47,G2,Sales Representative II,Individual Contributor,JP0002,Active,,,100076
+100393,Zachary Hale,Female,White,Yes,No,Marketing,Phoenix,2025-07-11,48,G2,Marketing Coordinator II,Individual Contributor,JP0034,Active,,,100518
+100394,Alicia Ibarra,Female,Two or more races,No,No,Marketing,Phoenix,2018-05-01,39,G5,Marketing Lead,Senior Individual Contributor,JP0037,Active,,,100322
+100395,Lori Arellano,Male,White,No,No,Operations,Chicago,2023-02-17,64,G4,Senior Operations Analyst,Individual Contributor,JP0044,Active,,,100777
+100396,Antonio Clark,Prefer not to disclose,Black or African American,No,No,Sales,Phoenix,2018-03-20,62,G4,Sales Specialist,Individual Contributor,JP0004,Active,,,100610
+100397,Dr. Jonathan Murphy,Female,White,No,No,HR,Chicago,2018-02-01,32,G2,HR Coordinator II,Individual Contributor,JP0018,Active,,,100178
+100398,Daniel Robinson PhD,Female,White,No,No,Finance,Chicago,2020-05-19,50,G3,Senior Finance Analyst,Individual Contributor,JP0011,Active,,,100989
+100399,Jessica Cooke,Female,White,No,No,Finance,Atlanta,2018-11-28,63,G6,Finance Manager,Manager,JP0014,Active,,,100740
+100400,Crystal Sullivan,Male,Hispanic or Latino,No,No,IT,Austin,2025-09-30,43,G3,Software Engineer II,Individual Contributor,JP0027,Active,,,100047
+100401,Stephen Rogers,Male,White,No,No,IT,Austin,2020-07-19,64,G6,Engineering Manager,Manager,JP0030,Active,,,100450
+100402,Courtney Diaz,Male,Black or African American,No,No,Finance,Atlanta,2017-06-15,48,G1,Finance Analyst I,Individual Contributor,JP0009,Active,,,100399
+100403,John Weaver,Female,White,No,No,HR,New York,2017-06-01,55,G1,HR Coordinator I,Individual Contributor,JP0017,Active,,,100357
+100404,Catherine Johnson,Female,White,No,No,Sales,New York,2017-10-19,56,G8,VP of Sales,Vice President,JP0008,Terminated,2020-03-05,Involuntary,100022
+100405,Mary Payne,Male,Hispanic or Latino,No,No,HR,Atlanta,2019-10-13,48,G7,HR Director,Director,JP0023,Active,,,100485
+100406,Jose Brown,Male,White,No,No,Sales,Austin,2021-06-23,32,G3,Senior Sales Representative,Individual Contributor,JP0003,Active,,,100698
+100407,Richard Johnson,Male,White,No,No,Marketing,Atlanta,2018-07-12,25,G5,Marketing Lead,Senior Individual Contributor,JP0037,Active,,,100518
+100408,Veronica Mahoney,Female,White,No,No,HR,Atlanta,2017-03-14,28,G4,Senior HR Specialist,Individual Contributor,JP0020,Active,,,100776
+100409,Michelle Mcdonald,Female,White,No,No,Customer Support,Chicago,2025-11-04,36,G6,Support Manager,Manager,JP0054,Active,,,100420
+100410,Amy Williams,Female,White,No,No,Marketing,Chicago,2023-02-10,48,G4,Senior Marketing Specialist,Individual Contributor,JP0036,Active,,,100604
+100411,Melinda Stone,Female,White,No,No,Customer Support,Atlanta,2018-05-07,57,G1,Support Representative I,Individual Contributor,JP0049,Active,,,100915
+100412,Diana Jackson,Female,White,No,Yes,Finance,Chicago,2026-02-21,44,G5,Senior Finance Lead,Senior Individual Contributor,JP0013,Terminated,2026-05-27,Voluntary Resignation,100815
+100413,Amanda Peterson,Male,Hispanic or Latino,Yes,No,Customer Support,Phoenix,2025-12-02,27,G7,Support Director,Director,JP0055,Active,,,100022
+100414,Jill Thompson,Male,White,Yes,No,Finance,New York,2023-08-07,43,G1,Finance Analyst I,Individual Contributor,JP0009,Active,,,100898
+100415,Kristen Edwards,Male,Hispanic or Latino,No,No,IT,Atlanta,2024-07-30,44,G5,Staff Engineer,Senior Individual Contributor,JP0029,Active,,,100948
+100416,Christopher Lee,Male,Hispanic or Latino,No,No,Operations,Phoenix,2023-07-01,57,G4,Senior Operations Analyst,Individual Contributor,JP0044,Active,,,100777
+100417,Lisa Miller,Male,White,No,No,Operations,Austin,2017-10-15,31,G8,VP of Operations,Vice President,JP0048,Active,,,100022
+100418,Pamela Cortez,Female,White,No,Yes,Finance,Dallas,2023-10-27,38,G1,Finance Analyst I,Individual Contributor,JP0009,Active,,,100259
+100419,Amber Powell,Female,White,No,No,IT,Dallas,2016-06-27,57,G4,Senior Software Engineer,Individual Contributor,JP0028,Active,,,100619
+100420,Jonathan Sweeney,Female,Hispanic or Latino,No,No,Customer Support,Dallas,2026-04-04,44,G7,Support Director,Director,JP0055,Terminated,2026-05-24,Voluntary Resignation,100022
+100421,Cheryl Quinn MD,Female,White,No,No,Marketing,Atlanta,2019-04-04,27,G2,Marketing Coordinator II,Individual Contributor,JP0034,Active,,,100214
+100422,Gregory Lyons,Male,White,No,No,IT,Atlanta,2022-01-12,22,G3,Software Engineer II,Individual Contributor,JP0027,Active,,,100335
+100423,Patricia Briggs,Male,Black or African American,No,No,Finance,New York,2019-04-10,64,G3,Senior Finance Analyst,Individual Contributor,JP0011,Active,,,100118
+100424,Vincent Dodson,Female,Two or more races,No,No,Operations,New York,2021-03-16,50,G6,Operations Manager,Manager,JP0046,Active,,,100069
+100425,Kimberly Thomas,Female,White,No,No,Sales,Phoenix,2021-07-12,61,G5,Senior Sales Specialist,Senior Individual Contributor,JP0005,Active,,,100907
+100426,Julie Stevens,Female,White,No,No,Operations,Chicago,2019-07-15,52,G2,Operations Coordinator II,Individual Contributor,JP0042,Active,,,100316
+100427,Larry Ross,Male,Black or African American,No,No,Customer Support,Phoenix,2024-11-19,24,G3,Senior Support Representative,Individual Contributor,JP0051,Active,,,100514
+100428,Stephanie Norton,Female,White,No,Yes,Customer Support,Dallas,2019-09-01,33,G6,Support Manager,Manager,JP0054,Active,,,100420
+100429,Craig Jackson,Male,White,No,No,HR,Chicago,2022-06-21,35,G3,HR Specialist,Individual Contributor,JP0019,Active,,,100648
+100430,Kimberly Wright,Male,White,No,No,HR,New York,2024-06-11,23,G4,Senior HR Specialist,Individual Contributor,JP0020,Active,,,100355
+100431,Richard Thompson,Female,Hispanic or Latino,No,No,Customer Support,Phoenix,2016-10-29,44,G2,Support Representative II,Individual Contributor,JP0050,Terminated,2018-04-22,Involuntary,100525
+100432,Jennifer James,Female,Pacific Islander,No,No,Operations,Dallas,2018-02-15,29,G3,Operations Analyst,Individual Contributor,JP0043,Active,,,100424
+100433,Anthony Wright,Non-binary,White,No,No,Marketing,Dallas,2018-11-03,26,G1,Marketing Coordinator I,Individual Contributor,JP0033,Active,,,100913
+100434,Tara Green,Male,White,No,No,IT,Austin,2025-07-31,55,G2,Software Engineer I,Individual Contributor,JP0026,Terminated,2026-05-17,Voluntary Resignation,100619
+100435,Gabriel Sampson,Male,Hispanic or Latino,No,No,Finance,New York,2019-03-31,50,G4,Finance Lead,Individual Contributor,JP0012,Active,,,100958
+100436,Shannon Gilmore,Male,White,No,No,IT,Austin,2016-08-19,51,G6,Engineering Manager,Manager,JP0030,Active,,,100470
+100437,Jerry Smith,Non-binary,White,No,No,Operations,Phoenix,2021-02-03,62,G4,Senior Operations Analyst,Individual Contributor,JP0044,Active,,,100777
+100438,Terri Hernandez,Female,Black or African American,No,No,HR,Austin,2023-02-22,36,G4,Senior HR Specialist,Individual Contributor,JP0020,Active,,,100564
+100439,David Hoffman,Female,White,No,No,HR,Dallas,2025-02-16,49,G2,HR Coordinator II,Individual Contributor,JP0018,Active,,,100357
+100440,Nicole Smith,Female,White,No,No,Marketing,Chicago,2021-04-15,30,G4,Senior Marketing Specialist,Individual Contributor,JP0036,Active,,,100177
+100441,Chase Lewis,Female,White,No,No,Finance,New York,2025-01-20,56,G6,Finance Manager,Manager,JP0014,Active,,,100238
+100442,Mrs. Christina Snyder MD,Female,White,No,No,Marketing,Dallas,2019-09-17,48,G6,Marketing Manager,Manager,JP0038,Active,,,100975
+100443,Kenneth Daniels,Female,Hispanic or Latino,No,No,IT,Dallas,2020-11-06,44,G1,IT Support Specialist I,Individual Contributor,JP0025,Active,,,100401
+100444,Heather Taylor,Male,White,No,No,IT,Austin,2020-12-19,61,G1,IT Support Specialist I,Individual Contributor,JP0025,Active,,,100948
+100445,Linda Vargas,Female,Hispanic or Latino,No,No,Finance,Austin,2024-09-11,39,G3,Senior Finance Analyst,Individual Contributor,JP0011,Terminated,2025-09-21,Voluntary Resignation,100259
+100446,Amber Cummings,Female,White,No,No,HR,Phoenix,2024-10-11,22,G5,HR Business Partner,Senior Individual Contributor,JP0021,Active,,,100017
+100447,Nicholas Mejia,Female,White,No,No,HR,Phoenix,2023-03-16,64,G2,HR Coordinator II,Individual Contributor,JP0018,Active,,,100017
+100448,John Mitchell,Female,Asian,No,Yes,Sales,New York,2018-12-25,42,G4,Sales Specialist,Individual Contributor,JP0004,Terminated,2024-09-30,Voluntary Resignation,100638
+100449,James Ray,Male,Hispanic or Latino,No,No,Finance,Chicago,2023-11-20,64,G3,Senior Finance Analyst,Individual Contributor,JP0011,Active,,,100933
+100450,Spencer Callahan,Male,White,No,No,IT,Atlanta,2020-07-17,25,G7,Engineering Director,Director,JP0031,Terminated,2025-09-21,Retirement,100273
+100451,William Clayton,Male,White,No,No,Customer Support,New York,2017-12-28,35,G4,Support Specialist,Individual Contributor,JP0052,Active,,,100915
+100452,Angel Garcia,Male,White,No,No,Sales,Austin,2020-05-26,49,G1,Sales Representative I,Individual Contributor,JP0001,Active,,,100610
+100453,David Mitchell,Female,Black or African American,No,No,Customer Support,Dallas,2022-04-30,25,G4,Support Specialist,Individual Contributor,JP0052,Active,,,100409
+100454,Kimberly Wright,Female,White,No,No,HR,Chicago,2016-12-27,45,G6,HR Manager,Manager,JP0022,Active,,,100918
+100455,Leah Bailey,Male,Black or African American,No,No,Customer Support,Dallas,2021-07-25,63,G5,Senior Support Specialist,Senior Individual Contributor,JP0053,Active,,,100821
+100456,Jerry Adams,Male,Asian,Yes,No,Sales,Phoenix,2018-04-07,62,G3,Senior Sales Representative,Individual Contributor,JP0003,Active,,,100664
+100457,Mark Summers,Female,White,No,No,Finance,Phoenix,2019-04-10,30,G6,Finance Manager,Manager,JP0014,Active,,,100911
+100458,Donna Collier,Male,Hispanic or Latino,No,No,Marketing,Atlanta,2016-11-09,38,G2,Marketing Coordinator II,Individual Contributor,JP0034,Active,,,100177
+100459,Kevin Miller,Female,Hispanic or Latino,No,No,Marketing,Dallas,2021-01-15,51,G5,Marketing Lead,Senior Individual Contributor,JP0037,Active,,,100197
+100460,Tammy Brooks,Female,Black or African American,No,No,HR,New York,2016-11-03,57,G1,HR Coordinator I,Individual Contributor,JP0017,Active,,,100157
+100461,Joshua Reeves,Female,White,Yes,No,Finance,New York,2024-07-02,36,G2,Finance Analyst II,Individual Contributor,JP0010,Active,,,100989
+100462,Kara Davis,Female,White,No,No,HR,Austin,2021-12-16,61,G5,HR Business Partner,Senior Individual Contributor,JP0021,Active,,,100776
+100463,Derrick Watson,Male,White,No,No,Sales,Atlanta,2023-11-17,34,G5,Senior Sales Specialist,Senior Individual Contributor,JP0005,Active,,,100108
+100464,Jose Pratt DDS,Male,White,No,No,Marketing,Atlanta,2021-09-17,26,G5,Marketing Lead,Senior Individual Contributor,JP0037,Active,,,100518
+100465,Rebecca Phillips,Male,White,No,Yes,HR,Dallas,2024-01-16,64,G5,HR Business Partner,Senior Individual Contributor,JP0021,Active,,,100017
+100466,Jessica Ross,Male,Black or African American,No,No,Marketing,Dallas,2025-07-11,49,G1,Marketing Coordinator I,Individual Contributor,JP0033,Active,,,100375
+100467,Natasha Eaton,Male,Black or African American,No,No,Sales,Phoenix,2023-05-18,62,G5,Senior Sales Specialist,Senior Individual Contributor,JP0005,Active,,,100907
+100468,Brian Castillo,Male,Black or African American,No,No,Marketing,Atlanta,2024-04-14,51,G4,Senior Marketing Specialist,Individual Contributor,JP0036,Active,,,100214
+100469,Rachel Rhodes,Female,White,Yes,No,Finance,Chicago,2018-12-29,61,G4,Finance Lead,Individual Contributor,JP0012,Active,,,100441
+100470,Scott Burns,Female,Native American,No,No,IT,Phoenix,2020-06-10,36,G7,Engineering Director,Director,JP0031,Active,,,100273
+100471,Jason Sanchez,Female,White,No,No,Marketing,New York,2026-01-19,25,G2,Marketing Coordinator II,Individual Contributor,JP0034,Active,,,100177
+100472,Zachary Fletcher,Male,White,No,No,IT,Austin,2021-12-12,30,G3,Software Engineer II,Individual Contributor,JP0027,Active,,,100335
+100473,Briana Nguyen,Male,White,Yes,No,IT,Dallas,2017-01-27,58,G1,IT Support Specialist I,Individual Contributor,JP0025,Active,,,100383
+100474,Jessica Harris,Female,White,No,No,Operations,Chicago,2022-03-09,50,G4,Senior Operations Analyst,Individual Contributor,JP0044,Active,,,100102
+100475,Sarah Garcia,Male,Black or African American,No,No,IT,New York,2017-07-27,42,G3,Software Engineer II,Individual Contributor,JP0027,Active,,,100383
+100476,Diana Michael,Female,White,No,No,IT,Atlanta,2025-02-20,34,G4,Senior Software Engineer,Individual Contributor,JP0028,Active,,,100305
+100477,Julie Pittman,Male,White,No,No,HR,Austin,2019-10-06,32,G5,HR Business Partner,Senior Individual Contributor,JP0021,Active,,,100715
+100478,Jeffrey Patrick,Female,White,No,No,Sales,Phoenix,2020-01-18,53,G2,Sales Representative II,Individual Contributor,JP0002,Active,,,100209
+100479,Jamie Johnston,Female,White,No,No,Operations,Dallas,2018-08-30,51,G3,Operations Analyst,Individual Contributor,JP0043,Active,,,100998
+100480,Paul Mathews,Male,White,No,No,IT,Austin,2020-11-28,60,G3,Software Engineer II,Individual Contributor,JP0027,Terminated,2022-10-22,Voluntary Resignation,100047
+100481,Jennifer Harris,Female,Hispanic or Latino,No,No,Customer Support,Atlanta,2018-12-31,41,G5,Senior Support Specialist,Senior Individual Contributor,JP0053,Active,,,100590
+100482,Barry Donaldson,Male,White,No,No,IT,New York,2020-01-03,36,G3,Software Engineer II,Individual Contributor,JP0027,Active,,,100900
+100483,Robert Mcneil,Female,White,No,No,Operations,Atlanta,2020-06-13,28,G4,Senior Operations Analyst,Individual Contributor,JP0044,Active,,,100777
+100484,Jordan Bryant,Male,Hispanic or Latino,No,No,Operations,Phoenix,2017-01-30,48,G8,VP of Operations,Vice President,JP0048,Active,,,100022
+100485,Logan Bailey,Female,Black or African American,No,Yes,HR,New York,2017-09-19,56,G8,Chief HR Officer,Vice President,JP0024,Active,,,100022
+100486,Daniel Kaiser,Male,Two or more races,No,No,Marketing,Phoenix,2024-02-05,32,G4,Senior Marketing Specialist,Individual Contributor,JP0036,Active,,,100442
+100487,Allison Rodriguez,Female,White,Yes,No,IT,Austin,2025-07-25,53,G1,IT Support Specialist I,Individual Contributor,JP0025,Active,,,100587
+100488,Paul Curtis,Female,Hispanic or Latino,No,No,Customer Support,Atlanta,2016-11-16,31,G3,Senior Support Representative,Individual Contributor,JP0051,Active,,,100153
+100489,Donna Odom,Prefer not to disclose,Hispanic or Latino,No,No,IT,New York,2019-01-06,46,G3,Software Engineer II,Individual Contributor,JP0027,Active,,,100305
+100490,Michael Hoffman,Female,White,No,No,HR,New York,2017-09-08,26,G2,HR Coordinator II,Individual Contributor,JP0018,Active,,,100813
+100491,Julia Irwin,Female,Black or African American,No,No,IT,Phoenix,2016-12-12,32,G8,VP of Engineering,Vice President,JP0032,Terminated,2025-06-25,Voluntary Resignation,100022
+100492,Jeffrey Vincent,Female,Hispanic or Latino,No,No,Marketing,Atlanta,2024-02-15,26,G7,Marketing Director,Director,JP0039,Active,,,100067
+100493,Susan Thompson,Female,Hispanic or Latino,No,No,HR,Chicago,2017-05-05,22,G1,HR Coordinator I,Individual Contributor,JP0017,Active,,,100802
+100494,Gabriel Wood,Male,White,No,No,IT,Austin,2017-04-26,41,G2,Software Engineer I,Individual Contributor,JP0026,Active,,,100900
+100495,Sherry Singleton,Female,Hispanic or Latino,No,No,Sales,Phoenix,2020-04-22,59,G5,Senior Sales Specialist,Senior Individual Contributor,JP0005,Active,,,100108
+100496,David Jones,Male,White,No,No,Finance,Chicago,2023-11-04,47,G4,Finance Lead,Individual Contributor,JP0012,Active,,,100989
+100497,Amy Barber,Male,White,Yes,No,IT,Phoenix,2023-03-17,38,G5,Staff Engineer,Senior Individual Contributor,JP0029,Active,,,100401
+100498,Michelle Pope,Male,Hispanic or Latino,No,No,IT,New York,2018-04-12,48,G4,Senior Software Engineer,Individual Contributor,JP0028,Active,,,100001
+100499,Aaron Montoya,Male,White,No,No,Customer Support,Dallas,2019-09-12,29,G5,Senior Support Specialist,Senior Individual Contributor,JP0053,Active,,,100409
+100500,Maureen Moreno,Male,White,Yes,No,Marketing,Dallas,2018-04-24,38,G7,Marketing Director,Director,JP0039,Active,,,100737
+100501,Bailey Diaz,Male,White,No,No,Operations,Austin,2021-07-30,55,G6,Operations Manager,Manager,JP0046,Active,,,100875
+100502,Chad Montgomery,Male,White,No,No,Finance,New York,2017-10-04,58,G3,Senior Finance Analyst,Individual Contributor,JP0011,Active,,,100933
+100503,Jeremy Garza,Male,Black or African American,No,No,IT,Phoenix,2017-12-07,31,G5,Staff Engineer,Senior Individual Contributor,JP0029,Active,,,100619
+100504,Monica Mahoney,Male,White,No,No,Sales,Chicago,2017-08-24,52,G2,Sales Representative II,Individual Contributor,JP0002,Terminated,2025-01-23,Voluntary Resignation,100209
+100505,Lee Taylor,Female,White,No,No,Operations,New York,2019-04-18,49,G5,Operations Lead,Senior Individual Contributor,JP0045,Active,,,100501
+100506,Megan Hernandez,Male,White,No,No,Operations,New York,2025-12-28,44,G4,Senior Operations Analyst,Individual Contributor,JP0044,Active,,,100316
+100507,Jeremy Williams,Prefer not to disclose,White,No,No,Customer Support,Austin,2017-06-16,30,G2,Support Representative II,Individual Contributor,JP0050,Active,,,100151
+100508,Andrea Harrison,Female,Hispanic or Latino,No,No,Sales,Atlanta,2025-08-23,38,G2,Sales Representative II,Individual Contributor,JP0002,Active,,,100664
+100509,Carol Cross,Male,White,No,No,IT,Chicago,2023-01-01,59,G5,Staff Engineer,Senior Individual Contributor,JP0029,Active,,,100948
+100510,Jared Leon,Male,Black or African American,No,No,Customer Support,New York,2021-08-04,46,G6,Support Manager,Manager,JP0054,Active,,,100267
+100511,Mary Berry,Female,Black or African American,No,No,Marketing,Chicago,2024-07-31,47,G4,Senior Marketing Specialist,Individual Contributor,JP0036,Active,,,100513
+100512,Gina Torres,Male,White,No,No,Operations,Phoenix,2025-11-19,59,G6,Operations Manager,Manager,JP0046,Terminated,2026-03-07,Voluntary Resignation,100265
+100513,Frederick Pittman,Male,White,No,No,Marketing,Phoenix,2026-02-27,53,G6,Marketing Manager,Manager,JP0038,Active,,,100492
+100514,Cheryl Green,Female,White,No,No,Customer Support,New York,2024-05-11,33,G6,Support Manager,Manager,JP0054,Active,,,100723
+100515,Cindy Silva,Female,White,No,Yes,Customer Support,Phoenix,2022-10-07,42,G4,Support Specialist,Individual Contributor,JP0052,Active,,,100590
+100516,Mary Matthews,Female,Hispanic or Latino,No,No,Customer Support,Dallas,2020-02-27,41,G6,Support Manager,Manager,JP0054,Active,,,100420
+100517,Dillon Davis,Male,White,No,No,Sales,Austin,2017-09-04,29,G3,Senior Sales Representative,Individual Contributor,JP0003,Active,,,100209
+100518,Shannon Lopez,Female,Hispanic or Latino,No,No,Marketing,Atlanta,2021-01-08,60,G6,Marketing Manager,Manager,JP0038,Active,,,100492
+100519,Matthew Rosales,Female,White,No,No,IT,Dallas,2022-05-06,51,G1,IT Support Specialist I,Individual Contributor,JP0025,Active,,,100001
+100520,Daniel Ferguson,Male,Black or African American,No,Yes,Finance,Atlanta,2025-02-06,38,G8,VP of Finance,Vice President,JP0016,Active,,,100022
+100521,Gabrielle Walsh,Female,White,No,No,IT,Chicago,2025-10-21,51,G4,Senior Software Engineer,Individual Contributor,JP0028,Active,,,100619
+100522,Mark French,Female,Prefer not to disclose,No,No,IT,Dallas,2023-03-28,53,G4,Senior Software Engineer,Individual Contributor,JP0028,Active,,,100305
+100523,Nicholas Fernandez,Female,Asian,No,No,Sales,Chicago,2023-05-09,22,G1,Sales Representative I,Individual Contributor,JP0001,Active,,,100664
+100524,Shannon Brooks,Male,Hispanic or Latino,No,No,Finance,Austin,2020-12-24,50,G4,Finance Lead,Individual Contributor,JP0012,Active,,,100399
+100525,Kevin Lopez,Female,White,No,No,Customer Support,New York,2020-08-27,29,G6,Support Manager,Manager,JP0054,Active,,,100420
+100526,Gregory Grant,Male,White,No,No,HR,New York,2020-12-15,60,G5,HR Business Partner,Senior Individual Contributor,JP0021,Active,,,100813
+100527,Nicole Arnold,Female,White,No,No,Sales,Atlanta,2020-11-03,25,G3,Senior Sales Representative,Individual Contributor,JP0003,Active,,,100076
+100528,Alexa Roberts,Male,Two or more races,Yes,No,Sales,Dallas,2024-01-27,57,G3,Senior Sales Representative,Individual Contributor,JP0003,Active,,,100610
+100529,Brandy Schmidt,Female,White,No,No,Operations,Chicago,2023-07-08,22,G4,Senior Operations Analyst,Individual Contributor,JP0044,Active,,,100512
+100530,Shane Ortiz,Female,White,No,No,Sales,Chicago,2018-06-21,48,G2,Sales Representative II,Individual Contributor,JP0002,Active,,,100907
+100531,Mario Schultz,Male,White,No,No,IT,New York,2024-10-27,45,G2,Software Engineer I,Individual Contributor,JP0026,Active,,,100401
+100532,Alexander Spencer,Female,Hispanic or Latino,No,No,Finance,Atlanta,2016-07-23,24,G3,Senior Finance Analyst,Individual Contributor,JP0011,Active,,,100898
+100533,Mark Hammond,Male,White,No,No,Sales,Austin,2017-03-04,44,G5,Senior Sales Specialist,Senior Individual Contributor,JP0005,Active,,,100907
+100534,Chad King,Female,White,No,No,IT,Phoenix,2023-01-23,46,G6,Engineering Manager,Manager,JP0030,Active,,,100550
+100535,Nicole Lin,Male,White,No,No,HR,Phoenix,2019-04-12,54,G5,HR Business Partner,Senior Individual Contributor,JP0021,Active,,,100017
+100536,Daniel Morrison,Female,White,No,No,Marketing,Atlanta,2024-02-16,45,G2,Marketing Coordinator II,Individual Contributor,JP0034,Active,,,100197
+100537,Sherri Robbins,Male,White,No,Yes,Marketing,New York,2025-01-13,39,G2,Marketing Coordinator II,Individual Contributor,JP0034,Active,,,100373
+100538,Monica Ross,Female,Hispanic or Latino,No,No,HR,Dallas,2022-11-01,29,G2,HR Coordinator II,Individual Contributor,JP0018,Active,,,100178
+100539,Laura Ortiz,Female,White,Yes,No,Marketing,New York,2024-09-24,59,G5,Marketing Lead,Senior Individual Contributor,JP0037,Active,,,100604
+100540,Tracy Haas,Female,Black or African American,No,No,Sales,New York,2022-04-23,49,G2,Sales Representative II,Individual Contributor,JP0002,Active,,,100610
+100541,Felicia Peters PhD,Male,White,No,No,Customer Support,Phoenix,2017-11-18,49,G2,Support Representative II,Individual Contributor,JP0050,Active,,,100129
+100542,Ricky Lane,Male,Black or African American,No,No,Sales,Chicago,2016-12-24,46,G8,VP of Sales,Vice President,JP0008,Active,,,100022
+100543,Stacey Adkins,Male,Native American,No,No,Customer Support,Austin,2020-11-25,63,G5,Senior Support Specialist,Senior Individual Contributor,JP0053,Active,,,100151
+100544,Madison Lara,Male,Black or African American,No,No,Sales,Dallas,2024-09-28,38,G5,Senior Sales Specialist,Senior Individual Contributor,JP0005,Active,,,100664
+100545,David Walker,Male,White,No,No,Marketing,Phoenix,2017-09-16,35,G4,Senior Marketing Specialist,Individual Contributor,JP0036,Terminated,2026-02-02,Voluntary Resignation,100375
+100546,Megan Cross,Female,Hispanic or Latino,No,No,Marketing,New York,2016-07-09,27,G3,Marketing Specialist,Individual Contributor,JP0035,Active,,,100962
+100547,Miss Carmen Howell DVM,Female,White,Yes,No,Finance,Chicago,2016-09-09,27,G4,Finance Lead,Individual Contributor,JP0012,Active,,,100933
+100548,Lisa Miller,Non-binary,White,No,Yes,Finance,Chicago,2017-11-01,36,G2,Finance Analyst II,Individual Contributor,JP0010,Active,,,100399
+100549,Jennifer Moreno,Male,Hispanic or Latino,No,No,HR,New York,2018-10-09,53,G4,Senior HR Specialist,Individual Contributor,JP0020,Active,,,100454
+100550,William Daniel,Female,Hispanic or Latino,No,No,IT,Dallas,2017-12-09,56,G7,Engineering Director,Director,JP0031,Active,,,100856
+100551,Jacob Dunn,Female,White,No,No,Marketing,Phoenix,2016-12-29,25,G3,Marketing Specialist,Individual Contributor,JP0035,Active,,,100518
+100552,Jade Holland,Female,White,No,No,IT,Austin,2023-11-21,52,G4,Senior Software Engineer,Individual Contributor,JP0028,Active,,,100047
+100553,Zachary Ramirez,Female,Asian,No,No,Customer Support,Chicago,2022-03-26,60,G2,Support Representative II,Individual Contributor,JP0050,Active,,,100636
+100554,Jacob Fox,Male,White,No,Yes,Sales,Atlanta,2025-01-06,50,G4,Sales Specialist,Individual Contributor,JP0004,Active,,,100209
+100555,Christine Duran,Female,White,No,No,Finance,Austin,2024-05-26,25,G3,Senior Finance Analyst,Individual Contributor,JP0011,Active,,,100259
+100556,Roberta Peterson,Male,Black or African American,No,No,Operations,Atlanta,2016-07-18,31,G5,Operations Lead,Senior Individual Contributor,JP0045,Active,,,100102
+100557,Derek Sanchez,Female,Black or African American,No,No,HR,Chicago,2017-02-24,38,G4,Senior HR Specialist,Individual Contributor,JP0020,Active,,,100776
+100558,Suzanne Wood,Female,Black or African American,No,No,Marketing,Phoenix,2024-09-23,32,G5,Marketing Lead,Senior Individual Contributor,JP0037,Active,,,100442
+100559,Frederick Campbell,Male,Hispanic or Latino,No,No,Finance,Dallas,2017-06-25,62,G3,Senior Finance Analyst,Individual Contributor,JP0011,Active,,,100016
+100560,Susan Davis,Female,White,No,No,Finance,Phoenix,2019-07-16,46,G2,Finance Analyst II,Individual Contributor,JP0010,Active,,,100815
+100561,Jennifer Maddox,Female,White,No,No,Marketing,Phoenix,2023-05-15,51,G2,Marketing Coordinator II,Individual Contributor,JP0034,Active,,,100518
+100562,Dale Martin,Male,White,No,No,Sales,New York,2018-09-27,32,G2,Sales Representative II,Individual Contributor,JP0002,Active,,,100209
+100563,Christopher Lopez,Non-binary,White,No,No,Operations,Chicago,2019-06-04,63,G6,Operations Manager,Manager,JP0046,Active,,,100796
+100564,Thomas Smith,Male,White,No,Yes,HR,Austin,2021-10-10,37,G6,HR Manager,Manager,JP0022,Active,,,100822
+100565,Michelle Hughes,Male,White,No,No,IT,Chicago,2020-03-15,60,G1,IT Support Specialist I,Individual Contributor,JP0025,Active,,,100047
+100566,William Johnson,Male,Hispanic or Latino,No,No,Finance,Phoenix,2017-06-06,61,G1,Finance Analyst I,Individual Contributor,JP0009,Active,,,100898
+100567,Hannah Morgan,Female,Black or African American,No,No,Marketing,Atlanta,2017-03-12,29,G2,Marketing Coordinator II,Individual Contributor,JP0034,Active,,,100375
+100568,Karen Riley,Male,White,No,No,IT,Phoenix,2024-04-26,31,G7,Engineering Director,Director,JP0031,Active,,,100856
+100569,Mark Tyler,Female,White,No,No,IT,Phoenix,2016-11-09,40,G4,Senior Software Engineer,Individual Contributor,JP0028,Active,,,100383
+100570,Stacy David,Female,Hispanic or Latino,No,No,Marketing,Phoenix,2021-03-03,57,G2,Marketing Coordinator II,Individual Contributor,JP0034,Active,,,100913
+100571,Dwayne Decker,Male,White,No,No,Finance,Atlanta,2023-07-07,64,G3,Senior Finance Analyst,Individual Contributor,JP0011,Active,,,100958
+100572,Brandon Davila,Male,White,No,No,Marketing,New York,2017-09-25,40,G4,Senior Marketing Specialist,Individual Contributor,JP0036,Active,,,100197
+100573,Jennifer Lewis,Female,Black or African American,No,No,IT,Austin,2025-12-09,26,G4,Senior Software Engineer,Individual Contributor,JP0028,Active,,,100733
+100574,Jerry Thomas,Female,White,Yes,No,Operations,Atlanta,2020-10-18,63,G2,Operations Coordinator II,Individual Contributor,JP0042,Active,,,100501
+100575,Jonathan Smith,Prefer not to disclose,Two or more races,No,No,Customer Support,Dallas,2023-06-11,42,G3,Senior Support Representative,Individual Contributor,JP0051,Active,,,100787
+100576,Sarah Williams,Prefer not to disclose,Hispanic or Latino,No,No,HR,Austin,2019-02-22,45,G6,HR Manager,Manager,JP0022,Active,,,100405
+100577,Walter Brown,Male,White,No,No,Operations,Atlanta,2018-03-02,25,G4,Senior Operations Analyst,Individual Contributor,JP0044,Active,,,100998
+100578,Kelly Stanley,Female,White,No,No,Customer Support,Dallas,2016-07-06,49,G4,Support Specialist,Individual Contributor,JP0052,Terminated,2023-06-14,Retirement,100730
+100579,Erin Harmon,Male,Black or African American,No,No,Customer Support,Austin,2023-10-02,64,G5,Senior Support Specialist,Senior Individual Contributor,JP0053,Terminated,2025-05-07,Voluntary Resignation,100525
+100580,Veronica Williams,Male,Hispanic or Latino,No,No,HR,Austin,2025-09-23,51,G7,HR Director,Director,JP0023,Active,,,100881
+100581,Regina Smith,Female,White,No,No,IT,Atlanta,2022-10-24,62,G3,Software Engineer II,Individual Contributor,JP0027,Active,,,100733
+100582,Richard Ramirez,Male,White,No,No,Customer Support,New York,2018-10-04,48,G4,Support Specialist,Individual Contributor,JP0052,Active,,,100516
+100583,Shirley Morales,Male,White,No,No,Finance,Austin,2021-11-15,30,G5,Senior Finance Lead,Senior Individual Contributor,JP0013,Terminated,2024-11-04,Involuntary,100815
+100584,William Johnson,Male,White,No,No,Sales,Chicago,2025-10-22,57,G4,Sales Specialist,Individual Contributor,JP0004,Terminated,2026-01-24,Voluntary Resignation,100108
+100585,Richard Fuller,Female,Black or African American,No,No,HR,Atlanta,2019-08-04,49,G2,HR Coordinator II,Individual Contributor,JP0018,Active,,,100355
+100586,Kathleen Williams,Female,White,No,No,Customer Support,Phoenix,2025-04-07,55,G2,Support Representative II,Individual Contributor,JP0050,Active,,,100730
+100587,Megan Johnson,Male,Black or African American,No,No,IT,Atlanta,2025-12-09,57,G6,Engineering Manager,Manager,JP0030,Active,,,100568
+100588,Sharon Suarez,Female,Hispanic or Latino,No,No,Sales,Atlanta,2018-03-09,37,G4,Sales Specialist,Individual Contributor,JP0004,Active,,,100108
+100589,Bryan Hill,Male,White,No,Yes,IT,Chicago,2023-12-22,37,G2,Software Engineer I,Individual Contributor,JP0026,Active,,,100587
+100590,Victoria Orr,Female,White,No,No,Customer Support,Dallas,2019-07-01,55,G6,Support Manager,Manager,JP0054,Terminated,2020-10-31,Involuntary,100944
+100591,Michael Erickson,Male,Hispanic or Latino,No,No,HR,Dallas,2020-12-26,52,G3,HR Specialist,Individual Contributor,JP0019,Active,,,100357
+100592,Ashley Cruz,Male,White,No,No,IT,New York,2019-01-31,41,G3,Software Engineer II,Individual Contributor,JP0027,Active,,,100401
+100593,Amanda Brewer,Female,Black or African American,No,No,Sales,Atlanta,2019-12-03,48,G4,Sales Specialist,Individual Contributor,JP0004,Active,,,100907
+100594,Ronald Fields,Female,White,No,No,Customer Support,Phoenix,2019-09-16,45,G2,Support Representative II,Individual Contributor,JP0050,Active,,,100004
+100595,Aaron Brown,Female,Prefer not to disclose,No,No,Operations,Austin,2021-02-01,22,G3,Operations Analyst,Individual Contributor,JP0043,Active,,,100501
+100596,Kimberly Rodriguez,Female,White,No,No,Marketing,Chicago,2019-11-07,56,G3,Marketing Specialist,Individual Contributor,JP0035,Active,,,100373
+100597,Susan Alvarez,Female,Hispanic or Latino,No,No,IT,Phoenix,2021-06-24,40,G4,Senior Software Engineer,Individual Contributor,JP0028,Active,,,100305
+100598,Zachary Jones,Female,Hispanic or Latino,No,No,Marketing,Atlanta,2017-03-18,43,G5,Marketing Lead,Senior Individual Contributor,JP0037,Active,,,100442
+100599,Jamie Warner,Female,White,No,No,IT,Atlanta,2021-03-30,49,G2,Software Engineer I,Individual Contributor,JP0026,Terminated,2024-11-17,Retirement,100900
+100600,Sarah Wilson,Female,Two or more races,No,Yes,HR,New York,2024-08-16,47,G5,HR Business Partner,Senior Individual Contributor,JP0021,Active,,,100648
+100601,Kerry Cook,Male,White,No,No,HR,Phoenix,2020-03-18,63,G3,HR Specialist,Individual Contributor,JP0019,Active,,,100648
+100602,Michaela Hopkins,Female,White,No,No,HR,New York,2021-09-26,60,G2,HR Coordinator II,Individual Contributor,JP0018,Active,,,100715
+100603,Carl Medina,Female,Hispanic or Latino,No,No,Sales,Atlanta,2022-09-12,45,G3,Senior Sales Representative,Individual Contributor,JP0003,Terminated,2025-10-26,Involuntary,100638
+100604,Jacob Garza,Female,Hispanic or Latino,No,No,Marketing,New York,2022-06-19,53,G6,Marketing Manager,Manager,JP0038,Active,,,100807
+100605,Benjamin Wolf,Male,White,No,No,Operations,Austin,2019-02-15,49,G5,Operations Lead,Senior Individual Contributor,JP0045,Active,,,100746
+100606,Daniel Burton,Male,White,No,No,Sales,Phoenix,2024-11-16,56,G4,Sales Specialist,Individual Contributor,JP0004,Active,,,100698
+100607,Kevin Riley,Male,White,No,No,Sales,Phoenix,2018-11-27,46,G4,Sales Specialist,Individual Contributor,JP0004,Active,,,100209
+100608,Jose Jones,Female,Hispanic or Latino,No,No,Finance,Dallas,2021-05-24,63,G3,Senior Finance Analyst,Individual Contributor,JP0011,Active,,,100815
+100609,Kimberly Lawrence,Female,White,No,No,Sales,Atlanta,2024-03-20,59,G5,Senior Sales Specialist,Senior Individual Contributor,JP0005,Active,,,100698
+100610,Victoria Fox,Male,White,No,No,Sales,New York,2025-07-12,47,G6,Sales Manager,Manager,JP0006,Active,,,100978
+100611,Jennifer Martinez,Female,Black or African American,No,No,Customer Support,New York,2018-11-02,57,G2,Support Representative II,Individual Contributor,JP0050,Active,,,100409
+100612,Jeremy Monroe,Female,White,No,No,HR,Atlanta,2019-02-22,37,G4,Senior HR Specialist,Individual Contributor,JP0020,Active,,,100715
+100613,Jenny Sloan,Male,White,No,No,HR,Austin,2023-11-13,60,G4,Senior HR Specialist,Individual Contributor,JP0020,Active,,,100157
+100614,Robert Rodriguez,Male,White,No,No,Operations,Austin,2016-08-22,47,G4,Senior Operations Analyst,Individual Contributor,JP0044,Active,,,100501
+100615,Denise Murray,Female,White,No,No,Customer Support,Phoenix,2022-04-23,27,G3,Senior Support Representative,Individual Contributor,JP0051,Active,,,100787
+100616,Luis Thompson,Male,White,No,Yes,Operations,Austin,2018-03-11,54,G4,Senior Operations Analyst,Individual Contributor,JP0044,Active,,,100998
+100617,Nicole King,Female,White,No,No,IT,Atlanta,2017-09-21,54,G2,Software Engineer I,Individual Contributor,JP0026,Active,,,100619
+100618,Jennifer Cobb,Male,Hispanic or Latino,No,Yes,Marketing,New York,2026-03-15,28,G4,Senior Marketing Specialist,Individual Contributor,JP0036,Active,,,100604
+100619,Brian Miranda,Female,Asian,No,No,IT,New York,2025-08-03,25,G6,Engineering Manager,Manager,JP0030,Terminated,2026-02-10,Voluntary Resignation,100550
+100620,Daniel Day,Male,Black or African American,No,No,IT,Phoenix,2019-01-15,63,G2,Software Engineer I,Individual Contributor,JP0026,Active,,,100047
+100621,Deborah Scott,Male,White,No,No,Sales,Chicago,2021-07-24,30,G5,Senior Sales Specialist,Senior Individual Contributor,JP0005,Active,,,100209
+100622,Ricardo King,Male,Hispanic or Latino,No,No,Operations,Austin,2020-12-11,60,G1,Operations Coordinator I,Individual Contributor,JP0041,Active,,,100998
+100623,Mr. Brandon Moore,Male,White,No,No,Customer Support,New York,2022-09-27,27,G3,Senior Support Representative,Individual Contributor,JP0051,Active,,,100516
+100624,Andrew Hancock,Female,White,No,No,Operations,Chicago,2020-11-25,25,G3,Operations Analyst,Individual Contributor,JP0043,Active,,,100424
+100625,Jane Kennedy,Male,White,No,No,HR,Chicago,2020-09-12,35,G1,HR Coordinator I,Individual Contributor,JP0017,Active,,,100802
+100626,Jennifer Pearson,Female,Hispanic or Latino,No,No,Sales,Dallas,2020-08-09,58,G7,Sales Director,Director,JP0007,Terminated,2022-01-09,Voluntary Resignation,100301
+100627,Alicia Williams,Female,Black or African American,No,No,Finance,Chicago,2018-12-21,46,G3,Senior Finance Analyst,Individual Contributor,JP0011,Active,,,100186
+100628,Jessica Baker,Female,Hispanic or Latino,No,Yes,Finance,Phoenix,2022-04-29,26,G2,Finance Analyst II,Individual Contributor,JP0010,Active,,,100016
+100629,Arthur Hancock,Female,White,No,No,Finance,Dallas,2025-07-02,49,G7,Finance Director,Director,JP0015,Active,,,100520
+100630,John Walsh,Female,White,No,No,HR,Chicago,2017-09-11,55,G4,Senior HR Specialist,Individual Contributor,JP0020,Terminated,2020-01-12,Voluntary Resignation,100355
+100631,Alicia Nixon,Female,Hispanic or Latino,No,No,Finance,Atlanta,2025-02-08,26,G1,Finance Analyst I,Individual Contributor,JP0009,Active,,,100457
+100632,Eric Johnson,Female,White,No,No,Operations,Chicago,2017-02-21,34,G2,Operations Coordinator II,Individual Contributor,JP0042,Active,,,100934
+100633,Robin Gomez,Female,Black or African American,No,No,Sales,Phoenix,2021-10-25,45,G3,Senior Sales Representative,Individual Contributor,JP0003,Active,,,100076
+100634,Johnathan Franklin,Female,Hispanic or Latino,Yes,No,HR,Chicago,2023-05-28,49,G3,HR Specialist,Individual Contributor,JP0019,Active,,,100564
+100635,Leon Powell,Male,White,Yes,No,HR,Atlanta,2019-03-13,47,G3,HR Specialist,Individual Contributor,JP0019,Active,,,100454
+100636,Devin Smith,Male,White,No,No,Customer Support,Phoenix,2024-12-21,43,G6,Support Manager,Manager,JP0054,Active,,,100944
+100637,Erin Rodriguez,Male,White,No,No,HR,Atlanta,2018-05-24,47,G2,HR Coordinator II,Individual Contributor,JP0018,Active,,,100355
+100638,Mr. Tyler Brooks,Male,White,No,No,Sales,New York,2021-05-22,44,G6,Sales Manager,Manager,JP0006,Active,,,100866
+100639,Amy Herrera,Female,White,No,No,Marketing,New York,2016-06-22,39,G4,Senior Marketing Specialist,Individual Contributor,JP0036,Active,,,100962
+100640,Christopher Richardson,Male,White,No,No,Customer Support,Phoenix,2018-07-26,48,G1,Support Representative I,Individual Contributor,JP0049,Active,,,100636
+100641,Michael Parrish,Male,White,No,No,Marketing,Dallas,2022-01-13,44,G5,Marketing Lead,Senior Individual Contributor,JP0037,Active,,,100513
+100642,Anthony Hogan,Male,White,No,No,Operations,Austin,2025-02-22,62,G3,Operations Analyst,Individual Contributor,JP0043,Active,,,100563
+100643,Donald Berger,Male,White,No,No,Sales,New York,2021-01-29,56,G4,Sales Specialist,Individual Contributor,JP0004,Active,,,100209
+100644,Mr. Alexander Lewis,Female,White,No,No,HR,Phoenix,2019-02-09,22,G1,HR Coordinator I,Individual Contributor,JP0017,Active,,,100178
+100645,Christopher Mann,Female,White,No,No,Marketing,Atlanta,2017-12-19,40,G2,Marketing Coordinator II,Individual Contributor,JP0034,Active,,,100913
+100646,Lauren Rivera,Female,Asian,No,No,Sales,Austin,2018-08-13,37,G5,Senior Sales Specialist,Senior Individual Contributor,JP0005,Active,,,100057
+100647,Jermaine Howard,Male,White,No,No,Customer Support,Phoenix,2018-08-30,53,G2,Support Representative II,Individual Contributor,JP0050,Active,,,100151
+100648,Daniel Mullins,Male,White,No,No,HR,Chicago,2023-07-24,45,G6,HR Manager,Manager,JP0022,Active,,,100822
+100649,Carol Kelley,Female,White,No,No,Sales,Austin,2016-11-08,25,G3,Senior Sales Representative,Individual Contributor,JP0003,Active,,,100209
+100650,Joseph Miller,Male,Black or African American,No,No,Customer Support,Austin,2025-04-03,23,G3,Senior Support Representative,Individual Contributor,JP0051,Active,,,100409
+100651,Benjamin Allen,Prefer not to disclose,Hispanic or Latino,No,No,IT,Phoenix,2020-08-29,30,G5,Staff Engineer,Senior Individual Contributor,JP0029,Active,,,100900
+100652,Marcus Heath,Male,White,No,No,HR,Chicago,2020-10-26,58,G2,HR Coordinator II,Individual Contributor,JP0018,Active,,,100776
+100653,John Smith,Female,White,No,No,Sales,Atlanta,2021-05-17,44,G2,Sales Representative II,Individual Contributor,JP0002,Active,,,100907
+100654,Michael Lewis,Female,Hispanic or Latino,No,No,Finance,Chicago,2025-10-31,38,G3,Senior Finance Analyst,Individual Contributor,JP0011,Active,,,100457
+100655,Crystal Franklin,Female,White,No,No,Sales,Austin,2018-07-29,56,G2,Sales Representative II,Individual Contributor,JP0002,Active,,,100057
+100656,Shawn Reynolds,Male,Hispanic or Latino,No,Yes,Operations,Phoenix,2019-01-29,37,G3,Operations Analyst,Individual Contributor,JP0043,Active,,,100777
+100657,Lisa Gray,Male,Hispanic or Latino,No,No,Sales,Dallas,2022-08-03,40,G5,Senior Sales Specialist,Senior Individual Contributor,JP0005,Terminated,2025-04-14,Involuntary,100209
+100658,Aaron Martinez,Male,Black or African American,No,No,Customer Support,New York,2025-02-06,29,G7,Support Director,Director,JP0055,Active,,,100022
+100659,Devin Key,Female,White,No,No,IT,Austin,2020-02-27,55,G2,Software Engineer I,Individual Contributor,JP0026,Active,,,100436
+100660,Rachael Hartman,Female,Asian,No,No,Operations,Dallas,2020-01-15,45,G3,Operations Analyst,Individual Contributor,JP0043,Active,,,100316
+100661,Veronica Cross,Male,White,No,No,Customer Support,Phoenix,2022-01-13,47,G2,Support Representative II,Individual Contributor,JP0050,Active,,,100751
+100662,Michael Ray,Female,Hispanic or Latino,No,No,Operations,Phoenix,2024-06-19,28,G2,Operations Coordinator II,Individual Contributor,JP0042,Active,,,100998
+100663,Jennifer Monroe,Female,White,No,No,Sales,New York,2023-04-27,61,G2,Sales Representative II,Individual Contributor,JP0002,Active,,,100907
+100664,Anthony Everett,Male,Black or African American,No,No,Sales,New York,2024-01-02,63,G6,Sales Manager,Manager,JP0006,Active,,,100710
+100665,Cory Foster Jr.,Male,White,No,No,Finance,Atlanta,2018-11-06,53,G4,Finance Lead,Individual Contributor,JP0012,Active,,,100823
+100666,Deanna Thomas,Male,Black or African American,No,No,Customer Support,Dallas,2022-05-14,45,G7,Support Director,Director,JP0055,Active,,,100231
+100667,Douglas Casey,Male,Black or African American,Yes,No,Finance,Austin,2024-04-01,57,G2,Finance Analyst II,Individual Contributor,JP0010,Active,,,100933
+100668,Mark Ramsey,Male,Asian,No,No,Customer Support,Atlanta,2018-07-11,53,G2,Support Representative II,Individual Contributor,JP0050,Active,,,100751
+100669,David Cruz,Female,Two or more races,No,No,IT,Dallas,2024-05-15,50,G8,VP of Engineering,Vice President,JP0032,Active,,,100022
+100670,Anthony Rollins,Male,White,No,No,Operations,Phoenix,2018-08-21,29,G4,Senior Operations Analyst,Individual Contributor,JP0044,Active,,,100934
+100671,Stacey Turner,Male,Hispanic or Latino,No,No,Finance,Atlanta,2021-08-11,43,G3,Senior Finance Analyst,Individual Contributor,JP0011,Active,,,100958
+100672,Jeremy Brown,Female,White,No,No,Finance,Austin,2017-08-15,25,G2,Finance Analyst II,Individual Contributor,JP0010,Active,,,100920
+100673,Thomas Mccarthy,Female,White,No,No,Finance,New York,2023-03-24,62,G4,Finance Lead,Individual Contributor,JP0012,Active,,,100989
+100674,Mary Taylor,Male,White,Yes,No,Sales,Phoenix,2021-08-23,43,G4,Sales Specialist,Individual Contributor,JP0004,Active,,,100907
+100675,Lori Reese,Male,White,No,No,Marketing,Dallas,2020-06-20,22,G5,Marketing Lead,Senior Individual Contributor,JP0037,Active,,,100442
+100676,Angela Johnson,Male,White,No,No,IT,Austin,2016-08-27,62,G2,Software Engineer I,Individual Contributor,JP0026,Active,,,100948
+100677,Christina Rogers,Prefer not to disclose,White,Yes,No,IT,Dallas,2026-06-15,34,G5,Staff Engineer,Senior Individual Contributor,JP0029,Active,,,100534
+100678,Clinton Grant,Male,White,No,No,Operations,Austin,2021-01-07,44,G2,Operations Coordinator II,Individual Contributor,JP0042,Active,,,100746
+100679,Kelly Ellison,Female,White,No,No,Operations,Austin,2024-05-25,28,G4,Senior Operations Analyst,Individual Contributor,JP0044,Active,,,100316
+100680,Mr. Andrew Olson,Female,Black or African American,No,No,Operations,Atlanta,2023-10-16,42,G5,Operations Lead,Senior Individual Contributor,JP0045,Active,,,100746
+100681,Dana Price,Male,White,No,No,Sales,Chicago,2022-07-15,45,G4,Sales Specialist,Individual Contributor,JP0004,Active,,,100698
+100682,Frank Kemp,Female,White,No,No,Sales,Phoenix,2022-05-18,56,G1,Sales Representative I,Individual Contributor,JP0001,Active,,,100610
+100683,Kara Barr,Female,Asian,No,No,Marketing,Austin,2022-06-10,22,G3,Marketing Specialist,Individual Contributor,JP0035,Active,,,100322
+100684,Peter Lopez,Male,White,No,No,Finance,Phoenix,2021-01-18,43,G7,Finance Director,Director,JP0015,Active,,,100834
+100685,Joseph Gomez MD,Male,White,No,No,Customer Support,Chicago,2022-11-17,42,G5,Senior Support Specialist,Senior Individual Contributor,JP0053,Active,,,100787
+100686,Rachel Johnson,Male,White,No,No,Marketing,New York,2025-03-26,61,G4,Senior Marketing Specialist,Individual Contributor,JP0036,Active,,,100513
+100687,Renee Kirk,Female,Asian,No,No,IT,Chicago,2023-05-01,28,G2,Software Engineer I,Individual Contributor,JP0026,Active,,,100619
+100688,Charles Levine,Male,White,No,No,Finance,New York,2021-12-29,23,G4,Finance Lead,Individual Contributor,JP0012,Active,,,100206
+100689,Shelley Pittman,Male,Black or African American,No,No,Marketing,Dallas,2020-08-02,27,G2,Marketing Coordinator II,Individual Contributor,JP0034,Active,,,100373
+100690,Angel Jones,Male,White,No,No,Operations,Chicago,2017-09-01,48,G5,Operations Lead,Senior Individual Contributor,JP0045,Active,,,100746
+100691,Stacy Robertson,Female,Black or African American,No,No,Customer Support,Austin,2016-11-01,54,G3,Senior Support Representative,Individual Contributor,JP0051,Active,,,100143
+100692,Erica Faulkner,Male,Hispanic or Latino,No,No,Operations,Atlanta,2016-10-19,55,G4,Senior Operations Analyst,Individual Contributor,JP0044,Terminated,2023-11-20,Retirement,100501
+100693,William Hill,Female,Black or African American,No,No,Sales,Dallas,2022-03-09,22,G3,Senior Sales Representative,Individual Contributor,JP0003,Active,,,100209
+100694,Katherine Smith,Female,White,No,No,IT,Chicago,2026-04-01,42,G4,Senior Software Engineer,Individual Contributor,JP0028,Active,,,100335
+100695,Christina Jones,Male,Two or more races,No,No,Sales,Chicago,2019-07-18,37,G3,Senior Sales Representative,Individual Contributor,JP0003,Active,,,100638
+100696,Jessica Smith,Female,Hispanic or Latino,No,No,Customer Support,Austin,2026-05-28,23,G5,Senior Support Specialist,Senior Individual Contributor,JP0053,Active,,,100525
+100697,Joshua Wilson,Female,White,No,Yes,Finance,Austin,2019-03-21,54,G3,Senior Finance Analyst,Individual Contributor,JP0011,Active,,,100989
+100698,Margaret White,Female,White,No,No,Sales,Phoenix,2017-04-16,54,G6,Sales Manager,Manager,JP0006,Active,,,100710
+100699,Connie Marshall,Female,White,No,No,Marketing,Chicago,2025-05-23,38,G2,Marketing Coordinator II,Individual Contributor,JP0034,Active,,,100197
+100700,Emily Wilson,Non-binary,White,No,No,Finance,Atlanta,2025-12-15,45,G2,Finance Analyst II,Individual Contributor,JP0010,Active,,,100186
+100701,Shelly Johnson,Male,White,No,No,Sales,Dallas,2023-09-10,35,G2,Sales Representative II,Individual Contributor,JP0002,Active,,,100108
+100702,Michelle Huynh,Male,White,No,No,Customer Support,Chicago,2023-09-18,30,G5,Senior Support Specialist,Senior Individual Contributor,JP0053,Active,,,100510
+100703,Noah Mcgee,Male,White,No,No,HR,Dallas,2017-01-23,47,G3,HR Specialist,Individual Contributor,JP0019,Active,,,100454
+100704,Elizabeth Osborne,Female,Black or African American,No,No,IT,New York,2022-11-03,38,G3,Software Engineer II,Individual Contributor,JP0027,Active,,,100733
+100705,Theodore Lopez,Female,White,No,No,IT,New York,2017-10-11,29,G3,Software Engineer II,Individual Contributor,JP0027,Active,,,100296
+100706,Tammy Maldonado,Female,White,No,Yes,Marketing,Phoenix,2017-09-08,22,G5,Marketing Lead,Senior Individual Contributor,JP0037,Active,,,100962
+100707,Sara Dominguez,Male,White,No,No,Finance,Phoenix,2025-10-18,37,G1,Finance Analyst I,Individual Contributor,JP0009,Active,,,100206
+100708,Jamie Calhoun,Female,White,No,No,Customer Support,Austin,2019-12-29,41,G4,Support Specialist,Individual Contributor,JP0052,Active,,,100143
+100709,Jeremy Christian,Female,White,No,No,IT,Dallas,2017-06-09,33,G2,Software Engineer I,Individual Contributor,JP0026,Terminated,2018-11-07,Retirement,100401
+100710,Julia Peterson,Female,White,No,No,Sales,Chicago,2024-03-13,57,G7,Sales Director,Director,JP0007,Terminated,2024-07-18,Voluntary Resignation,100404
+100711,Lindsay Brown,Non-binary,White,No,No,Finance,Chicago,2022-06-07,23,G1,Finance Analyst I,Individual Contributor,JP0009,Active,,,100399
+100712,James Henry,Female,White,No,No,HR,Phoenix,2020-08-11,37,G2,HR Coordinator II,Individual Contributor,JP0018,Active,,,100576
+100713,Cindy Douglas,Female,White,No,No,IT,Chicago,2024-11-08,51,G3,Software Engineer II,Individual Contributor,JP0027,Active,,,100436
+100714,Melissa Price,Female,White,No,No,Customer Support,Atlanta,2018-11-11,28,G3,Senior Support Representative,Individual Contributor,JP0051,Active,,,100730
+100715,Cynthia Moore,Male,Black or African American,No,No,HR,Dallas,2018-08-30,36,G6,HR Manager,Manager,JP0022,Active,,,100051
+100716,Julia Dean,Male,White,No,No,Operations,Austin,2020-02-14,45,G2,Operations Coordinator II,Individual Contributor,JP0042,Active,,,100424
+100717,Adrian Weber,Female,Hispanic or Latino,No,No,Customer Support,Phoenix,2022-07-03,55,G5,Senior Support Specialist,Senior Individual Contributor,JP0053,Active,,,100730
+100718,Melissa Durham,Male,Black or African American,No,No,Finance,Chicago,2026-01-29,63,G1,Finance Analyst I,Individual Contributor,JP0009,Active,,,100441
+100719,Mary Burns,Female,Black or African American,No,No,Finance,Chicago,2020-02-04,38,G2,Finance Analyst II,Individual Contributor,JP0010,Active,,,100989
+100720,Shannon Carter,Male,Hispanic or Latino,No,No,Operations,Dallas,2024-05-24,23,G5,Operations Lead,Senior Individual Contributor,JP0045,Terminated,2025-12-28,Voluntary Resignation,100934
+100721,Frederick Morgan,Male,Hispanic or Latino,No,No,HR,Chicago,2025-05-23,50,G4,Senior HR Specialist,Individual Contributor,JP0020,Active,,,100776
+100722,Jennifer Nunez,Female,White,No,No,Marketing,Austin,2024-12-18,51,G3,Marketing Specialist,Individual Contributor,JP0035,Active,,,100177
+100723,Matthew Odonnell,Female,White,No,Yes,Customer Support,Chicago,2018-01-11,43,G7,Support Director,Director,JP0055,Active,,,100910
+100724,Chad Perez,Male,White,No,Yes,Customer Support,New York,2024-01-09,31,G3,Senior Support Representative,Individual Contributor,JP0051,Active,,,100784
+100725,Casey Smith,Female,Hispanic or Latino,No,No,Marketing,New York,2022-04-26,39,G4,Senior Marketing Specialist,Individual Contributor,JP0036,Active,,,100177
+100726,Matthew Stokes,Male,Black or African American,No,No,Sales,Dallas,2020-09-04,63,G1,Sales Representative I,Individual Contributor,JP0001,Active,,,100638
+100727,Dr. Chelsey Nunez,Male,Black or African American,No,No,Finance,Atlanta,2018-01-23,52,G1,Finance Analyst I,Individual Contributor,JP0009,Active,,,100259
+100728,Matthew Cooper,Female,White,No,Yes,Sales,New York,2017-12-08,39,G1,Sales Representative I,Individual Contributor,JP0001,Active,,,100664
+100729,Erika Wilcox,Female,White,No,No,Marketing,Austin,2022-09-03,47,G3,Marketing Specialist,Individual Contributor,JP0035,Active,,,100442
+100730,Richard Long,Male,White,No,No,Customer Support,Phoenix,2017-08-31,40,G6,Support Manager,Manager,JP0054,Active,,,100759
+100731,Anthony Robertson,Male,White,No,Yes,HR,Austin,2016-10-28,26,G2,HR Coordinator II,Individual Contributor,JP0018,Active,,,100776
+100732,Danielle Brown,Male,White,No,No,Operations,Austin,2022-12-23,33,G2,Operations Coordinator II,Individual Contributor,JP0042,Active,,,100777
+100733,Kelly Hayes,Non-binary,White,No,No,IT,Atlanta,2020-03-18,28,G6,Engineering Manager,Manager,JP0030,Active,,,100999
+100734,Tracey Parks,Male,White,No,No,IT,Atlanta,2024-12-20,34,G7,Engineering Director,Director,JP0031,Active,,,100273
+100735,Derrick Gates,Female,White,No,No,Finance,Chicago,2022-12-10,53,G4,Finance Lead,Individual Contributor,JP0012,Active,,,100457
+100736,Nancy Johnson,Male,Hispanic or Latino,No,No,Customer Support,Austin,2021-08-01,58,G3,Senior Support Representative,Individual Contributor,JP0051,Active,,,100510
+100737,Stephanie Madden,Male,White,No,No,Marketing,New York,2019-11-05,37,G8,VP of Marketing,Vice President,JP0040,Active,,,100022
+100738,Jennifer Pope,Male,White,Yes,Yes,Customer Support,Chicago,2022-05-30,47,G3,Senior Support Representative,Individual Contributor,JP0051,Active,,,100514
+100739,Aaron Odonnell,Male,White,No,No,Sales,New York,2020-12-16,26,G5,Senior Sales Specialist,Senior Individual Contributor,JP0005,Active,,,100664
+100740,Maria Green MD,Female,Asian,No,No,Finance,Austin,2023-10-21,59,G7,Finance Director,Director,JP0015,Active,,,100834
+100741,Roger Marshall,Male,Hispanic or Latino,No,No,Sales,New York,2023-01-23,36,G3,Senior Sales Representative,Individual Contributor,JP0003,Active,,,100057
+100742,Lisa Johnson,Male,White,No,No,Marketing,Austin,2025-04-08,37,G5,Marketing Lead,Senior Individual Contributor,JP0037,Active,,,100442
+100743,Christina Thompson,Male,White,No,No,Sales,Atlanta,2026-01-20,39,G5,Senior Sales Specialist,Senior Individual Contributor,JP0005,Active,,,100638
+100744,Sarah Williams,Male,White,No,No,Operations,Dallas,2018-12-29,36,G5,Operations Lead,Senior Individual Contributor,JP0045,Active,,,100998
+100745,Amanda Potter,Male,White,No,No,IT,Dallas,2025-12-10,48,G3,Software Engineer II,Individual Contributor,JP0027,Active,,,100619
+100746,Rachel Hughes,Female,White,No,No,Operations,Phoenix,2017-06-06,25,G6,Operations Manager,Manager,JP0046,Active,,,100875
+100747,Jason Fleming,Female,White,No,No,Sales,Phoenix,2020-10-25,52,G5,Senior Sales Specialist,Senior Individual Contributor,JP0005,Terminated,2023-07-23,Involuntary,100108
+100748,Lisa Parker,Non-binary,White,No,No,Customer Support,Chicago,2021-04-30,47,G4,Support Specialist,Individual Contributor,JP0052,Active,,,100751
+100749,Mary Miranda,Female,White,No,No,Customer Support,Phoenix,2024-10-11,57,G4,Support Specialist,Individual Contributor,JP0052,Active,,,100153
+100750,Janice Phillips,Male,Black or African American,No,Yes,Sales,Atlanta,2018-01-03,25,G5,Senior Sales Specialist,Senior Individual Contributor,JP0005,Active,,,100907
+100751,Ashlee Jackson,Male,White,Yes,No,Customer Support,Atlanta,2017-02-14,42,G6,Support Manager,Manager,JP0054,Active,,,100267
+100752,Kimberly Shea,Female,Hispanic or Latino,No,No,Finance,Chicago,2020-03-17,57,G3,Senior Finance Analyst,Individual Contributor,JP0011,Active,,,100989
+100753,James Terry,Male,White,No,No,HR,Austin,2017-05-12,23,G5,HR Business Partner,Senior Individual Contributor,JP0021,Active,,,100454
+100754,Michelle Blackwell,Male,White,Yes,No,Finance,Austin,2021-08-14,59,G3,Senior Finance Analyst,Individual Contributor,JP0011,Active,,,100823
+100755,Raven Ray,Female,White,No,No,HR,Phoenix,2024-08-28,42,G3,HR Specialist,Individual Contributor,JP0019,Active,,,100648
+100756,Melissa Nelson,Female,White,No,No,Sales,Phoenix,2017-02-01,64,G1,Sales Representative I,Individual Contributor,JP0001,Active,,,100057
+100757,Diane Forbes,Female,White,No,No,IT,New York,2021-07-14,57,G1,IT Support Specialist I,Individual Contributor,JP0025,Active,,,100047
+100758,Brandi Woods,Female,Asian,No,No,Finance,Chicago,2019-03-05,37,G3,Senior Finance Analyst,Individual Contributor,JP0011,Terminated,2024-04-10,Voluntary Resignation,100898
+100759,Charles Wise,Male,White,No,No,Customer Support,Atlanta,2024-05-16,39,G7,Support Director,Director,JP0055,Active,,,100910
+100760,Matthew Cook,Male,White,No,Yes,Sales,Atlanta,2019-10-02,56,G3,Senior Sales Representative,Individual Contributor,JP0003,Active,,,100108
+100761,Justin Rios,Female,White,Yes,No,HR,Chicago,2024-02-14,55,G2,HR Coordinator II,Individual Contributor,JP0018,Active,,,100813
+100762,Haley Matthews,Female,White,No,No,Customer Support,Dallas,2019-02-08,38,G3,Senior Support Representative,Individual Contributor,JP0051,Active,,,100751
+100763,Matthew Elliott,Female,White,No,No,HR,Chicago,2019-12-22,30,G4,Senior HR Specialist,Individual Contributor,JP0020,Active,,,100178
+100764,Theresa Simpson,Female,Hispanic or Latino,No,No,Customer Support,Austin,2020-06-26,28,G1,Support Representative I,Individual Contributor,JP0049,Active,,,100129
+100765,Robert Smith,Male,White,No,Yes,IT,Chicago,2021-11-08,45,G4,Senior Software Engineer,Individual Contributor,JP0028,Active,,,100335
+100766,Allison Moran,Female,Hispanic or Latino,No,No,IT,Chicago,2022-07-22,39,G1,IT Support Specialist I,Individual Contributor,JP0025,Active,,,100401
+100767,Robert Martinez,Male,White,No,No,HR,Chicago,2021-03-03,45,G3,HR Specialist,Individual Contributor,JP0019,Active,,,100391
+100768,Scott Hawkins,Female,White,No,No,HR,Dallas,2018-01-18,22,G3,HR Specialist,Individual Contributor,JP0019,Terminated,2022-02-10,Involuntary,100355
+100769,Christina Barnes,Male,Hispanic or Latino,No,No,HR,Phoenix,2019-11-10,53,G2,HR Coordinator II,Individual Contributor,JP0018,Terminated,2021-03-13,Voluntary Resignation,100564
+100770,Mrs. April Cruz DDS,Female,Black or African American,No,No,Finance,Phoenix,2016-09-10,55,G4,Finance Lead,Individual Contributor,JP0012,Active,,,100399
+100771,Matthew Rose,Male,White,No,No,Finance,New York,2020-01-09,56,G3,Senior Finance Analyst,Individual Contributor,JP0011,Active,,,100399
+100772,Richard Butler,Male,Black or African American,No,No,Operations,Chicago,2023-08-12,23,G4,Senior Operations Analyst,Individual Contributor,JP0044,Terminated,2024-09-14,Voluntary Resignation,100563
+100773,Aaron Johnson,Male,White,No,No,Operations,Dallas,2016-08-10,22,G4,Senior Operations Analyst,Individual Contributor,JP0044,Active,,,100501
+100774,Christina Pittman,Female,White,No,No,Customer Support,Chicago,2016-08-16,60,G5,Senior Support Specialist,Senior Individual Contributor,JP0053,Active,,,100730
+100775,Gregory Odonnell,Female,Hispanic or Latino,No,No,Finance,Dallas,2023-08-18,52,G3,Senior Finance Analyst,Individual Contributor,JP0011,Active,,,100259
+100776,Michael Rodriguez,Male,Hispanic or Latino,Yes,No,HR,Austin,2025-02-20,55,G6,HR Manager,Manager,JP0022,Active,,,100074
+100777,Danielle Mann,Female,White,No,No,Operations,Phoenix,2023-07-29,31,G6,Operations Manager,Manager,JP0046,Active,,,100875
+100778,Angel Guerrero,Male,White,No,No,Marketing,Chicago,2022-07-17,31,G2,Marketing Coordinator II,Individual Contributor,JP0034,Active,,,100177
+100779,Jon Smith,Male,Hispanic or Latino,No,Yes,Sales,Atlanta,2026-03-28,40,G3,Senior Sales Representative,Individual Contributor,JP0003,Active,,,100907
+100780,Alicia Williams,Non-binary,Asian,No,No,Operations,Phoenix,2025-01-24,56,G2,Operations Coordinator II,Individual Contributor,JP0042,Active,,,100102
+100781,Kelly Gaines,Male,White,No,Yes,IT,Phoenix,2017-09-02,38,G3,Software Engineer II,Individual Contributor,JP0027,Active,,,100383
+100782,Amanda Bailey,Male,Hispanic or Latino,Yes,No,Sales,Chicago,2018-12-27,49,G2,Sales Representative II,Individual Contributor,JP0002,Active,,,100209
+100783,Jeffrey Schwartz,Male,White,No,No,Finance,Chicago,2021-02-26,45,G5,Senior Finance Lead,Senior Individual Contributor,JP0013,Active,,,100898
+100784,Brittany Massey,Prefer not to disclose,White,No,No,Customer Support,Austin,2025-12-10,54,G6,Support Manager,Manager,JP0054,Active,,,100349
+100785,Stephanie Davis,Female,White,No,No,Operations,New York,2019-08-10,28,G3,Operations Analyst,Individual Contributor,JP0043,Active,,,100998
+100786,Jason Watson,Female,White,Yes,No,Finance,Atlanta,2022-05-24,23,G2,Finance Analyst II,Individual Contributor,JP0010,Terminated,2024-08-19,Voluntary Resignation,100016
+100787,Kevin Fowler,Female,White,No,No,Customer Support,Dallas,2021-04-18,32,G6,Support Manager,Manager,JP0054,Active,,,100267
+100788,Samuel Barajas,Male,Hispanic or Latino,No,No,Customer Support,Dallas,2018-06-15,36,G2,Support Representative II,Individual Contributor,JP0050,Active,,,100510
+100789,Thomas Smith,Female,Hispanic or Latino,No,No,Marketing,Atlanta,2018-06-06,60,G4,Senior Marketing Specialist,Individual Contributor,JP0036,Terminated,2020-08-21,Involuntary,100322
+100790,Deanna Brooks,Male,White,No,No,Operations,Austin,2021-06-17,39,G5,Operations Lead,Senior Individual Contributor,JP0045,Active,,,100102
+100791,Sally Wright,Female,White,No,No,Operations,New York,2017-04-27,26,G2,Operations Coordinator II,Individual Contributor,JP0042,Terminated,2023-01-06,Voluntary Resignation,100934
+100792,Veronica Gamble,Male,Hispanic or Latino,No,No,Marketing,Atlanta,2023-01-14,48,G4,Senior Marketing Specialist,Individual Contributor,JP0036,Active,,,100214
+100793,John Davenport,Male,White,No,No,Customer Support,Austin,2022-06-25,36,G2,Support Representative II,Individual Contributor,JP0050,Active,,,100510
+100794,Olivia Green,Female,Asian,No,No,Customer Support,Chicago,2020-12-22,24,G3,Senior Support Representative,Individual Contributor,JP0051,Active,,,100153
+100795,Elizabeth Johnson,Female,White,No,No,Marketing,Atlanta,2020-10-04,60,G5,Marketing Lead,Senior Individual Contributor,JP0037,Active,,,100513
+100796,Alejandro Myers,Male,White,No,No,Operations,New York,2024-08-19,56,G7,Operations Director,Director,JP0047,Active,,,100096
+100797,Harry Barnes,Female,Hispanic or Latino,No,No,Customer Support,Austin,2020-09-21,39,G4,Support Specialist,Individual Contributor,JP0052,Active,,,100862
+100798,Samantha Brown,Male,White,No,No,Marketing,Atlanta,2025-11-10,52,G1,Marketing Coordinator I,Individual Contributor,JP0033,Active,,,100322
+100799,Nancy Bailey,Male,Asian,No,No,IT,New York,2025-03-15,31,G4,Senior Software Engineer,Individual Contributor,JP0028,Active,,,100436
+100800,Daniel Cox,Female,Hispanic or Latino,No,No,Finance,Atlanta,2019-07-13,36,G4,Finance Lead,Individual Contributor,JP0012,Active,,,100920
+100801,Michael Perkins,Male,White,No,No,Sales,New York,2019-08-27,42,G4,Sales Specialist,Individual Contributor,JP0004,Active,,,100610
+100802,Briana Williams,Female,White,No,No,HR,New York,2017-10-14,29,G6,HR Manager,Manager,JP0022,Active,,,100580
+100803,Tamara Lawrence,Female,White,No,No,Marketing,Atlanta,2023-03-13,41,G2,Marketing Coordinator II,Individual Contributor,JP0034,Active,,,100214
+100804,Whitney Wallace,Male,White,No,No,Operations,Austin,2024-03-13,31,G4,Senior Operations Analyst,Individual Contributor,JP0044,Active,,,100934
+100805,Andrew Rogers,Male,White,Yes,No,IT,Atlanta,2024-05-10,37,G4,Senior Software Engineer,Individual Contributor,JP0028,Active,,,100587
+100806,Mary Ramsey,Male,Prefer not to disclose,No,No,Operations,New York,2020-11-07,45,G4,Senior Operations Analyst,Individual Contributor,JP0044,Active,,,100237
+100807,Juan Perkins DVM,Female,Hispanic or Latino,No,No,Marketing,Atlanta,2022-02-28,63,G7,Marketing Director,Director,JP0039,Active,,,100067
+100808,Jordan Taylor,Male,Hispanic or Latino,No,No,IT,New York,2016-08-27,22,G2,Software Engineer I,Individual Contributor,JP0026,Active,,,100335
+100809,Connor Whitney,Male,White,No,No,Finance,Phoenix,2022-06-30,23,G1,Finance Analyst I,Individual Contributor,JP0009,Active,,,100118
+100810,Danielle Giles,Female,White,No,No,Finance,Chicago,2024-11-01,22,G1,Finance Analyst I,Individual Contributor,JP0009,Active,,,100823
+100811,Kenneth Kidd,Female,White,No,No,HR,Phoenix,2017-05-31,32,G1,HR Coordinator I,Individual Contributor,JP0017,Active,,,100017
+100812,Melissa Green,Male,White,Yes,No,IT,Chicago,2019-04-28,57,G2,Software Engineer I,Individual Contributor,JP0026,Active,,,100335
+100813,Jared Parker,Female,White,No,No,HR,New York,2021-03-19,22,G6,HR Manager,Manager,JP0022,Active,,,100822
+100814,Shane Walker,Female,Asian,No,Yes,HR,Austin,2022-02-28,60,G5,HR Business Partner,Senior Individual Contributor,JP0021,Active,,,100454
+100815,James Reynolds,Female,White,No,No,Finance,Austin,2021-04-18,54,G6,Finance Manager,Manager,JP0014,Terminated,2023-08-18,Contract End,100629
+100816,Elizabeth Hernandez,Male,Hispanic or Latino,No,No,Customer Support,Atlanta,2025-03-22,57,G2,Support Representative II,Individual Contributor,JP0050,Active,,,100143
+100817,Gina Snow,Male,White,No,No,Marketing,Dallas,2018-05-05,46,G2,Marketing Coordinator II,Individual Contributor,JP0034,Active,,,100604
+100818,Kyle Mueller,Female,White,No,No,HR,Chicago,2021-02-05,58,G4,Senior HR Specialist,Individual Contributor,JP0020,Active,,,100776
+100819,Margaret Chen,Male,White,No,No,IT,Austin,2026-04-24,43,G2,Software Engineer I,Individual Contributor,JP0026,Active,,,100948
+100820,Matthew Simmons,Female,Hispanic or Latino,No,Yes,IT,Atlanta,2020-04-13,38,G2,Software Engineer I,Individual Contributor,JP0026,Active,,,100619
+100821,Jennifer Tate,Male,White,No,No,Customer Support,Phoenix,2020-12-28,35,G6,Support Manager,Manager,JP0054,Active,,,100413
+100822,Angela Thomas,Male,White,No,No,HR,Dallas,2020-01-21,40,G7,HR Director,Director,JP0023,Active,,,100226
+100823,Connie Long,Male,Hispanic or Latino,No,No,Finance,New York,2017-04-05,26,G6,Finance Manager,Manager,JP0014,Active,,,100684
+100824,Joann Hall,Male,Asian,No,No,Finance,Dallas,2017-12-10,54,G5,Senior Finance Lead,Senior Individual Contributor,JP0013,Active,,,100958
+100825,John Rodriguez,Male,Asian,No,No,Finance,Phoenix,2024-05-31,63,G3,Senior Finance Analyst,Individual Contributor,JP0011,Terminated,2025-05-31,Voluntary Resignation,100898
+100826,Ronald Merritt,Male,White,No,No,Marketing,New York,2023-01-19,35,G1,Marketing Coordinator I,Individual Contributor,JP0033,Active,,,100604
+100827,Richard Perez,Female,White,Yes,No,Finance,Chicago,2024-01-15,46,G7,Finance Director,Director,JP0015,Active,,,100520
+100828,Michael Perez,Male,Hispanic or Latino,No,No,Marketing,Chicago,2018-07-20,55,G5,Marketing Lead,Senior Individual Contributor,JP0037,Active,,,100604
+100829,Ryan Dixon,Prefer not to disclose,White,Yes,No,Operations,New York,2021-04-09,51,G5,Operations Lead,Senior Individual Contributor,JP0045,Active,,,100102
+100830,Melissa Garcia,Female,White,No,No,Marketing,Phoenix,2023-01-24,24,G2,Marketing Coordinator II,Individual Contributor,JP0034,Active,,,100375
+100831,Mary Rivera,Female,Asian,No,Yes,Sales,Austin,2016-10-31,62,G4,Sales Specialist,Individual Contributor,JP0004,Active,,,100907
+100832,Jo Davis,Female,Asian,No,No,Customer Support,Austin,2020-01-08,63,G4,Support Specialist,Individual Contributor,JP0052,Active,,,100730
+100833,Heather Salazar,Male,Hispanic or Latino,No,No,HR,Phoenix,2023-04-15,24,G5,HR Business Partner,Senior Individual Contributor,JP0021,Active,,,100715
+100834,Julia Brown,Female,Black or African American,No,No,Finance,Dallas,2021-08-30,63,G8,VP of Finance,Vice President,JP0016,Active,,,100022
+100835,Valerie Alvarado,Female,Hispanic or Latino,No,No,IT,Chicago,2019-12-29,43,G5,Staff Engineer,Senior Individual Contributor,JP0029,Active,,,100383
+100836,Stephanie Baker,Male,Hispanic or Latino,No,No,Operations,Dallas,2017-12-11,30,G3,Operations Analyst,Individual Contributor,JP0043,Active,,,100237
+100837,Latoya Banks,Female,White,Yes,No,Sales,New York,2026-04-03,61,G2,Sales Representative II,Individual Contributor,JP0002,Terminated,2026-06-13,Voluntary Resignation,100907
+100838,Sarah Baker,Male,White,Yes,No,HR,Dallas,2019-12-27,54,G4,Senior HR Specialist,Individual Contributor,JP0020,Active,,,100715
+100839,Jackie Bell,Male,Native American,No,No,HR,Atlanta,2020-03-21,63,G3,HR Specialist,Individual Contributor,JP0019,Active,,,100391
+100840,Jerry West,Female,White,No,Yes,Marketing,New York,2020-09-09,44,G4,Senior Marketing Specialist,Individual Contributor,JP0036,Active,,,100177
+100841,Jose Hernandez,Male,Hispanic or Latino,No,No,Finance,Austin,2023-11-04,22,G1,Finance Analyst I,Individual Contributor,JP0009,Active,,,100958
+100842,Tracey Rodriguez,Female,Black or African American,No,No,Finance,New York,2017-07-23,62,G2,Finance Analyst II,Individual Contributor,JP0010,Active,,,100441
+100843,Veronica Oconnor,Male,White,No,No,Finance,Phoenix,2017-07-28,27,G4,Finance Lead,Individual Contributor,JP0012,Active,,,100958
+100844,Virginia Wilson,Female,White,No,No,IT,Austin,2017-01-25,46,G4,Senior Software Engineer,Individual Contributor,JP0028,Active,,,100436
+100845,Molly Ortega,Male,White,Yes,No,Sales,Dallas,2021-12-08,34,G4,Sales Specialist,Individual Contributor,JP0004,Active,,,100076
+100846,Robert Arnold,Male,White,No,No,Finance,Phoenix,2026-03-14,40,G7,Finance Director,Director,JP0015,Active,,,100834
+100847,Karen Jones,Male,Two or more races,No,No,Customer Support,Chicago,2019-03-03,26,G2,Support Representative II,Individual Contributor,JP0050,Active,,,100590
+100848,Steven Clark,Female,Black or African American,Yes,No,IT,Atlanta,2026-03-30,37,G7,Engineering Director,Director,JP0031,Active,,,100669
+100849,Derek Williams,Female,Prefer not to disclose,No,No,HR,Phoenix,2023-05-05,36,G8,Chief HR Officer,Vice President,JP0024,Active,,,100022
+100850,Kathy Tran,Female,White,No,No,Finance,New York,2017-05-19,23,G3,Senior Finance Analyst,Individual Contributor,JP0011,Active,,,100920
+100851,Bernard Rocha,Female,Black or African American,No,No,Finance,Phoenix,2025-02-27,46,G3,Senior Finance Analyst,Individual Contributor,JP0011,Active,,,100186
+100852,Christopher Hall,Female,White,No,No,Marketing,Dallas,2019-10-29,22,G1,Marketing Coordinator I,Individual Contributor,JP0033,Terminated,2020-05-10,Voluntary Resignation,100442
+100853,Samantha Young,Male,White,Yes,No,Finance,Dallas,2017-10-18,61,G3,Senior Finance Analyst,Individual Contributor,JP0011,Terminated,2019-01-31,Voluntary Resignation,100186
+100854,Joseph Diaz,Female,Black or African American,No,No,HR,Phoenix,2025-04-18,26,G3,HR Specialist,Individual Contributor,JP0019,Active,,,100776
+100855,Richard Tyler,Male,White,No,No,HR,Phoenix,2022-11-07,58,G3,HR Specialist,Individual Contributor,JP0019,Active,,,100576
+100856,Amy Sanford,Male,White,Yes,No,IT,New York,2020-04-14,23,G8,VP of Engineering,Vice President,JP0032,Active,,,100022
+100857,Bruce Bradshaw,Male,Asian,No,No,Marketing,Atlanta,2016-12-31,59,G4,Senior Marketing Specialist,Individual Contributor,JP0036,Active,,,100913
+100858,Mary Perez,Female,Hispanic or Latino,No,No,Sales,Dallas,2021-09-22,22,G4,Sales Specialist,Individual Contributor,JP0004,Active,,,100610
+100859,Susan Wheeler,Male,Hispanic or Latino,No,No,Marketing,Phoenix,2016-10-15,26,G2,Marketing Coordinator II,Individual Contributor,JP0034,Active,,,100604
+100860,Pam Hernandez,Male,Black or African American,No,No,Customer Support,Atlanta,2021-10-07,45,G4,Support Specialist,Individual Contributor,JP0052,Active,,,100821
+100861,Michael Alexander,Male,White,No,No,Sales,Chicago,2016-09-24,34,G5,Senior Sales Specialist,Senior Individual Contributor,JP0005,Active,,,100698
+100862,Tamara Hawkins,Non-binary,Asian,No,No,Customer Support,Chicago,2019-09-06,30,G6,Support Manager,Manager,JP0054,Active,,,100723
+100863,Robin Thomas,Male,Hispanic or Latino,No,No,Customer Support,Chicago,2019-06-04,26,G2,Support Representative II,Individual Contributor,JP0050,Active,,,100730
+100864,Nicole Doyle,Female,Black or African American,No,No,Sales,Atlanta,2024-10-05,37,G2,Sales Representative II,Individual Contributor,JP0002,Terminated,2025-08-24,Involuntary,100610
+100865,Alexander Tucker,Female,Hispanic or Latino,No,No,Finance,Dallas,2018-11-21,42,G3,Senior Finance Analyst,Individual Contributor,JP0011,Active,,,100399
+100866,Allen Myers,Male,White,No,No,Sales,Atlanta,2021-02-06,60,G7,Sales Director,Director,JP0007,Active,,,100301
+100867,Antonio Roberts,Female,Black or African American,No,No,Finance,Dallas,2025-01-06,53,G3,Senior Finance Analyst,Individual Contributor,JP0011,Active,,,100958
+100868,Adam Mason,Female,Asian,No,No,Sales,Dallas,2022-10-26,25,G4,Sales Specialist,Individual Contributor,JP0004,Active,,,100076
+100869,Cynthia Gonzalez,Male,Hispanic or Latino,No,No,Marketing,Dallas,2019-09-05,37,G7,Marketing Director,Director,JP0039,Terminated,2022-10-18,Retirement,100737
+100870,Chad Carroll,Female,White,No,No,HR,Austin,2025-09-21,64,G5,HR Business Partner,Senior Individual Contributor,JP0021,Active,,,100937
+100871,Barbara Anderson,Male,White,No,No,Sales,Dallas,2017-05-20,49,G3,Senior Sales Representative,Individual Contributor,JP0003,Active,,,100698
+100872,Thomas Garrett,Male,Hispanic or Latino,No,No,Operations,Phoenix,2024-10-24,55,G4,Senior Operations Analyst,Individual Contributor,JP0044,Active,,,100424
+100873,Margaret Morgan,Female,White,No,No,Marketing,Austin,2022-01-11,52,G4,Senior Marketing Specialist,Individual Contributor,JP0036,Active,,,100513
+100874,Jason Adams,Male,White,No,No,Customer Support,Austin,2017-02-03,45,G3,Senior Support Representative,Individual Contributor,JP0051,Active,,,100862
+100875,Samantha Roberts,Female,White,Yes,No,Operations,Atlanta,2017-07-24,47,G7,Operations Director,Director,JP0047,Active,,,100484
+100876,Gloria Ray,Prefer not to disclose,White,No,Yes,HR,Atlanta,2017-09-20,49,G4,Senior HR Specialist,Individual Contributor,JP0020,Active,,,100715
+100877,Eric Hall,Female,Black or African American,No,No,Customer Support,New York,2021-04-14,33,G1,Support Representative I,Individual Contributor,JP0049,Active,,,100636
+100878,Susan Davis,Male,Hispanic or Latino,No,No,HR,Austin,2020-12-26,41,G4,Senior HR Specialist,Individual Contributor,JP0020,Active,,,100391
+100879,Jane Mueller,Female,White,No,No,IT,Chicago,2025-04-08,23,G2,Software Engineer I,Individual Contributor,JP0026,Active,,,100001
+100880,Christopher Riley,Male,Hispanic or Latino,No,Yes,Marketing,Austin,2023-07-27,56,G2,Marketing Coordinator II,Individual Contributor,JP0034,Active,,,100513
+100881,Joshua Hale,Female,White,Yes,Yes,HR,Chicago,2023-04-02,32,G8,Chief HR Officer,Vice President,JP0024,Active,,,100022
+100882,Mrs. Paula Ritter,Female,Prefer not to disclose,No,No,Marketing,Chicago,2022-08-20,53,G1,Marketing Coordinator I,Individual Contributor,JP0033,Active,,,100375
+100883,Wendy Johnson,Female,White,No,No,Marketing,New York,2020-02-14,58,G2,Marketing Coordinator II,Individual Contributor,JP0034,Active,,,100214
+100884,Kimberly Rodriguez,Male,Hispanic or Latino,Yes,No,Finance,Austin,2022-10-08,27,G4,Finance Lead,Individual Contributor,JP0012,Active,,,100457
+100885,Martha Pham,Female,White,No,No,HR,Atlanta,2024-07-29,38,G4,Senior HR Specialist,Individual Contributor,JP0020,Active,,,100355
+100886,Christopher Thompson,Non-binary,White,No,No,Operations,New York,2017-05-17,45,G4,Senior Operations Analyst,Individual Contributor,JP0044,Active,,,100512
+100887,Lauren Campos,Male,White,No,No,Finance,New York,2019-05-18,43,G2,Finance Analyst II,Individual Contributor,JP0010,Active,,,100933
+100888,Rachel Acosta,Female,White,No,No,Sales,Atlanta,2018-07-27,55,G2,Sales Representative II,Individual Contributor,JP0002,Active,,,100610
+100889,Timothy Johnson,Male,Asian,No,No,Finance,Austin,2017-12-20,49,G4,Finance Lead,Individual Contributor,JP0012,Terminated,2019-04-09,Voluntary Resignation,100399
+100890,Loretta Simmons,Female,Hispanic or Latino,No,No,Finance,Dallas,2018-05-21,55,G1,Finance Analyst I,Individual Contributor,JP0009,Active,,,100259
+100891,Michael Smith,Female,White,No,No,Customer Support,Chicago,2021-10-29,60,G2,Support Representative II,Individual Contributor,JP0050,Active,,,100896
+100892,Joshua Joseph,Male,White,No,No,IT,Chicago,2019-09-03,46,G3,Software Engineer II,Individual Contributor,JP0027,Active,,,100733
+100893,Hailey Campos,Male,White,No,No,IT,New York,2021-12-29,32,G4,Senior Software Engineer,Individual Contributor,JP0028,Terminated,2022-04-12,Voluntary Resignation,100335
+100894,Daniel Pham,Female,Asian,No,No,Customer Support,Austin,2023-09-07,30,G3,Senior Support Representative,Individual Contributor,JP0051,Active,,,100821
+100895,Emma Munoz,Male,White,Yes,No,Finance,Dallas,2018-04-20,40,G5,Senior Finance Lead,Senior Individual Contributor,JP0013,Active,,,100016
+100896,Todd Henderson,Male,White,No,No,Customer Support,Chicago,2016-12-19,42,G6,Support Manager,Manager,JP0054,Active,,,100759
+100897,Joshua Bennett,Male,White,No,No,Operations,Dallas,2023-03-28,39,G4,Senior Operations Analyst,Individual Contributor,JP0044,Active,,,100424
+100898,Mr. Luis Parker,Male,Black or African American,No,No,Finance,New York,2020-03-29,51,G6,Finance Manager,Manager,JP0014,Active,,,100238
+100899,Julie Stephens,Male,White,No,No,Customer Support,Atlanta,2018-04-11,54,G4,Support Specialist,Individual Contributor,JP0052,Active,,,100510
+100900,Charles Davis,Female,Black or African American,No,Yes,IT,Chicago,2025-03-24,54,G6,Engineering Manager,Manager,JP0030,Active,,,100568
+100901,Andrew Warren,Male,White,No,No,Marketing,New York,2016-10-20,28,G3,Marketing Specialist,Individual Contributor,JP0035,Active,,,100513
+100902,Jorge Dunlap,Female,Black or African American,No,No,Operations,Austin,2024-10-08,43,G5,Operations Lead,Senior Individual Contributor,JP0045,Active,,,100777
+100903,Lindsay Taylor,Female,Hispanic or Latino,No,No,Customer Support,New York,2026-06-01,49,G5,Senior Support Specialist,Senior Individual Contributor,JP0053,Active,,,100510
+100904,Valerie Carson,Female,White,No,No,Customer Support,Atlanta,2021-08-13,30,G3,Senior Support Representative,Individual Contributor,JP0051,Active,,,100784
+100905,Jonathan Peters,Female,White,No,Yes,Sales,New York,2026-03-23,34,G3,Senior Sales Representative,Individual Contributor,JP0003,Active,,,100698
+100906,Jamie Townsend,Male,White,No,No,Sales,New York,2018-02-24,33,G4,Sales Specialist,Individual Contributor,JP0004,Active,,,100698
+100907,Anthony Jones,Male,Hispanic or Latino,No,No,Sales,Austin,2025-07-15,35,G6,Sales Manager,Manager,JP0006,Active,,,100978
+100908,Bradley Cole,Male,White,No,No,Sales,Atlanta,2021-10-12,52,G5,Senior Sales Specialist,Senior Individual Contributor,JP0005,Terminated,2025-11-20,Voluntary Resignation,100057
+100909,Donna Skinner,Male,White,No,No,Customer Support,Dallas,2019-01-21,50,G4,Support Specialist,Individual Contributor,JP0052,Active,,,100143
+100910,Tony Lopez,Female,White,No,No,Customer Support,Austin,2018-06-24,61,G8,VP of Customer Success,Vice President,JP0056,Active,,,100022
+100911,Brian Pitts,Female,Hispanic or Latino,Yes,No,Finance,Dallas,2024-12-07,23,G7,Finance Director,Director,JP0015,Terminated,2025-10-21,Voluntary Resignation,100834
+100912,Stacy Dawson,Male,Black or African American,No,No,Marketing,Dallas,2018-07-30,41,G3,Marketing Specialist,Individual Contributor,JP0035,Active,,,100322
+100913,Paul Hughes,Male,Asian,No,No,Marketing,Atlanta,2022-08-20,42,G6,Marketing Manager,Manager,JP0038,Active,,,100807
+100914,Walter Duncan,Non-binary,Black or African American,No,No,Marketing,Dallas,2026-01-27,56,G4,Senior Marketing Specialist,Individual Contributor,JP0036,Active,,,100962
+100915,Anita Gray,Female,White,No,No,Customer Support,Austin,2024-12-13,43,G6,Support Manager,Manager,JP0054,Active,,,100413
+100916,Jesus Gonzalez,Female,Hispanic or Latino,No,No,Sales,Phoenix,2024-04-28,48,G2,Sales Representative II,Individual Contributor,JP0002,Active,,,100610
+100917,Sarah Sanchez,Female,White,No,No,Customer Support,Austin,2023-02-06,41,G3,Senior Support Representative,Individual Contributor,JP0051,Active,,,100862
+100918,Melinda Scott DVM,Female,White,No,No,HR,Chicago,2021-05-23,47,G7,HR Director,Director,JP0023,Active,,,100849
+100919,Kimberly Cooper,Female,White,No,No,IT,Chicago,2020-10-14,53,G2,Software Engineer I,Individual Contributor,JP0026,Active,,,100436
+100920,Ashley King,Female,White,No,No,Finance,Austin,2018-11-16,59,G6,Finance Manager,Manager,JP0014,Active,,,100911
+100921,Gina Herrera,Male,Asian,No,No,Sales,Austin,2018-09-12,43,G4,Sales Specialist,Individual Contributor,JP0004,Active,,,100907
+100922,Mrs. Erin Garcia,Female,White,No,No,Finance,Atlanta,2016-09-24,44,G5,Senior Finance Lead,Senior Individual Contributor,JP0013,Active,,,100399
+100923,Jose Randolph,Female,Hispanic or Latino,No,No,HR,Chicago,2016-10-17,35,G2,HR Coordinator II,Individual Contributor,JP0018,Terminated,2022-11-20,Retirement,100454
+100924,Daniel Robinson,Prefer not to disclose,Hispanic or Latino,No,No,Finance,Chicago,2023-12-27,55,G4,Finance Lead,Individual Contributor,JP0012,Active,,,100920
+100925,Frank Andrade,Male,White,No,No,Finance,Dallas,2022-01-23,24,G1,Finance Analyst I,Individual Contributor,JP0009,Active,,,100815
+100926,Nicole Smith,Male,White,No,No,IT,Austin,2017-05-02,56,G2,Software Engineer I,Individual Contributor,JP0026,Active,,,100383
+100927,Tanner Steele,Female,White,No,No,Finance,Austin,2020-01-16,32,G5,Senior Finance Lead,Senior Individual Contributor,JP0013,Terminated,2024-05-19,Voluntary Resignation,100399
+100928,Matthew Hoover,Female,Hispanic or Latino,No,No,HR,Phoenix,2021-02-17,33,G4,Senior HR Specialist,Individual Contributor,JP0020,Active,,,100776
+100929,Lucas Santos,Female,White,No,No,HR,Austin,2023-11-06,64,G2,HR Coordinator II,Individual Contributor,JP0018,Active,,,100564
+100930,Michelle Jacobs,Male,White,No,No,Sales,Dallas,2020-12-23,57,G3,Senior Sales Representative,Individual Contributor,JP0003,Terminated,2024-09-27,Voluntary Resignation,100610
+100931,Shannon Allen MD,Male,White,No,No,IT,Phoenix,2018-09-20,28,G3,Software Engineer II,Individual Contributor,JP0027,Active,,,100335
+100932,Teresa Bailey,Female,White,No,No,Finance,Chicago,2018-03-01,34,G2,Finance Analyst II,Individual Contributor,JP0010,Active,,,100259
+100933,Curtis Hughes,Female,White,No,Yes,Finance,New York,2017-09-15,52,G6,Finance Manager,Manager,JP0014,Active,,,100629
+100934,Nicole Todd,Female,Hispanic or Latino,No,No,Operations,Chicago,2023-07-29,32,G6,Operations Manager,Manager,JP0046,Terminated,2024-11-17,Involuntary,100069
+100935,Jessica Pierce,Male,White,No,Yes,Marketing,New York,2024-01-20,28,G3,Marketing Specialist,Individual Contributor,JP0035,Active,,,100962
+100936,Edward Alexander,Female,White,No,No,Marketing,Austin,2016-12-30,28,G3,Marketing Specialist,Individual Contributor,JP0035,Active,,,100322
+100937,Kenneth Allen,Female,Black or African American,No,No,HR,Austin,2025-04-11,27,G6,HR Manager,Manager,JP0022,Active,,,100580
+100938,Patrick Chandler,Male,White,No,No,Marketing,Dallas,2024-07-16,27,G5,Marketing Lead,Senior Individual Contributor,JP0037,Terminated,2025-05-26,Voluntary Resignation,100197
+100939,Joseph Davis,Female,White,No,No,IT,New York,2022-01-21,39,G2,Software Engineer I,Individual Contributor,JP0026,Active,,,100733
+100940,Karen Turner,Male,White,No,No,Customer Support,Atlanta,2018-06-17,38,G1,Support Representative I,Individual Contributor,JP0049,Active,,,100821
+100941,Michael Lopez,Male,Hispanic or Latino,No,No,Sales,Atlanta,2017-11-22,34,G3,Senior Sales Representative,Individual Contributor,JP0003,Active,,,100108
+100942,Albert Baker,Male,White,Yes,No,Customer Support,Chicago,2018-12-30,38,G4,Support Specialist,Individual Contributor,JP0052,Active,,,100428
+100943,Michael Phillips,Female,White,No,No,Operations,Dallas,2017-01-12,40,G1,Operations Coordinator I,Individual Contributor,JP0041,Active,,,100424
+100944,Martha Clark,Female,White,No,No,Customer Support,Atlanta,2024-07-03,54,G7,Support Director,Director,JP0055,Active,,,100910
+100945,Brenda Cantu,Female,White,No,No,Marketing,Dallas,2022-07-09,51,G3,Marketing Specialist,Individual Contributor,JP0035,Active,,,100373
+100946,Christina Stephens MD,Male,White,No,No,Customer Support,Dallas,2025-04-01,42,G3,Senior Support Representative,Individual Contributor,JP0051,Active,,,100862
+100947,Mary Clark,Male,White,No,No,IT,Chicago,2025-02-07,27,G4,Senior Software Engineer,Individual Contributor,JP0028,Active,,,100900
+100948,Lisa Brennan,Male,Black or African American,No,No,IT,Phoenix,2022-03-09,22,G6,Engineering Manager,Manager,JP0030,Active,,,100848
+100949,Nancy Smith,Female,White,No,No,Operations,Phoenix,2020-05-03,27,G2,Operations Coordinator II,Individual Contributor,JP0042,Active,,,100934
+100950,Andrew Adams,Female,Two or more races,No,No,Finance,Chicago,2016-12-07,63,G4,Finance Lead,Individual Contributor,JP0012,Active,,,100259
+100951,Steve Robinson,Male,White,No,No,Customer Support,Austin,2019-03-10,45,G5,Senior Support Specialist,Senior Individual Contributor,JP0053,Active,,,100151
+100952,Kaitlyn Hess,Female,White,No,No,Customer Support,New York,2025-10-23,64,G3,Senior Support Representative,Individual Contributor,JP0051,Terminated,2026-06-07,Contract End,100428
+100953,Danielle Wallace,Male,White,No,No,HR,Phoenix,2018-05-15,28,G4,Senior HR Specialist,Individual Contributor,JP0020,Active,,,100357
+100954,John Bass,Male,White,No,No,Finance,Austin,2017-02-06,28,G2,Finance Analyst II,Individual Contributor,JP0010,Active,,,100206
+100955,Amanda Wagner,Female,White,No,No,Finance,Atlanta,2018-05-24,41,G3,Senior Finance Analyst,Individual Contributor,JP0011,Terminated,2021-10-10,Voluntary Resignation,100399
+100956,Jennifer Ramos,Female,White,No,No,Marketing,Phoenix,2018-12-03,54,G5,Marketing Lead,Senior Individual Contributor,JP0037,Active,,,100214
+100957,Robert Harris,Male,White,No,No,IT,Atlanta,2023-05-08,45,G4,Senior Software Engineer,Individual Contributor,JP0028,Active,,,100335
+100958,Bethany Wilson,Female,Hispanic or Latino,No,No,Finance,New York,2024-08-07,50,G6,Finance Manager,Manager,JP0014,Active,,,100007
+100959,Kyle Franklin,Male,White,No,No,Finance,Austin,2018-05-03,63,G5,Senior Finance Lead,Senior Individual Contributor,JP0013,Terminated,2023-05-08,Involuntary,100920
+100960,John Pearson,Male,White,No,No,Customer Support,Dallas,2025-02-15,63,G2,Support Representative II,Individual Contributor,JP0050,Terminated,2025-07-19,Retirement,100821
+100961,Danielle Diaz,Male,White,No,No,Operations,Phoenix,2025-01-17,22,G3,Operations Analyst,Individual Contributor,JP0043,Active,,,100316
+100962,Taylor Diaz,Male,White,No,No,Marketing,Phoenix,2019-12-28,39,G6,Marketing Manager,Manager,JP0038,Active,,,100500
+100963,Suzanne Peterson,Male,White,No,No,HR,Atlanta,2017-10-22,37,G5,HR Business Partner,Senior Individual Contributor,JP0021,Active,,,100017
+100964,John Austin,Female,Hispanic or Latino,Yes,No,Marketing,Phoenix,2024-09-28,29,G5,Marketing Lead,Senior Individual Contributor,JP0037,Active,,,100177
+100965,Luke Peters,Female,White,Yes,Yes,Sales,Austin,2019-11-11,45,G2,Sales Representative II,Individual Contributor,JP0002,Active,,,100907
+100966,Kelli Daniels,Female,Asian,Yes,No,Marketing,Austin,2019-11-29,54,G2,Marketing Coordinator II,Individual Contributor,JP0034,Active,,,100373
+100967,Donald Rivera,Female,Black or African American,No,No,Sales,Atlanta,2021-07-12,30,G5,Senior Sales Specialist,Senior Individual Contributor,JP0005,Active,,,100108
+100968,Craig Taylor,Prefer not to disclose,Hispanic or Latino,No,No,Customer Support,Chicago,2023-10-05,46,G1,Support Representative I,Individual Contributor,JP0049,Active,,,100915
+100969,Jennifer Schultz,Female,Prefer not to disclose,No,No,Operations,New York,2017-03-14,27,G2,Operations Coordinator II,Individual Contributor,JP0042,Active,,,100746
+100970,Sonya Powell,Female,Asian,No,No,Finance,Austin,2022-03-02,57,G1,Finance Analyst I,Individual Contributor,JP0009,Active,,,100118
+100971,Jose Smith,Female,White,No,No,IT,Phoenix,2024-03-06,63,G2,Software Engineer I,Individual Contributor,JP0026,Active,,,100948
+100972,Juan Lopez,Prefer not to disclose,White,No,No,Customer Support,Dallas,2020-11-04,36,G1,Support Representative I,Individual Contributor,JP0049,Active,,,100004
+100973,Alexander Maynard,Male,Hispanic or Latino,No,No,Marketing,Dallas,2019-09-01,55,G3,Marketing Specialist,Individual Contributor,JP0035,Active,,,100604
+100974,Steven Hudson,Male,White,No,No,Finance,Dallas,2018-04-12,49,G3,Senior Finance Analyst,Individual Contributor,JP0011,Active,,,100259
+100975,Eric Schultz,Male,White,Yes,No,Marketing,Austin,2025-01-22,53,G7,Marketing Director,Director,JP0039,Active,,,100737
+100976,Michael Walker,Female,Black or African American,No,No,HR,Atlanta,2023-06-24,26,G3,HR Specialist,Individual Contributor,JP0019,Active,,,100564
+100977,David Roberts,Male,Black or African American,No,No,Customer Support,Chicago,2018-07-23,57,G2,Support Representative II,Individual Contributor,JP0050,Active,,,100751
+100978,Gabriela Ramirez,Female,Black or African American,No,No,Sales,Austin,2019-07-29,51,G7,Sales Director,Director,JP0007,Active,,,100346
+100979,Michele Johnson,Female,White,No,No,Finance,Atlanta,2023-08-27,29,G5,Senior Finance Lead,Senior Individual Contributor,JP0013,Active,,,100186
+100980,Michael Lee,Male,White,No,No,Marketing,New York,2022-09-27,59,G7,Marketing Director,Director,JP0039,Active,,,100067
+100981,Jorge Santos,Male,White,No,No,Marketing,Austin,2018-07-12,47,G4,Senior Marketing Specialist,Individual Contributor,JP0036,Active,,,100373
+100982,Jermaine Cooley,Male,White,No,No,Operations,Phoenix,2023-09-03,25,G4,Senior Operations Analyst,Individual Contributor,JP0044,Active,,,100746
+100983,Shelly Parker,Female,Black or African American,Yes,No,Customer Support,New York,2022-07-09,37,G2,Support Representative II,Individual Contributor,JP0050,Active,,,100151
+100984,Robert Hunter Jr.,Female,White,No,No,HR,Austin,2022-09-01,63,G3,HR Specialist,Individual Contributor,JP0019,Active,,,100813
+100985,Matthew Lambert,Female,White,No,No,Customer Support,Atlanta,2019-10-10,56,G4,Support Specialist,Individual Contributor,JP0052,Active,,,100143
+100986,Lee Holland,Female,White,No,No,Customer Support,Austin,2020-09-18,59,G3,Senior Support Representative,Individual Contributor,JP0051,Active,,,100636
+100987,Elizabeth Campos,Male,Hispanic or Latino,No,No,Finance,New York,2016-08-12,31,G2,Finance Analyst II,Individual Contributor,JP0010,Active,,,100457
+100988,David Washington,Male,White,No,No,Operations,Atlanta,2019-09-10,62,G1,Operations Coordinator I,Individual Contributor,JP0041,Active,,,100237
+100989,Tammy Reed,Female,Hispanic or Latino,No,No,Finance,Austin,2021-07-19,39,G6,Finance Manager,Manager,JP0014,Active,,,100007
+100990,Dr. Dorothy Hunt DVM,Female,Black or African American,No,No,Customer Support,Chicago,2019-11-05,43,G3,Senior Support Representative,Individual Contributor,JP0051,Active,,,100153
+100991,Mrs. Sandra Murphy,Female,White,No,Yes,Sales,New York,2021-01-16,41,G2,Sales Representative II,Individual Contributor,JP0002,Active,,,100108
+100992,Kelly Suarez,Male,Hispanic or Latino,No,No,Customer Support,Phoenix,2026-01-29,51,G2,Support Representative II,Individual Contributor,JP0050,Active,,,100862
+100993,Todd Campbell,Male,White,No,Yes,HR,Dallas,2021-08-20,25,G7,HR Director,Director,JP0023,Active,,,100849
+100994,Kevin Taylor,Female,Black or African American,No,No,Marketing,Austin,2021-07-09,40,G4,Senior Marketing Specialist,Individual Contributor,JP0036,Active,,,100197
+100995,Theodore Jacobs,Male,White,No,No,Sales,Phoenix,2025-02-14,34,G1,Sales Representative I,Individual Contributor,JP0001,Active,,,100209
+100996,Ryan Blake,Female,White,Yes,No,Sales,Phoenix,2019-07-17,34,G5,Senior Sales Specialist,Senior Individual Contributor,JP0005,Active,,,100076
+100997,Christopher Baker,Male,Hispanic or Latino,No,No,Customer Support,New York,2020-11-26,33,G5,Senior Support Specialist,Senior Individual Contributor,JP0053,Active,,,100821
+100998,Holly Mcmillan,Female,Hispanic or Latino,No,No,Operations,New York,2023-03-08,54,G6,Operations Manager,Manager,JP0046,Active,,,100875
+100999,Alexis Evans,Female,White,No,No,IT,Dallas,2021-02-25,36,G7,Engineering Director,Director,JP0031,Active,,,100856

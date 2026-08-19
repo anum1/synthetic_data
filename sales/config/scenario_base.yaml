@@ -1,0 +1,214 @@
+# =============================================================================
+# ApexTech - Enterprise Sales & Profitability 360
+# Base scenario configuration.
+#
+# Every number here is a knob. Copy this file, change values, regenerate:
+#   python3 src/generate.py --scenario config/my_scenario.yaml
+# Referential integrity and business logic are preserved automatically.
+# =============================================================================
+
+meta:
+  scenario_name: base
+  company: ApexTech
+  seed: 42
+
+# -----------------------------------------------------------------------------
+# Calendar anchoring
+#   anchor: today  -> current year is the incomplete year; history_years back
+#   anchor: fixed  -> use as_of_date literally
+# -----------------------------------------------------------------------------
+calendar:
+  anchor: today
+  as_of_date: null          # only used when anchor: fixed, e.g. 2026-08-31
+  history_years: 2          # full years of history before the current year
+  forecast_months: 16       # months of budget/forecast beyond as_of_date
+  # Fiscal calendar: month the fiscal year starts (2 = February). The fiscal
+  # year is labelled by the calendar year it ENDS in.
+  fiscal_year_start_month: 2
+  # Retail calendar: month the retail year starts, and the period pattern.
+  # Pattern options: "4-5-4" (NRF standard), "4-4-5", "5-4-4", "13x4".
+  retail_454_start_month: 2
+  retail_pattern: "4-5-4"
+
+# -----------------------------------------------------------------------------
+# Size tiers. --tier small|full
+# -----------------------------------------------------------------------------
+tiers:
+  small:
+    order_lines: 300_000
+    customers: 2_000
+    products: 800
+    suppliers: 150
+    locations: 120
+    sales_reps: 90
+    inventory_locations: 18      # snapshot grid = locations x skus x weeks
+    inventory_skus: 90
+  full:
+    order_lines: 3_000_000
+    customers: 8_000
+    products: 2_500
+    suppliers: 500
+    locations: 500
+    sales_reps: 300
+    inventory_locations: 30
+    inventory_skus: 120
+
+# -----------------------------------------------------------------------------
+# Baseline business shape (before any events are applied)
+# -----------------------------------------------------------------------------
+baseline:
+  lines_per_order: [1, 6]          # uniform range
+  underlying_growth_yoy: 0.06     # 8.4% revenue growth target
+  base_gross_margin_pct: 0.230     # blended starting margin
+  base_discount_pct: 0.085
+  return_rate: 0.030
+  seasonality:                     # multiplier by calendar month (Jan..Dec)
+    [0.88, 0.85, 0.97, 0.95, 1.00, 1.03, 0.94, 0.96, 1.05, 1.06, 1.22, 1.28]
+  weekday_weights:                 # Mon..Sun
+    [1.15, 1.18, 1.16, 1.12, 1.05, 0.70, 0.64]
+  channel_mix:
+    Direct Sales: 0.34
+    Online: 0.28
+    Partner: 0.20
+    Retail Store: 0.13
+    Distributor: 0.05
+  region_mix:
+    North America: 0.42
+    Europe: 0.27
+    APAC: 0.21
+    LATAM: 0.10
+  data_quality:                    # deliberate, controlled dirt
+    null_ship_date_pct: 0.004
+    duplicate_order_count: 12
+    late_return_pct: 0.02
+
+# -----------------------------------------------------------------------------
+# PLANTED BUSINESS EVENTS
+# Each block drives one or more demo flows. Set enabled: false to remove the
+# story from the data entirely; change the numbers to change its severity.
+#
+# TIMING: offsets are in months relative to the as-of month (the last month
+# with actual sales).  -3 = three months before as-of;  0 = the as-of month
+# itself;  +2 = two months into the forecast horizon.  Using offsets instead
+# of absolute months keeps the narrative correct whenever you regenerate.
+# -----------------------------------------------------------------------------
+events:
+
+  # Flow 6 - Supplier cost shock. Revenue holds, COGS jumps, margin erodes.
+  supplier_cost_shock:
+    enabled: true
+    supplier_group: Global Components
+    # Subcategories this group is the primary source for. Widen the list to
+    # make the shock hit more of the P&L; narrow it to make it a niche issue.
+    sourced_subcategories: [Laptops, Memory]
+    start_offset: -3
+    end_offset: null               # null = runs through the forecast horizon
+    cost_increase_pct: 0.12
+    revenue_impact_pct: 0.0
+
+  # Flow 9 - Promotion overreach. Units up, margin down.
+  promotion_surge:
+    enabled: true
+    category: Electronics
+    start_offset: -2
+    end_offset: -1
+    unit_lift_pct: 0.22
+    # Additional discount in PERCENTAGE POINTS on promoted lines.
+    # 0.22 unit lift with 6.6pts extra discount reproduces the design's
+    # "units +22%, revenue +14%, margin -5pts" outcome.
+    extra_discount_points: 0.066
+
+  # Flow 4 - New product launch / cannibalization.
+  product_launch:
+    enabled: true
+    launch_offset: -2
+    new_product: Nimbus Air N4
+    incumbent_product: Nimbus Air N3
+    new_product_lift: 3.00
+    incumbent_decline: -0.28
+    family_net_lift: 0.04
+
+  # Flow 3 - Regional profitability problem. The largest single profit driver.
+  region_margin_erosion:
+    enabled: true
+    region: Europe
+    country: Germany          # focus of the drill-down
+    category: Electronics     # full scope of the erosion
+    subcategory: Laptops      # sharpest point of the erosion
+    start_offset: -4
+    end_offset: 0
+    revenue_change: 0.02
+    unit_change: 0.05
+    profit_change: -0.45
+    # Relative intensity by how closely a line matches the focus. Germany +
+    # Laptops takes the full hit; the rest of European Electronics takes less.
+    focus_weight: 1.8         # focus country AND focus subcategory
+    country_weight: 0.9       # focus country, other subcategories
+    subcategory_weight: 0.9   # other countries, focus subcategory
+    region_weight: 0.45       # rest of the region's category
+
+  # Flow 5 - Strategic customer contraction.
+  customer_contraction:
+    enabled: true
+    customer_name: GlobalTech Corp
+    revenue_share: 0.04
+    start_offset: -2
+    end_offset: null
+    order_change: -0.25
+    revenue_change: -0.22
+    reason: Contract renegotiation
+
+  # Flow 8 - Inventory shortage. Demand up, availability down, sales miss.
+  inventory_shortage:
+    enabled: true
+    start_offset: -1
+    end_offset: 0
+    affected_sku_count: 6
+    demand_change: 0.30
+    # Supply cap: the supplier ships only (1 + inventory_change) of weekly
+    # demand while the shortage runs, so on-hand stock draws down to zero.
+    inventory_change: -0.45
+
+  # Flow 7 - Supplier quality failure -> returns and defects spike.
+  quality_failure:
+    enabled: true
+    start_offset: -1
+    end_offset: null
+    return_rate_from: 0.03
+    return_rate_to: 0.11
+    defect_rate_from: 0.02
+    defect_rate_to: 0.09
+
+  # Flow 12 - Anomalous mega order in the most recent complete month.
+  sales_anomaly:
+    enabled: true
+    offset: 0
+    order_amount: 2_800_000
+    normal_monthly_range: [100_000, 300_000]
+    reason: One-time enterprise deployment
+
+  # Flow 11 - Forecast deterioration (forecast horizon only).
+  forecast_deterioration:
+    enabled: true
+    start_offset: 1
+    revenue_shortfall: 4_200_000
+    profit_shortfall: 6_800_000
+
+  # Flow 13 - Recovery / what-if scenario (forecast horizon only).
+  recovery_scenario:
+    enabled: true
+    start_offset: 3
+    supplier_cost_change: -0.07
+    discount_change: -0.04
+    inventory_availability_change: 0.20
+    customer_recovery: 0.10
+    profit_recovery: 5_100_000
+
+# -----------------------------------------------------------------------------
+# Output
+# -----------------------------------------------------------------------------
+output:
+  formats: [parquet, csv]          # csv is skipped for the full tier by default
+  csv_max_tier: small
+  partition_large_facts: true      # parquet partitioned by year_number
+  decimals: 2

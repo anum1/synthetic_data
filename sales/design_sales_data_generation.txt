@@ -1,0 +1,1322 @@
+**single enterprise retail/sales dataset** that can support several demo narratives rather than creating separate datasets for each dashboard.
+
+The goal is that the same data can demonstrate:
+
+**Executive KPI → variance → hierarchy drill-down → anomaly → root cause → customer/product/supplier analysis → forecast → scenario → AI investigation.**
+
+# 1. Demo dataset concept
+
+### Dataset name
+
+**Enterprise Sales & Profitability 360**
+
+### Business
+
+A fictional global technology retailer/manufacturer called **ApexTech**.
+
+### Data period
+
+**January 2024 – December 2026**
+
+Use 2026 as the current/incomplete year so you can demonstrate:
+
+* YTD
+* PYTD
+* YoY
+* MoM
+* QoQ
+* forecast
+* budget variance
+* run-rate
+* LTM
+* seasonality
+
+### Target size
+
+Approximately **2–4 million sales order lines**.
+
+That is large enough to make an enterprise analytics demo feel credible without making development painful.
+
+---
+
+# 2. Overall data model
+
+I would use a star/snowflake-ish model:
+
+```text
+                         ┌──────────────┐
+                         │   Calendar   │
+                         └──────┬───────┘
+                                │
+                                │
+┌──────────┐              ┌─────▼──────┐             ┌───────────┐
+│ Customer │──────────────│ Sales Order│─────────────│ Location  │
+└──────────┘              └─────┬──────┘             └───────────┘
+                                │
+                                ▼
+                         ┌──────────────┐
+                         │ Order Lines  │
+                         └──────┬───────┘
+                                │
+              ┌─────────────────┼─────────────────┐
+              │                 │                 │
+              ▼                 ▼                 ▼
+         ┌─────────┐       ┌──────────┐      ┌───────────┐
+         │ Product │       │Promotion │      │ ShipMethod│
+         └────┬────┘       └──────────┘      └───────────┘
+              │
+              ▼
+        ┌───────────┐
+        │ Supplier  │
+        └───────────┘
+
+
+       ┌──────────┐       ┌──────────┐
+       │  Budget  │       │ Forecast │
+       └──────────┘       └──────────┘
+
+       ┌──────────┐       ┌──────────┐
+       │ Inventory│       │ Returns  │
+       └──────────┘       └──────────┘
+
+       ┌───────────────────────────┐
+       │ Supplier Performance      │
+       └───────────────────────────┘
+```
+
+---
+
+# 3. Tables
+
+I would create **14 tables**.
+
+| Table                       | Approx. rows | Purpose                    |
+| --------------------------- | -----------: | -------------------------- |
+| `dim_date`                  |        1,100 | Calendar/time intelligence |
+| `dim_customer`              |        1,000 | Customer hierarchy         |
+| `dim_product`               |        5  00 | Product hierarchy          |
+| `dim_supplier`              |          500 | Supplier analysis          |
+| `dim_location`              |          500 | Geography hierarchy        |
+| `dim_promotion`             |          200 | Promotions                 |
+| `dim_sales_rep`             |          300 | Sales organization         |
+| `fact_sales_order`          |           1M | Order header               |
+| `fact_sales_order_line`     |           3M | Main analytical fact       |
+| `fact_returns`              |         100K | Returns                    |
+| `fact_inventory`            |         500k | Inventory snapshots        |
+| `fact_budget`               |          50K | Budget                     |
+| `fact_forecast`             |          50K | Forecast                   |
+| `fact_supplier_performance` |          50K | Supplier metrics           |
+
+The **sales order line** is the main fact table.
+
+---
+
+# 4. `dim_date`
+
+This table should be much richer than a normal date dimension.
+
+```text
+date_key
+date
+day
+day_name
+week
+week_start_date
+month
+month_name
+month_number
+quarter
+quarter_name
+year
+year_month
+year_quarter
+
+fiscal_year
+fiscal_quarter
+fiscal_month
+fiscal_week
+
+is_month_end
+is_quarter_end
+is_year_end
+
+is_holiday
+holiday_name
+
+retail_454_week
+retail_454_period
+retail_454_quarter
+```
+
+Use a **4-5-4 retail calendar** as well as standard calendar attributes.
+
+This allows you to demonstrate:
+
+> "Compare current fiscal period against the same retail period last year."
+
+---
+
+# 5. `dim_customer`
+
+Columns:
+
+```text
+customer_id
+customer_name
+customer_type
+customer_segment
+industry
+customer_tier
+
+country
+region
+state
+city
+
+sales_channel
+account_manager_id
+
+customer_since_date
+
+credit_rating
+payment_terms
+
+annual_revenue_band
+customer_lifetime_value
+
+is_strategic_customer
+is_active
+```
+
+### Customer hierarchy
+
+```text
+Customer Segment
+      ↓
+Industry
+      ↓
+Customer Tier
+      ↓
+Customer
+```
+
+Example:
+
+```text
+Enterprise
+ ├── Technology
+ │    ├── Strategic
+ │    └── Standard
+ │
+ ├── Healthcare
+ └── Manufacturing
+```
+
+---
+
+# 6. `dim_product`
+
+Columns:
+
+```text
+product_id
+sku
+product_name
+
+category
+subcategory
+product_family
+brand
+
+product_launch_date
+product_end_date
+
+supplier_id
+
+standard_cost
+list_price
+
+product_lifecycle_stage
+
+is_premium
+is_new_product
+is_discontinued
+```
+
+### Product hierarchy
+
+```text
+Category
+   ↓
+Subcategory
+   ↓
+Product Family
+   ↓
+Brand
+   ↓
+Product
+   ↓
+SKU
+```
+
+Example:
+
+```text
+Computers
+ └── Laptops
+      └── Mac
+           └── MacBook Air
+                ├── M2 13"
+                ├── M3 13"
+                └── M4 13"
+```
+
+This is extremely useful for your expandable hierarchy demo.
+
+---
+
+# 7. `dim_supplier`
+
+```text
+supplier_id
+supplier_name
+supplier_group
+country
+region
+
+supplier_tier
+supplier_category
+
+payment_terms
+contract_start_date
+contract_end_date
+
+quality_rating
+risk_rating
+
+default_lead_time_days
+```
+
+Hierarchy:
+
+```text
+Supplier Region
+      ↓
+Supplier Group
+      ↓
+Supplier Tier
+      ↓
+Supplier
+```
+
+---
+
+# 8. `dim_location`
+
+```text
+location_id
+location_name
+
+country
+region
+state
+city
+
+market
+territory
+
+latitude
+longitude
+
+location_type
+store_type
+```
+
+Hierarchy:
+
+```text
+Global
+ ↓
+Region
+ ↓
+Country
+ ↓
+State
+ ↓
+City
+ ↓
+Location
+```
+
+---
+
+# 9. `dim_promotion`
+
+```text
+promotion_id
+promotion_name
+
+promotion_type
+promotion_category
+
+start_date
+end_date
+
+discount_pct
+promotion_budget
+
+target_category
+target_segment
+
+campaign_channel
+```
+
+Example promotions:
+
+```text
+Spring Sale
+Back to School
+Black Friday
+Holiday
+Clearance
+New Product Launch
+Enterprise Contract
+```
+
+---
+
+# 10. `dim_sales_rep`
+
+```text
+sales_rep_id
+sales_rep_name
+
+sales_region
+territory
+sales_team
+
+manager_id
+
+hire_date
+quota
+```
+
+Hierarchy:
+
+```text
+VP Sales
+   ↓
+Region
+   ↓
+Sales Director
+   ↓
+Sales Manager
+   ↓
+Sales Rep
+```
+
+This gives you another hierarchy for the dashboard.
+
+---
+
+# 11. Main fact: `fact_sales_order`
+
+```text
+order_id
+order_date
+customer_id
+location_id
+sales_rep_id
+
+sales_channel
+
+order_status
+payment_method
+
+ship_method
+
+requested_ship_date
+actual_ship_date
+
+order_priority
+
+currency
+exchange_rate
+
+total_order_amount
+```
+
+---
+
+# 12. Main fact: `fact_sales_order_line`
+
+This is where most of your demo intelligence lives.
+
+```text
+order_line_id
+order_id
+
+order_date
+customer_id
+product_id
+supplier_id
+location_id
+sales_rep_id
+promotion_id
+
+quantity
+
+list_price
+unit_price
+
+discount_amount
+discount_pct
+
+gross_sales
+net_sales
+
+cost
+shipping_cost
+
+gross_profit
+gross_margin_pct
+
+tax_amount
+
+return_amount
+
+inventory_cost
+
+lead_time_days
+
+sales_channel
+```
+
+I would also include:
+
+```text
+currency
+exchange_rate
+```
+
+so you can demonstrate global reporting.
+
+---
+
+# 13. `fact_returns`
+
+```text
+return_id
+order_line_id
+return_date
+
+customer_id
+product_id
+
+return_quantity
+return_amount
+
+return_reason
+return_category
+
+product_condition
+
+refund_amount
+```
+
+Return reasons:
+
+```text
+Damaged
+Wrong Product
+Customer Changed Mind
+Late Delivery
+Product Defect
+Duplicate Order
+```
+
+---
+
+# 14. `fact_inventory`
+
+Daily or weekly snapshots.
+
+```text
+snapshot_date
+location_id
+product_id
+
+opening_inventory
+received_quantity
+sold_quantity
+
+ending_inventory
+
+reserved_quantity
+available_inventory
+
+inventory_value
+
+stockout_flag
+days_of_supply
+```
+
+This enables:
+
+> "Did declining sales come from weak demand or lack of inventory?"
+
+---
+
+# 15. `fact_budget`
+
+Grain:
+
+**Month × Region × Category × Channel**
+
+```text
+budget_month
+region
+country
+category
+subcategory
+sales_channel
+
+budget_sales
+budget_quantity
+budget_cost
+budget_profit
+budget_margin
+```
+
+---
+
+# 16. `fact_forecast`
+
+```text
+forecast_month
+forecast_version
+
+region
+category
+subcategory
+sales_channel
+
+forecast_sales
+forecast_quantity
+forecast_cost
+forecast_profit
+
+confidence_low
+confidence_high
+```
+
+Create versions:
+
+```text
+Original Budget
+Forecast v1
+Forecast v2
+Latest Forecast
+```
+
+This is excellent for planning demos.
+
+---
+
+# 17. `fact_supplier_performance`
+
+```text
+month
+supplier_id
+product_id
+
+orders
+units_ordered
+
+units_received
+units_defective
+
+on_time_deliveries
+late_deliveries
+
+average_lead_time
+
+supplier_cost
+
+cost_change_pct
+
+quality_score
+delivery_score
+supplier_score
+```
+
+This table is what allows you to trace:
+
+**Supplier → Cost → Product Margin → Profit**
+
+---
+
+# 18. Key relationships
+
+The important relationships should be:
+
+```text
+customer_id
+product_id
+supplier_id
+location_id
+promotion_id
+sales_rep_id
+order_id
+order_line_id
+date
+```
+
+Most importantly:
+
+```text
+fact_sales_order
+       │
+       │ order_id
+       ▼
+fact_sales_order_line
+       │
+       ├── customer
+       ├── product
+       ├── supplier
+       ├── location
+       ├── promotion
+       └── sales rep
+```
+
+---
+
+# 19. Plant these 10 business events
+
+This is the most important part of the entire specification.
+
+## Event 1 — Supplier cost shock
+
+**April 2026**
+
+Supplier group:
+
+> Global Components
+
+increases component costs by **12%**.
+
+Impact:
+
+```text
+COGS       +9–12%
+Margin     -3–4 pts
+Profit     ↓
+```
+
+But don't reduce sales.
+
+This creates:
+
+> **Revenue is growing while profit is declining.**
+
+---
+
+## Event 2 — Major promotion
+
+**May–June 2026**
+
+Electronics promotion.
+
+Effect:
+
+```text
+Units       +22%
+Revenue     +14%
+Discount    +18%
+Margin      -5 pts
+```
+
+This produces a classic:
+
+> "Revenue growth isn't translating into profit."
+
+story.
+
+---
+
+## Event 3 — New product launch
+
+**May 2026**
+
+Launch:
+
+> MacBook Air M3
+
+Generate:
+
+```text
+M3 sales       +300%
+M2 sales        -28%
+Mac category    +4%
+```
+
+This enables:
+
+> **"Is M3 generating incremental demand or cannibalizing M2?"**
+
+---
+
+## Event 4 — Europe profitability problem
+
+**June–August 2026**
+
+Europe:
+
+```text
+Revenue       +8%
+Units         +5%
+Profit       -14%
+```
+
+Specifically:
+
+```text
+Germany
+  ↓
+Electronics
+  ↓
+Laptops
+  ↓
+Mac
+```
+
+Make this the largest contributor to the global profit decline.
+
+---
+
+## Event 5 — Strategic customer contraction
+
+Customer:
+
+> GlobalTech Corp
+
+represents ~4% of company revenue.
+
+Starting July:
+
+```text
+Orders       -25%
+Revenue      -22%
+```
+
+Reason:
+
+Contract renegotiation.
+
+Now ask:
+
+> "What is the revenue impact if our largest customer reduces purchases?"
+
+---
+
+## Event 6 — Inventory shortage
+
+**July 2026**
+
+A popular laptop SKU experiences:
+
+```text
+Demand       +30%
+Inventory    -45%
+Stockouts    +300%
+```
+
+Result:
+
+Sales growth underperforms despite high demand.
+
+This gives you:
+
+> **"Are we losing sales because customers don't want the product, or because we don't have inventory?"**
+
+---
+
+## Event 7 — Product quality problem
+
+One supplier begins producing defective components.
+
+**August 2026**
+
+For affected products:
+
+```text
+Return rate       3% → 11%
+Defect rate       2% → 9%
+Customer rating   ↓
+Profit            ↓
+```
+
+Now you can connect:
+
+**Supplier → Product → Returns → Customer → Profit**
+
+---
+
+## Event 8 — Sales anomaly
+
+Create one unusually large enterprise order.
+
+Normal:
+
+```text
+Customer monthly sales = $100K–$300K
+```
+
+August:
+
+```text
+$2.8M
+```
+
+Cause:
+
+> One-time enterprise deployment.
+
+This creates an obvious anomaly that AI can explain.
+
+---
+
+## Event 9 — Forecast deterioration
+
+Starting September 2026:
+
+Latest forecast predicts:
+
+```text
+Revenue shortfall = $4.2M
+Profit shortfall  = $6.8M
+```
+
+Drivers:
+
+```text
+Europe margin
+Supplier costs
+Customer contraction
+Inventory shortage
+```
+
+This gives you the executive forecasting story.
+
+---
+
+## Event 10 — Recovery scenario
+
+Starting October:
+
+Management actions:
+
+```text
+Supplier renegotiation       -7% cost
+Promotion reduction          -4 pts discount
+Inventory replenishment      +20% availability
+Customer recovery             +10%
+```
+
+Forecast:
+
+```text
+Profit recovery = +$5.1M
+```
+
+Now you can demonstrate **what-if analysis**.
+
+---
+
+# 20. The executive dashboard
+
+Your first dashboard should be extremely simple.
+
+### KPI row
+
+```text
+Revenue
+$842.6M
+▲ 8.4%
+
+Gross Profit
+$168.2M
+▼ 5.7%
+
+Margin
+20.0%
+▼ 3.0 pts
+
+Units
+12.4M
+▲ 4.2%
+
+Customers
+18,420
+▲ 2.1%
+
+Forecast
+$1.02B
+▼ $4.2M vs Plan
+```
+
+Then:
+
+### Row 2
+
+**Revenue vs Profit trend**
+
+Two lines.
+
+### Row 3
+
+**Profit variance by Region**
+
+```text
+Europe       -$8.4M
+North America +$4.2M
+APAC          +$2.1M
+LATAM         +$0.8M
+```
+
+### Row 4
+
+**Profit waterfall**
+
+```text
+Prior Year Profit
+      ↓
+Volume
+      ↓
+Price
+      ↓
+Discount
+      ↓
+COGS
+      ↓
+Returns
+      ↓
+Current Profit
+```
+
+### Row 5
+
+**Top drivers**
+
+```text
+1. Europe Electronics       -$8.4M
+2. Supplier cost increase   -$4.7M
+3. GlobalTech contraction   -$3.1M
+4. Product returns          -$2.2M
+5. Promotion discounts      -$1.9M
+```
+
+That's a very strong executive demo.
+
+---
+
+# 21. 30 AI/dashboard questions
+
+These are deliberately designed so the answers require **SQL/aggregation/drill-down**, rather than simple semantic retrieval.
+
+## Executive
+
+### 1.
+
+**"Revenue is up but profit is down. What are the top five drivers of the profit decline?"**
+
+### 2.
+
+**"Which regions contributed most to the change in gross profit versus last year?"**
+
+### 3.
+
+**"Show me revenue, volume, price, discount and margin variance versus last year."**
+
+### 4.
+
+**"Which categories are growing revenue but losing margin?"**
+
+### 5.
+
+**"What percentage of total profit decline is explained by Europe?"**
+
+---
+
+# Product
+
+### 6.
+
+**"Which products had revenue growth greater than 15% but margin declined by more than 3 percentage points?"**
+
+### 7.
+
+**"Did the MacBook Air M3 launch create incremental category revenue or cannibalize M2 sales?"**
+
+### 8.
+
+**"Which new products launched in 2026 are outperforming their launch-period budget?"**
+
+### 9.
+
+**"Find products with increasing sales, declining inventory and increasing stockout rates."**
+
+### 10.
+
+**"Which products generate high revenue but below-average profitability?"**
+
+---
+
+# Customer
+
+### 11.
+
+**"Which customers increased revenue but decreased profitability?"**
+
+### 12.
+
+**"What percentage of revenue comes from our top 10 customers?"**
+
+### 13.
+
+**"Which strategic customers have declining purchases for three consecutive months?"**
+
+### 14.
+
+**"What would happen to annual revenue if our top five customers reduced purchases by 10%?"**
+
+### 15.
+
+**"Which customers have high revenue, low margin and increasing return rates?"**
+
+---
+
+# Supplier
+
+### 16.
+
+**"Which suppliers caused the largest increase in product cost during 2026?"**
+
+### 17.
+
+**"Show suppliers with increasing costs and declining quality scores."**
+
+### 18.
+
+**"Which suppliers have the largest impact on our gross margin?"**
+
+### 19.
+
+**"Is the increase in European product costs primarily driven by supplier pricing or product mix?"**
+
+### 20.
+
+**"Which suppliers have both poor on-time delivery and high defect rates?"**
+
+---
+
+# Inventory
+
+### 21.
+
+**"Which products are losing sales because of inventory shortages?"**
+
+### 22.
+
+**"Find products with more than 30 days of inventory but declining sales."**
+
+### 23.
+
+**"Which locations have the highest inventory value at risk?"**
+
+### 24.
+
+**"What products are likely to stock out based on current sales velocity?"**
+
+### 25.
+
+**"Compare sales growth against inventory growth by category."**
+
+---
+
+# Forecast / Planning
+
+### 26.
+
+**"Which regions are responsible for the forecasted revenue shortfall?"**
+
+### 27.
+
+**"Compare actual, budget and latest forecast for every region and category."**
+
+### 28.
+
+**"If we reduce discounts by 3 percentage points, what is the potential profit impact?"**
+
+### 29.
+
+**"If supplier costs increase another 5%, which products will be most affected?"**
+
+### 30.
+
+**"What combination of price, discount and cost changes would allow us to recover the forecasted $6.8M profit shortfall?"**
+
+---
+
+# 22. The killer demo flow
+
+If I were presenting this to an executive, I would **not** show all 30 questions.
+
+I'd tell one story.
+
+### Step 1 — Executive overview
+
+> "Revenue is growing 8.4%, but profit is down 5.7%."
+
+---
+
+### Step 2 — Ask AI
+
+> **"Why is profit declining despite revenue growth?"**
+
+AI identifies:
+
+```text
+Europe
+Supplier costs
+Discounting
+Returns
+Customer contraction
+```
+
+---
+
+### Step 3 — Drill into Europe
+
+Expand:
+
+```text
+Europe
+ └── Germany
+      └── Electronics
+           └── Laptops
+```
+
+---
+
+### Step 4 — Identify supplier problem
+
+> **"Which suppliers are contributing to the margin decline?"**
+
+AI finds:
+
+> Global Components → +12% cost → $4.7M impact.
+
+---
+
+### Step 5 — Check inventory
+
+> **"Are we also losing sales because of inventory shortages?"**
+
+AI identifies the affected laptop SKUs.
+
+---
+
+### Step 6 — Investigate customer
+
+> **"Which customers are contributing to the decline?"**
+
+AI identifies GlobalTech Corp.
+
+---
+
+### Step 7 — Forecast
+
+> **"What happens if nothing changes?"**
+
+Forecast:
+
+**$6.8M profit shortfall.**
+
+---
+
+### Step 8 — Scenario
+
+Change:
+
+```text
+Supplier cost     -7%
+Discount           -3 pts
+Inventory          +20%
+Customer recovery +10%
+```
+
+Result:
+
+**Profit shortfall reduced from $6.8M → $1.7M.**
+
+---
+
+### Step 9 — Executive conclusion
+
+The dashboard has gone from:
+
+**"What happened?"**
+
+to
+
+**"Why did it happen?"**
+
+to
+
+**"What happens next?"**
+
+to
+
+**"What should we do?"**
+
+That is the kind of demo story I'd optimize the synthetic data for.
+
+---
+
+# 23. One additional thing I'd strongly recommend
+
+Don't make the synthetic data generator just produce random distributions.
+
+Build it as a **scenario-driven generator**:
+
+```text
+                 ┌─────────────────────┐
+                 │ Demo Scenario Config │
+                 └──────────┬──────────┘
+                            │
+       ┌────────────────────┼────────────────────┐
+       ▼                    ▼                    ▼
+  Supplier Shock       Promotion             Customer
+  +12% COGS            +22% Volume            -25%
+       │                    │                    │
+       └────────────────────┼────────────────────┘
+                            ▼
+                    Synthetic Generator
+                            │
+        ┌───────────────────┼───────────────────┐
+        ▼                   ▼                   ▼
+      Facts              Dimensions          Events
+        │                   │                   │
+        └───────────────────┼───────────────────┘
+                            ▼
+                  Enterprise Demo Dataset
+```
+
+That way you can later say:
+
+> **"Generate me a pessimistic scenario where revenue grows 5%, but profit declines 12%."**
+
+and regenerate the entire dataset while preserving referential integrity and the underlying business logic.
+
+**That would make this much more valuable than a one-off CSV generator.** It becomes a reusable synthetic-data engine for demos.

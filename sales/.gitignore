@@ -1,0 +1,8 @@
+# Generated output - regenerate with:
+#   python3 src/generate.py --tier small
+#   python3 src/generate.py --tier full --formats parquet
+data/
+
+__pycache__/
+*.pyc
+.DS_Store

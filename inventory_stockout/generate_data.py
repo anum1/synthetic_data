@@ -13,6 +13,7 @@ Storyline baked into the data:
 import numpy as np
 import pandas as pd
 from datetime import date, timedelta
+from pathlib import Path
 
 rng = np.random.default_rng(42)
 
@@ -135,7 +136,7 @@ for wh_id, wh_name, region, wh_factor in WAREHOUSES:
             })
 
 df = pd.DataFrame(rows)
-out_path = "/Users/anuragmalik/Documents/ai_apps/python_data_prep/supply_chain/supply_chain_inventory_demo.csv"
+out_path = Path(__file__).with_name("inventory_stockout_demo.csv")
 df.to_csv(out_path, index=False)
 print(f"Wrote {len(df)} rows to {out_path}")
 

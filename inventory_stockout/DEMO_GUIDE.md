@@ -2,7 +2,7 @@
 
 ## Data
 
-**File:** `supply_chain_inventory_demo.csv` (9,000 rows, flat/denormalized — one row per day × product × warehouse)
+**File:** `inventory_stockout_demo.csv` (9,000 rows, flat/denormalized — one row per day × product × warehouse)
 **Generator:** `generate_data.py` (re-run to regenerate; seeded, so output is reproducible)
 
 **Period:** 2026-05-06 → 2026-08-03 (90 days)

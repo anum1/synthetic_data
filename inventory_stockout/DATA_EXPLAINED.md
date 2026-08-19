@@ -1,6 +1,6 @@
 # Understanding This Data (No Supply Chain Background Needed)
 
-This file explains the concepts behind `supply_chain_inventory_demo.csv` in plain
+This file explains the concepts behind `inventory_stockout_demo.csv` in plain
 terms. If you already know supply chain jargon, skip to `DEMO_GUIDE.md` instead.
 
 ## The basic idea

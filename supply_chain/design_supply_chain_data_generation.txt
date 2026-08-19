@@ -1,0 +1,977 @@
+For a **supply-chain dashboard demo** design the synthetic data **backward from the demo story** so that the dashboard can expose realistic problems, drill into root causes, and let AI answer sophisticated questions.
+
+The goal should be that you can start with:
+
+> **“Our supply chain looks healthy at the aggregate level, but where are we actually at risk?”**
+
+…and progressively uncover inventory, supplier, demand, fulfillment, and cost problems.
+
+## 1. The demo story I recommend
+
+Build the dataset around a fictional global manufacturer/retailer with:
+
+**5 major regions → 15 countries → 40 distribution centers → 200 suppliers → 1,500 products → ~100,000 customers**
+
+And roughly **3 years of daily/weekly history**, e.g. Jan 2024–Dec 2026.
+
+Your dashboard story can follow this progression:
+
+### Executive view
+
+Show:
+
+* Revenue
+* Gross margin
+* Inventory value
+* Inventory turns
+* Fill rate
+* OTIF %
+* Stockout %
+* Backorder value
+* Supplier on-time %
+* Forecast accuracy
+* Working capital
+* Supply-chain risk score
+
+Then reveal:
+
+> **Inventory is up 14%, but service level has deteriorated.**
+
+That's a much better demo than simply showing KPIs.
+
+---
+
+# 2. Build the data around 8 core business areas
+
+I'd use a star/snowflake model rather than one giant synthetic table.
+
+### Dimensions
+
+| Table           | Approx. rows |
+| --------------- | -----------: |
+| `dim_date`      |        1,100 |
+| `dim_product`   |        1,500 |
+| `dim_customer`  |       10,000 |
+| `dim_supplier`  |          200 |
+| `dim_location`  |           40 |
+| `dim_warehouse` |           40 |
+| `dim_carrier`   |           20 |
+| `dim_employee`  |          500 |
+
+### Facts
+
+| Table                     | Approx. rows |
+| ------------------------- | -----------: |
+| `fact_sales_order`        |         500K |
+| `fact_forecast`           |         1.5M |
+| `fact_inventory_snapshot` |           2M |
+| `fact_purchase_order`     |         300K |
+| `fact_supplier_delivery`  |         250K |
+| `fact_shipment`           |         500K |
+| `fact_production`         |         300K |
+| `fact_demand_signal`      |           1M |
+
+That gives you enough complexity to demonstrate enterprise-scale analytics without making the synthetic dataset unnecessarily huge.
+
+---
+
+# 3. The most important table: Product
+
+Make `dim_product` rich.
+
+Example:
+
+```text
+product_id
+product_name
+category
+subcategory
+brand
+product_family
+product_type
+material
+unit_cost
+standard_price
+weight
+volume
+shelf_life_days
+lead_time_days
+safety_stock_days
+abc_class
+xyz_class
+criticality
+country_of_origin
+primary_supplier_id
+secondary_supplier_id
+```
+
+Add classifications:
+
+### ABC
+
+* A = high-value products
+* B = medium
+* C = low
+
+### XYZ
+
+* X = predictable demand
+* Y = seasonal
+* Z = highly volatile
+
+This gives you powerful questions such as:
+
+> Which AX products have the highest stockout risk?
+
+and:
+
+> Which high-value products have excessive safety stock relative to demand volatility?
+
+---
+
+# 4. Supplier data should contain problems
+
+This is critical for the demo.
+
+Don't make suppliers uniformly good.
+
+For each supplier:
+
+```text
+supplier_id
+supplier_name
+supplier_tier
+country
+region
+category
+payment_terms
+lead_time_days
+minimum_order_qty
+capacity_units
+quality_score
+on_time_rate
+defect_rate
+risk_score
+financial_risk
+geopolitical_risk
+single_source_flag
+```
+
+Create supplier tiers:
+
+* Strategic
+* Preferred
+* Approved
+* At Risk
+
+And deliberately create a few bad suppliers.
+
+For example:
+
+**Supplier S-104**
+
+* 96% on-time historically
+* drops to 71% in 2026
+* defect rate increases
+* lead time increases
+* supplies several critical products
+* no alternate supplier
+
+That creates a fantastic drill-down.
+
+---
+
+# 5. Inventory needs daily snapshots
+
+`fact_inventory_snapshot`
+
+```text
+date
+warehouse_id
+product_id
+on_hand_qty
+reserved_qty
+available_qty
+in_transit_qty
+backorder_qty
+safety_stock_qty
+reorder_point
+inventory_value
+days_of_supply
+stockout_flag
+excess_inventory_flag
+```
+
+This enables:
+
+### Inventory dashboard
+
+**Inventory**
+
+$82.4M
+
+▲ 14.2% YoY
+
+**Days of Supply**
+
+68 days
+
+▲ 11 days
+
+**Stockout Rate**
+
+4.8%
+
+▲ 1.7 pts
+
+Then drill into:
+
+> Why is inventory increasing while stockouts are also increasing?
+
+That's a strong demo question.
+
+---
+
+# 6. Demand forecast data
+
+This is where the demo becomes much more sophisticated.
+
+`fact_forecast`
+
+```text
+forecast_date
+forecast_generated_date
+product_id
+location_id
+forecast_horizon
+forecast_qty
+actual_qty
+forecast_error
+forecast_accuracy
+forecast_model
+confidence_low
+confidence_high
+```
+
+Create multiple forecast versions:
+
+* Baseline
+* ML
+* Statistical
+* Planner Override
+
+Then you can demonstrate:
+
+> Which products consistently have poor forecast accuracy?
+
+or:
+
+> Where are planner overrides materially improving forecast accuracy?
+
+Even better:
+
+> Find products where forecast error is increasing for three consecutive months.
+
+---
+
+# 7. Purchase orders
+
+`fact_purchase_order`
+
+```text
+po_id
+po_line_id
+po_date
+supplier_id
+product_id
+warehouse_id
+ordered_qty
+unit_cost
+requested_date
+promised_date
+actual_receipt_date
+received_qty
+cancelled_qty
+status
+```
+
+This gives you:
+
+**PO performance**
+
+| KPI           |  Value |
+| ------------- | -----: |
+| Open POs      |  1,842 |
+| PO value      | $24.8M |
+| Late POs      |    312 |
+| Late value    |  $5.2M |
+| Supplier OTIF |  87.4% |
+
+Then drill:
+
+**Supplier → Product → PO → shipment**
+
+---
+
+# 8. Shipment data
+
+This lets you create a beautiful end-to-end supply chain story.
+
+```text
+shipment_id
+order_id
+supplier_id
+warehouse_id
+customer_id
+carrier_id
+ship_date
+expected_delivery_date
+actual_delivery_date
+shipping_method
+shipping_cost
+distance_miles
+quantity
+delay_days
+damage_flag
+```
+
+Now you can answer:
+
+> Why did OTIF fall from 94% to 87%?
+
+And break it down:
+
+```text
+OTIF decline
+      ↓
+Region
+      ↓
+Warehouse
+      ↓
+Carrier
+      ↓
+Supplier
+      ↓
+Product
+```
+
+---
+
+# 9. Create 10–15 planted business events
+
+This is the **secret sauce**.
+
+Don't just generate distributions. Plant specific events that your dashboard/AI can discover.
+
+For example:
+
+### Event 1 — Supplier disruption
+
+Supplier S-104 experiences a capacity problem for 8 weeks.
+
+Impact:
+
+* lead time +35%
+* on-time rate ↓
+* inventory ↓
+* stockouts ↑
+
+---
+
+### Event 2 — Demand spike
+
+Product family "SmartHome" experiences a 28% demand increase.
+
+Cause:
+
+Marketing campaign.
+
+Impact:
+
+* forecast error ↑
+* stockouts ↑
+* expedited shipments ↑
+
+---
+
+### Event 3 — Excess inventory
+
+A group of slow-moving products gets over-forecast.
+
+Impact:
+
+* inventory +30%
+* turns decline
+* carrying cost increases
+
+---
+
+### Event 4 — Carrier degradation
+
+Carrier C-07 develops chronic delays in the Northeast.
+
+Impact:
+
+* delivery time +2.5 days
+* OTIF declines
+* freight cost increases
+
+---
+
+### Event 5 — Quality problem
+
+Supplier S-137's defect rate increases from 1.5% → 7%.
+
+Impact:
+
+* rejected receipts
+* production delays
+* customer backorders
+
+---
+
+### Event 6 — Port disruption
+
+Products originating from Asia experience a temporary transportation disruption.
+
+Impact:
+
+* inbound lead time ↑
+* inventory ↓
+* expedited freight ↑
+
+---
+
+### Event 7 — Forecast model problem
+
+One product category gets systematically under-forecast.
+
+Impact:
+
+* forecast bias
+* stockouts
+* emergency POs
+
+---
+
+### Event 8 — Safety-stock policy change
+
+Planner increases safety stock by 25% for several products.
+
+Impact:
+
+* inventory ↑
+* stockouts ↓ slightly
+* working capital ↑ substantially
+
+This gives you a great **"Was the decision worth it?"** demo.
+
+---
+
+### Event 9 — Product substitution
+
+Customers shift from Product A → Product B.
+
+This creates:
+
+* excess inventory of A
+* shortage of B
+
+Excellent AI analysis scenario.
+
+---
+
+### Event 10 — Single-source risk
+
+A critical product relies on one supplier.
+
+Then that supplier experiences disruption.
+
+Now you can ask:
+
+> Which products are most exposed to single-supplier risk?
+
+---
+
+# 10. Add a supply-chain risk layer
+
+This is excellent for an executive dashboard.
+
+Create:
+
+`fact_supply_chain_risk`
+
+```text
+date
+entity_type
+entity_id
+demand_risk
+supplier_risk
+inventory_risk
+logistics_risk
+quality_risk
+financial_risk
+overall_risk_score
+risk_level
+```
+
+Example:
+
+| Supplier | Demand | Supply | Logistics | Quality |     Overall |
+| -------- | -----: | -----: | --------: | ------: | ----------: |
+| S-104    |     72 |     91 |        64 |      82 | **84 HIGH** |
+| S-137    |     55 |     62 |        71 |      96 | **81 HIGH** |
+| S-088    |     42 |     31 |        28 |      25 |  **29 LOW** |
+
+Now your dashboard can have:
+
+### Supply Chain Risk Heatmap
+
+**Critical**
+
+12 suppliers
+
+**High**
+
+28 suppliers
+
+**Medium**
+
+67 suppliers
+
+**Low**
+
+93 suppliers
+
+---
+
+# 11. Dashboard structure
+
+I would create **6 dashboard pages**.
+
+### Page 1 — Executive Control Tower
+
+Top KPIs:
+
+```text
+Revenue       $482M
+Inventory     $82M
+Fill Rate     93.4%
+OTIF          87.2%
+Stockouts     4.8%
+Forecast Acc  81.6%
+```
+
+Then:
+
+**Supply Chain Health Score**
+
+`72 / 100`
+
+And:
+
+* Risk map
+* Inventory trend
+* OTIF trend
+* Stockout trend
+* Top 10 risks
+
+---
+
+### Page 2 — Inventory
+
+Show:
+
+* Inventory value
+* Days of supply
+* Turns
+* Excess inventory
+* Obsolete inventory
+* Stockouts
+* Inventory by category
+* Inventory by warehouse
+* Aging
+
+Most interesting visual:
+
+**Inventory vs Demand**
+
+Identify:
+
+> High inventory + low demand
+
+and
+
+> Low inventory + high demand
+
+---
+
+### Page 3 — Supplier Performance
+
+Show:
+
+* Supplier OTIF
+* Lead time
+* Defect rate
+* PO value
+* Late PO value
+* Supplier risk
+
+Scatter plot:
+
+**Supplier Risk vs Spend**
+
+This immediately identifies strategic suppliers that deserve attention.
+
+---
+
+### Page 4 — Demand & Forecast
+
+Show:
+
+* Actual vs forecast
+* Forecast accuracy
+* Forecast bias
+* MAPE
+* Forecast error
+* Demand volatility
+
+Add:
+
+**Forecast Accuracy by Product ABC/XYZ**
+
+This is a great advanced analytics visual.
+
+---
+
+### Page 5 — Logistics
+
+Show:
+
+* OTIF
+* Transit time
+* Freight cost
+* Late shipments
+* Carrier performance
+* Region performance
+
+Drill:
+
+**Region → Warehouse → Carrier → Shipment**
+
+---
+
+### Page 6 — Root Cause / AI Analysis
+
+This is where I'd make your demo really impressive.
+
+Have an AI chat:
+
+> **Ask anything about the supply chain**
+
+Examples:
+
+> Why did OTIF decline in Q2?
+
+> Which suppliers are driving the increase in stockouts?
+
+> Identify products where inventory is increasing while demand is declining.
+
+> Find products at risk of stockout within the next 30 days.
+
+> Which supplier disruptions have the largest revenue exposure?
+
+> If we increase safety stock by 15%, what happens to working capital?
+
+---
+
+# 12. The killer demo flow
+
+I'd actually script your demo around this sequence:
+
+### Step 1
+
+Open Executive Control Tower.
+
+Say:
+
+> "At first glance, the supply chain looks reasonably healthy."
+
+Then show:
+
+**Revenue ↑**
+
+**Inventory ↑**
+
+But:
+
+**OTIF ↓**
+
+**Stockouts ↑**
+
+---
+
+### Step 2
+
+Ask AI:
+
+> **Why are stockouts increasing even though inventory is up 14%?**
+
+AI should discover:
+
+* inventory concentrated in slow movers
+* demand increased in several high-volume SKUs
+* safety stock is poorly allocated
+* supplier delays affecting critical SKUs
+
+---
+
+### Step 3
+
+Ask:
+
+> **Which products are creating the largest revenue-at-risk exposure?**
+
+Return:
+
+| Product   | Revenue at Risk | Stockout Probability |
+| --------- | --------------: | -------------------: |
+| Product A |           $4.2M |                  82% |
+| Product B |           $3.7M |                  76% |
+| Product C |           $2.9M |                  69% |
+
+---
+
+### Step 4
+
+Drill into Product A.
+
+AI discovers:
+
+**Supplier S-104**
+
+↓
+
+Lead time increased from **18 → 29 days**
+
+↓
+
+OTIF dropped from **95% → 71%**
+
+↓
+
+No alternate supplier
+
+↓
+
+Product A inventory falling
+
+---
+
+### Step 5
+
+Ask:
+
+> **What other products are exposed to Supplier S-104?**
+
+Now show dependency analysis.
+
+This is much more impressive than a normal BI dashboard.
+
+---
+
+### Step 6
+
+Ask:
+
+> **If Supplier S-104 remains disrupted for another 30 days, what revenue is at risk?**
+
+Now you have a scenario analysis.
+
+---
+
+# 13. Add "executive questions" specifically designed for AI
+
+I'd build at least **30 questions** into the dataset.
+
+Some of the best ones:
+
+### Inventory
+
+1. Which products have excess inventory?
+2. Which products are most likely to stock out?
+3. Where is inventory growing faster than demand?
+4. Which warehouses have the lowest inventory turns?
+5. Which products have inventory but declining demand?
+
+### Suppliers
+
+6. Which suppliers are responsible for most late POs?
+7. Which suppliers have deteriorating performance?
+8. Which critical products depend on a single supplier?
+9. Which suppliers have high spend and high risk?
+10. Which suppliers have increasing defect rates?
+
+### Forecast
+
+11. Which products have the largest forecast bias?
+12. Where is forecast accuracy deteriorating?
+13. Which categories are systematically under-forecast?
+14. Which planner overrides improved forecast accuracy?
+15. Which products have highly volatile demand?
+
+### Logistics
+
+16. Why did OTIF decline?
+17. Which carriers are causing the most delays?
+18. Which routes have increasing transit times?
+19. Which regions have the highest freight cost?
+20. What is driving expedited shipping?
+
+### Cross-domain
+
+21. Which suppliers are causing stockouts?
+22. Which products have high demand but low supply?
+23. Which inventory is tied to poor forecast accuracy?
+24. Which supplier issues have the greatest revenue impact?
+25. Which products have simultaneous supply and demand risk?
+
+### Executive
+
+26. What are the top 10 supply-chain risks?
+27. Where should we invest $5M to improve service levels?
+28. Which problems should the supply-chain team address first?
+29. What is causing working capital to increase?
+30. What will happen if we increase safety stock by 15%?
+
+---
+
+# 14. Make the synthetic data intentionally "messy"
+
+For an enterprise demo, don't make everything perfectly clean.
+
+Include:
+
+* duplicate supplier names
+* slightly different supplier names
+* missing lead times
+* inconsistent product descriptions
+* delayed purchase orders
+* cancelled orders
+* partial receipts
+* backorders
+* products with no alternate supplier
+* unusual spikes
+* seasonal demand
+* supplier performance degradation
+* changing product costs
+
+For example:
+
+```text
+Acme Components Inc.
+ACME Components
+Acme Component Inc
+ACME COMP.
+Acme Components LLC
+```
+
+All should map to:
+
+```text
+supplier_master_id = SUP-104
+```
+
+This gives you an opportunity to demonstrate **data quality + supply-chain analytics** in the same demo.
+
+---
+
+# 15. One more thing I'd add: financial impact
+
+This will make the demo much more compelling to executives.
+
+Add:
+
+```text
+inventory_carrying_cost
+stockout_revenue_loss
+expedite_cost
+supplier_penalty
+quality_cost
+warehousing_cost
+freight_cost
+working_capital
+```
+
+Then AI can answer:
+
+> **What is the financial impact of our supply-chain problems?**
+
+Instead of:
+
+> "Supplier S-104 is late."
+
+You get:
+
+> "Supplier S-104's performance deterioration is contributing to approximately $3.8M of revenue exposure, $420K of expedited freight, and $1.2M of additional working-capital pressure."
+
+That is **C-level demo material**.
+
+---
+
+## Recommended architecture
+
+I'd ultimately create something like:
+
+```text
+                    SUPPLY CHAIN CONTROL TOWER
+                              │
+          ┌───────────────────┼───────────────────┐
+          │                   │                   │
+       Demand             Supply              Logistics
+          │                   │                   │
+     Forecast            Suppliers             Carriers
+     Sales               POs                   Shipments
+     Customers           Quality               Transit
+          │                   │                   │
+          └───────────────────┼───────────────────┘
+                              │
+                         INVENTORY
+                              │
+                    ┌─────────┴─────────┐
+                    │                   │
+                 Products           Warehouses
+                    │                   │
+                    └─────────┬─────────┘
+                              │
+                       FINANCIAL IMPACT
+                              │
+                 Revenue / Margin / WC / Cost
+                              │
+                              ▼
+                         AI ANALYST
+```
+
+### My recommendation for your demo
+
+Don't start by generating the CSVs yet.
+
+**First create the synthetic-data specification** with:
+
+1. **15–20 tables**
+2. Exact columns and data types
+3. Primary/foreign keys
+4. Relationships
+5. Row counts
+6. Date ranges
+7. Dimension hierarchies
+8. Realistic distributions
+9. Seasonal patterns
+10. **15 planted supply-chain events**
+11. Cross-table causal relationships
+12. KPI definitions
+13. 50+ AI questions
+14. Expected answers for the planted events
+15. SQL queries that should answer the questions
+
+That will give you a dataset where the **dashboard, AI analyst, drilldowns, anomaly detection, and scenario analysis all tell the same coherent story**, rather than looking like unrelated random synthetic data.

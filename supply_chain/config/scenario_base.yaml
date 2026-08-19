@@ -1,0 +1,432 @@
+# =============================================================================
+# Meridian Global Industries - Supply Chain Control Tower
+# Base scenario configuration.
+#
+# Every number here is a knob. Copy this file, change values, regenerate:
+#   python3 src/generate.py --scenario config/my_scenario.yaml
+# Referential integrity and business logic are preserved automatically.
+# =============================================================================
+
+meta:
+  scenario_name: base
+  company: Meridian Global Industries
+  seed: 42
+
+# -----------------------------------------------------------------------------
+# Calendar anchoring
+#   anchor: today  -> as-of is the last day of the previous complete month
+#   anchor: fixed  -> use as_of_date literally
+# -----------------------------------------------------------------------------
+calendar:
+  anchor: today
+  as_of_date: null            # only used when anchor: fixed, e.g. 2026-07-31
+  history_years: 2            # full years of history before the current year
+  forecast_months: 12         # months of forecast beyond as_of_date
+  fiscal_year_start_month: 1  # calendar-aligned fiscal year
+  retail_454_start_month: 2
+  retail_pattern: "4-5-4"
+
+# -----------------------------------------------------------------------------
+# Size tiers. --tier small|full
+#   small -> Tableau / Power BI Desktop.  full -> Snowflake / Databricks.
+# Same seed, same events, same story.
+# -----------------------------------------------------------------------------
+tiers:
+  small:
+    products: 600
+    suppliers: 120
+    locations: 20
+    customers: 3_000
+    carriers: 12
+    employees: 150
+    sales_order_lines: 200_000
+    po_lines: 120_000
+    production_orders: 120_000
+  full:
+    products: 1_500
+    suppliers: 200
+    locations: 40
+    customers: 10_000
+    carriers: 20
+    employees: 500
+    sales_order_lines: 500_000
+    po_lines: 300_000
+    production_orders: 300_000
+
+# -----------------------------------------------------------------------------
+# Inventory snapshot grid.  See docs/DATA_MODEL.md section 3.
+#
+# The full product x location cross product is 33x larger than any useful
+# dataset, so stocking breadth is sparse and driven by ABC class, and history
+# is weekly with a daily window over the recent period.
+# -----------------------------------------------------------------------------
+inventory:
+  snapshot_frequency: weekly    # weekly | daily  (grain for full history)
+  daily_window_days: 90         # trailing N days ALSO emitted at daily grain
+
+  # Fraction of locations that stock a SKU, by ABC class.
+  stocking_breadth:
+    A: 0.75
+    B: 0.30
+    C: 0.10
+
+  # Baseline planning parameters before events adjust them.
+  safety_stock_days:
+    A: 21
+    B: 14
+    C: 7
+  review_period_days: 7         # replenishment review cycle
+  target_days_of_supply: 45
+
+  # Planners order MORE than forecast demand, because not everything ordered
+  # arrives: ~4% of lines are cancelled, ~9% are received short, and rejects
+  # take another slice. Sizing orders to bare demand builds a structural ~10%
+  # shortfall into the dataset and every fill rate comes out too low.
+  # Set for NET PARITY with demand (~0.89 of what is ordered actually lands),
+  # not for growth: a constant surplus accumulates without bound over a 3-year
+  # horizon and days-of-supply drifts to nonsense. The YoY inventory build is
+  # the JOB OF THE EVENTS (3 and 8), not of a global constant.
+  replenishment_over_order: 1.12
+
+# -----------------------------------------------------------------------------
+# Baseline business shape (before any events are applied)
+# -----------------------------------------------------------------------------
+baseline:
+  underlying_demand_growth_yoy: 0.06
+  base_gross_margin_pct: 0.315
+  lines_per_sales_order: [1, 5]
+  lines_per_po: [1, 8]
+
+  # Service levels BEFORE events degrade them. The events do the damage; these
+  # are the "healthy" starting points the trends decline from.
+  base_line_fill_rate: 0.955
+  base_otif: 0.940
+  # OTIF = on-time AND in-full, so the on-time draw has to sit BELOW the OTIF
+  # target: the in-full leg removes a few more points on top of it.
+  base_shipment_on_time: 0.900
+  base_supplier_on_time: 0.925
+  base_defect_rate: 0.015
+  base_forecast_accuracy: 0.859
+
+  seasonality:                  # demand multiplier by calendar month (Jan..Dec)
+    [0.92, 0.90, 1.02, 1.01, 1.04, 1.06, 0.95, 0.97, 1.08, 1.09, 1.05, 0.91]
+  weekday_weights:              # Mon..Sun  (industrial demand, weak weekends)
+    [1.22, 1.24, 1.21, 1.18, 1.08, 0.55, 0.52]
+
+  region_mix:
+    North America: 0.38
+    Europe: 0.26
+    APAC: 0.22
+    LATAM: 0.09
+    MEA: 0.05
+
+  category_mix:
+    Industrial Components: 0.19
+    Electronics: 0.17
+    SmartHome: 0.13
+    Power Systems: 0.12
+    Fluid Control: 0.11
+    Fasteners & Hardware: 0.11
+    Safety Equipment: 0.10
+    Raw Materials: 0.07
+
+  # Supplier lead time in days, sampled per supplier by sourcing region.
+  lead_time_days_by_region:
+    North America: [7, 21]
+    Europe: [12, 28]
+    APAC: [24, 52]
+    LATAM: [14, 32]
+    MEA: [18, 40]
+
+  supplier_tier_mix:
+    Strategic: 0.10
+    Preferred: 0.28
+    Approved: 0.47
+    At Risk: 0.15
+
+  data_quality:                 # deliberate, controlled dirt. 0 = pristine.
+    supplier_name_variant_count: 18   # suppliers given 3-5 name spellings
+    missing_lead_time_pct: 0.03
+    inconsistent_description_pct: 0.05
+    cancelled_po_line_pct: 0.04
+    partial_receipt_pct: 0.09
+    null_delivery_date_pct: 0.005
+    duplicate_po_count: 15
+
+# -----------------------------------------------------------------------------
+# Derived classifications.  These are COMPUTED from generated demand, never
+# assigned -- see docs/DATA_MODEL.md section 4.  These knobs set the cutoffs.
+# -----------------------------------------------------------------------------
+classification:
+  abc_cumulative_value_cutoffs: [0.80, 0.95]   # A up to 80%, B to 95%, rest C
+  xyz_demand_cv_cutoffs: [0.50, 1.00]          # X below 0.5, Y to 1.0, rest Z
+  criticality_mix:
+    Critical: 0.12
+    Important: 0.33
+    Standard: 0.55
+
+# -----------------------------------------------------------------------------
+# Risk scoring.  Components are derived from the facts; these are the weights
+# and the banding.  Tune bands to hit the target heatmap distribution.
+# -----------------------------------------------------------------------------
+risk:
+  weights:
+    supplier_risk: 0.30
+    demand_risk: 0.25
+    inventory_risk: 0.20
+    logistics_risk: 0.15
+    quality_risk: 0.10
+  # Scales the raw weighted composite onto 0-100. Tune against
+  # target_supplier_distribution below; validate.py checks the result.
+  score_scale: 2.6
+  bands:                        # lower bound of each level, 0-100
+    Critical: 80
+    High: 60
+    Medium: 35
+    Low: 0
+  # Target supplier counts per band at as-of, asserted by the validator.
+  target_supplier_distribution:
+    Critical: 12
+    High: 28
+    Medium: 67
+    Low: 93
+
+# -----------------------------------------------------------------------------
+# Financial impact model.  Turns operational failures into dollars, which is
+# what makes the executive answer "$3.8M of revenue exposure" instead of
+# "supplier S-104 is late".
+# -----------------------------------------------------------------------------
+financial:
+  inventory_carrying_cost_annual_pct: 0.22   # capital + storage + obsolescence
+  warehousing_cost_per_unit_month: 0.42
+  expedite_freight_premium: 3.20             # multiple of standard freight
+  stockout_revenue_capture_rate: 0.55        # share of lost demand truly lost
+  supplier_penalty_pct_of_late_value: 0.015
+  quality_cost_per_defective_unit: 18.50
+  working_capital_days_payable: 45
+
+# -----------------------------------------------------------------------------
+# PLANTED BUSINESS EVENTS
+#
+# TIMING: offsets are in months relative to the as-of month. -3 = three months
+# before as-of; 0 = the as-of month; +2 = two months into the forecast horizon.
+# Offsets instead of absolute dates keep the narrative correct on regeneration.
+#
+# Expected effects are documented in docs/EVENTS.md and asserted by validate.py.
+# Set enabled: false to remove a story from the data entirely.
+# -----------------------------------------------------------------------------
+events:
+
+  # --- THE SPINE. Build and validate these four first. ----------------------
+
+  # Event 1 - Supplier disruption. The centre of the whole demo.
+  supplier_disruption:
+    enabled: true
+    supplier_master_id: SUP-104
+    start_offset: -5
+    end_offset: -3
+    lead_time_days_from: 18
+    lead_time_days_to: 29
+    on_time_rate_from: 0.95
+    on_time_rate_to: 0.71
+    capacity_change: -0.40          # receipts fall 40% during the window
+    # Recovery is partial and slow -- lead time does NOT snap back at end_offset.
+    recovery_months: 4
+    recovery_fraction: 0.65         # regains 65% of the gap by end of recovery
+
+  # Event 5 - Supplier quality failure.
+  quality_failure:
+    enabled: true
+    supplier_master_id: SUP-137
+    start_offset: -4
+    end_offset: null                # null = runs through the horizon
+    defect_rate_from: 0.015
+    defect_rate_to: 0.070
+    rejected_receipt_pct: 0.06
+    backorder_value_target: 800_000
+
+  # Event 6 - Port disruption on Asia-origin inbound.
+  port_disruption:
+    enabled: true
+    origin_region: APAC
+    start_offset: -3
+    end_offset: -2
+    transit_days_added: 12       # the mechanism; ~+30% on a 36-day APAC lead time
+    expedite_multiple: 3.0          # expedited shipments vs baseline
+
+  # Event 10 - Single-source risk. Structural, not time-windowed.
+  single_source_risk:
+    enabled: true
+    critical_single_sourced_count: 22
+    on_disrupted_supplier: 6        # of those, how many sit on SUP-104
+    revenue_at_risk_target: 9_000_000
+
+  # --- THE REST -------------------------------------------------------------
+
+  # Event 2 - Demand spike from a marketing campaign.
+  demand_spike:
+    enabled: true
+    product_family: SmartHome
+    start_offset: -6
+    end_offset: -2
+    demand_change: 0.28
+    forecast_error_points: 0.08     # MAPE degradation on the family
+    expedite_share_multiple: 2.0
+
+  # Event 3 - Excess inventory from over-forecasting slow movers.
+  excess_inventory:
+    enabled: true
+    affected_sku_count: 230
+    target_abc_class: C
+    start_offset: -9
+    end_offset: null
+    over_forecast_pct: 0.35
+    inventory_change: 0.30
+    turns_from: 4.1
+    turns_to: 2.6
+
+  # Event 4 - Carrier degradation, geographically concentrated.
+  carrier_degradation:
+    enabled: true
+    carrier_code: C-07
+    region: North America
+    sub_region: Northeast
+    start_offset: -5
+    end_offset: null
+    transit_days_added: 2.5
+    otif_points_below_median: 0.09
+    freight_cost_change: 0.14
+
+  # Event 7 - Systematic forecast bias in one category.
+  forecast_model_failure:
+    enabled: true
+    category: Industrial Components
+    start_offset: -7
+    end_offset: null
+    forecast_bias: -0.22            # negative = under-forecast
+    emergency_po_multiple: 3.0
+    stockout_rate_multiple: 2.0
+
+  # Event 8 - Safety-stock policy change.
+  # DELIBERATELY NET-NEGATIVE: $6M of working capital buys 1.2 points of
+  # stockout reduction on SKUs that were not the ones stocking out. The demo
+  # question is "was the decision worth it?" -- it only works if it wasn't.
+  safety_stock_policy_change:
+    enabled: true
+    affected_sku_count: 300
+    target_abc_class: A
+    start_offset: -4
+    end_offset: null
+    safety_stock_change: 0.40
+    inventory_change: 0.25
+    stockout_rate_points: -0.012
+    working_capital_change: 6_000_000
+
+  # Event 9 - Product substitution / cannibalisation.
+  product_substitution:
+    enabled: true
+    declining_product: Nimbus N3 Controller
+    growing_product: Nimbus N4 Controller
+    start_offset: -6
+    end_offset: null
+    declining_change: -0.45
+    growing_change: 0.60
+    declining_days_of_supply_min: 180
+    growing_stockout_rate: 0.12
+
+  # Event 11 - Raw-material cost inflation, stepped over four quarters.
+  cost_inflation:
+    enabled: true
+    category: Raw Materials
+    start_offset: -12
+    end_offset: null
+    unit_cost_change: 0.18
+    step_quarters: 4
+    margin_points_lost: 0.045
+
+  # Event 12 - New distribution centre ramp-up.
+  new_dc_ramp:
+    enabled: true
+    location_name: Phoenix DC
+    region: North America
+    open_offset: -8
+    ramp_months: 3
+    target_inventory_value: 4_000_000
+    fill_rate_dip_points: -0.03
+
+  # Event 13 - Labour shortage constraining outbound pick capacity.
+  labour_shortage:
+    enabled: true
+    affected_location_count: 2
+    start_offset: -3
+    end_offset: -1
+    pick_capacity: 0.70
+    line_fill_points: -0.06
+    order_to_ship_days_added: 1.8
+
+  # Event 14 - End-of-life obsolescence.
+  obsolescence:
+    enabled: true
+    affected_sku_count: 60
+    start_offset: -10
+    end_offset: null
+    demand_change: -0.92
+    obsolete_inventory_value_target: 2_200_000
+
+  # Event 15 - Planner overrides.
+  # MUST CUT BOTH WAYS: "where do overrides improve accuracy?" is a weak
+  # question if the answer is "everywhere".
+  planner_override_win:
+    enabled: true
+    improved_sku_count: 90
+    degraded_sku_count: 30
+    target_xyz_class: Y
+    start_offset: -6
+    end_offset: null
+    mape_improvement_points: 0.06
+    mape_degradation_points: 0.04
+
+# -----------------------------------------------------------------------------
+# Forecast versions. Later versions have seen more of the planted events, which
+# is what makes forecast deterioration visible as a walk across versions.
+# -----------------------------------------------------------------------------
+forecast:
+  versions:
+    - name: Baseline
+      events_visible_before_offset: -12
+      base_mape: 0.190
+    - name: Statistical
+      events_visible_before_offset: -6
+      base_mape: 0.165
+    - name: ML
+      events_visible_before_offset: -3
+      base_mape: 0.141
+    - name: Planner Override
+      events_visible_before_offset: -1
+      base_mape: 0.148     # better on some SKUs, worse on others: Event 15
+  horizons_months: [1, 3, 6]
+  confidence_interval_pct: 0.80
+
+# -----------------------------------------------------------------------------
+# Executive headline. Everything above is tuned to land here at the as-of date.
+# validate.py asserts these six numbers within tolerance; if they miss, retune
+# the events rather than the dashboard.
+# -----------------------------------------------------------------------------
+headline:
+  tolerance: 0.15               # relative tolerance on each target below
+  revenue_growth_yoy: 0.06
+  inventory_growth_yoy: 0.142
+  line_fill_rate: 0.934
+  otif: 0.872
+  stockout_rate: 0.048
+  forecast_accuracy: 0.816
+
+# -----------------------------------------------------------------------------
+# Output
+# -----------------------------------------------------------------------------
+output:
+  formats: [parquet, csv]
+  csv_max_tier: small           # csv skipped for the full tier
+  partition_large_facts: true   # parquet partitioned by year_number
+  decimals: 2
+  quantity_decimals: 3

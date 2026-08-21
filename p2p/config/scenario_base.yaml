@@ -1,0 +1,498 @@
+# =============================================================================
+# Norvant Group - Procure-to-Pay Control Tower
+# Base scenario configuration.
+#
+# Every number here is a knob. Copy this file, change values, regenerate:
+#   python3 src/generate.py --scenario config/my_scenario.yaml
+# Referential integrity and business logic are preserved automatically.
+#
+# PLAN.md is the design rationale; section references below point into it.
+# =============================================================================
+
+meta:
+  scenario_name: base
+  company: Norvant Group
+  seed: 42
+
+# -----------------------------------------------------------------------------
+# Calendar anchoring  (PLAN 2.9)
+#   anchor: today  -> as-of is the last day of the previous complete month
+#   anchor: fixed  -> use as_of_date literally
+# Every event below is timed in months relative to as-of, never in absolute
+# dates, so regenerating next year still tells this year's story.
+# -----------------------------------------------------------------------------
+calendar:
+  anchor: today
+  as_of_date: null            # only used when anchor: fixed, e.g. 2026-07-31
+  history_years: 3
+  forecast_months: 0
+  fiscal_year_start_month: 1
+
+# -----------------------------------------------------------------------------
+# Size tiers. --tier small|full
+#   small -> Tableau / Power BI Desktop.  full -> Snowflake / Databricks / Incorta.
+# Same seed, same events, same story.
+# -----------------------------------------------------------------------------
+tiers:
+  small:
+    suppliers: 600
+    employees: 1_250
+    departments: 40
+    cost_centers: 150
+    items: 1_000
+    contracts: 800
+    requisitions_per_month_base: 555
+  full:
+    suppliers: 2_400
+    employees: 5_000
+    departments: 96
+    cost_centers: 520
+    items: 4_000
+    contracts: 3_200
+    requisitions_per_month_base: 2_220
+
+# -----------------------------------------------------------------------------
+# Legal entities. Multi-entity is what makes duplicate suppliers and split POs
+# realistic - the same vendor onboarded twice in two entities is the single most
+# common master-data defect in a real ERP.  (PLAN 3)
+# -----------------------------------------------------------------------------
+entities:
+  - {code: NG100, name: Norvant Group North America, country: US, currency: USD, weight: 0.42}
+  - {code: NG200, name: Norvant Manufacturing US,    country: US, currency: USD, weight: 0.21}
+  - {code: NG300, name: Norvant Europe BV,           country: NL, currency: EUR, weight: 0.16}
+  - {code: NG400, name: Norvant UK Ltd,              country: GB, currency: GBP, weight: 0.09}
+  - {code: NG500, name: Norvant Asia Pte,            country: SG, currency: SGD, weight: 0.07}
+  - {code: NG600, name: Norvant Canada Inc,          country: CA, currency: CAD, weight: 0.05}
+
+# -----------------------------------------------------------------------------
+# Demand shape
+#
+# Requisition volume per month, before growth and seasonality. Indirect spend
+# spikes at quarter end and in December (budget flush); direct spend follows
+# production and is far smoother.
+# -----------------------------------------------------------------------------
+demand:
+  annual_growth: 0.160                # drives the +14% spend headline; realised
+                                      # growth is lower than this because line mix
+                                      # and approval lag damp it
+  seasonality_by_month: [0.94, 0.91, 1.04, 0.97, 0.99, 1.06, 0.95, 0.93, 1.05, 1.00, 1.02, 1.14]
+  lines_per_requisition_lambda: 1.4   # Poisson + 1, mean ~2.4 lines
+  line_amount_lognorm: [6.90, 1.35]   # mu, sigma of log(line amount USD)
+                                      # Note: total spend is NOT sensitive to mu.
+                                      # Leaf weights are normalised by expected
+                                      # line value, so raising mu shrinks the
+                                      # line count in the same proportion.
+                                      # Scale total spend with
+                                      # requisitions_per_month_base instead.
+  # Supplier concentration: the top 20% of suppliers take ~72% of spend.
+  # Rank-based (Zipf), not Pareto: below alpha 2 a Pareto draw has infinite
+  # variance and the realised concentration swings 10 points between seeds,
+  # which makes the "top 10 suppliers" tile unreproducible. The shift scales
+  # with supplier count so both tiers land on the same concentration.
+  supplier_zipf_exponent: 1.05
+  supplier_zipf_shift_frac: 0.005
+  supplier_weight_jitter_sigma: 0.30
+  # Concentration is carried mostly by category breadth. Applying the full
+  # weight again inside each category compounds it; this flattens the
+  # within-category draw so the two mechanisms sum to the target.
+  supplier_within_leaf_exponent: 0.55
+  # Spend mix by segment. Set explicitly rather than left to fall out of how
+  # many category leaves each segment happens to have - leaf count is a property
+  # of the taxonomy, not of what the company buys, and letting it drive the mix
+  # put Professional Services at 30% of spend and two-way matching at 43% of
+  # value. Must sum to 1.
+  segment_spend_share:
+    Direct Materials: 0.46
+    Professional Services: 0.17
+    IT: 0.13
+    Facilities: 0.09
+    Logistics: 0.09
+    Travel: 0.06
+
+# -----------------------------------------------------------------------------
+# Spend channels  (PLAN 2.1)
+#
+# These three shares must reconcile to total spend. Non-PO invoices and p-card
+# are where maverick spend lives; the classification of "maverick" is derived
+# (a contract existed and was not used), never drawn.
+# -----------------------------------------------------------------------------
+channels:
+  non_po_invoice_share_of_value: 0.187   # invoices with no PO at all (realised ~16%)
+  pcard_share_of_value: 0.133            # card / expense channel (realised ~11%)
+  pcard_avg_txn_usd: 385
+  pcard_txn_lognorm: [5.55, 1.05]
+
+# -----------------------------------------------------------------------------
+# Requisitioning  (PLAN 2.9)
+#
+# 18% of requisitions never become a PO. That loss is a story the design note
+# had no way to tell: rejected, withdrawn, or blocked on budget.
+# -----------------------------------------------------------------------------
+requisitioning:
+  approval_days_lognorm: [0.75, 0.85]    # mu, sigma of log(days), median ~2.1d
+  rejected_share: 0.081
+  withdrawn_share: 0.052
+  budget_blocked_share: 0.047
+  # Requisition -> PO conversion cardinality. Aggregation is WHY it takes days.
+  conversion_mix: {one_to_one: 0.70, aggregated: 0.25, split: 0.05}
+  aggregate_reqs_per_po: 2.5
+  split_pos_per_req: 2
+  req_to_po_days_lognorm: [1.15, 0.80]   # median ~3.2d, long tail on aggregation
+
+# -----------------------------------------------------------------------------
+# Sourcing and pricing
+#
+# contract_price is the source of truth for what we SHOULD be paying. Event 4
+# (price drift) is the gap between it and purchase_order_line.unit_price, so
+# this has to exist before any of that story can be told.  (PLAN 2.3)
+# -----------------------------------------------------------------------------
+sourcing:
+  contract_coverage: 0.71             # share of spend where a contract exists
+  contract_used_when_available: 0.86  # the other 14% is off-contract leakage
+  preferred_supplier_share: 0.62
+  contract_term_months: 24
+  contract_price_discount_range: [0.03, 0.22]
+  spot_price_premium_range: [0.02, 0.19]
+  item_price_sigma: 0.55            # spread around the per-UOM price anchor
+
+# -----------------------------------------------------------------------------
+# Receiving
+#
+# Service and blanket POs have NO goods receipt and are 2-way matched. The
+# design note ignored these; they are ~30% of indirect spend.  (PLAN 2.3)
+# -----------------------------------------------------------------------------
+receiving:
+  service_po_share: 0.29              # 2-way match, no receipt
+  lead_time_days_by_segment:
+    Direct Materials: [12, 46]
+    IT: [7, 38]
+    Facilities: [4, 24]
+    Professional Services: [10, 45]
+    Travel: [1, 8]
+    Logistics: [3, 18]
+  base_on_time_rate: 0.94
+  late_days_lognorm: [1.95, 0.85]     # median ~7d late when late
+  partial_receipt_share: 0.22         # more than one receipt against a PO line
+  over_receipt_share: 0.031
+  short_receipt_share: 0.058
+  over_receipt_pct_range: [0.02, 0.14]
+  short_receipt_pct_range: [0.03, 0.25]
+
+# -----------------------------------------------------------------------------
+# Invoicing
+# -----------------------------------------------------------------------------
+invoicing:
+  receipt_to_invoice_days_lognorm: [1.00, 0.75]   # median ~2.7d; the measured
+                                      # receipt-to-invoice leg lands higher once
+                                      # partial receipts, instalments and the
+                                      # postal lag are added on top
+  non_po_invoice_days_lognorm: [1.65, 0.90]
+  lines_per_invoice_lambda: 1.3
+  # Instalment billing: a blanket or milestone PO invoiced several times, which
+  # is WHY the document funnel widens.  (PLAN 2.1)
+  multi_invoice_po_share: 0.27
+  invoices_per_multi_po: [2, 4]
+  credit_memo_share: 0.028
+  fx_rate_drift_annual: 0.06
+
+# -----------------------------------------------------------------------------
+# Matching  (PLAN 2.3)
+#
+# Real policy data. The match verdict is COMPUTED against these rows and must be
+# reproducible from the PO price, received quantity and invoiced quantity - if
+# it is drawn, the demo dies on the first drill-down.
+# -----------------------------------------------------------------------------
+matching:
+  default_tolerance:
+    price_tolerance_pct: 0.02
+    price_tolerance_abs_usd: 50
+    qty_tolerance_pct: 0.05
+    qty_tolerance_abs_units: 2
+    total_variance_cap_usd: 250       # under this, auto write-off, no hold
+  tolerance_overrides:
+    Direct Materials: {price_tolerance_pct: 0.01, qty_tolerance_pct: 0.02}
+    Travel:           {price_tolerance_pct: 0.05, total_variance_cap_usd: 100}
+    Professional Services: {qty_tolerance_pct: 0.10}
+  # Natural noise: small variances that exist in any real ERP feed.
+  price_noise_share: 0.205
+  price_noise_pct: [0.005, 0.115]
+  qty_noise_share: 0.150
+
+# -----------------------------------------------------------------------------
+# Invoice approval and holds
+#
+# The average here is what closes the early-payment discount window. Event 6
+# and Event 8 are the same event.  (PLAN 2.6)
+# -----------------------------------------------------------------------------
+approval:
+  invoice_approval_days_lognorm: [1.88, 0.78]    # median ~7.4d, mean ~11d
+  non_po_extra_approval_days: 3.4                # coding + cost centre owner
+  hold_resolution_days_lognorm: [2.75, 0.95]     # median ~15.6d once held
+  hold_write_off_share: 0.34                     # resolved by write-off, not fix
+  delegation_share: 0.11                         # approved by a delegate
+  approver_absence_months: [7, 12]               # month offsets of a leave gap
+
+# -----------------------------------------------------------------------------
+# Payment  (PLAN 2.4)
+#
+# Payments are PAY RUNS covering many invoices, not one per invoice. The
+# invoice-to-payment bridge is fact_payment_application.
+# -----------------------------------------------------------------------------
+payment:
+  pay_run_weekday: 3                  # Thursday
+  pay_runs_per_month: 2      # semi-monthly runs, so a run covers more invoices
+  terms_mix:
+    "2/10 Net 30": 0.27
+    "1/15 Net 45": 0.06
+    "Net 30": 0.25
+    "Net 45": 0.19
+    "Net 60": 0.17
+    "Net 90": 0.04
+    "Immediate": 0.02
+  pay_on_due_date_share: 0.71
+  early_days_range: [1, 9]
+  late_share: 0.075                   # intent; realised rate is higher once
+                                      # the pay-run calendar and Event 9 apply
+  late_days_lognorm: [2.35, 0.85]
+  partial_payment_share: 0.024
+  methods: {ACH: 0.58, Wire: 0.19, Check: 0.16, Card: 0.07}
+
+# -----------------------------------------------------------------------------
+# Delegation of authority  (PLAN 2.7)
+#
+# Thresholds must be DATA, effective-dated and varying by role and entity, or
+# "POs just below the threshold" is an assertion nothing can prove.
+# -----------------------------------------------------------------------------
+doa:
+  levels:
+    - {role: Requester,          limit_usd: 2_500}
+    - {role: Manager,            limit_usd: 25_000}
+    - {role: Senior Manager,     limit_usd: 50_000}
+    - {role: Director,           limit_usd: 150_000}
+    - {role: VP,                 limit_usd: 500_000}
+    - {role: SVP,                limit_usd: 2_000_000}
+    - {role: C-Suite,            limit_usd: 100_000_000}
+  entity_multiplier: {NG100: 1.0, NG200: 1.0, NG300: 0.8, NG400: 0.8, NG500: 0.6, NG600: 0.6}
+  # A policy revision mid-history, so the effective-dating is visible.
+  revision_offset_month: -19
+  revision_uplift: 1.25
+
+# -----------------------------------------------------------------------------
+# Currency
+# -----------------------------------------------------------------------------
+currency:
+  base: USD
+  rates: {USD: 1.0, EUR: 0.92, GBP: 0.79, SGD: 1.34, CAD: 1.36, JPY: 151.0, MXN: 17.1}
+  volatility: {USD: 0.0, EUR: 0.055, GBP: 0.049, SGD: 0.032, CAD: 0.036, JPY: 0.081, MXN: 0.094}
+
+# -----------------------------------------------------------------------------
+# Supplier master data quality  (PLAN 4)
+# -----------------------------------------------------------------------------
+supplier_master:
+  duplicate_family_share: 0.055       # suppliers that are a variant of another
+  variants_per_family: [2, 4]
+  missing_tax_id_share: 0.068
+  missing_bank_detail_share: 0.041
+  inactive_share: 0.216
+  risk_score_range: [8, 96]
+  diversity_flag_share: 0.18
+
+# =============================================================================
+# The eighteen planted events  (PLAN 6)
+#
+# Two rules:
+#   - scope is a FRACTION of the population, so a story stays proportionally
+#     visible at both tiers;
+#   - events RAMP across a window rather than stepping, so the AI has to measure
+#     rather than spot.
+# Offsets are months relative to as-of. Negative is the past.
+# =============================================================================
+events:
+
+  # E1 - Maverick spend concentrated in two departments.
+  maverick_spend:
+    enabled: true
+    start_offset: -30
+    end_offset: 0
+    department_share: 0.06            # of departments carrying most of it
+    concentration: 0.68               # share of maverick value in those depts
+    target_value_usd: 12_800_000      # TTM, full tier
+    # Share of non-PO invoices drawn from a supplier x category pair that a
+    # contract already covered. Without aiming this, supplier and category are
+    # independent draws, they almost never coincide with a contract, and
+    # maverick spend comes out at a fifth of the intended figure.
+    contracted_pair_share: 0.27
+
+  # E2 - Invoice amount variance over tolerance. Downstream of E4.
+  invoice_amount_variance:
+    enabled: true
+    start_offset: -24
+    end_offset: 0
+    share_of_po_invoices: 0.041
+
+  # E3 - Quantity mismatch, concentrated in three categories.
+  quantity_mismatch:
+    enabled: true
+    start_offset: -26
+    end_offset: 0
+    share_of_lines: 0.026
+    category_count: 3
+
+  # E4 - THE ROOT CAUSE. PO price drifts above contract price for 14 suppliers.
+  contract_price_drift:
+    enabled: true
+    start_offset: -22
+    end_offset: 0
+    supplier_count: 14
+    drift_pct_range: [0.06, 0.23]
+    hero_supplier_drift: 0.18
+
+  # E5 - Delivery performance decay for nine suppliers.
+  delivery_decay:
+    enabled: true
+    start_offset: -14
+    end_offset: 0
+    supplier_count: 9
+    on_time_from: 0.94
+    on_time_to: 0.79
+
+  # E6 - Invoice approval slowdown. CAUSES E8.
+  approval_slowdown:
+    enabled: true
+    start_offset: -9
+    end_offset: 0
+    department_share: 0.02
+    days_from: 9.0
+    days_to: 24.0
+
+  # E7 - Duplicate invoices, four archetypes, some of them PAID.  (PLAN 2.8)
+  duplicate_invoices:
+    enabled: true
+    start_offset: -34
+    end_offset: -1
+    suspected_count: 412
+    paid_count: 63
+    archetype_mix:
+      formatting_variant: 0.38
+      duplicate_supplier_record: 0.27
+      double_entry_channel: 0.24
+      unapplied_credit_memo: 0.11     # the honest false positive
+
+  # E8 - Missed early-payment discount. Downstream of E6.
+  missed_discount:
+    enabled: true
+    start_offset: -24
+    end_offset: 0
+    target_missed_usd: 1_050_000
+    share_missed_due_to_approval: 0.78
+
+  # E9 - Late payment to the worst-served suppliers.
+  late_payment:
+    enabled: true
+    start_offset: -18
+    end_offset: 0
+    supplier_count: 3
+    extra_days_late: 16
+
+  # E10 - Supplier concentration inside one category.
+  supplier_concentration:
+    enabled: true
+    category_name: Network Infrastructure
+    shares: [0.42, 0.31, 0.15, 0.12]
+
+  # E11 - Shared bank accounts: three real clusters plus two benign.  (PLAN 2.7)
+  shared_bank_accounts:
+    enabled: true
+    suspicious_clusters: 3
+    suppliers_per_cluster: [2, 3]
+    benign_clusters: 2                # same corporate parent, legitimately shared
+
+  # E12 - Employee / supplier conflicts of interest, with lookalikes.
+  employee_supplier_conflict:
+    enabled: true
+    real_conflicts: 4
+    coincidental_matches: 6
+
+  # E13 - PO splitting below a threshold, against a natural base rate.
+  po_splitting:
+    enabled: true
+    start_offset: -28
+    end_offset: 0
+    real_cases: 40
+    window_days: 10
+    parts_range: [2, 4]
+
+  # E14 - Excess mass just below the approval threshold.
+  threshold_clustering:
+    enabled: true
+    start_offset: -30
+    end_offset: 0
+    threshold_usd: 50_000
+    band_pct: 0.10                    # $45-50K
+    excess_share: 0.045               # excess over the fitted tail
+    buyer_share: 0.04                 # concentrated in this share of buyers
+
+  # E15 - GR/IR: received, never invoiced.  NEW (PLAN 2.1)
+  gr_ir_pile:
+    enabled: true
+    start_offset: -30
+    end_offset: -2
+    target_value_usd: 18_700_000
+    share_aged_over_90d: 0.62
+
+  # E16 - Contract expiry wave in the next 90 days.  NEW
+  contract_expiry_wave:
+    enabled: true
+    expiring_count: 340
+    horizon_days: 90
+    spend_at_risk_usd: 41_000_000
+
+  # E17 - FX red herring: an apparent price rise that is entirely rate.  NEW
+  fx_red_herring:
+    enabled: true
+    currency: EUR
+    start_offset: -12
+    end_offset: 0
+    apparent_increase: 0.09
+
+  # E18 - Consolidation opportunity: fragmented categories.  NEW
+  consolidation_opportunity:
+    enabled: true
+    category_count: 3
+    min_suppliers: 40
+    top5_share_below: 0.35
+
+# -----------------------------------------------------------------------------
+# Headline targets  (PLAN 7)
+#
+# What the demo opens on. validate.py asserts the generated data lands within
+# tolerance of each one - these are not decoration, they are the contract.
+# -----------------------------------------------------------------------------
+headline:
+  total_spend_ttm_usd: 284_600_000
+  spend_growth_yoy: 0.141
+  first_pass_match_rate: 0.886
+  straight_through_rate: 0.714
+  exception_rate: 0.148
+  gr_ir_accrual_usd: 18_700_000
+  maverick_spend_usd: 12_800_000
+  missed_discount_usd: 1_050_000
+  duplicate_paid_usd: 418_000
+  req_to_cash_days: 72.7
+  tolerance_pct: 0.15                 # how far a measured value may sit from target
+
+# -----------------------------------------------------------------------------
+# Data-quality noise. Deliberately imperfect, and deliberately NOT 2% fraud.
+# (PLAN 2.7)
+# -----------------------------------------------------------------------------
+data_quality:
+  enabled: true
+  normal_share: 0.840
+  minor_anomaly_share: 0.100
+  operational_share: 0.055
+  fraud_share: 0.004
+  extreme_share: 0.001
+
+output:
+  formats: [parquet, csv]
+  csv_max_tier: small

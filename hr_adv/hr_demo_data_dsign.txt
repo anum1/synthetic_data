@@ -1,0 +1,1005 @@
+**HR / Workday-style synthetic data is excellent for a dashboard demo** because you can create a story that moves from executive workforce KPIs → compensation → payroll → benefits → organization → employee-level investigation → AI-driven root-cause analysis.
+
+Design the data around a handful of business events that create interesting questions and visible patterns.
+
+## 1. The demo story 
+
+Imagine your fictional company:
+
+**GlobalTech — 18,500 employees across US, Canada, UK, Germany, India and Japan**
+
+Your dashboard opens with:
+
+> **“Why did our workforce cost increase 8.7% this year while headcount only increased 3.2%?”**
+
+Then the dashboard lets you drill into:
+
+**Workforce**
+→ Headcount increased
+→ Engineering and Sales drove growth
+→ Attrition increased in a few critical organizations
+
+**Compensation**
+→ Average salary increased
+→ But salary growth isn't evenly distributed
+→ Certain job families have compression problems
+
+**Payroll**
+→ Payroll cost increased faster than headcount
+→ Overtime and bonuses explain part of the increase
+→ A payroll anomaly appears in one business unit
+
+**Benefits**
+→ Benefits cost per employee increased
+→ Healthcare enrollment shifted
+→ A new benefit plan caused unexpected cost
+
+**Employee investigation**
+→ Drill from company → department → manager → employee
+→ See salary, compensation history, payroll, benefits and job history
+
+That gives you a much more compelling demo than simply showing an HR dashboard.
+
+---
+
+# 2. Data model
+
+I'd create approximately **12–15 tables**.
+
+### Core Workday-like model
+
+| Table                  | Purpose                          | Suggested rows |
+| ---------------------- | -------------------------------- | -------------: |
+| `employee`             | Employee master                  |         18,500 |
+| `employee_job_history` | Promotions/transfers/job changes |         45,000 |
+| `organization`         | Company hierarchy                |            800 |
+| `position`             | Positions                        |         21,000 |
+| `job`                  | Job catalog                      |          1,200 |
+| `location`             | Locations                        |            250 |
+| `manager_relationship` | Manager hierarchy                |         18,500 |
+| `salary_history`       | Salary changes                   |         70,000 |
+| `bonus`                | Bonus/variable compensation      |         35,000 |
+| `payroll`              | Payroll transactions             |          ~1.5M |
+| `benefit_enrollment`   | Benefit elections                |        100,000 |
+| `benefit_plan`         | Benefit plans                    |             30 |
+| `performance_review`   | Performance ratings              |         50,000 |
+| `absence`              | PTO/absence                      |        250,000 |
+| `termination`          | Terminations                     |          5,000 |
+
+You don't necessarily need all 15 in the first version.
+
+For a demo, I'd start with **10 core tables**.
+
+---
+
+# 3. Employee table
+
+This is the central dimension.
+
+`employee`
+
+```text
+employee_id
+employee_number
+first_name
+last_name
+gender
+date_of_birth
+hire_date
+termination_date
+employment_status
+employment_type
+worker_type
+job_id
+position_id
+organization_id
+manager_employee_id
+location_id
+country
+state
+city
+work_email
+cost_center
+fte
+pay_frequency
+currency
+```
+
+Example:
+
+```text
+EMP102384
+James
+Anderson
+Active
+Full-Time
+Regular
+2021-04-12
+JOB_0421
+POS_8821
+ORG_ENG_PLATFORM
+EMP100291
+LOC_DALLAS
+US
+TX
+Dallas
+1.0
+USD
+```
+
+---
+
+# 4. Organization hierarchy
+
+This is **very important for your demo**.
+
+Create a hierarchy such as:
+
+```text
+GlobalTech
+│
+├── North America
+│   ├── United States
+│   │   ├── Sales
+│   │   ├── Engineering
+│   │   ├── Finance
+│   │   ├── HR
+│   │   ├── Operations
+│   │   └── Marketing
+│   │
+│   └── Canada
+│
+├── EMEA
+│   ├── UK
+│   ├── Germany
+│   └── France
+│
+└── APAC
+    ├── India
+    ├── Japan
+    └── Singapore
+```
+
+Then go deeper:
+
+```text
+Engineering
+   ↓
+Cloud Platform
+   ↓
+Data Infrastructure
+   ↓
+Data Engineering
+   ↓
+Team A
+   ↓
+Manager
+   ↓
+Employees
+```
+
+This makes hierarchical drill-down extremely valuable.
+
+---
+
+# 5. Job table
+
+`job`
+
+Include:
+
+```text
+job_id
+job_code
+job_title
+job_family
+job_subfamily
+job_level
+management_level
+career_track
+exempt_status
+standard_hours
+min_salary
+mid_salary
+max_salary
+```
+
+Example:
+
+```text
+Software Engineer
+Software Engineering
+Engineering
+L4
+Individual Contributor
+120,000
+145,000
+170,000
+```
+
+This enables a **compensation benchmarking story**.
+
+---
+
+# 6. Salary history
+
+This is one of the most important tables.
+
+`salary_history`
+
+```text
+salary_history_id
+employee_id
+effective_date
+end_date
+salary
+currency
+salary_basis
+change_reason
+change_percentage
+merit_percentage
+promotion_percentage
+market_adjustment
+job_level
+```
+
+Possible `change_reason`:
+
+```text
+Annual Merit
+Promotion
+Market Adjustment
+Job Change
+Cost of Living
+Retention Adjustment
+Correction
+New Hire
+```
+
+Now you can answer:
+
+> Which employees received salary increases?
+
+> Which organizations received the largest salary increases?
+
+> Are promotions driving compensation growth?
+
+> Where do employees sit below the midpoint of their salary range?
+
+---
+
+# 7. Payroll
+
+This is where the demo becomes much more interesting.
+
+`payroll`
+
+```text
+payroll_id
+employee_id
+pay_period_start
+pay_period_end
+pay_date
+regular_hours
+overtime_hours
+regular_pay
+overtime_pay
+bonus_pay
+commission
+allowance
+gross_pay
+tax
+benefit_deduction
+other_deduction
+net_pay
+currency
+cost_center
+```
+
+You can generate approximately:
+
+**18,500 employees × 26 pay periods = ~481K payroll records/year**
+
+For 3 years:
+
+**~1.4M records**
+
+That's perfect for demonstrating analytical performance.
+
+---
+
+# 8. Benefits
+
+Create:
+
+### `benefit_plan`
+
+```text
+benefit_plan_id
+benefit_type
+plan_name
+provider
+coverage_level
+employee_cost
+employer_cost
+effective_date
+```
+
+Examples:
+
+```text
+Medical
+Dental
+Vision
+401K
+Life Insurance
+Disability
+HSA
+FSA
+```
+
+### `benefit_enrollment`
+
+```text
+employee_id
+benefit_plan_id
+effective_date
+coverage_level
+employee_contribution
+employer_contribution
+enrollment_status
+```
+
+This gives you questions like:
+
+> What is our benefits cost per employee?
+
+> Which benefit plans are increasing fastest?
+
+> Which organizations have the highest benefits cost?
+
+---
+
+# 9. Employee job history
+
+This creates **career movement**.
+
+`employee_job_history`
+
+```text
+employee_id
+effective_date
+action
+old_job_id
+new_job_id
+old_organization_id
+new_organization_id
+old_manager_id
+new_manager_id
+old_location_id
+new_location_id
+reason
+```
+
+Actions:
+
+```text
+Hire
+Promotion
+Transfer
+Demotion
+Manager Change
+Location Change
+Reorganization
+```
+
+Now you can tell a great story:
+
+> "Engineering had 312 promotions this year, but 74 employees also transferred out."
+
+---
+
+# 10. Performance
+
+`performance_review`
+
+```text
+review_id
+employee_id
+review_year
+review_date
+review_period
+performance_rating
+potential_rating
+goal_score
+competency_score
+overall_score
+promotion_recommendation
+merit_recommendation
+review_status
+```
+
+Ratings:
+
+```text
+1 = Needs Improvement
+2 = Developing
+3 = Successful
+4 = Exceeds Expectations
+5 = Exceptional
+```
+
+Now compensation + performance becomes possible.
+
+For example:
+
+> "Are high-performing employees being compensated appropriately?"
+
+That's much more interesting than simple salary reporting.
+
+---
+
+# 11. Absence
+
+`absence`
+
+```text
+absence_id
+employee_id
+absence_type
+start_date
+end_date
+days
+hours
+status
+```
+
+Types:
+
+```text
+Vacation
+Sick
+Personal
+Parental
+Bereavement
+Unpaid Leave
+```
+
+This lets you investigate:
+
+> Which organizations have unusually high absenteeism?
+
+---
+
+# 12. Termination
+
+`termination`
+
+```text
+employee_id
+termination_date
+termination_type
+termination_reason
+voluntary_flag
+regrettable_flag
+termination_category
+years_of_service
+```
+
+Important categories:
+
+```text
+Resignation
+Layoff
+Retirement
+Performance
+Relocation
+Compensation
+Manager
+Career Growth
+Other
+```
+
+The **regrettable attrition flag** is especially useful.
+
+---
+
+# 13. The synthetic data should contain intentional business events
+
+This is the secret to making the demo good.
+
+Don't generate purely random data.
+
+Plant events.
+
+I'd create at least these:
+
+### Event 1 — Engineering hiring surge
+
+Cloud Engineering hires **450 employees** over six months.
+
+Result:
+
+> Engineering headcount +18%
+
+---
+
+### Event 2 — Sales attrition spike
+
+Sales voluntary attrition jumps from **8% → 17%**.
+
+Mostly among:
+
+* Account Executives
+* Sales Engineers
+* high performers
+
+---
+
+### Event 3 — Compensation compression
+
+New hires in Engineering are coming in near the salary midpoint while existing employees remain below midpoint.
+
+Question:
+
+> Are we underpaying existing employees?
+
+---
+
+### Event 4 — Promotion wave
+
+Engineering has a large promotion cycle.
+
+Salary expense increases disproportionately.
+
+---
+
+### Event 5 — Benefits inflation
+
+Healthcare employer contribution increases **14%**.
+
+Headcount increases only 3%.
+
+Dashboard detects:
+
+> Benefits cost increased significantly faster than workforce.
+
+---
+
+### Event 6 — Payroll anomaly
+
+One business unit accidentally receives excessive overtime payments for two pay periods.
+
+This creates an obvious anomaly.
+
+---
+
+### Event 7 — Acquisition
+
+GlobalTech acquires a fictional company:
+
+**DataSphere**
+
+~600 employees enter the organization.
+
+Now you have:
+
+```text
+Acquired Employees
+New Organization
+New Locations
+New Benefit Plans
+Different Salary Structures
+```
+
+Fantastic demo story.
+
+---
+
+### Event 8 — Reorganization
+
+Marketing gets reorganized.
+
+Employees move:
+
+```text
+Marketing
+   ↓
+Product Marketing
+Demand Generation
+Corporate Communications
+```
+
+Now your hierarchy/history functionality becomes useful.
+
+---
+
+### Event 9 — High performer attrition
+
+Plant a pattern:
+
+> Employees with performance rating 4–5 and salary below market midpoint have significantly higher resignation rates.
+
+This is **excellent for AI analysis**.
+
+---
+
+### Event 10 — Manager problem
+
+One manager has:
+
+* high turnover
+* low engagement
+* high absenteeism
+* low performance scores
+
+This creates a compelling drill-down.
+
+---
+
+# 14. Dashboard structure
+
+I would make **5 dashboard pages**.
+
+## Page 1 — Workforce Executive
+
+Top KPIs:
+
+```text
+18,500
+Headcount
+
++3.2%
+YoY Headcount
+
+11.4%
+Attrition
+
+$2.1B
+Total Payroll
+
+$113K
+Avg Salary
+
+$14.2K
+Benefits / Employee
+```
+
+Charts:
+
+**Headcount trend**
+
+**Headcount by organization**
+
+**Attrition trend**
+
+**Employees by geography**
+
+**New hires vs terminations**
+
+---
+
+# Page 2 — Compensation
+
+KPIs:
+
+```text
+Average Salary
+Median Salary
+Salary Increase %
+Compensation Cost
+Bonus %
+Compa-Ratio
+```
+
+Charts:
+
+* Salary by job family
+* Salary by level
+* Salary distribution
+* Compa-ratio distribution
+* Salary increase by organization
+* Promotion vs salary increase
+
+A particularly good visualization:
+
+### Salary range
+
+```text
+Minimum ───── Midpoint ───── Maximum
+          ● Employee
+```
+
+---
+
+# Page 3 — Payroll & Workforce Cost
+
+KPIs:
+
+```text
+Gross Payroll
+Regular Pay
+Overtime
+Bonus
+Commission
+Employer Benefits
+Total Workforce Cost
+```
+
+Then:
+
+```text
+Workforce Cost
+     │
+     ├── Salary
+     ├── Bonus
+     ├── Overtime
+     ├── Commission
+     └── Benefits
+```
+
+This lets executives understand **why workforce cost changed**.
+
+---
+
+# Page 4 — Benefits
+
+Show:
+
+* enrollment
+* employer contribution
+* employee contribution
+* benefits cost/employee
+* plan utilization
+* cost by organization
+* cost by geography
+
+A great insight:
+
+> "Healthcare accounts for 61% of benefits cost and increased 13.8% YoY."
+
+---
+
+# Page 5 — Workforce Risk / AI
+
+This is where I'd make the demo really impressive.
+
+Cards:
+
+### 🔴 Attrition Risk
+
+High-risk organizations
+
+### 🟠 Compensation Risk
+
+Employees below market midpoint
+
+### 🟡 Manager Risk
+
+Managers with abnormal turnover
+
+### 🔵 Workforce Cost Anomaly
+
+Unexpected payroll increases
+
+Then allow the user to click into the underlying employees.
+
+---
+
+# 15. The most impressive AI questions
+
+Your synthetic data should be designed so these questions have **real SQL answers**, not just LLM-generated narratives.
+
+### Workforce
+
+> How has headcount changed over the last 12 months?
+
+> Which organizations contributed most to headcount growth?
+
+> What is our voluntary attrition rate by job family?
+
+> Which locations have the highest regrettable attrition?
+
+### Compensation
+
+> Which employees are below 90% of their salary range midpoint?
+
+> Which job families have the greatest salary compression?
+
+> Compare salary growth against performance ratings.
+
+> Are high performers receiving larger salary increases?
+
+### Payroll
+
+> Why did payroll increase this quarter?
+
+> Decompose the payroll increase into headcount, salary, bonus, overtime and commission.
+
+This one is **excellent**.
+
+For example:
+
+```text
+Payroll +8.7%
+
+Headcount        +2.9%
+Salary increases +3.1%
+Bonus            +1.4%
+Overtime         +0.9%
+Other            +0.4%
+```
+
+### Benefits
+
+> Which benefit plans drove the increase in employer benefits cost?
+
+> What is benefits cost per employee by country?
+
+### Management
+
+> Which managers have the highest voluntary attrition?
+
+> Are employees leaving certain managers despite strong performance?
+
+### Workforce planning
+
+> Which departments are growing faster than their budgeted headcount?
+
+> Which job families have the highest hiring demand?
+
+---
+
+# 16. One killer demo question
+
+I'd build the entire dataset around this question:
+
+> **"Why did workforce cost increase 9% when headcount only increased 3%?"**
+
+The AI/dashboard should produce:
+
+```text
+Workforce Cost +9.0%
+
+                    Contribution
+Salary increases       +3.2%
+Headcount               +2.9%
+Benefits                +1.4%
+Bonus                   +0.9%
+Overtime                +0.6%
+                           ────
+                           +9.0%
+```
+
+Then the user clicks:
+
+**Salary increases**
+
+→ Engineering
+
+→ Cloud Platform
+
+→ Data Engineering
+
+→ Job Level L5
+
+→ Employees
+
+Then:
+
+> "Why are these employees receiving larger increases?"
+
+AI discovers:
+
+**Promotion wave + market adjustment.**
+
+That's a **much stronger enterprise demo** than a generic HR dashboard.
+
+---
+
+# 17. Make the data longitudinal
+
+I'd recommend:
+
+**January 2023 → August 2026**
+
+rather than generating only a snapshot.
+
+That gives you:
+
+* YoY
+* MoM
+* QoQ
+* YTD
+* rolling 12 months
+* attrition trends
+* salary progression
+* promotion trends
+* benefits inflation
+* payroll trends
+
+And it lets your dashboard answer:
+
+> "What changed?"
+
+rather than simply:
+
+> "What is the current value?"
+
+---
+
+# 18. Suggested scale
+
+For a realistic demo:
+
+| Data                |   Rows |
+| ------------------- | -----: |
+| Employees           | 18,500 |
+| Job history         | 45,000 |
+| Salary history      | 70,000 |
+| Payroll             |   1.4M |
+| Benefits enrollment |   100K |
+| Performance         |    50K |
+| Absence             |   250K |
+| Terminations        |     5K |
+| Organizations       |    800 |
+| Jobs                |  1,200 |
+| Positions           |    21K |
+
+This is large enough to feel like an enterprise Workday implementation but still manageable for local/Postgres/Incorta demo environments.
+
+---
+
+## 19. Architecture I'd use
+
+I'd structure it like this:
+
+```text
+                    HR ANALYTICS
+                         │
+        ┌────────────────┼────────────────┐
+        │                │                │
+    Workforce       Compensation       Payroll
+        │                │                │
+    Employee        Salary History     Payroll
+    Organization    Job               Bonus
+    Position        Performance        Benefits
+        │                │                │
+        └────────────────┼────────────────┘
+                         │
+                   AI / SQL Layer
+                         │
+             ┌───────────┼───────────┐
+             │           │           │
+          Dashboard    NLQ Chat    Alerts
+```
+
+For your use case, I'd keep the **raw Workday-style tables** separate from analytical tables/materialized views. That gives you an opportunity to demonstrate both **enterprise data modeling and fast analytics**.
+
+---
+
+## 20. What I would build next
+
+Given your previous synthetic-data demos, I'd make this a **full demo dataset rather than just CSV generation**.
+
+The next specification should define:
+
+1. **15 tables**
+2. Exact columns + data types
+3. Primary/foreign keys
+4. Workday-style hierarchies
+5. 3.5 years of data
+6. Exact row counts
+7. Synthetic-data generation rules
+8. Realistic distributions
+9. **10 planted business events**
+10. Cross-table correlations
+11. Data-quality issues to intentionally plant
+12. 50+ dashboard/AI questions
+13. KPI definitions
+14. PostgreSQL DDL
+15. Python Faker/data-generation approach
+16. CSV generation
+17. A compelling **15-minute demo script**
+
+That would give you a reusable **"GlobalTech HR Analytics" synthetic Workday dataset** that you can use for Incorta demos, AI/NLQ demos, dashboard demos, hierarchy demos, and performance demos.

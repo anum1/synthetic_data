@@ -1,0 +1,422 @@
+# =============================================================================
+# Vantage Industrial - Order-to-Cash Control Tower
+# Base scenario configuration.
+#
+# Every number here is a knob. Copy this file, change values, regenerate:
+#   python3 src/generate.py --scenario config/my_scenario.yaml
+# Referential integrity and business logic are preserved automatically.
+# =============================================================================
+
+meta:
+  scenario_name: base
+  company: Vantage Industrial
+  seed: 42
+
+# -----------------------------------------------------------------------------
+# Calendar anchoring
+#   anchor: today  -> as-of is the last day of the previous complete month
+#   anchor: fixed  -> use as_of_date literally
+# The whole demo is relative to as-of, so it never goes stale. Every event below
+# is timed in months relative to as-of, never in absolute dates.
+# -----------------------------------------------------------------------------
+calendar:
+  anchor: today
+  as_of_date: null            # only used when anchor: fixed, e.g. 2026-07-31
+  history_years: 3            # full years of history before the current year
+  forecast_months: 0          # O2C carries no forecast horizon
+  fiscal_year_start_month: 1
+
+# -----------------------------------------------------------------------------
+# Size tiers. --tier small|full
+#   small -> Tableau / Power BI Desktop.  full -> Snowflake / Databricks / Incorta.
+# Same seed, same events, same story.
+# -----------------------------------------------------------------------------
+tiers:
+  small:
+    customers: 1_500
+    sites_per_customer: 1.6
+    products: 600
+    sales_reps: 80
+    warehouses: 12
+    carriers: 15
+    orders_per_month_base: 300
+  full:
+    customers: 5_000
+    sites_per_customer: 1.6
+    products: 2_000
+    sales_reps: 250
+    warehouses: 30
+    carriers: 40
+    orders_per_month_base: 1_200
+
+# -----------------------------------------------------------------------------
+# Demand shape
+#
+# Seasonality follows the design note: Q1 normal, Q2 moderate, Q3 strong,
+# Q4 very strong. Growth is applied monthly and compounds, which is what makes
+# bookings up 12% while cash lags.
+# -----------------------------------------------------------------------------
+demand:
+  annual_growth: 0.225
+  seasonality_by_month: [0.92, 0.90, 0.98, 1.00, 1.02, 1.05, 1.06, 1.04, 1.08, 1.12, 1.14, 1.19]
+  lines_per_order_lambda: 3.2       # Poisson, plus 1, so mean ~4.2 lines
+  order_line_qty_lognorm: [2.98, 0.85]   # mu, sigma of log(quantity)
+  # Customer concentration: the top 20% of customers take ~70% of revenue.
+  customer_pareto_alpha: 1.75
+  # Share of orders raised without a preceding quote (contract call-offs,
+  # reorders, EDI). These point at the "Direct Order" quote row, never NULL.
+  direct_order_share: 0.15
+
+# -----------------------------------------------------------------------------
+# Quoting
+# -----------------------------------------------------------------------------
+quoting:
+  quotes_per_won_quote: 2.50        # inverse of the blended win rate
+  base_win_rate: 0.35
+  quote_validity_days: 30
+  quote_to_order_days: [2, 12]      # uniform range
+  # Win probability responds to discount and deal size, so "discount buys
+  # volume" is testable in the data rather than assumed.
+  win_lift_per_discount_point: 0.018
+  win_lift_large_deal: 0.06
+  expired_share_of_open: 0.35
+  status_mix_open: {Draft: 0.10, Submitted: 0.55, Approved: 0.35}
+
+# -----------------------------------------------------------------------------
+# Pricing
+#
+# contract_pricing is the source of truth for what a customer SHOULD be billed.
+# Event 7 (pricing leakage) is the gap between this and invoice_line.unit_price,
+# so this table has to exist before any of that story can be told.
+# -----------------------------------------------------------------------------
+pricing:
+  list_price_lognorm: [4.01, 1.05]  # mu, sigma of log(list price USD)
+  gross_margin_range: [0.19, 0.44]  # target margin on list
+  contract_coverage: 0.62           # share of customer x product pairs on contract
+  contract_discount_range: [0.04, 0.26]
+  contract_term_months: 24
+  standard_discount_range: [0.00, 0.09]
+  volume_break_qty: 50
+  volume_break_extra_discount: 0.035
+
+# -----------------------------------------------------------------------------
+# Credit management
+#
+# Exposure is a RUNNING ledger evaluated at order entry, order by order. It is
+# not a column drawn at the end - Event 9 depends on the sequence.
+# -----------------------------------------------------------------------------
+credit:
+  limit_multiple_of_monthly_spend: [1.3, 3.4]
+  rating_mix: {AAA: 0.06, AA: 0.14, A: 0.26, BBB: 0.28, BB: 0.16, B: 0.08, CCC: 0.02}
+  # An order breaching the limit goes on hold; most are released once cash lands.
+  hold_release_days: [3, 21]
+  hold_release_prob: 0.82
+  cancel_after_hold_days: 90
+
+# -----------------------------------------------------------------------------
+# Fulfilment
+# -----------------------------------------------------------------------------
+fulfillment:
+  base_fill_rate: 0.955
+  allocation_days: [0, 2]
+  pick_pack_days: [1, 3]
+  split_shipment_base_rate: 0.05
+  backorder_recovery_days: [7, 35]
+  # Monthly inventory position is emitted only for SKU x warehouse pairs that
+  # actually transact, which is what keeps this table at 540K rows instead of
+  # the 65.7M a daily grain would produce.
+  inventory_snapshot_grain: month
+
+# -----------------------------------------------------------------------------
+# Shipping
+# -----------------------------------------------------------------------------
+shipping:
+  transit_days_by_region: {NA: [2, 6], EMEA: [3, 8], APAC: [5, 12], LATAM: [4, 10]}
+  base_on_time_rate: 0.94
+  delay_days: [1, 9]
+  lost_rate: 0.0015
+  freight_pct_of_order: [0.014, 0.042]
+  expedite_base_rate: 0.06
+  expedite_cost_multiple: 3.4
+  min_freight_charge_usd: 60      # carrier minimum per consignment
+  split_handling_charge_usd: 70   # extra handling once an order needs two
+  events_per_shipment: [4, 7]
+
+# -----------------------------------------------------------------------------
+# Billing
+#
+# billing_rule is set per customer. It drives invoice count, invoice lag and the
+# shape of Event 5, so duplicate billing (Event 13) is a defect on top of a
+# defined rule rather than a random duplicate.
+# -----------------------------------------------------------------------------
+billing:
+  rule_mix: {per_shipment: 0.70, consolidated_monthly: 0.30}
+  base_lag_days: [1, 5]             # delivery -> invoice, normal case
+  tax_rate_by_region: {NA: 0.0775, EMEA: 0.195, APAC: 0.088, LATAM: 0.16}
+  credit_memo_rate: 0.021
+  credit_memo_pct_of_invoice: [0.05, 1.00]
+
+# -----------------------------------------------------------------------------
+# Collections
+#
+# days_to_pay is lognormal per customer, conditioned on segment and terms. This
+# is the distribution Event 6 shifts.
+# -----------------------------------------------------------------------------
+collections:
+  days_to_pay_sigma: 0.42
+  payment_behaviour_by_segment:     # multiplier on the terms' due days
+    Strategic: 1.02
+    Enterprise: 1.08
+    Mid-Market: 1.12
+    Small Business: 1.20
+  early_payment_discount_take_rate: 0.38
+  partial_payment_rate: 0.22
+  invoices_per_remittance: [1, 4]
+  writeoff_days: 210
+  writeoff_rate: 0.004
+  dispute_base_rate: 0.028
+  dispute_resolution_days: [8, 90]
+  dispute_reason_mix:
+    Pricing Discrepancy: 0.22
+    Quantity Discrepancy: 0.12
+    Damaged Goods: 0.11
+    Late Delivery: 0.13
+    Missing PO: 0.10
+    Tax Issue: 0.07
+    Duplicate Invoice: 0.06
+    Contract Dispute: 0.06
+    Short Shipment: 0.08
+    Wrong Product: 0.05
+  return_base_rate: 0.021
+  return_disposition_mix: {Restock: 0.62, Scrap: 0.18, Repair: 0.12, Return to Vendor: 0.08}
+
+# -----------------------------------------------------------------------------
+# Currency
+#
+# Fixed budget rate plus a rate table, and local + USD on every money column.
+# Payment currency is forced to invoice currency: this is an O2C demo, not a
+# treasury one, and floating FX would contaminate the waterfall.
+# -----------------------------------------------------------------------------
+currency:
+  reporting: USD
+  force_payment_currency_match: true
+  rates:      # units of local per USD, held flat at the budget rate
+    USD: 1.00
+    EUR: 0.92
+    GBP: 0.79
+    CAD: 1.36
+    JPY: 151.0
+    AUD: 1.52
+    MXN: 17.2
+    SGD: 1.34
+  mix: {USD: 0.58, EUR: 0.14, GBP: 0.06, CAD: 0.06, JPY: 0.05, AUD: 0.04, MXN: 0.04, SGD: 0.03}
+
+# =============================================================================
+# The fifteen planted events.
+#
+# Timing is months relative to as-of (negative = in the past). Scope is a
+# FRACTION of the population, never an absolute count, so every story stays
+# proportionally visible at both tiers.
+#
+# Two chains are deliberate:
+#   Event 3  -> Event 14   warehouse bottleneck -> backorders -> expedited freight
+#   Event 7  -> Event 10   pricing leakage -> disputes
+# Building the chains rather than two independent multipliers is what lets the
+# root-cause scene survive an unplanned drill-down.
+# =============================================================================
+events:
+
+  quote_conversion_collapse:        # Event 1
+    enabled: true
+    region: EMEA
+    start_offset: -14
+    end_offset: 0
+    win_rate_multiplier: 0.52
+    assert_conversion_range: [0.22, 0.30]
+
+  discount_explosion:               # Event 2
+    enabled: true
+    rep_share: 0.012                # ~3 reps at full tier
+    start_offset: -12
+    end_offset: 0
+    discount_from: 0.08
+    discount_to: 0.26
+    assert_min_lift_vs_peers: 2.2
+
+  warehouse_bottleneck:             # Event 3
+    enabled: true
+    warehouse_code: WH-07
+    start_offset: -10
+    end_offset: 0
+    # Two separate constraints, because a warehouse in trouble is short of both
+    # stock and hands, and they show up in different places. supply_multiplier
+    # drives backorders; pick_capacity_vs_demand drives late shipments.
+    supply_multiplier: 0.46
+    pick_headroom_normal: 1.60      # pick capacity as a multiple of its own
+                                    # arrival rate before the event
+    pick_capacity_vs_demand: 0.86   # ...and after it. Anchoring to the arrival
+                                    # rate rather than to configured capacity is
+                                    # what makes the bite seed-independent.
+    assert_backorder_rate: [0.15, 0.26]
+    assert_min_ship_delay_days: 2.5
+
+  carrier_deterioration:            # Event 4
+    enabled: true
+    carrier_name: Meridian Freight
+    start_offset: -8
+    end_offset: 0
+    on_time_multiplier: 0.70
+    transit_multiplier: 1.7
+    assert_on_time_range: [0.62, 0.78]
+
+  invoice_lag:                      # Event 5
+    enabled: true
+    business_unit: West
+    start_offset: -9
+    end_offset: 0
+    lag_days_from: 3
+    lag_days_to: 11
+    assert_min_lag_days: 9.5
+
+  customer_payment_slowdown:        # Event 6
+    enabled: true
+    customer_rank: 3                # 3rd largest customer by revenue
+    start_offset: -7
+    end_offset: 0
+    days_to_pay_from: 35
+    days_to_pay_to: 67
+    assert_min_days_to_pay: 58
+
+  pricing_leakage:                  # Event 7  -> drives Event 10
+    enabled: true
+    invoice_line_share: 0.120
+    variance_range: [0.07, 0.12]
+    concentrated_customers: 3
+    start_offset: -15
+    end_offset: 0
+    # ~0.6% of invoiced revenue. The design note implied a much larger number;
+    # leaking $1.5M on a $104M book needs a third of all contract lines mispriced,
+    # which is not a stale price list, it is a broken one. See docs/EVENTS.md.
+    assert_min_variance_usd: 240_000
+
+  partial_shipment_problem:         # Event 8
+    enabled: true
+    product_family: Hydraulic Pumps
+    start_offset: -11
+    end_offset: 0
+    split_rate_from: 0.12
+    split_rate_to: 0.45
+    # Asserted as a LIFT in freight per shipped line, not as an absolute split
+    # rate. The split rate a customer experiences also absorbs backorders and
+    # dual sourcing; the freight consequence is what the event is actually for.
+    # Event 8 is primarily a split-rate story; the freight cost is its
+    # consequence and is necessarily diluted, because an order carrying one
+    # pump line among four is only partly a pump order.
+    assert_min_split_lift: 1.40
+    assert_min_freight_lift: 1.05
+
+  credit_hold:                      # Event 9
+    enabled: true
+    customer_share: 0.200
+    start_offset: -6
+    end_offset: 0
+    limit_freeze: true
+    # The frozen limit is capped at this fraction of what the customer's grown
+    # volume would otherwise have earned them. Volume keeps rising, the limit
+    # does not, and orders start failing the check on their own.
+    frozen_limit_factor: 0.45
+    # Overrides are refused far more often once the limit is the problem rather
+    # than the order. This is what turns a trickle of holds into a queue.
+    override_prob: 0.18
+    # The design note asked for $4.7M blocked. That is 13 days of company
+    # bookings and it does not survive the arithmetic - see docs/EVENTS.md.
+    # This band is what a credible frozen-limit population actually produces.
+    assert_held_value_usd: [1_000_000, 2_600_000]
+
+  dispute_spike:                    # Event 10  <- driven by Event 7
+    enabled: true
+    customer_rank: 1                # largest customer; also a leakage target
+    start_offset: -5
+    end_offset: 0
+    dispute_rate_multiplier: 9.0
+    # Scoped to the whole global account. A single legal entity is at most 3%
+    # of revenue, so the design note's $1.4M/month cannot come from one - see
+    # docs/EVENTS.md for the arithmetic.
+    assert_min_monthly_usd: 70_000
+
+  product_shortage:                 # Event 11
+    enabled: true
+    sku_share: 0.003                # ~6 SKUs at full tier
+    target: high_margin
+    start_offset: -8
+    end_offset: -3
+    assert_max_fill_rate: 0.75
+
+  returns_spike:                    # Event 12
+    enabled: true
+    product_category: Electrical & Automation
+    start_offset: -6
+    end_offset: 0
+    return_rate_from: 0.021
+    return_rate_to: 0.145
+    assert_min_lift: 3.0
+
+  duplicate_billing:                # Event 13
+    enabled: true
+    order_share: 0.004
+    start_offset: -36
+    end_offset: 0
+    assert_min_pairs: 100
+
+  freight_leakage:                  # Event 14  <- driven by Event 3
+    enabled: true
+    start_offset: -10
+    end_offset: 0
+    expedite_rate_from: 0.06
+    expedite_rate_to: 0.24
+    backorder_expedite_bias: 3.0
+    # Freight as a share of revenue, not absolute spend: absolute spend rises
+    # with volume anyway, and a leakage KPI that moves when nothing leaks is
+    # worse than no KPI.
+    assert_min_freight_pct_lift: 1.30
+
+  revenue_trapped:                  # Event 15
+    enabled: true
+    business_units: [West, Central, Export]
+    start_offset: -6
+    end_offset: 0
+    lag_tail_share: 0.18            # share of invoices drawn from the fat tail
+    lag_tail_days: [25, 70]
+    assert_unbilled_usd: [5_000_000, 9_500_000]
+
+# -----------------------------------------------------------------------------
+# Deliberately planted data-quality defects.
+#
+# The best one here is causal: orders raised with no PO number become
+# "Missing PO" disputes downstream, so the defect and the exception are the same
+# story rather than two unrelated oddities.
+# -----------------------------------------------------------------------------
+data_quality:
+  enabled: true
+  missing_po_share: 0.031           # -> Missing PO disputes
+  customer_name_variants: 14        # same legal entity, spelled differently
+  shipments_without_delivery_event: 240
+  orphan_remittance_share: 0.004    # cash received, not yet applied to an invoice
+
+# -----------------------------------------------------------------------------
+# Headline targets. The validator asserts the generated data lands in these
+# bands; they are the numbers the demo script quotes.
+# -----------------------------------------------------------------------------
+headline:
+  bookings_ttm_usd: [118_000_000, 140_000_000]
+  bookings_growth: [0.08, 0.17]
+  dso_days: [45, 58]
+  overdue_share_of_ar: [0.28, 0.46]
+  # A distributor carrying a warehouse bottleneck, a failing carrier and a
+  # billing backlog does not run an 85% perfect-order rate. This band is what
+  # the four component flags actually produce together - see docs/EVENTS.md.
+  perfect_order_rate: [0.35, 0.62]
+
+output:
+  formats: [parquet, csv]
+  csv_max_tier: small

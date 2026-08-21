@@ -1,0 +1,443 @@
+# =============================================================================
+# GlobalTech - HR / Workforce Analytics
+# Base scenario configuration.
+#
+# Every number here is a knob. Copy this file, change values, regenerate:
+#   python3 src/generate.py --scenario config/my_scenario.yaml
+# Referential integrity and business logic are preserved automatically.
+# =============================================================================
+
+meta:
+  scenario_name: base
+  company: GlobalTech
+  seed: 42
+
+# -----------------------------------------------------------------------------
+# Calendar anchoring
+#   anchor: today  -> as-of is the last day of the previous complete month
+#   anchor: fixed  -> use as_of_date literally
+# The whole demo is relative to as-of, so it never goes stale.
+# -----------------------------------------------------------------------------
+calendar:
+  anchor: today
+  as_of_date: null            # only used when anchor: fixed, e.g. 2026-07-31
+  history_years: 3            # full years of history before the current year
+  forecast_months: 0          # HR dataset carries no forecast horizon
+  fiscal_year_start_month: 1
+  merit_cycle_month: 4        # annual merit increases effective 1 April
+  review_cycle_month: 2       # performance reviews completed in February
+  open_enrollment_month: 11   # elections made Nov, effective 1 Jan
+  benefit_plan_year_start: 1
+
+# -----------------------------------------------------------------------------
+# Size tiers. --tier small|full
+#   small -> Tableau / Power BI Desktop.  full -> Snowflake / Databricks / Incorta.
+# Same seed, same events, same story.
+# -----------------------------------------------------------------------------
+tiers:
+  small:
+    employees_at_as_of: 6_000
+    organizations: 300
+    locations: 80
+    jobs: 400
+  full:
+    employees_at_as_of: 18_500
+    organizations: 800
+    locations: 250
+    jobs: 900        # the natural catalog size; see docs/DATA_MODEL.md
+
+# -----------------------------------------------------------------------------
+# Protected-class attributes.
+# Generated either way so a DEI page is one flag away, but written to disk only
+# when enabled. Off by default: plenty of prospects do not want these on screen.
+# -----------------------------------------------------------------------------
+demographics:
+  enabled: false
+  columns: [gender, ethnicity, veteran_status, disability_status]
+
+# -----------------------------------------------------------------------------
+# Workforce shape
+# -----------------------------------------------------------------------------
+baseline:
+  headcount_growth_yoy: 0.032       # the +3.2% the headline quotes
+  voluntary_attrition_annual: 0.051 # baseline BEFORE events push it up
+  involuntary_attrition_annual: 0.021
+  merit_budget_pct: 0.028           # average annual merit increase
+  promotion_rate_annual: 0.081
+  promotion_increase_pct: [0.08, 0.14]
+  market_adjustment_rate_annual: 0.030
+  bonus_target_pct_by_track:        # of base salary
+    Individual Contributor: 0.08
+    Manager: 0.12
+    Director: 0.18
+    Executive: 0.32
+  bonus_payout_factor: [0.75, 1.25] # multiplier on target, driven by rating
+  # Overtime eligibility is NOT a knob: it is derived from dim_job.exempt_status,
+  # so it stays consistent with the job catalog instead of drifting from it.
+  overtime_hours_per_period: [1.0, 16.0]
+  overtime_participation: 0.70      # of non-exempt staff, in any given period
+  fte_part_time_share: 0.055
+  contingent_worker_share: 0.04
+
+  # Country mix at as-of. Also drives the pay zone on every salary range.
+  country_mix:
+    US: 0.44
+    India: 0.21
+    UK: 0.11
+    Germany: 0.09
+    Canada: 0.08
+    Japan: 0.07
+
+  # Where NEW hires go, as opposed to where the standing population sits.
+  # Deliberately weighted towards India: it is what actually happens, and it is
+  # what makes the Mix component of the cost bridge come out negative. A bridge
+  # where every line is positive looks like five numbers chosen to add up.
+  hiring_country_mix:
+    US: 0.34
+    India: 0.34
+    UK: 0.10
+    Germany: 0.08
+    Canada: 0.07
+    Japan: 0.07
+
+  # Organization mix at as-of.
+  function_mix:
+    Engineering: 0.34
+    Sales: 0.19
+    Operations: 0.14
+    Marketing: 0.08
+    Finance: 0.07
+    Customer Success: 0.07
+    HR: 0.05
+    Legal: 0.03
+    IT: 0.03
+
+  # Job level distribution across the IC/management ladder.
+  level_mix:
+    L1: 0.04
+    L2: 0.11
+    L3: 0.19
+    L4: 0.23
+    L5: 0.17
+    L6: 0.11
+    L7: 0.08
+    L8: 0.05
+    L9: 0.02
+
+  span_of_control: [5, 9]           # direct reports per people manager
+  hierarchy_depth: 6
+
+# -----------------------------------------------------------------------------
+# Compensation structure
+# Salary ranges are anchored globally by job level and then differentiated per
+# geography. A single USD midpoint across six countries makes every employee in
+# India look underpaid and destroys the compa-ratio story.
+# -----------------------------------------------------------------------------
+compensation:
+  level_midpoint_usd:               # global anchor, USD, before geo factor
+    L1: 52_000
+    L2: 68_000
+    L3: 92_000
+    L4: 121_000
+    L5: 152_000
+    L6: 188_000
+    L7: 235_000
+    L8: 310_000
+    L9: 420_000
+  range_spread: 0.40                # max = mid x (1+0.20), min = mid x (1-0.20)
+
+  # Pay zone factor applied to the USD anchor, and the fixed budget FX rate used
+  # to convert local money back to USD. The rate is FIXED on purpose: a floating
+  # rate would contaminate the workforce cost bridge, and this is an HR demo,
+  # not a treasury one.
+  geo_zone:
+    US:      {factor: 1.00, currency: USD, fx_to_usd: 1.000,   pay_frequency: Biweekly}
+    Canada:  {factor: 0.86, currency: CAD, fx_to_usd: 0.735,   pay_frequency: Biweekly}
+    UK:      {factor: 0.88, currency: GBP, fx_to_usd: 1.270,   pay_frequency: Monthly}
+    Germany: {factor: 0.84, currency: EUR, fx_to_usd: 1.085,   pay_frequency: Monthly}
+    India:   {factor: 0.32, currency: INR, fx_to_usd: 0.01195, pay_frequency: Monthly}
+    Japan:   {factor: 0.79, currency: JPY, fx_to_usd: 0.00655, pay_frequency: Monthly}
+
+  # Salary ranges move each year with the market. Engineering moves much faster
+  # than the rest of the business, which - against an incumbent merit budget that
+  # does not - is what actually produces compression. Event 3 caps the merit; this
+  # is the other half of the scissors.
+  range_movement_annual: 0.028
+  range_movement_by_function:
+    Engineering: 0.062
+  new_hire_compa: [0.92, 1.04]      # where new hires land in range, normally
+  starting_compa: [0.84, 1.06]      # spread of the seeded population
+  tenure_compa_uplift_max: 0.08     # long-tenure drift up the range at seeding
+  market_adjustment_intensity: 0.35 # off-cycle corrections are a SCARCE budget
+
+# -----------------------------------------------------------------------------
+# Termination hazard model.
+# Terminations are NOT stamped onto chosen employees. Every active employee is
+# evaluated monthly against this model, so the correlations the AI "discovers"
+# are real and survive being sliced any way the audience asks.
+#
+#   p(resign) = base x f_compa x f_perf x f_promo x f_tenure x f_manager x events
+# -----------------------------------------------------------------------------
+attrition:
+  compa_multiplier:                 # compa-ratio band -> multiplier
+    - {max: 0.85, mult: 4.60}
+    - {max: 0.90, mult: 3.30}
+    - {max: 0.95, mult: 1.50}
+    - {max: 1.05, mult: 1.00}
+    - {max: 9.99, mult: 0.72}
+  rating_multiplier:                # performance rating -> multiplier
+    1: 0.55                         # low performers are managed out, not resigning
+    2: 0.75
+    3: 1.00
+    4: 1.65
+    5: 1.95
+  months_since_promotion_multiplier:
+    - {max: 12, mult: 0.70}
+    - {max: 24, mult: 0.95}
+    - {max: 36, mult: 1.25}
+    - {max: 999, mult: 1.55}
+  tenure_multiplier:                # months of service -> multiplier
+    - {max: 6, mult: 0.45}
+    - {max: 12, mult: 1.10}
+    - {max: 30, mult: 1.40}         # the classic 1-2 year peak
+    - {max: 60, mult: 1.00}
+    - {max: 999, mult: 0.68}
+  country_multiplier:
+    US: 1.00
+    India: 1.34
+    UK: 0.92
+    Germany: 0.64                   # notice periods and works councils
+    Canada: 0.95
+    Japan: 0.58
+  function_multiplier:
+    Engineering: 1.05
+    Sales: 1.25
+    Operations: 0.95
+    Marketing: 1.00
+    Finance: 0.85
+    Customer Success: 1.10
+    HR: 0.90
+    Legal: 0.70
+    IT: 0.95
+  regrettable_share_by_rating:      # of voluntary exits, share flagged regrettable
+    1: 0.00
+    2: 0.05
+    3: 0.35
+    4: 0.85
+    5: 0.95
+  seasonality:                      # resignation multiplier by month (Jan..Dec)
+    [1.28, 1.10, 1.05, 1.14, 0.98, 0.95, 1.02, 0.94, 1.06, 1.00, 0.78, 0.70]
+
+# -----------------------------------------------------------------------------
+# Performance
+# -----------------------------------------------------------------------------
+performance:
+  rating_distribution: {1: 0.03, 2: 0.11, 3: 0.55, 4: 0.24, 5: 0.07}
+  merit_multiplier_by_rating: {1: 0.0, 2: 0.5, 3: 0.9, 4: 1.35, 5: 1.85}
+  promotion_odds_by_rating: {1: 0.0, 2: 0.2, 3: 0.8, 4: 2.1, 5: 3.0}
+  potential_correlation: 0.62       # potential rating vs performance rating
+
+# -----------------------------------------------------------------------------
+# Benefits
+# -----------------------------------------------------------------------------
+benefits:
+  participation_rate: 0.87
+  plans_per_participant: [2, 5]
+  coverage_mix:
+    Employee Only: 0.41
+    Employee + Spouse: 0.19
+    Employee + Children: 0.16
+    Family: 0.24
+  employer_share:                   # employer portion of total plan cost
+    Medical: 0.78
+    Dental: 0.65
+    Vision: 0.60
+    Life Insurance: 1.00
+    Disability: 1.00
+    401K: 1.00                      # employer match
+    HSA: 1.00
+    FSA: 0.00
+  annual_cost_inflation: 0.045      # baseline, before Event 5
+  life_event_rate_annual: 0.06      # mid-year enrolment changes
+
+# -----------------------------------------------------------------------------
+# Absence
+# -----------------------------------------------------------------------------
+absence:
+  days_per_employee_year:
+    US: 16
+    Canada: 19
+    UK: 27
+    Germany: 29
+    India: 22
+    Japan: 20
+  type_mix:
+    Vacation: 0.63
+    Sick: 0.22
+    Personal: 0.07
+    Parental: 0.04
+    Bereavement: 0.02
+    Unpaid Leave: 0.02
+  unpaid_reduces_pay: true          # unpaid leave really does reduce payroll hours
+
+# -----------------------------------------------------------------------------
+# Payroll
+# -----------------------------------------------------------------------------
+payroll:
+  effective_tax_rate:
+    US: 0.243
+    Canada: 0.256
+    UK: 0.281
+    Germany: 0.372
+    India: 0.176
+    Japan: 0.264
+  employer_tax_rate: 0.086          # payroll taxes on top of gross
+  allowance_share_of_base:          # car/housing/transport allowances
+    US: 0.004
+    Canada: 0.004
+    UK: 0.010
+    Germany: 0.014
+    India: 0.085                    # allowance-heavy structure, deliberately
+    Japan: 0.048
+  commission_functions: [Sales]
+  commission_pct_of_base: [0.10, 0.35]
+
+# -----------------------------------------------------------------------------
+# The 10 planted events.
+# Timing is in MONTHS RELATIVE TO AS-OF, so the story stays correct whenever the
+# dataset is regenerated. Scope is a FRACTION of the population, so every event
+# stays proportionally visible at both tiers.
+# Set enabled: false to remove that story from the data entirely.
+# -----------------------------------------------------------------------------
+events:
+
+  engineering_hiring_surge:         # Event 1
+    enabled: true
+    start_offset: -18
+    end_offset: -12
+    organization: Cloud Platform
+    extra_hires_share: 0.0243       # x18,500 = ~450 at full tier
+    target_headcount_lift: 0.18
+
+  sales_attrition_spike:            # Event 2
+    enabled: true
+    start_offset: -14
+    end_offset: -6
+    function: Sales
+    job_families: [Account Executive, Sales Engineering]
+    hazard_multiplier: 2.60         # on the named job families
+    function_hazard_multiplier: 1.70  # on the rest of Sales - the whole function moves
+    high_performer_bias: 1.30       # the leavers skew good, which is the point
+
+  compensation_compression:         # Event 3
+    enabled: true
+    start_offset: -24
+    function: Engineering
+    new_hire_compa: [0.98, 1.04]    # new hires come in at midpoint
+    incumbent_merit_cap: 0.030      # incumbents capped below market movement
+    target_below_90_share: 0.28
+
+  promotion_wave:                   # Event 4
+    enabled: true
+    month_offset: -9
+    function: Engineering
+    from_level: L4
+    to_level: L5
+    promoted_share: 0.0097          # x18,500 = ~180 at full tier
+    increase_pct: [0.11, 0.18]
+
+  benefits_inflation:               # Event 5
+    enabled: true
+    plan_year_offset: 0             # current plan year
+    benefit_type: Medical
+    employer_cost_increase: 0.19
+    employee_cost_increase: 0.06
+
+  payroll_anomaly:                  # Event 6
+    enabled: true
+    month_offset: -4
+    organization: Operations
+    country: UK
+    pay_periods: 2
+    overtime_multiplier: 6.0
+
+  acquisition:                      # Event 7
+    enabled: true
+    month_offset: -11
+    company_name: DataSphere
+    headcount_share: 0.0324         # x18,500 = ~600 at full tier
+    countries: {US: 0.55, UK: 0.25, India: 0.20}
+    compa_shift: -0.06              # acquired staff sit below GlobalTech ranges
+    own_benefit_plans: true
+    retention_hazard_multiplier: 1.45
+
+  marketing_reorganization:         # Event 8
+    enabled: true
+    month_offset: -7
+    from_organization: Marketing
+    to_organizations: [Product Marketing, Demand Generation, Corporate Communications]
+    moved_share: 0.92
+
+  high_performer_attrition:         # Event 9
+    enabled: true
+    # No parameters. This one EMERGES from the hazard model above: rating 4-5
+    # multiplied by compa <0.90 already produces ~2.8x baseline. The block
+    # exists so the validator knows to assert the lift, and so disabling it
+    # flattens the compa and rating multipliers to 1.0.
+    min_lift: 2.5
+
+  manager_problem:                  # Event 10
+    enabled: true
+    organization: Data Engineering
+    hazard_multiplier: 5.0
+    absence_multiplier: 2.0
+    rating_shift: -0.8
+    # Staff the affected org up to a size where the signal is unmistakable, and
+    # express BOTH thresholds as shares of the population. At twenty people a 60%
+    # attrition rate is indistinguishable from noise - half a dozen small teams
+    # will beat it by chance and the "one manager clearly stands out" moment does
+    # not land. An absolute count would work at one tier and fail at the other,
+    # which is the sibling Meridian dataset's known weakness, deliberately not
+    # repeated here.
+    min_org_headcount_share: 0.015    # 90 at small, 278 at full
+    min_reports_share: 0.004          # 24 at small, 74 at full
+
+# -----------------------------------------------------------------------------
+# Deliberate data-quality defects.
+# The acquisition is the natural carrier for these - it is how real HR data
+# actually gets dirty. Disable the block for a clean dataset.
+# -----------------------------------------------------------------------------
+data_quality:
+  enabled: true
+  duplicate_person_records: 12      # same human, two employee_numbers
+  missing_manager_count: 40         # point at the "No Manager" row, id 0
+  inconsistent_cost_center_share: 0.35   # of acquired employees
+  late_termination_posting: 18      # payroll continued past termination date
+  name_case_noise_share: 0.02
+
+# -----------------------------------------------------------------------------
+# Headline the dataset is tuned to produce at as-of.
+# validate.py asserts each of these; they are targets, not decorations.
+# -----------------------------------------------------------------------------
+headline:
+  headcount_yoy: [0.028, 0.038]
+  # Band, not a point. Merit, compression, attrition and backfill are coupled:
+  # cutting the merit budget RAISES total cost, because compression drives exits
+  # and the backfills come in at market. That loop is the dataset behaving
+  # correctly, so the headline is tuned to a range rather than chased to a
+  # decimal place.
+  workforce_cost_yoy: [0.080, 0.099]
+  voluntary_attrition: [0.105, 0.124]
+  # Average salary grows SLOWER than the rate of pay increases, because hiring is
+  # weighted towards India. That gap is a demo insight, not an error - see the
+  # Rate component of the cost bridge for what people actually got.
+  avg_salary_growth: [0.018, 0.032]
+  benefits_per_employee_yoy: [0.120, 0.160]
+  bridge_close_tolerance: 0.001     # |sum(components) - total| in cost-share pts
+
+# -----------------------------------------------------------------------------
+# Output
+# -----------------------------------------------------------------------------
+output:
+  formats: [parquet, csv]
+  csv_max_tier: small               # CSV only at small tier; full is parquet only

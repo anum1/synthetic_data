@@ -1,0 +1,985 @@
+**Procure-to-Pay (P2P)**  synthetic-data demo because to tell a complete story from 
+**supplier selection → purchase request → PO → receipt → invoice → payment**, and then layer in data quality, 
+spend analytics, AP efficiency, compliance, and working-capital insights.
+
+design the data specifically so the dashboard has **intentional business problems planted into it**, rather than generating purely random transactions.
+
+## 1. The P2P process to model
+
+end-to-end flow:
+
+**Supplier Master**
+→ **Requisition**
+→ **Purchase Order**
+→ **Goods Receipt / Service Receipt**
+→ **Supplier Invoice**
+→ **3-Way Match**
+→ **Accounts Payable**
+→ **Payment**
+
+And add a few cross-cutting datasets:
+
+* Supplier hierarchy / parent companies
+* Supplier contracts
+* Commodity/category hierarchy
+* Employees / buyers / departments
+* Cost centers
+* GL accounts
+* Approval workflow
+* Payment terms
+* FX / currency
+* Risk/compliance attributes
+
+This gives you much more interesting analytical possibilities than just PO + invoice data.
+
+---
+
+# 2. The synthetic dataset I would build
+
+A good demo-sized dataset could look like this:
+
+| Table                   |    Rows | Purpose                                  |
+| ----------------------- | ------: | ---------------------------------------- |
+| `supplier`              |   2,000 | Supplier master                          |
+| `supplier_site`         |   4,000 | Multiple locations/entities per supplier |
+| `supplier_parent`       |   1,500 | Supplier corporate hierarchy             |
+| `supplier_bank_account` |   2,500 | Payment information                      |
+| `employee`              |   5,000 | Requesters/approvers/buyers              |
+| `department`            |     100 | Organization hierarchy                   |
+| `cost_center`           |     500 | Financial allocation                     |
+| `category`              |     300 | Procurement hierarchy                    |
+| `contract`              |   3,000 | Supplier contracts                       |
+| `requisition`           | 100,000 | Purchase requests                        |
+| `requisition_line`      | 250,000 | Requested items/services                 |
+| `purchase_order`        |  80,000 | POs                                      |
+| `purchase_order_line`   | 200,000 | PO details                               |
+| `goods_receipt`         | 150,000 | Receipts                                 |
+| `goods_receipt_line`    | 300,000 | Received quantities                      |
+| `invoice`               | 120,000 | Supplier invoices                        |
+| `invoice_line`          | 300,000 | Invoice details                          |
+| `three_way_match`       | 120,000 | Match results                            |
+| `payment`               | 100,000 | AP payments                              |
+| `approval_event`        | 500,000 | Approval workflow                        |
+| `supplier_risk`         |   2,000 | Risk/compliance                          |
+| `budget`                |  20,000 | Procurement budget                       |
+
+That is enough to create a **very realistic enterprise P2P environment**.
+
+---
+
+# 3. Most important: preserve the transaction chain
+
+The data shouldn't just be separate tables.
+
+You want relationships like:
+
+```text
+Supplier
+   │
+   ├── Contract
+   │
+   └── Requisition
+          │
+          ▼
+      PO Header
+          │
+          ▼
+      PO Line
+          │
+          ▼
+      Goods Receipt
+          │
+          ▼
+      Invoice
+          │
+          ▼
+    3-Way Match
+          │
+          ▼
+       Payment
+```
+
+For example:
+
+```text
+REQ-100234
+      ↓
+PO-200187
+      ↓
+Receipt-300442
+      ↓
+INV-500991
+      ↓
+MATCH-500991
+      ↓
+PAY-700812
+```
+
+This is extremely important for your demo because you can drill from an executive KPI all the way down to the individual transaction.
+
+---
+
+# 4. Supplier master — make this interesting
+
+Don't generate 2,000 perfectly clean suppliers.
+
+Plant **supplier master-data problems**.
+
+Example:
+
+| Supplier ID | Supplier Name                   | Normalized Name | Country | Parent | Status |
+| ----------- | ------------------------------- | --------------- | ------- | ------ | ------ |
+| SUP001      | IBM Corp                        | IBM             | US      | IBM    | Active |
+| SUP827      | IBM Corporation                 | IBM             | US      | IBM    | Active |
+| SUP992      | I.B.M. Corp                     | IBM             | US      | IBM    | Active |
+| SUP1042     | International Business Machines | IBM             | US      | IBM    | Active |
+
+Now you have a fantastic demo:
+
+> **"How much are we actually spending with IBM?"**
+
+The answer requires supplier normalization / hierarchy.
+
+You can deliberately create:
+
+* Duplicate suppliers
+* Duplicate supplier sites
+* Different spellings
+* Different addresses
+* Different tax IDs
+* Same supplier under multiple legal entities
+* Inactive suppliers still receiving POs
+* Suppliers sharing bank accounts
+* Suppliers with missing tax information
+
+This can become a **Supplier 360 / Data Quality** story.
+
+---
+
+# 5. Procurement hierarchy
+
+Create something like:
+
+```text
+Indirect Spend
+│
+├── IT
+│   ├── Hardware
+│   ├── Software
+│   └── Services
+│
+├── Facilities
+│   ├── Maintenance
+│   ├── Security
+│   └── Cleaning
+│
+├── Professional Services
+│   ├── Consulting
+│   ├── Legal
+│   └── Accounting
+│
+└── Travel
+    ├── Hotels
+    ├── Airfare
+    └── Ground Transportation
+```
+
+This lets your dashboard drill:
+
+**Total Spend → Category → Subcategory → Supplier → PO → Invoice**
+
+---
+
+# 6. Plant realistic P2P problems
+
+This is the most important part of the synthetic dataset.
+
+I would intentionally plant **15–20 business events**.
+
+### Event 1 — Maverick spend
+
+Some employees bypass procurement.
+
+```text
+PO Spend                 $50M
+Non-PO Spend              $8M
+Maverick Spend             $5M
+```
+
+Dashboard question:
+
+> "Which departments have the highest maverick spend?"
+
+---
+
+### Event 2 — Invoice matching problem
+
+Create invoices where:
+
+```text
+PO = $100,000
+Receipt = $100,000
+Invoice = $118,000
+```
+
+Result:
+
+**18% invoice variance**
+
+Then ask:
+
+> "What suppliers are generating the most invoice discrepancies?"
+
+---
+
+### Event 3 — Quantity mismatch
+
+```text
+PO quantity       1,000
+Received            800
+Invoiced          1,000
+```
+
+This creates a classic 3-way-match exception.
+
+---
+
+### Event 4 — Price mismatch
+
+```text
+PO price       $100
+Invoice price  $115
+```
+
+Create thousands of these, but concentrate them around **10–20 suppliers**.
+
+That allows the dashboard to identify the pattern.
+
+---
+
+### Event 5 — Late receipts
+
+Create suppliers where:
+
+```text
+Expected delivery: June 10
+Actual receipt:    June 27
+```
+
+Then correlate:
+
+**Supplier → Category → PO → Delivery performance**
+
+---
+
+### Event 6 — Slow invoice approval
+
+Plant invoices that sit in approval for:
+
+* 2 days
+* 5 days
+* 10 days
+* 20+ days
+
+Then create one department where invoice approval suddenly deteriorates.
+
+---
+
+### Event 7 — Duplicate invoices
+
+Create:
+
+```text
+INV-10021
+INV-10021
+```
+
+or slightly different invoice numbers:
+
+```text
+ABC-12345
+ABC12345
+ABC-012345
+```
+
+Same:
+
+* Supplier
+* Amount
+* Date
+* PO
+
+Now you can demonstrate:
+
+> "Find potentially duplicated invoices."
+
+---
+
+### Event 8 — Early-payment opportunity
+
+Supplier terms:
+
+```text
+2% / 10 Net 30
+```
+
+But invoices are being paid on day 29.
+
+Dashboard:
+
+> "How much cash discount are we leaving on the table?"
+
+This is a **great CFO story**.
+
+---
+
+### Event 9 — Late payments
+
+Create invoices where:
+
+```text
+Due date:     July 10
+Paid date:    July 28
+```
+
+Then calculate:
+
+**Days Past Due**
+
+and:
+
+**Supplier payment performance**
+
+---
+
+### Event 10 — Supplier concentration
+
+Create a category where:
+
+```text
+Supplier A     42%
+Supplier B     31%
+Supplier C     15%
+Others         12%
+```
+
+Then ask:
+
+> "Where are we over-dependent on a small number of suppliers?"
+
+---
+
+# 7. Add a fraud/risk storyline
+
+This makes the demo much more impressive.
+
+Plant several suspicious patterns.
+
+### Scenario A — Shared bank account
+
+```text
+Supplier A ─┐
+Supplier B ─┼── Bank Account 12345
+Supplier C ─┘
+```
+
+Dashboard:
+
+> "Which suppliers share bank accounts?"
+
+---
+
+### Scenario B — Employee/supplier relationship
+
+Create:
+
+```text
+Employee: John Smith
+Supplier contact: John Smith
+```
+
+or matching addresses.
+
+---
+
+### Scenario C — Split POs
+
+Instead of:
+
+```text
+$150,000 PO
+```
+
+create:
+
+```text
+PO 1 = $49,000
+PO 2 = $48,000
+PO 3 = $53,000
+```
+
+same:
+
+* requester
+* supplier
+* category
+* day/week
+
+Now you can identify potential **PO splitting to circumvent approval thresholds**.
+
+---
+
+### Scenario D — Just-below-approval threshold
+
+Suppose:
+
+```text
+Manager approval threshold = $50,000
+```
+
+Generate suspicious numbers:
+
+```text
+$49,850
+$49,700
+$49,950
+$49,400
+```
+
+Then ask:
+
+> "Are buyers systematically creating POs just below approval thresholds?"
+
+That's a **very strong AI/data-analysis demo question**.
+
+---
+
+# 8. Add procurement performance metrics
+
+Your dashboard should calculate metrics such as:
+
+### Spend
+
+* Total spend
+* PO spend
+* Non-PO spend
+* Contracted spend
+* Non-contracted spend
+* Spend by supplier
+* Spend by category
+* Spend by department
+* Spend by region
+
+### Procurement efficiency
+
+* Requisition → PO days
+* PO approval time
+* PO → receipt days
+* Receipt → invoice days
+* Invoice processing time
+* Invoice → payment days
+* Total P2P cycle time
+
+### AP
+
+* Invoice volume
+* Invoice value
+* First-pass match rate
+* Exception rate
+* Duplicate invoice rate
+* Invoice aging
+* DPO
+* On-time payment %
+
+### Supplier
+
+* Supplier OTIF
+* Supplier defect rate
+* Invoice accuracy
+* Contract compliance
+* Supplier concentration
+* Supplier risk
+
+---
+
+# 9. The killer KPI: P2P cycle time
+
+Create a metric like:
+
+```text
+Requisition Created
+       ↓
+PO Approved
+       ↓
+Goods Received
+       ↓
+Invoice Received
+       ↓
+Invoice Approved
+       ↓
+Payment
+```
+
+Calculate:
+
+**End-to-End P2P Cycle Time**
+
+Example:
+
+```text
+Average P2P Cycle Time
+        31.4 days
+
+           ↓
+
+Best suppliers       18.2 days
+Average               31.4 days
+Worst suppliers       67.8 days
+```
+
+Then drill into the bottleneck.
+
+---
+
+# 10. Dashboard layout I'd recommend
+
+Don't make it a giant dashboard.
+
+Create **4 dashboard pages**.
+
+## Page 1 — Executive P2P Overview
+
+Top KPI cards:
+
+```text
+$284.6M
+Total Spend
+
+87.4%
+Contracted Spend
+
+91.2%
+3-Way Match Rate
+
+$6.8M
+Maverick Spend
+
+12.7%
+Invoice Exception Rate
+
+28.4
+Avg P2P Days
+```
+
+Then:
+
+**Spend Trend**
+
+**Spend by Category**
+
+**Spend by Supplier**
+
+**P2P Funnel**
+
+```text
+100K Requisitions
+      ↓
+82K POs
+      ↓
+77K Receipts
+      ↓
+120K Invoices
+      ↓
+108K Payments
+```
+
+---
+
+# 11. Page 2 — Spend & Procurement
+
+Show:
+
+### Spend waterfall
+
+```text
+Total Procurement Spend
+        ↓
+Contracted Spend
+        ↓
+Non-Contracted
+        ↓
+Maverick Spend
+```
+
+### Supplier concentration
+
+Top 10 suppliers.
+
+### Category spend
+
+Tree:
+
+```text
+IT
+ ├─ Software
+ ├─ Hardware
+ └─ Services
+```
+
+### Savings opportunity
+
+Create synthetic calculated opportunities:
+
+```text
+Price variance             $2.1M
+Maverick spend             $4.8M
+Missed discounts            $1.2M
+Supplier consolidation      $3.4M
+
+Total opportunity          $11.5M
+```
+
+This gives your demo an obvious **"so what?"**
+
+---
+
+# 12. Page 3 — AP / Invoice Operations
+
+This can be particularly impressive.
+
+KPIs:
+
+```text
+Invoices             120K
+Straight-through      91%
+Exceptions             9%
+Duplicates            1.2%
+Avg processing        4.8 days
+Past due              $7.2M
+```
+
+Then:
+
+### Invoice aging
+
+```text
+0–30       $32M
+31–60      $11M
+61–90       $4M
+90+         $2M
+```
+
+### Exception reasons
+
+```text
+Price mismatch       38%
+Quantity mismatch    24%
+Missing receipt      18%
+PO missing           11%
+Duplicate             6%
+Other                 3%
+```
+
+Click **Price mismatch** → supplier → PO → invoice.
+
+---
+
+# 13. Page 4 — Supplier 360
+
+This is where the synthetic relational model really pays off.
+
+Select:
+
+**Supplier: ABC Technology**
+
+Display:
+
+```text
+Supplier Risk        Medium
+Annual Spend         $12.4M
+Active POs           147
+Invoices             1,284
+On-Time Delivery     82%
+Invoice Accuracy     91%
+Contract Compliance  76%
+Avg Payment Days     34
+```
+
+Then:
+
+### Supplier spend trend
+
+### Open POs
+
+### Invoice exceptions
+
+### Late deliveries
+
+### Contracts
+
+### Payments
+
+### Risk flags
+
+```text
+⚠ 3 duplicate invoices
+⚠ 2 shared bank accounts
+⚠ 18% price variance
+⚠ Contract expired 45 days ago
+```
+
+That makes for a great **drill-through demo**.
+
+---
+
+# 14. The AI questions I would build around the data
+
+This is where your demo can become much stronger than a traditional BI dashboard.
+
+### Executive questions
+
+> What is driving the increase in procurement spend this quarter?
+
+> Which categories have the greatest savings opportunity?
+
+> Why did invoice exceptions increase this month?
+
+> Which suppliers are responsible for most of our P2P delays?
+
+---
+
+### Procurement questions
+
+> Which suppliers have the highest spend growth but declining delivery performance?
+
+> Find categories where spend increased more than 20% while supplier count decreased.
+
+> Which suppliers have significant non-contract spend?
+
+> Where are we paying different prices for the same product?
+
+---
+
+### AP questions
+
+> What are the top causes of invoice exceptions?
+
+> Which suppliers have the highest duplicate invoice risk?
+
+> Which invoices are overdue and why?
+
+> How much early-payment discount are we missing?
+
+---
+
+### Fraud/risk questions
+
+> Find suppliers sharing the same bank account.
+
+> Find purchase orders just below approval thresholds.
+
+> Identify potential PO splitting.
+
+> Find suppliers with unusual invoice frequency.
+
+> Find employees associated with suspicious supplier relationships.
+
+---
+
+### Advanced cross-domain questions
+
+These are particularly good demos because they require joining multiple tables:
+
+> **Which suppliers have high spend, poor delivery performance, and high invoice exception rates?**
+
+> **Which departments have the highest spend leakage from non-contract purchases?**
+
+> **Which suppliers are increasing prices while their delivery performance is deteriorating?**
+
+> **How much cash could we save if all eligible invoices took the early-payment discount?**
+
+> **Which categories have the greatest opportunity for supplier consolidation?**
+
+---
+
+# 15. Add time intelligence
+
+I would generate **3 years of data**:
+
+**2024 → 2026**
+
+with 2026 containing the current-year storyline.
+
+Then you can demonstrate:
+
+* YoY spend
+* MoM spend
+* QoQ spend
+* YTD
+* QTD
+* MTD
+* rolling 12 months
+* supplier spend growth
+* invoice aging trend
+* P2P cycle-time trend
+
+For example:
+
+```text
+P2P Cycle Time
+
+2024     26.1 days
+2025     27.8 days
+2026     31.4 days
+                   ↑
+             +13% deterioration
+```
+
+Then your AI explains **why**.
+
+---
+
+# 16. Make the synthetic data intentionally imperfect
+
+I'd use approximately:
+
+| Data condition         | % of data |
+| ---------------------- | --------: |
+| Normal transactions    |       85% |
+| Minor anomalies        |        7% |
+| Operational problems   |        5% |
+| Fraud/risk scenarios   |        2% |
+| Extreme planted events |        1% |
+
+The key is that the anomalies should **cluster**, not be random.
+
+For example:
+
+```text
+Supplier ABC
+    ↓
+Price variance ↑
+Invoice exceptions ↑
+Delivery delays ↑
+Spend ↑ 31%
+```
+
+That creates a genuine story:
+
+> **"ABC Technology has become one of our fastest-growing suppliers, but its operational performance is deteriorating."**
+
+That's much better than a dashboard saying "ABC has a high exception rate."
+
+---
+
+# 17. The demo story I'd actually use
+
+I'd structure the live demo around **one executive question**:
+
+> **"We increased procurement spend by 14% this year. Are we actually getting more value from that spend?"**
+
+Start at the executive dashboard.
+
+Discover:
+
+**Spend +14%**
+
+↓
+
+Drill into category.
+
+**IT Services +28%**
+
+↓
+
+Drill into suppliers.
+
+**ABC Technology +41%**
+
+↓
+
+Supplier 360.
+
+Discover:
+
+* Delivery performance ↓
+* Invoice exceptions ↑
+* Price variance ↑
+* Contract compliance ↓
+
+↓
+
+Drill into invoices.
+
+Find:
+
+**18% of invoices have price discrepancies**
+
+↓
+
+Drill into PO.
+
+Find:
+
+**PO prices differ from contract prices**
+
+↓
+
+Ask AI:
+
+> "How much would we have saved if ABC Technology invoices had followed the contracted price?"
+
+↓
+
+AI calculates:
+
+**$1.3M potential savings**
+
+Then ask:
+
+> "Are there other suppliers with the same pattern?"
+
+AI finds:
+
+**7 suppliers / $4.8M opportunity**
+
+That's a **much more compelling demo** than simply showing procurement KPIs.
+
+---
+
+# 18. One additional thing I'd strongly recommend
+
+Since you're building this for an Incorta-style demo, don't make this just a star-schema analytics dataset.
+
+Preserve the **transaction lineage**:
+
+```text
+Supplier
+   ↓
+Requisition
+   ↓
+PO
+   ↓
+PO Line
+   ↓
+Receipt
+   ↓
+Invoice
+   ↓
+Match
+   ↓
+Payment
+```
+
+Then you can demonstrate the value of being able to go from:
+
+**$284.6M procurement spend**
+
+all the way to:
+
+**Supplier → PO → PO line → receipt → invoice → payment**
+
+without losing the business context.
+
+That is exactly where a P2P demo can become a powerful **"360° operational analytics + AI"** story.
+

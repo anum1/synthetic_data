@@ -1,0 +1,1015 @@
+**Marketing synthetic dataset**,For a strong dashboard demo, you want to model the **entire marketing funnel**, 
+connect spend to pipeline/revenue, and deliberately plant a few business stories that AI can discover.
+
+demo story:
+
+> **“Which marketing investments are actually driving revenue, where are we wasting spend, and what should we do next?”**
+
+## 1. The marketing funnel
+
+Build the synthetic data around this flow:
+```text
+Marketing Spend
+      ↓
+Campaigns / Channels
+      ↓
+Impressions / Clicks / Engagement
+      ↓
+Leads
+      ↓
+MQL
+      ↓
+SQL
+      ↓
+Opportunity
+      ↓
+Won Deal
+      ↓
+Revenue
+```
+
+Then add **customer, product, geography and time dimensions** so you can slice the entire funnel.
+
+---
+
+# 2. Core tables I recommend
+
+I'd create around **12–15 tables**.
+
+### A. Marketing master data
+
+| Table           | Purpose                                    |
+| --------------- | ------------------------------------------ |
+| `dim_campaign`  | Campaign master                            |
+| `dim_channel`   | Paid Search, LinkedIn, Email, Events, etc. |
+| `dim_customer`  | Prospects/customers                        |
+| `dim_product`   | Products / product families                |
+| `dim_sales_rep` | Sales ownership                            |
+| `dim_geography` | Country → State → City → Region            |
+| `dim_date`      | Calendar/time intelligence                 |
+
+### B. Marketing activity
+
+| Table                 | Purpose                    |
+| --------------------- | -------------------------- |
+| `fact_campaign_daily` | Daily campaign performance |
+| `fact_ad_performance` | Ad-level performance       |
+| `fact_email_activity` | Email sends/opens/clicks   |
+| `fact_web_activity`   | Website sessions/events    |
+| `fact_lead`           | Lead lifecycle             |
+| `fact_lead_activity`  | Touchpoints/interactions   |
+
+### C. Revenue funnel
+
+| Table                       | Purpose                                     |
+| --------------------------- | ------------------------------------------- |
+| `fact_opportunity`          | Sales opportunities                         |
+| `fact_opportunity_stage`    | Stage progression                           |
+| `fact_campaign_attribution` | Marketing → opportunity/revenue attribution |
+
+This lets you demonstrate **marketing → sales → revenue**, which is much more compelling than a standard digital marketing dashboard.
+
+---
+
+# 3. Campaign table
+
+Example:
+
+### `dim_campaign`
+
+```text
+campaign_id
+campaign_name
+campaign_type
+channel_id
+campaign_category
+objective
+product_id
+target_segment
+target_industry
+target_region
+start_date
+end_date
+budget
+campaign_status
+agency
+```
+
+Campaign types:
+
+```text
+Brand Awareness
+Demand Generation
+Product Launch
+Webinar
+Customer Event
+Trade Show
+Retargeting
+ABM
+Content Syndication
+Email Nurture
+```
+
+Channels:
+
+```text
+Google Ads
+LinkedIn
+Facebook
+Email
+Organic Search
+Webinar
+Trade Show
+Partner
+Content Syndication
+Direct Mail
+YouTube
+```
+
+---
+
+# 4. Daily campaign performance
+
+This is one of the most important tables.
+
+### `fact_campaign_daily`
+
+```text
+date
+campaign_id
+channel_id
+impressions
+clicks
+video_views
+engagements
+landing_page_visits
+form_submissions
+leads
+mqls
+sqls
+spend
+```
+
+From this you can calculate:
+
+```text
+CTR
+CPC
+CPL
+MQL Rate
+Cost per MQL
+SQL Rate
+Cost per SQL
+```
+
+And ultimately:
+
+```text
+Revenue
+ROAS
+ROI
+CAC
+```
+
+---
+
+# 5. Lead table
+
+### `fact_lead`
+
+```text
+lead_id
+lead_date
+customer_id
+campaign_id
+source_channel
+lead_status
+lead_score
+mql_date
+sql_date
+converted_opportunity_id
+industry
+company_size
+country
+state
+revenue_potential
+```
+
+Lead status:
+
+```text
+New
+Working
+MQL
+SQL
+Disqualified
+Converted
+Nurture
+```
+
+---
+
+# 6. Website behavior
+
+This gives you a really good AI demo.
+
+### `fact_web_activity`
+
+```text
+activity_id
+date
+lead_id
+customer_id
+session_id
+page
+activity_type
+device
+source
+campaign_id
+duration_seconds
+```
+
+Activities:
+
+```text
+Page View
+Product View
+Pricing View
+Demo Request
+Whitepaper Download
+Case Study Download
+Contact Sales
+Chat
+Video View
+```
+
+Now you can ask:
+
+> Which behaviors are strongest predictors of conversion?
+
+---
+
+# 7. Email marketing
+
+### `fact_email_activity`
+
+```text
+email_activity_id
+date
+campaign_id
+lead_id
+email_id
+sent
+delivered
+opened
+clicked
+unsubscribed
+bounced
+```
+
+This supports:
+
+```text
+Open Rate
+CTR
+CTOR
+Bounce Rate
+Unsubscribe Rate
+Conversion Rate
+Revenue per Email
+```
+
+---
+
+# 8. Opportunity table
+
+This is what makes the demo **enterprise-grade**.
+
+### `fact_opportunity`
+
+```text
+opportunity_id
+customer_id
+lead_id
+opportunity_date
+sales_rep_id
+product_id
+campaign_id
+stage
+amount
+probability
+expected_close_date
+actual_close_date
+won_flag
+lost_reason
+```
+
+Stages:
+
+```text
+Discovery
+Qualification
+Evaluation
+Proposal
+Negotiation
+Closed Won
+Closed Lost
+```
+
+Now marketing can be connected to actual revenue.
+
+---
+
+# 9. Marketing attribution
+
+This is critical.
+
+### `fact_campaign_attribution`
+
+```text
+attribution_id
+opportunity_id
+campaign_id
+lead_id
+touch_date
+touch_type
+attribution_model
+attribution_weight
+attributed_pipeline
+attributed_revenue
+```
+
+Attribution models:
+
+```text
+First Touch
+Last Touch
+Linear
+U-Shaped
+W-Shaped
+Position Based
+```
+
+This creates an excellent demo:
+
+> “Why does LinkedIn appear to generate more revenue under first-touch attribution but webinars win under last-touch attribution?”
+
+---
+
+# 10. Dimensions / hierarchy
+
+I would make the dimensions fairly rich.
+
+### Geography
+
+```text
+Global
+ └── North America
+      ├── USA
+      │    ├── Texas
+      │    ├── California
+      │    └── New York
+      └── Canada
+```
+
+### Product
+
+```text
+Product Portfolio
+ ├── Analytics
+ │    ├── BI
+ │    ├── Embedded Analytics
+ │    └── AI Analytics
+ ├── Data Platform
+ └── AI Applications
+```
+
+### Customer
+
+```text
+Enterprise
+Mid Market
+SMB
+```
+
+Industries:
+
+```text
+Manufacturing
+Retail
+Healthcare
+Financial Services
+Technology
+Telecommunications
+Energy
+Professional Services
+```
+
+---
+
+# 11. Dataset size
+
+For a convincing demo, I'd use something like:
+
+| Table                       |   Rows |
+| --------------------------- | -----: |
+| `dim_date`                  |  1,500 |
+| `dim_campaign`              |    500 |
+| `dim_channel`               |     15 |
+| `dim_customer`              | 50,000 |
+| `dim_product`               |    100 |
+| `dim_sales_rep`             |    500 |
+| `fact_campaign_daily`       |  ~250K |
+| `fact_ad_performance`       |    ~1M |
+| `fact_email_activity`       |    ~2M |
+| `fact_web_activity`         |    ~5M |
+| `fact_lead`                 |   500K |
+| `fact_lead_activity`        |     2M |
+| `fact_opportunity`          |   100K |
+| `fact_opportunity_stage`    |   500K |
+| `fact_campaign_attribution` |     1M |
+
+That's enough to feel like **real enterprise marketing data** while remaining manageable.
+
+Use **3 years of history**, e.g.
+
+```text
+2024
+2025
+2026 YTD
+```
+
+This gives you excellent YoY and trend analysis.
+
+---
+
+# 12. Most important: plant business stories
+
+This is where I would spend most of the effort.
+
+Don't generate completely random data.
+
+Create **intentional scenarios** that your dashboard/AI can discover.
+
+### Scenario 1 — High-spend, poor-performing campaign
+
+Campaign:
+
+```text
+Enterprise AI Summer Campaign
+```
+
+Spend:
+
+```text
+$1.2M
+```
+
+Lots of impressions and clicks.
+
+But:
+
+```text
+CPL ↑
+MQL conversion ↓
+SQL conversion ↓
+Pipeline ↓
+```
+
+Demo question:
+
+> “Which campaigns are consuming budget without generating pipeline?”
+
+---
+
+### Scenario 2 — Small campaign, huge ROI
+
+A webinar campaign:
+
+```text
+Spend: $45K
+Pipeline: $2.8M
+Revenue: $1.1M
+```
+
+This becomes your:
+
+> **Hidden Marketing Gem**
+
+story.
+
+---
+
+### Scenario 3 — LinkedIn looks great until attribution changes
+
+First-touch:
+
+```text
+LinkedIn → $8M attributed revenue
+```
+
+Last-touch:
+
+```text
+LinkedIn → $3M
+Webinars → $5M
+```
+
+Great AI question:
+
+> “How does campaign ROI change under different attribution models?”
+
+---
+
+### Scenario 4 — Marketing generates leads but Sales doesn't convert them
+
+Example:
+
+```text
+Campaign                  Leads      MQL→SQL
+------------------------------------------------
+LinkedIn Enterprise       18,000       8%
+Webinar                    4,000      31%
+Trade Show                 2,000      42%
+```
+
+Marketing might say:
+
+> “LinkedIn generated the most leads.”
+
+Sales might say:
+
+> “Trade shows generate much better opportunities.”
+
+That's a great cross-functional story.
+
+---
+
+### Scenario 5 — Lead quality deterioration
+
+Plant:
+
+```text
+Q1 MQL → SQL = 34%
+Q2 MQL → SQL = 29%
+Q3 MQL → SQL = 17%
+Q4 MQL → SQL = 12%
+```
+
+But marketing spend continues increasing.
+
+AI can identify:
+
+> “Lead volume is growing, but lead quality has deteriorated significantly.”
+
+---
+
+### Scenario 6 — Geography problem
+
+Example:
+
+```text
+North America       ROAS 4.8x
+Europe              ROAS 3.9x
+APAC                ROAS 1.4x
+```
+
+But APAC spending increased 65%.
+
+Question:
+
+> “Where should we reduce marketing spend?”
+
+---
+
+### Scenario 7 — Product launch
+
+Create a major campaign around a new product.
+
+Before launch:
+
+```text
+Awareness ↑
+Website traffic ↑
+Leads ↑
+```
+
+After launch:
+
+```text
+MQL ↑
+SQL ↑
+Pipeline ↑
+Revenue ↑
+```
+
+This gives you a beautiful **campaign impact timeline**.
+
+---
+
+### Scenario 8 — Attribution conflict
+
+Create customers with multiple touchpoints:
+
+```text
+Google Search
+     ↓
+Webinar
+     ↓
+LinkedIn
+     ↓
+Demo
+     ↓
+Sales
+     ↓
+Closed Won
+```
+
+Now your dashboard can show:
+
+**Customer Journey**
+
+rather than simply campaign statistics.
+
+---
+
+# 13. Dashboard I would build
+
+I'd create **5 dashboard pages**.
+
+## Page 1 — Marketing Executive Overview
+
+Top KPIs:
+
+```text
+Marketing Spend       $18.4M
+Leads                  485K
+MQLs                   142K
+Pipeline              $96.2M
+Revenue               $38.7M
+ROAS                    2.1x
+CAC                     $1,840
+```
+
+Then:
+
+```text
+Spend vs Pipeline Trend
+```
+
+```text
+Marketing Funnel
+
+Impressions
+   ↓
+Clicks
+   ↓
+Leads
+   ↓
+MQL
+   ↓
+SQL
+   ↓
+Opportunity
+   ↓
+Revenue
+```
+
+And:
+
+**Top 10 campaigns by attributed revenue**
+
+---
+
+# 14. Page 2 — Campaign Performance
+
+Have:
+
+```text
+Campaign
+Channel
+Spend
+Leads
+MQL
+SQL
+Pipeline
+Revenue
+CAC
+ROAS
+```
+
+Add scatter plot:
+
+**Spend vs Revenue**
+
+This immediately highlights:
+
+* high spend / low revenue
+* low spend / high revenue
+* high spend / high revenue
+* low spend / low revenue
+
+---
+
+# 15. Page 3 — Funnel Analysis
+
+Show conversion rates:
+
+```text
+Lead
+485K
+ ↓ 29%
+MQL
+142K
+ ↓ 31%
+SQL
+44K
+ ↓ 38%
+Opportunity
+17K
+ ↓ 41%
+Won
+7K
+```
+
+Then allow drill-down:
+
+```text
+Overall
+ → Channel
+    → Campaign
+       → Region
+          → Industry
+             → Product
+```
+
+This would be particularly useful for an enterprise analytics demo.
+
+---
+
+# 16. Page 4 — Customer Journey
+
+This could be the **wow page**.
+
+For a selected customer:
+
+```text
+Jan 12
+Google Search
+      ↓
+Jan 15
+Whitepaper Download
+      ↓
+Jan 21
+LinkedIn Ad
+      ↓
+Feb 03
+Webinar
+      ↓
+Feb 10
+Demo Request
+      ↓
+Feb 15
+SQL
+      ↓
+Mar 08
+Opportunity
+      ↓
+Apr 22
+Closed Won
+```
+
+Show:
+
+```text
+Touchpoints: 7
+Marketing Spend: $1,420
+Opportunity: $420K
+Revenue: $380K
+```
+
+---
+
+# 17. Page 5 — Marketing Optimization
+
+This is where AI becomes interesting.
+
+Show:
+
+### Budget allocation
+
+```text
+Channel             Current     Recommended
+
+LinkedIn             $4.2M       $3.0M
+Google               $3.8M       $4.5M
+Webinars             $1.1M       $2.0M
+Trade Shows          $3.4M       $3.8M
+Email                $0.8M       $1.0M
+```
+
+Then:
+
+> **Expected incremental pipeline: +$12.4M**
+
+Obviously the recommendation would be based on the synthetic data you've generated.
+
+---
+
+# 18. AI questions to demo
+
+This dataset can support some excellent natural-language questions.
+
+### Executive
+
+1. **How is marketing ROI trending YoY?**
+2. **Which channels generated the most revenue?**
+3. **Where are we wasting marketing spend?**
+4. **Which campaigns should we scale?**
+5. **Which campaigns should we stop?**
+
+### Funnel
+
+6. **Where is our biggest funnel conversion problem?**
+7. **Which channels generate the highest-quality leads?**
+8. **Why did MQL-to-SQL conversion decline?**
+9. **Which industries convert best?**
+10. **Which campaigns generate pipeline but not revenue?**
+
+### Attribution
+
+11. **Show revenue by first-touch vs last-touch attribution.**
+12. **Which campaigns influence deals but rarely get the final touch?**
+13. **What is the average number of touches before conversion?**
+14. **Which touchpoints are most predictive of conversion?**
+
+### Optimization
+
+15. **If we cut LinkedIn spend by 20%, what happens to pipeline?**
+16. **Where should we invest an additional $1M?**
+17. **Which campaigns have the best marginal ROI?**
+18. **What campaigns should be scaled next quarter?**
+
+### Anomaly detection
+
+19. **Which campaigns have unusual CPL increases?**
+20. **Which regions have declining conversion rates?**
+21. **Find campaigns where spend increased but revenue decreased.**
+22. **Find sudden drops in website conversion.**
+
+### Executive AI
+
+23. **Why did marketing-generated revenue decline this quarter?**
+24. **Summarize the top three marketing problems.**
+25. **Give me five actions the CMO should take next month.**
+
+---
+
+# 19. One particularly powerful demo story
+
+I'd structure the actual demo like this:
+
+### Step 1 — CMO opens dashboard
+
+> **Marketing generated $38.7M revenue from $18.4M spend.**
+
+Looks good.
+
+### Step 2 — AI asks:
+
+> “Is our marketing actually becoming more efficient?”
+
+AI discovers:
+
+```text
+Spend       +24%
+Leads       +31%
+MQL         +18%
+Pipeline     +8%
+Revenue      +3%
+```
+
+**Problem:** spend is growing much faster than revenue.
+
+---
+
+### Step 3 — Drill into channels
+
+AI finds:
+
+```text
+LinkedIn
+Spend       +48%
+Revenue      +6%
+
+Webinars
+Spend       +12%
+Revenue     +41%
+```
+
+Now you have an insight:
+
+> **Marketing is over-investing in LinkedIn while under-investing in webinars.**
+
+---
+
+### Step 4 — Drill into funnel
+
+LinkedIn:
+
+```text
+Lead → MQL       35%
+MQL → SQL        11%
+SQL → Won        18%
+```
+
+Webinar:
+
+```text
+Lead → MQL       48%
+MQL → SQL        34%
+SQL → Won        42%
+```
+
+Now you know **why**.
+
+---
+
+### Step 5 — Ask AI:
+
+> “What if I move $1M from LinkedIn to webinars?”
+
+Your synthetic dataset can have an **optimization/scenario model** that estimates:
+
+```text
+Current pipeline:       $96M
+
+Scenario pipeline:     $103M
+
+Incremental pipeline:   +$7M
+```
+
+That's a much stronger demo than:
+
+> “Here is a marketing dashboard.”
+
+It's a complete **Marketing Performance → Root Cause → Recommendation → What-if** story.
+
+---
+
+# 20. Recommended architecture
+
+For your use case, I'd generate the data in PostgreSQL:
+
+```text
+                    ┌──────────────────┐
+                    │    DIMENSIONS    │
+                    │                  │
+                    │ Customer         │
+                    │ Campaign         │
+                    │ Channel          │
+                    │ Product          │
+                    │ Geography        │
+                    │ Date             │
+                    └────────┬─────────┘
+                             │
+                             ▼
+              ┌───────────────────────────┐
+              │      MARKETING FACTS      │
+              │                           │
+              │ Campaign Daily            │
+              │ Ad Performance            │
+              │ Email Activity            │
+              │ Web Activity              │
+              │ Leads                     │
+              │ Opportunities             │
+              │ Attribution               │
+              └─────────────┬─────────────┘
+                            │
+                            ▼
+                 ┌────────────────────┐
+                 │   KPI / SEMANTIC   │
+                 │      LAYER         │
+                 └─────────┬──────────┘
+                           │
+              ┌────────────┴────────────┐
+              ▼                         ▼
+       Executive Dashboard          AI Analyst
+              │                         │
+              ▼                         ▼
+       Marketing Insights       Natural Language Q&A
+```
+
+## My recommendation
+
+Don't make this just a **digital marketing dataset**.
+
+Make it an **enterprise Marketing-to-Revenue dataset**:
+
+**Campaign → Engagement → Lead → MQL → SQL → Opportunity → Revenue**
+
+with **attribution, customer journey, spend, product, geography, industry and sales dimensions**.
+
+That gives you a much richer demo and lets you show 
+**descriptive analytics + drill-down + root-cause analysis + AI + attribution + what-if planning** from the same dataset.
+

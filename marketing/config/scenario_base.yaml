@@ -1,0 +1,482 @@
+# =============================================================================
+# Novareach Software - Marketing Performance & Attribution
+# Base scenario configuration.
+#
+# Every number here is a knob. Copy this file, change values, regenerate:
+#   python3 src/generate.py --scenario config/my_scenario.yaml
+# Referential integrity and business logic are preserved automatically.
+#
+# PLAN.md is the design rationale; section references below point into it.
+#
+# THE ONE RULE (PLAN 1): headline numbers are DERIVED from mix and rates, never
+# asserted alongside them. Change a channel rate here and the blended headline
+# moves. validate.py asserts the blend, so it cannot silently drift.
+# =============================================================================
+
+meta:
+  scenario_name: base
+  company: Novareach Software
+  seed: 42
+
+# -----------------------------------------------------------------------------
+# Calendar anchoring  (PLAN 2.9)
+#   anchor: today  -> as-of is the last day of the previous complete month
+#   anchor: fixed  -> use as_of_date literally
+# Every event below is timed in months relative to as-of, never in absolute
+# dates, so regenerating next year still tells this year's story.
+# -----------------------------------------------------------------------------
+calendar:
+  anchor: today
+  as_of_date: null            # only used when anchor: fixed, e.g. 2026-07-31
+  # FOUR years, of which the first is a warm-up the demo never measures.
+  #
+  # With three, the earliest close quarters are left-censored: a deal closing in
+  # month 3 cannot have a 600-day sales cycle, because the dataset does not go
+  # back that far. Long cycles are big deals, so early quarters are missing
+  # their largest ones and the average deal size ramps from $22.6K to $26.5K
+  # across the window - which showed up as +28% revenue growth that was pure
+  # calendar artefact, on the exact chart the demo is built around.
+  #
+  # The extra year costs ~30% more rows and buys a TTM and a prior TTM that are
+  # both clear of the ramp.
+  history_years: 4
+  fiscal_year_start_month: 1
+
+# -----------------------------------------------------------------------------
+# THE UNIVERSE - identical at both tiers.  (PLAN 2.2)
+#
+# Accounts, contacts, leads, opportunities and every dollar are BUSINESS
+# numbers: they have to be defensible, so they do not move when you pick a
+# tier. The contact pool is not configured at all - it is sized by the leads
+# the spend actually acquires, because you do not have contacts until marketing
+# goes and gets them.
+# -----------------------------------------------------------------------------
+universe:
+  accounts: 50_000
+  sales_reps: 480
+  reengagement_rate: 0.31    # share of leads that are a KNOWN contact returning
+
+# -----------------------------------------------------------------------------
+# Size tiers. --tier small|full
+#   small -> Tableau / Power BI Desktop.  full -> Snowflake / Databricks / Incorta.
+# Same seed, same events, same story, same headline. Only BEHAVIOURAL volume
+# changes - sessions, sends, impressions - because that is where enterprise
+# scale actually lives and nobody audits it. (PLAN 2.2)
+# -----------------------------------------------------------------------------
+tiers:
+  small:
+    creatives_per_campaign: 3
+    web_sessions_per_lead: 4.2        # TOTAL sessions per lead; identified
+    web_events_per_session: 1.6       # journey touches count toward it and the
+    email_sends_per_contact_month: 0.10   # remainder is anonymous background
+  full:
+    creatives_per_campaign: 7
+    web_sessions_per_lead: 7.0
+    web_events_per_session: 3.1
+    email_sends_per_contact_month: 0.45
+
+# -----------------------------------------------------------------------------
+# THE MONEY.  (PLAN 2.1)
+# Spend is set here and is exact. Everything else in the funnel is derived from
+# it by cost-per-lead and conversion rates, so no volume in this dataset can
+# contradict the spend that produced it.
+# -----------------------------------------------------------------------------
+spend:
+  ttm_total_usd: 18_400_000
+  yoy_growth: 0.24              # TTM vs prior TTM  (PLAN 7)
+  prior_yoy_growth: 0.19        # the year before that
+  monthly_seasonality:          # Jan..Dec, normalised by the generator
+    [0.85, 0.92, 1.06, 1.02, 1.04, 1.12, 0.88, 0.83, 1.10, 1.12, 1.09, 0.97]
+
+# Average won-deal size drives every volume in the dataset. (PLAN 3, decision 2)
+deal:
+  target_avg_won_usd: 28_000
+  # mean_usd is the MEAN of the segment's deals, not the median - the
+  # generator subtracts sigma^2/2 before drawing, because a lognormal's mean
+  # sits well above its median and configuring one while drawing the other
+  # inflates every total silently.
+  #
+  # The share of WON deals each segment holds is NOT configured here: it is
+  # derived from segments.lead_share and segments.quality_mult, because it is a
+  # consequence of them. Enterprise leads are rare and convert far better, so
+  # they end up ~8% of won deals and ~41% of revenue - which is the real shape
+  # of B2B and a good question in its own right. (PLAN 1)
+  #
+  # Lognormal within each segment so the tail reaches the $420K hero deal in
+  # docs/DEMO_FLOWS.md rather than mocking it up.
+  segment_mix:
+    SMB:          {mean_usd: 8_000,   sigma: 0.55}
+    Mid-Market:   {mean_usd: 36_000,  sigma: 0.62}
+    Enterprise:   {mean_usd: 145_000, sigma: 0.78}
+
+# -----------------------------------------------------------------------------
+# CHANNELS - the mix table from PLAN 2.6.
+#
+#   spend_share   share of TTM spend          (sums to 1.0)
+#   cpl_usd       cost per lead               -> leads = spend / cpl
+#   lead_to_mql   .. and so on down the funnel
+#
+# The rates are CALIBRATED, not guessed: the four blended conversion rates and
+# the end-to-end pipeline-per-dollar spread were solved together. A channel that
+# is worst at every step compounds into absurdity - LinkedIn was returning 0.59x
+# pipeline per dollar against Organic's 28x, a 48x spread no marketer would sit
+# through. LinkedIn is now weak where the story says it is weak (MQL->SQL 12.6%
+# against Trade Show's 46.5%) and merely below average downstream, which lands
+# the spread at 12.7x on a 5.0x blend.
+#
+#   spend_yoy     TTM vs prior-TTM spend growth for this channel. These are
+#                 RELATIVE: the generator normalises each trailing-12-month
+#                 block to spend.yoy_growth exactly, so the company total is
+#                 the number on the tile and the channel growths keep their
+#                 spread. LinkedIn +48% against Webinar +12% is E8/E9.
+#
+# The blended headline that falls out of this table is asserted by validate.py
+# NARRATIVE checks. If you change a rate, the headline moves and the docs must
+# be regenerated - that is the point.
+# -----------------------------------------------------------------------------
+channels:
+  Google Ads:
+    {group: Paid Search,  paid: true,  spend_share: 0.2045, cpl_usd: 145,
+     lead_to_mql: 0.279, mql_to_sql: 0.329, sql_to_opp: 0.371, opp_to_won: 0.392,
+     cpm_usd: 0,  ctr: 0.038, deal_mult: 0.85, spend_yoy: 0.22, cpc_usd: 8.0}
+  LinkedIn:
+    {group: Paid Social,  paid: true,  spend_share: 0.2259, cpl_usd: 310,
+     lead_to_mql: 0.318, mql_to_sql: 0.126, sql_to_opp: 0.332, opp_to_won: 0.333,
+     cpm_usd: 42, ctr: 0.0055, deal_mult: 1.05, spend_yoy: 0.48}
+  Content Syndication:
+    {group: Content,      paid: true,  spend_share: 0.0807, cpl_usd: 92,
+     lead_to_mql: 0.179, mql_to_sql: 0.155, sql_to_opp: 0.322, opp_to_won: 0.314,
+     cpm_usd: 0,  ctr: 0.021, deal_mult: 0.80, spend_yoy: 0.31, cpc_usd: 28.0}
+  Email:
+    {group: Owned,        paid: false, spend_share: 0.0485, cpl_usd: 92,
+     lead_to_mql: 0.259, mql_to_sql: 0.291, sql_to_opp: 0.361, opp_to_won: 0.382,
+     cpm_usd: 0,  ctr: 0.0,   deal_mult: 0.95, spend_yoy: 0.15}
+  Organic Search:
+    {group: Owned,        paid: false, spend_share: 0.0545, cpl_usd: 105,
+     lead_to_mql: 0.348, mql_to_sql: 0.426, sql_to_opp: 0.391, opp_to_won: 0.421,
+     cpm_usd: 0,  ctr: 0.0,   deal_mult: 1.00, spend_yoy: 0.1}
+  Webinar:
+    {group: Events,       paid: false, spend_share: 0.0592, cpl_usd: 180,
+     lead_to_mql: 0.478, mql_to_sql: 0.368, sql_to_opp: 0.41, opp_to_won: 0.451,
+     cpm_usd: 0,  ctr: 0.0,   deal_mult: 1.15, spend_yoy: 0.12}
+  YouTube:
+    {group: Paid Video,   paid: true,  spend_share: 0.0396, cpl_usd: 260,
+     lead_to_mql: 0.219, mql_to_sql: 0.213, sql_to_opp: 0.332, opp_to_won: 0.343,
+     cpm_usd: 18, ctr: 0.0072, deal_mult: 0.90, spend_yoy: 0.3}
+  Facebook:
+    {group: Paid Social,  paid: true,  spend_share: 0.0317, cpl_usd: 190,
+     lead_to_mql: 0.199, mql_to_sql: 0.194, sql_to_opp: 0.322, opp_to_won: 0.323,
+     cpm_usd: 14, ctr: 0.0091, deal_mult: 0.75, spend_yoy: 0.05}
+  Partner:
+    {group: Partner,      paid: false, spend_share: 0.0484, cpl_usd: 420,
+     lead_to_mql: 0.517, mql_to_sql: 0.484, sql_to_opp: 0.42, opp_to_won: 0.47,
+     cpm_usd: 0,  ctr: 0.0,   deal_mult: 1.30, spend_yoy: 0.18}
+  Trade Show:
+    {group: Events,       paid: false, spend_share: 0.183, cpl_usd: 780,
+     lead_to_mql: 0.438, mql_to_sql: 0.465, sql_to_opp: 0.41, opp_to_won: 0.461,
+     cpm_usd: 0,  ctr: 0.0,   deal_mult: 1.45, spend_yoy: 0.12}
+  Direct Mail:
+    {group: Outbound,     paid: false, spend_share: 0.0132, cpl_usd: 650,
+     lead_to_mql: 0.298, mql_to_sql: 0.252, sql_to_opp: 0.342, opp_to_won: 0.362,
+     cpm_usd: 0,  ctr: 0.0,   deal_mult: 1.10, spend_yoy: -0.1}
+  Customer Event:
+    {group: Events,       paid: false, spend_share: 0.0108, cpl_usd: 520,
+     lead_to_mql: 0.577, mql_to_sql: 0.504, sql_to_opp: 0.44, opp_to_won: 0.509,
+     cpm_usd: 0,  ctr: 0.0,   deal_mult: 1.25, spend_yoy: 0.08}
+
+# -----------------------------------------------------------------------------
+# GEOGRAPHY.  (PLAN 2.6)
+# The note's 4.8x / 3.9x / 1.4x cannot blend to a 2.1x company average without
+# APAC being 70-85% of spend. These multipliers produce roughly 2.6 / 2.1 / 0.8,
+# which does blend - and APAC below 1.0x is the stronger story: the region loses
+# money on every dollar, it does not merely underperform.
+#
+# quality_mult compounds down four funnel steps and E16 lands on APAC as well,
+# so the spread here is much narrower than the ROAS spread it produces. At 0.75
+# APAC came out at 0.26x, which is not a region with a problem - it is a region
+# nobody would have kept funding for three years.
+# -----------------------------------------------------------------------------
+regions:
+  North America: {spend_share: 0.50, cpl_mult: 0.92, quality_mult: 1.05, deal_mult: 1.10}
+  EMEA:          {spend_share: 0.30, cpl_mult: 1.05, quality_mult: 1.02, deal_mult: 0.92}
+  APAC:          {spend_share: 0.20, cpl_mult: 1.30, quality_mult: 0.85, deal_mult: 0.80}
+
+# quality_mult compounds down four funnel steps, so the won-deal mix is roughly
+# lead_share * quality_mult^3. These values put Enterprise at ~5.5% of leads and
+# ~8% of won deals, carrying ~41% of revenue.
+# account_share is the shape of the addressable UNIVERSE - there are far more
+# small companies than large ones. lead_share is the shape of what marketing
+# actually acquires. They differ because a 40,000-person manufacturer holds
+# more people who fill in forms than a 30-person agency: Enterprise is 3% of
+# accounts and 5.5% of leads, so roughly twice the contacts per account.
+segments:
+  SMB:        {account_share: 0.775, lead_share: 0.680, quality_mult: 0.95, cycle_days_median: 45}
+  Mid-Market: {account_share: 0.195, lead_share: 0.265, quality_mult: 1.05, cycle_days_median: 128}
+  Enterprise: {account_share: 0.030, lead_share: 0.055, quality_mult: 1.12, cycle_days_median: 260}
+
+# Sales cycle and stage lags, in days. (PLAN 3, decision 6)
+# The lag is what makes recent campaign cohorts immature - see PLAN 2.5 and
+# docs/KPI_DEFINITIONS.md. It is a feature, and the dashboard must label it.
+lifecycle:
+  lead_to_mql_days:   {median: 9,  sigma: 0.85}
+  mql_to_sql_days:    {median: 14, sigma: 0.90}
+  sql_to_opp_days:    {median: 11, sigma: 0.80}
+  cycle_sigma: 0.62
+  # Median, not mean - the generator draws lognormally, so a median of 5 gives
+  # a mean near 6 across all leads and 9-10 for converted ones, which is the
+  # range B2B research actually quotes. It is also the main driver of table
+  # size: journey touches materialise as web sessions, so a median of 7 put
+  # 1.1M sessions in the small tier on its own.
+  touches: {min: 3, median: 5, max: 22}
+
+# -----------------------------------------------------------------------------
+# LEAD QUALITY INDEX  (PLAN 2.6)
+# A multiplier on lead_to_mql and mql_to_sql, indexed by month. Declines across
+# history so that volume rises while quality falls - the §19 story. Normalised
+# by the generator so the TTM mean is exactly 1.0, which is what keeps the
+# blended headline equal to the channel mix table above.
+#
+# The note's 34% -> 12% collapse in four quarters is a company-ending event.
+# This is 34% -> 21%, which is a marketing problem, and survives being asked
+# about.
+# -----------------------------------------------------------------------------
+# This is the SECULAR trend only, and it is deliberately mild: it is what
+# drives the year-over-year story (spend +24%, revenue +3%), and it compounds
+# down four funnel steps, so a steep value here collapses revenue rather than
+# flattening it. The sharp current-year deterioration is E5 below, which acts
+# on MQL->SQL alone - the two were one knob and could not both be satisfied.
+quality_index:
+  start: 1.10           # first month of history
+  as_of: 0.93           # as-of month
+  curve: 1.50           # >1 = decline accelerates late
+
+# -----------------------------------------------------------------------------
+# ATTRIBUTION  (PLAN 2.4)
+# Five models, stored long, one row per (opportunity, touch, model).
+# INVARIANT, asserted by validate.py: weights sum to 1.0 per (opportunity,
+# model), so total attributed revenue is IDENTICAL under all five models. Only
+# the distribution across channels moves. That is the whole demo.
+# U-Shaped and Position Based are the same model; the note listed both.
+# -----------------------------------------------------------------------------
+attribution:
+  models:
+    - {code: FIRST_TOUCH, name: First Touch,  rule: first}
+    - {code: LAST_TOUCH,  name: Last Touch,   rule: last}
+    - {code: LINEAR,      name: Linear,       rule: linear}
+    - {code: U_SHAPED,    name: U-Shaped,     rule: u, first_pct: 0.40, last_pct: 0.40}
+    - {code: W_SHAPED,    name: W-Shaped,     rule: w,
+       first_pct: 0.30, sql_pct: 0.30, last_pct: 0.30}
+
+# -----------------------------------------------------------------------------
+# RESPONSE CURVES  (PLAN 2.7)
+#   pipeline(spend) = a * ln(1 + spend / b)      marginal = a / (b + spend)
+# `saturation` is spend / b at current spend: >1 means the channel is past its
+# inflection and the next dollar buys less than the last. This is what makes
+# Q15-Q18 answerable at all, and what makes the +$X incremental pipeline in
+# docs/DEMO_FLOWS.md Flow 5 fall out of a model instead of being asserted.
+# -----------------------------------------------------------------------------
+response_curve:
+  scenario_grid: {min_mult: 0.50, max_mult: 1.50, step: 0.05}
+  saturation:
+    LinkedIn: 3.40            # heavily past inflection - the overinvestment
+    Facebook: 2.60
+    Content Syndication: 2.90
+    YouTube: 1.70
+    Direct Mail: 1.55
+    Google Ads: 1.05          # roughly at the efficient frontier
+    Email: 0.70
+    Organic Search: 0.62
+    Trade Show: 0.85
+    Partner: 0.48
+    Webinar: 0.35             # well below inflection - the underinvestment
+    Customer Event: 0.40
+
+# Zero-sum reallocation. NOT a hand-written table: the recommendation is solved
+# from the response curves by constrained water-filling - move budget until the
+# marginal pipeline per dollar is equal everywhere, subject to a cap on how far
+# any one channel can move in a single planning cycle.
+#
+# It was hand-written once, and after the channel rates were recalibrated the
+# table recommended CUTTING the channel with the second-best marginal return.
+# A recommendation that contradicts the ranking on the page above it is worse
+# than no recommendation. (PLAN 1, PLAN 2.7)
+reallocation:
+  move_limit_pct: 0.40      # no channel moves more than +/-40% in one cycle
+  min_spend_usd: 100_000    # nothing is zeroed out entirely
+
+# -----------------------------------------------------------------------------
+# PRODUCTS. gross_margin_pct is what separates ROI from ROAS. (PLAN 2.8)
+# 2.10x ROAS at a 61% blended margin is a marketing ROI of ~0.28x - a better
+# tile than the ROAS it replaces.
+# -----------------------------------------------------------------------------
+products:
+  - {family: Analytics,    line: BI Platform,          margin: 0.72, share: 0.22}
+  - {family: Analytics,    line: Embedded Analytics,   margin: 0.68, share: 0.11}
+  - {family: Analytics,    line: AI Analytics,         margin: 0.64, share: 0.14}
+  - {family: Data Platform, line: Data Warehouse,      margin: 0.55, share: 0.17}
+  - {family: Data Platform, line: Data Integration,    margin: 0.58, share: 0.12}
+  - {family: Data Platform, line: Data Governance,     margin: 0.61, share: 0.07}
+  - {family: AI Applications, line: Forecasting Suite, margin: 0.49, share: 0.10}
+  - {family: AI Applications, line: Agent Studio,      margin: 0.44, share: 0.07}
+
+industries:
+  Manufacturing:         0.16
+  Financial Services:    0.15
+  Technology:            0.15
+  Retail:                0.13
+  Healthcare:            0.12
+  Professional Services: 0.11
+  Telecommunications:    0.07
+  Energy:                0.06
+  Public Sector:         0.05
+
+# -----------------------------------------------------------------------------
+# THE SIXTEEN PLANTED EVENTS  (docs/EVENTS.md carries the MEASURED magnitude;
+# where the arithmetic will not support the intent here, the docs are
+# authoritative.)
+#
+# Ramps, not step changes. A step change is findable by eye and makes the AI
+# look clairvoyant rather than useful; a ramp has to be measured.
+# -----------------------------------------------------------------------------
+events:
+  # E1 - the money pit. High spend, high clicks, no pipeline.
+  wasteful_flagship:
+    enabled: true
+    campaign_name: Enterprise AI Summer Campaign
+    channel: LinkedIn
+    spend_usd: 1_200_000
+    start_month_offset: -14
+    duration_months: 5
+    ctr_mult: 1.45            # looks brilliant at the top of the funnel
+    cpl_mult: 1.30
+    mql_mult: 0.62            # and falls apart below it
+    # Not lower: at sql_mult 0.35 the campaign produced a single won deal and a
+    # ROAS that rounded to 0.00x, which reads as planted rather than damning.
+    # A handful of deals and a ~0.2x return is the number that lands.
+    sql_mult: 0.48
+    won_mult: 0.68
+
+  # E2 - the hidden gem. The note wanted 24x. These multipliers compound on top
+  # of Webinar's already-best channel rates, so the first build landed at 40x -
+  # past ~15x the room stops believing the dataset. Tuned to land near 13x,
+  # which against a 2.0x company average still wins by a mile.
+  hidden_gem:
+    enabled: true
+    campaign_name: CFO Analytics Masterclass Series
+    channel: Webinar
+    spend_usd: 150_000
+    start_month_offset: -20
+    duration_months: 9
+    cpl_mult: 0.90
+    mql_mult: 1.10
+    sql_mult: 1.12
+    won_mult: 1.08
+    deal_mult: 1.10
+
+  # E3 - LinkedIn wins first-touch, webinars win last-touch. Emerges from touch
+  # ORDERING, never from a drawn number: LinkedIn opens journeys, webinars and
+  # events close them.
+  attribution_divergence:
+    enabled: true
+    opener_channels: [LinkedIn, Facebook, YouTube, Content Syndication]
+    closer_channels: [Webinar, Customer Event, Trade Show, Partner]
+    # Applied as a square root at each end (see events.first_touch_bias), and
+    # then blunted again by attribution's 12-touch account-level window - so the
+    # configured value is considerably larger than the spread it produces.
+    opener_first_bias: 7.0
+    closer_last_bias: 8.0
+
+  # E4 - marketing counts leads, sales counts opportunities. Already carried by
+  # the channels table (LinkedIn 9% vs Trade Show 48% MQL->SQL); this only
+  # asserts it stays visible.
+  channel_quality_gap:
+    enabled: true
+    min_spread_pp: 30
+
+  # E5 - lead quality decay through the current year. Acts on MQL->SQL ONLY,
+  # ramping linearly across the trailing twelve months and normalised so its
+  # TTM mean is 1.0 - so it creates the quarter-on-quarter slope without moving
+  # the TTM headline off the channel mix table. (PLAN 1, PLAN 2.6)
+  # The swing is derived from these two targets: (q1-q4)/(q1+q4).
+  lead_quality_decay:
+    enabled: true
+    target_q1_mql_to_sql: 0.34
+    target_q4_mql_to_sql: 0.21
+
+  # E6 - APAC is underwater and spending harder.
+  apac_underwater:
+    enabled: true
+    region: APAC
+    spend_growth: 0.65
+    target_roas_max: 1.0
+
+  # E7 - product launch. Awareness first, pipeline two quarters later.
+  product_launch:
+    enabled: true
+    product_line: Agent Studio
+    launch_month_offset: -9
+    pre_launch_months: 3
+    awareness_mult: 2.60
+    pipeline_mult: 1.85
+
+  # E8/E9 - the reallocation story: over-invested in LinkedIn, under-invested
+  # in webinars. Spend growth diverges from revenue growth.
+  channel_reallocation:
+    enabled: true
+    over_invested: {channel: LinkedIn, spend_growth: 0.48, revenue_growth: 0.06}
+    under_invested: {channel: Webinar, spend_growth: 0.12, revenue_growth: 0.41}
+
+  # E10 - content syndication buys volume and nothing else.
+  junk_volume:
+    enabled: true
+    channel: Content Syndication
+    spend_growth: 0.31
+    revenue_growth: -0.08
+
+  # E11 - EMEA email reach is consent-gated. A real answer to a real question.
+  consent_gap:
+    enabled: true
+    region: EMEA
+    consent_rate: 0.58        # vs 0.94 elsewhere
+
+  # E12 - hand-built hero journeys. WITHOUT THESE THE JOURNEY PAGE DIES: a
+  # randomly clicked account gives a two-touch journey and the wow evaporates.
+  # (PLAN 6)
+  hero_journeys:
+    enabled: true
+    count: 5
+    touches: {min: 7, max: 11}
+    deal_usd: [420_000, 265_000, 180_000, 96_000, 61_000]
+    close_month_offset: [-4, -7, -2, -11, -6]
+
+  # E13 - saturation. Carried by response_curve.saturation.
+  saturation:
+    enabled: true
+
+  # E14 - a CPL anomaly with a cause: a lookalike-audience expansion mid-flight
+  # that broadened targeting and doubled cost per lead. (Q19)
+  cpl_anomaly:
+    enabled: true
+    campaign_name: Retargeting - Pricing Page Q3
+    month_offset: -5
+    cpl_mult: 2.35
+
+  # E15 - a website form-conversion drop. (Q22)
+  web_conversion_drop:
+    enabled: true
+    month_offset: -3
+    duration_months: 2
+    conversion_mult: 0.58
+    pages: [/pricing, /demo-request]
+
+  # E16 - one region's rep team stops converting SQLs. Marketing looks fine;
+  # the problem is downstream. (Q20)
+  sales_execution_gap:
+    enabled: true
+    region: APAC
+    start_month_offset: -8
+    opp_to_won_mult: 0.55
+
+output:
+  formats: [parquet, csv]
+  csv_max_tier: small

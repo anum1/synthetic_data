@@ -1,0 +1,36 @@
+-- Load parquet into Snowflake. Stage the data/ folder first:
+--   PUT file://data/full/*.parquet @~/p2p AUTO_COMPRESS=FALSE;
+
+COPY INTO dim_activity_type FROM @~/p2p/dim_activity_type.parquet FILE_FORMAT = (TYPE = PARQUET) MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE;
+COPY INTO dim_ad_creative FROM @~/p2p/dim_ad_creative.parquet FILE_FORMAT = (TYPE = PARQUET) MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE;
+COPY INTO dim_attribution_model FROM @~/p2p/dim_attribution_model.parquet FILE_FORMAT = (TYPE = PARQUET) MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE;
+COPY INTO dim_campaign FROM @~/p2p/dim_campaign.parquet FILE_FORMAT = (TYPE = PARQUET) MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE;
+COPY INTO dim_channel FROM @~/p2p/dim_channel.parquet FILE_FORMAT = (TYPE = PARQUET) MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE;
+COPY INTO dim_contact FROM @~/p2p/dim_contact.parquet FILE_FORMAT = (TYPE = PARQUET) MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE;
+COPY INTO dim_content_asset FROM @~/p2p/dim_content_asset.parquet FILE_FORMAT = (TYPE = PARQUET) MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE;
+COPY INTO dim_customer FROM @~/p2p/dim_customer.parquet FILE_FORMAT = (TYPE = PARQUET) MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE;
+COPY INTO dim_date FROM @~/p2p/dim_date.parquet FILE_FORMAT = (TYPE = PARQUET) MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE;
+COPY INTO dim_geography FROM @~/p2p/dim_geography.parquet FILE_FORMAT = (TYPE = PARQUET) MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE;
+COPY INTO dim_industry FROM @~/p2p/dim_industry.parquet FILE_FORMAT = (TYPE = PARQUET) MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE;
+COPY INTO dim_lead_source FROM @~/p2p/dim_lead_source.parquet FILE_FORMAT = (TYPE = PARQUET) MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE;
+COPY INTO dim_lost_reason FROM @~/p2p/dim_lost_reason.parquet FILE_FORMAT = (TYPE = PARQUET) MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE;
+COPY INTO dim_opportunity_stage FROM @~/p2p/dim_opportunity_stage.parquet FILE_FORMAT = (TYPE = PARQUET) MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE;
+COPY INTO dim_product FROM @~/p2p/dim_product.parquet FILE_FORMAT = (TYPE = PARQUET) MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE;
+COPY INTO dim_sales_rep FROM @~/p2p/dim_sales_rep.parquet FILE_FORMAT = (TYPE = PARQUET) MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE;
+COPY INTO dim_segment FROM @~/p2p/dim_segment.parquet FILE_FORMAT = (TYPE = PARQUET) MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE;
+COPY INTO fact_ad_performance FROM @~/p2p/fact_ad_performance.parquet FILE_FORMAT = (TYPE = PARQUET) MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE;
+COPY INTO fact_attribution_touch FROM @~/p2p/fact_attribution_touch.parquet FILE_FORMAT = (TYPE = PARQUET) MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE;
+COPY INTO fact_budget_scenario FROM @~/p2p/fact_budget_scenario.parquet FILE_FORMAT = (TYPE = PARQUET) MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE;
+COPY INTO fact_campaign_daily FROM @~/p2p/fact_campaign_daily.parquet FILE_FORMAT = (TYPE = PARQUET) MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE;
+COPY INTO fact_campaign_summary FROM @~/p2p/fact_campaign_summary.parquet FILE_FORMAT = (TYPE = PARQUET) MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE;
+COPY INTO fact_channel_response_curve FROM @~/p2p/fact_channel_response_curve.parquet FILE_FORMAT = (TYPE = PARQUET) MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE;
+COPY INTO fact_email_event FROM @~/p2p/fact_email_event.parquet FILE_FORMAT = (TYPE = PARQUET) MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE;
+COPY INTO fact_email_send FROM @~/p2p/fact_email_send.parquet FILE_FORMAT = (TYPE = PARQUET) MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE;
+COPY INTO fact_funnel_snapshot FROM @~/p2p/fact_funnel_snapshot.parquet FILE_FORMAT = (TYPE = PARQUET) MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE;
+COPY INTO fact_lead FROM @~/p2p/fact_lead.parquet FILE_FORMAT = (TYPE = PARQUET) MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE;
+COPY INTO fact_lead_activity FROM @~/p2p/fact_lead_activity.parquet FILE_FORMAT = (TYPE = PARQUET) MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE;
+COPY INTO fact_marketing_budget FROM @~/p2p/fact_marketing_budget.parquet FILE_FORMAT = (TYPE = PARQUET) MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE;
+COPY INTO fact_opportunity FROM @~/p2p/fact_opportunity.parquet FILE_FORMAT = (TYPE = PARQUET) MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE;
+COPY INTO fact_opportunity_stage FROM @~/p2p/fact_opportunity_stage.parquet FILE_FORMAT = (TYPE = PARQUET) MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE;
+COPY INTO fact_web_event FROM @~/p2p/fact_web_event.parquet FILE_FORMAT = (TYPE = PARQUET) MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE;
+COPY INTO fact_web_session FROM @~/p2p/fact_web_session.parquet FILE_FORMAT = (TYPE = PARQUET) MATCH_BY_COLUMN_NAME = CASE_INSENSITIVE;
